@@ -14,22 +14,24 @@
         header { position: fixed; top: 0; left: 0; width: 100%; background-color: #ffffff; z-index: 1000; padding: 20px 0 10px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .header-container { max-width: 900px; margin: 0 auto; text-align: center; }
         .logo { font-family: 'Georgia', serif; font-size: 42px; font-style: italic; color: #2d6a4f; font-weight: 500; margin-bottom: 15px; display: inline-block; }
-        nav { display: flex; justify-content: space-between; max-width: 800px; margin: 0 auto; padding: 0 20px; }
-        nav a { text-decoration: none; color: #000000; font-size: 18px; font-weight: 800; font-family: 'Arial Black', Gadget, sans-serif; transition: color 0.3s ease; padding: 5px 10px; }
+        
+        /* PC 버전 메뉴 기본 스타일 */
+        nav { display: flex; justify-content: space-between; max-width: 800px; margin: 0 auto; padding: 0 20px; gap: 10px; }
+        nav a { text-decoration: none; color: #000000; font-size: 18px; font-weight: 800; font-family: 'Arial Black', Gadget, sans-serif; transition: color 0.3s ease; padding: 5px 10px; white-space: nowrap; }
         nav a:hover { color: #52b788; }
 
-        /* 공통 섹션 레이아웃 (헤더에 가려지지 않도록 패딩을 대폭 늘렸습니다) */
+        /* 공통 섹션 레이아웃 (상단 헤더 가림 방지 여백 확보) */
         section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; border-bottom: 1px solid #f0f0f0; }
         .container { max-width: 900px; width: 100%; display: flex; gap: 40px; align-items: flex-start; }
         
-        /* 이미지 영역 고정 및 엑박 방지 */
+        /* 이미지 영역 크기 고정 */
         .content-img { flex: 0 0 300px; max-width: 300px; text-align: center; background: #fafafa; border-radius: 4px; min-height: 200px; }
         .content-img img { width: 100%; height: auto; border-radius: 4px; object-fit: cover; display: block; }
         
-        /* 텍스트 영역 밀림 절대 방지 */
+        /* 텍스트 영역 밀림/사라짐 방지 안전장치 */
         .content-text { flex: 1; min-width: 0; font-size: 14px; color: #333333; text-align: left; word-break: keep-all; }
 
-        /* 섹션별 스타일 */
+        /* 섹션별 전용 스타일 */
         #basic .container { flex-direction: row-reverse; }
         #basic .content-text { text-align: right; padding-right: 20px; }
         .cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #555; margin-bottom: 20px; line-height: 1.4; }
@@ -37,7 +39,7 @@
         #about .content-text p { margin-bottom: 20px; line-height: 1.7; }
         #about .highlight-text { font-weight: bold; background-color: #f0fdf4; padding: 2px 4px; }
         
-        /* 프로필 스타일 */
+        /* 프로필용 전용 독립 클래스 */
         .profile-title { font-size: 16px; font-weight: bold; margin-bottom: 10px; color: #111; display: block; }
         .profile-list-group { list-style: none; margin-bottom: 25px; padding: 0; }
         .profile-list-group li { margin-bottom: 8px; font-size: 14px; line-height: 1.8; }
@@ -54,17 +56,59 @@
         .gallery-right { flex: 2; }
         .gallery-right img { width: 100%; height: auto; border-radius: 4px; }
         
-        .review-card { background: #ffffff !important; padding: 18px !important; border-radius: 10px !important; border: 1px solid #eee !important; box-shadow: 0 3px 10px rgba(0,0,0,0.02) !important; width: calc(50% - 8px) !important; min-width: 280px !important; box-sizing: border-box !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; }
+        /* 리뷰 리스트 레이아웃 부모 창 */
+        #review-list { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 16px; 
+            justify-content: flex-start; 
+            width: 100%; 
+            box-sizing: border-box; 
+            min-height: 50px;
+            text-align: left;
+        }
 
+        /* 리뷰 응원 카드 기본 스타일 (PC 버전: 2열 배치) */
+        .review-card { 
+            background: #ffffff; 
+            padding: 18px; 
+            border-radius: 10px; 
+            border: 1px solid #eee; 
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02); 
+            width: calc(50% - 8px); 
+            min-width: 280px; 
+            box-sizing: border-box; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+        }
+
+        /* 모바일 반응형 디자인 */
         @media (max-width: 768px) {
-            header { padding: 10px 0; position: static; } /* 모바일에선 헤더 고정을 풀어 안전하게 확보 */
-            section { padding-top: 40px; min-height: auto; }
-            .container { flex-direction: column !important; gap: 20px; align-items: center; }
+            header { padding: 15px 0 5px 0; }
+            .logo { font-size: 28px; margin-bottom: 10px; }
+            
+            /* 가로 스크롤 메뉴 유지 */
+            nav { justify-content: flex-start; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 0 15px 8px 15px; gap: 5px; }
+            nav a { font-size: 14px; padding: 4px 8px; }
+            nav::-webkit-scrollbar { display: none; } 
+            
+            section { padding-top: 160px; min-height: auto; }
+            .container { flex-direction: column !important; gap: 30px; align-items: center; }
             .content-img { flex: 0 0 auto; width: 100%; max-width: 300px; min-height: auto; }
             .content-text { text-align: center !important; padding: 0 !important; }
             #basic .content-text { text-align: center; }
             .gallery-layout { flex-direction: column; }
-            .review-card { width: 100% !important; }
+            
+            /* [모바일 리뷰 깨짐 방지 핵심 수정] */
+            #review-list { 
+                flex-direction: column !important; 
+                width: 100% !important; 
+            }
+            .review-card { 
+                width: 100% !important; 
+                margin: 0 0 10px 0 !important;
+            }
         }
     </style>
 </head>
@@ -76,11 +120,11 @@
             <div class="logo">🍃 Leaf</div>
         </a>
         <nav>
-            <a href="#about" class="nav-link">about</a>
-            <a href="#profile" class="nav-link">profile</a>
-            <a href="#find-me" class="nav-link">find me</a>
-            <a href="#sneak-peak" class="nav-link">sneak peak</a>
-            <a href="#footprints" class="nav-link">footprints</a>
+            <a href="#about">about</a>
+            <a href="#profile">profile</a>
+            <a href="#find-me">find me</a>
+            <a href="#sneak-peak">sneak peak</a>
+            <a href="#footprints">footprints</a>
         </nav>
     </div>
 </header>
@@ -181,8 +225,8 @@
     </div>
 </section>
 
-<section id="footprints" style="padding: 120px 20px 60px 20px; background-color: #ffffff; display: block !important; text-align: center;">
-    <div style="max-width: 720px; margin: 0 auto; width: 100%; display: block !important;">
+<section id="footprints" style="padding: 120px 20px 60px 20px; background-color: #ffffff; display: block; text-align: center;">
+    <div style="max-width: 720px; margin: 0 auto; width: 100%; display: block;">
         <div style="margin-bottom: 30px; text-align: center;">
             <h3 style="font-family: 'Georgia', serif; font-size: 26px; color: #2d6a4f; margin-bottom: 12px; font-weight: bold;">Footprints</h3>
         </div>
@@ -199,7 +243,7 @@
                 </div>
             </div>
         </div>
-        <div id="review-list" style="text-align: left !important; display: flex !important; flex-wrap: wrap !important; gap: 15px !important; justify-content: flex-start !important; width: 100% !important; box-sizing: border-box !important; min-height: 50px;"></div>
+        <div id="review-list"></div>
     </div>
 </section>
 
@@ -227,7 +271,9 @@
 
 <script>
     var MASTER_PASSWORD = "leaf1234";
-    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', loadReviews); } else { loadReviews(); }
+
+    // 페이지 로드 시 리뷰 가져오기 안정화
+    document.addEventListener('DOMContentLoaded', loadReviews);
     window.onload = function() { loadReviews(); };
 
     function clearBrokenData() {
@@ -270,4 +316,46 @@
             var stored = localStorage.getItem('leaf_reviews') || localStorage.getItem('reviews');
             if (stored) reviews = JSON.parse(stored);
         } catch(e) { reviews = []; }
+        
         if (!Array.isArray(reviews) || reviews.length === 0) {
+            reviewList.innerHTML = '<p style="text-align:center; color:#bbb; font-size:13.5px; margin:30px auto; width:100%;">작성된 응원의 한 마디가 아직 없습니다. 첫 마디를 남겨보세요! 🍃</p>';
+            return;
+        }
+        var htmlContent = '';
+        for (var i = 0; i < reviews.length; i++) {
+            var r = reviews[i];
+            if (!r || !r.name || !r.content) continue;
+            htmlContent += '<div class="review-card">' +
+                           '  <div>' +
+                           '    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">' +
+                           '      <div style="display: flex; align-items: center; gap: 8px;">' +
+                           '        <span style="font-weight: bold; font-size: 13px; color: #444;">' + r.name + '</span>' +
+                           '        <span style="font-size: 11px; color: #bbb;">' + (r.date || '') + '</span>' +
+                           '      </div>' +
+                           '      <button onclick="deleteReview(' + r.id + ')" style="background: none; border: none; color: #ccc; font-size: 11px; cursor: pointer; padding: 2px 5px;">삭제</button>' +
+                           '    </div>' +
+                           '    <p style="margin: 0; font-size: 13px; color: #555; line-height: 1.6; white-space: pre-wrap; text-align: left;">' + r.content + '</p>' +
+                           '  </div>' +
+                           '</div>';
+        }
+        reviewList.innerHTML = htmlContent;
+    }
+
+    function deleteReview(id) {
+        var accessPassword = prompt("관리자 비밀번호를 입력해 주세요:");
+        if (!accessPassword) return;
+        if (accessPassword === MASTER_PASSWORD) {
+            var reviews = [];
+            try { reviews = JSON.parse(localStorage.getItem('leaf_reviews')) || JSON.parse(localStorage.getItem('reviews')) || []; } catch(e) { reviews = []; }
+            if (Array.isArray(reviews)) {
+                reviews = reviews.filter(function(r) { return r.id !== id; });
+                localStorage.setItem('leaf_reviews', JSON.stringify(reviews));
+                localStorage.setItem('reviews', JSON.stringify(reviews));
+            }
+            loadReviews();
+            alert("리뷰가 완전히 삭제되었습니다. 🍃");
+        } else { alert("비밀번호가 올바르지 않습니다."); }
+    }
+</script>
+</body>
+</html>
