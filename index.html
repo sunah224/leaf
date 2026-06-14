@@ -20,7 +20,7 @@
         nav a { text-decoration: none; color: #000000; font-size: 18px; font-weight: 800; font-family: 'Arial Black', Gadget, sans-serif; transition: color 0.3s ease; padding: 5px 10px; white-space: nowrap; }
         nav a:hover { color: #52b788; }
 
-        /* 공통 섹션 레이아웃 (상단 헤더 가림 방지 여백 확보) */
+        /* 공통 섹션 레이아웃 */
         section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; border-bottom: 1px solid #f0f0f0; }
         .container { max-width: 900px; width: 100%; display: flex; gap: 40px; align-items: flex-start; }
         
@@ -68,7 +68,7 @@
             text-align: left;
         }
 
-        /* 리뷰 응원 카드 기본 스타일 (PC 버전: 2열 배치) */
+        /* 리뷰 응원 카드 기본 스타일 (PC 버전: 가로 2열 배치) */
         .review-card { 
             background: #ffffff; 
             padding: 18px; 
@@ -88,7 +88,6 @@
             header { padding: 15px 0 5px 0; }
             .logo { font-size: 28px; margin-bottom: 10px; }
             
-            /* 가로 스크롤 메뉴 유지 */
             nav { justify-content: flex-start; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 0 15px 8px 15px; gap: 5px; }
             nav a { font-size: 14px; padding: 4px 8px; }
             nav::-webkit-scrollbar { display: none; } 
@@ -100,17 +99,21 @@
             #basic .content-text { text-align: center; }
             .gallery-layout { flex-direction: column; }
             
-            /* [모바일 리뷰 깨짐 방지 핵심 수정] */
+            /* 모바일 리뷰 화면 깨짐 방지 */
             #review-list { 
+                display: flex !important;
                 flex-direction: column !important; 
                 width: 100% !important; 
             }
             .review-card { 
                 width: 100% !important; 
-                margin: 0 0 10px 0 !important;
+                margin: 0 0 12px 0 !important;
             }
         }
     </style>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 </head>
 <body>
 
@@ -238,7 +241,7 @@
             <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
                 <textarea id="review-content" placeholder="따뜻한 한 마디를 남겨주세요 (로그인 없이 바로 등록됩니다) 😊" style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px; font-size: 14.5px; resize: vertical; outline: none; background: #fff; font-family: sans-serif; line-height: 1.7; box-sizing: border-box; color: #333;"></textarea>
                 <div style="text-align: right; display: flex; justify-content: flex-end; gap: 10px;">
-                    <button onclick="clearBrokenData()" style="background-color: #e63946; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: bold; cursor: pointer; opacity: 0.6;">정렬 초기화</button>
+                    <button onclick="clearBrokenData()" style="background-color: #e63946; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: bold; cursor: pointer; opacity: 0.6;">데이터 리셋</button>
                     <button onclick="addReview()" style="background-color: #52b788; color: white; border: none; padding: 12px 45px; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; transition: background 0.2s; box-shadow: 0 3px 8px rgba(82,183,136,0.25);">등록</button>
                 </div>
             </div>
@@ -272,17 +275,71 @@
 <script>
     var MASTER_PASSWORD = "leaf1234";
 
-    // 페이지 로드 시 리뷰 가져오기 안정화
-    document.addEventListener('DOMContentLoaded', loadReviews);
-    window.onload = function() { loadReviews(); };
+    // 1. Firebase 설정 값 (질문자님의 고유 키로 매칭 완료)
+    var firebaseConfig = {
+        apiKey: "AIzaSyCd0izexUnK2e3hFFZ72F09pSvNDMUX0Bg",
+        authDomain: "leaf-web-f6019.firebaseapp.com",
+        databaseURL: "https://leaf-web-f6019-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "leaf-web-f6019",
+        storageBucket: "leaf-web-f6019.firebasestorage.app",
+        messagingSenderId: "318569186261",
+        appId: "1:318569186261:web:006ee73e7359f2482bb35c"
+    };
+    
+    // 2. Firebase 활성화
+    firebase.initializeApp(firebaseConfig);
+    var database = firebase.database();
 
-    function clearBrokenData() {
-        if (confirm("혹시 브라우저에 꼬여있는 구형 에러 데이터를 초기화할까요?")) {
-            localStorage.removeItem('leaf_reviews');
-            localStorage.removeItem('reviews');
-            loadReviews();
-            alert("초기화되었습니다! 이제 한 줄 응원을 새로 작성해 보세요. 🍃");
-        }
+    // 페이지 로딩 완료 후 DB 실시간 연결 시작
+    document.addEventListener('DOMContentLoaded', listenReviews);
+
+    function listenReviews() {
+        var reviewList = document.getElementById('review-list');
+        if (!reviewList) return;
+
+        // Firebase의 'reviews' 데이터 관찰
+        database.ref('reviews').on('value', function(snapshot) {
+            var data = snapshot.val();
+            
+            if (!data) {
+                reviewList.innerHTML = '<p style="text-align:center; color:#bbb; font-size:13.5px; margin:30px auto; width:100%;">작성된 응원의 한 마디가 아직 없습니다. 첫 마디를 남겨보세요! 🍃</p>';
+                return;
+            }
+
+            var reviewsArray = [];
+            for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    var item = data[key];
+                    item.firebaseKey = key; 
+                    reviewsArray.push(item);
+                }
+            }
+
+            // 최신 글 정렬
+            reviewsArray.sort(function(a, b) {
+                return b.timestamp - a.timestamp;
+            });
+
+            var htmlContent = '';
+            for (var i = 0; i < reviewsArray.length; i++) {
+                var r = reviewsArray[i];
+                htmlContent += '<div class="review-card">' +
+                               '  <div>' +
+                               '    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">' +
+                               '      <div style="display: flex; align-items: center; gap: 8px;">' +
+                               '        <span style="font-weight: bold; font-size: 13px; color: #444;">' + r.name + '</span>' +
+                               '        <span style="font-size: 11px; color: #bbb;">' + (r.date || '') + '</span>' +
+                               '      </div>' +
+                               '      <button onclick="deleteReview(\'' + r.firebaseKey + '\')" style="background: none; border: none; color: #ccc; font-size: 11px; cursor: pointer; padding: 2px 5px;">삭제</button>' +
+                               '    </div>' +
+                               '    <p style="margin: 0; font-size: 13px; color: #555; line-height: 1.6; white-space: pre-wrap; text-align: left;">' + r.content + '</p>' +
+                               '  </div>' +
+                               '</div>';
+            }
+            reviewList.innerHTML = htmlContent;
+        }, function(error) {
+            console.error("Firebase 로딩 에러:", error);
+        });
     }
 
     function addReview() {
@@ -290,71 +347,54 @@
             var name = document.getElementById('review-name').value.trim();
             var content = document.getElementById('review-content').value.trim();
             if (!name || !content) { alert("닉네임과 내용을 모두 입력해 주세요! 🌿"); return; }
-            var newReview = { id: Date.now(), name: name, content: content, date: new Date().toLocaleDateString('ko-KR') };
-            var reviews = [];
-            try {
-                var raw1 = localStorage.getItem('leaf_reviews');
-                var raw2 = localStorage.getItem('reviews');
-                if (raw1) reviews = JSON.parse(raw1);
-                else if (raw2) reviews = JSON.parse(raw2);
-            } catch(e) { reviews = []; }
-            if (!Array.isArray(reviews)) { reviews = []; }
-            reviews.unshift(newReview);
-            localStorage.setItem('leaf_reviews', JSON.stringify(reviews));
-            localStorage.setItem('reviews', JSON.stringify(reviews));
-            document.getElementById('review-name').value = '';
-            document.getElementById('review-content').value = '';
-            loadReviews();
+            
+            var newReview = {
+                name: name,
+                content: content,
+                date: new Date().toLocaleDateString('ko-KR'),
+                timestamp: Date.now()
+            };
+            
+            database.ref('reviews').push(newReview)
+                .then(function() {
+                    document.getElementById('review-name').value = '';
+                    document.getElementById('review-content').value = '';
+                })
+                .catch(function(err) {
+                    alert("데이터 저장 실패! Firebase 데이터베이스 설정을 확인해 보세요.");
+                    console.error(err);
+                });
+
         } catch(err) { console.error(err); }
     }
 
-    function loadReviews() {
-        var reviewList = document.getElementById('review-list');
-        if (!reviewList) return;
-        var reviews = [];
-        try {
-            var stored = localStorage.getItem('leaf_reviews') || localStorage.getItem('reviews');
-            if (stored) reviews = JSON.parse(stored);
-        } catch(e) { reviews = []; }
-        
-        if (!Array.isArray(reviews) || reviews.length === 0) {
-            reviewList.innerHTML = '<p style="text-align:center; color:#bbb; font-size:13.5px; margin:30px auto; width:100%;">작성된 응원의 한 마디가 아직 없습니다. 첫 마디를 남겨보세요! 🍃</p>';
-            return;
-        }
-        var htmlContent = '';
-        for (var i = 0; i < reviews.length; i++) {
-            var r = reviews[i];
-            if (!r || !r.name || !r.content) continue;
-            htmlContent += '<div class="review-card">' +
-                           '  <div>' +
-                           '    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">' +
-                           '      <div style="display: flex; align-items: center; gap: 8px;">' +
-                           '        <span style="font-weight: bold; font-size: 13px; color: #444;">' + r.name + '</span>' +
-                           '        <span style="font-size: 11px; color: #bbb;">' + (r.date || '') + '</span>' +
-                           '      </div>' +
-                           '      <button onclick="deleteReview(' + r.id + ')" style="background: none; border: none; color: #ccc; font-size: 11px; cursor: pointer; padding: 2px 5px;">삭제</button>' +
-                           '    </div>' +
-                           '    <p style="margin: 0; font-size: 13px; color: #555; line-height: 1.6; white-space: pre-wrap; text-align: left;">' + r.content + '</p>' +
-                           '  </div>' +
-                           '</div>';
-        }
-        reviewList.innerHTML = htmlContent;
-    }
-
-    function deleteReview(id) {
+    function deleteReview(firebaseKey) {
         var accessPassword = prompt("관리자 비밀번호를 입력해 주세요:");
         if (!accessPassword) return;
         if (accessPassword === MASTER_PASSWORD) {
-            var reviews = [];
-            try { reviews = JSON.parse(localStorage.getItem('leaf_reviews')) || JSON.parse(localStorage.getItem('reviews')) || []; } catch(e) { reviews = []; }
-            if (Array.isArray(reviews)) {
-                reviews = reviews.filter(function(r) { return r.id !== id; });
-                localStorage.setItem('leaf_reviews', JSON.stringify(reviews));
-                localStorage.setItem('reviews', JSON.stringify(reviews));
-            }
-            loadReviews();
-            alert("리뷰가 완전히 삭제되었습니다. 🍃");
+            
+            database.ref('reviews/' + firebaseKey).remove()
+                .then(function() {
+                    alert("리뷰가 안전하게 삭제되었습니다. 🍃");
+                })
+                .catch(function(err) {
+                    alert("삭제 실패했습니다.");
+                    console.error(err);
+                });
+                
         } else { alert("비밀번호가 올바르지 않습니다."); }
+    }
+
+    function clearBrokenData() {
+        var accessPassword = prompt("이 기능은 DB의 모든 데이터를 초기화합니다. 관리자 비밀번호 입력:");
+        if (accessPassword === MASTER_PASSWORD) {
+            if (confirm("정말 모든 데이터를 영구 삭제할까요?")) {
+                database.ref('reviews').remove();
+                alert("전체 초기화 완료! 🍃");
+            }
+        } else {
+            alert("비밀번호가 틀렸습니다.");
+        }
     }
 </script>
 </body>
