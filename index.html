@@ -63,6 +63,7 @@
 
         .price-info { font-size: 14px; font-weight: bold; color: #444; border-top: 1px solid #ddd; padding-top: 15px; display: inline-block; width: auto; margin: 0 auto; }
         
+        /* sneak peak 갤러리 레이아웃 */
         #sneak-peak .container { flex-direction: column; align-items: center; }
         .gallery-layout { display: flex; gap: 20px; width: 100%; }
         .gallery-left { display: flex; flex-direction: column; gap: 20px; flex: 1; }
@@ -116,8 +117,24 @@
             #basic .content-text { text-align: center !important; padding: 0 !important; justify-content: center !important; }
             .cursive-text { margin-bottom: 20px; }
             
-            .gallery-layout { flex-direction: column; }
-            .contact-list { margin-bottom: 25px; }
+            /* 모바일 전용 profile 텍스트 80% 축소 스케일링 규칙 */
+            #profile .content-text { text-align: left !important; padding: 0 5px !important; } 
+            #profile .profile-title { font-size: 13px !important; margin-bottom: 8px !important; line-height: 1.4 !important; }
+            #profile .profile-list-group { margin-bottom: 18px !important; }
+            #profile .profile-list-group li { font-size: 11.5px !important; margin-bottom: 6px !important; line-height: 1.6 !important; }
+            #profile div[style*="margin-top: 25px"] { margin-top: 15px !important; }
+            
+            /* 모바일 전용 find-me 링크 70% 축소 스케일링 규칙 (상담비용 제외) */
+            #find-me .contact-list { margin-bottom: 20px !important; }
+            #find-me .contact-item { font-size: 11.5px !important; gap: 10px !important; margin-bottom: 11px !important; }
+            #find-me .contact-item img { width: 17px !important; height: 17px !important; }
+            #find-me .contact-item img.kakao-logo { width: 15px !important; height: 15px !important; margin-left: 1px !important; margin-right: 1px !important; }
+            #find-me .contact-item.open-kakao-item a { font-size: 10.5px !important; }
+            #find-me .price-info { font-size: 14px !important; padding-top: 12px !important; }
+
+            /* [수정 부분] 모바일 전용 sneak peak 사진들 한 페이지 가로 배치 규칙 */
+            .gallery-layout { flex-direction: row !important; gap: 10px !important; align-items: stretch !important; }
+            .gallery-left { gap: 10px !important; }
             
             #review-list { 
                 display: flex !important;
@@ -247,7 +264,7 @@
                     </li>
                     <li class="contact-item open-kakao-item">
                         <img src="kakao.jpg" class="kakao-logo" alt="KakaoTalk">
-                        <a href="https://open.kakao.com/o/gilQkDyi" target="_blank">https://open.kakao.com/o/gilQkDyi</a>
+                        <a href="https://open.kakao.com/o/s0995Nzi" target="_blank">https://open.kakao.com/o/s0995Nzi</a>
                     </li>
                 </ul>
                 <div>
