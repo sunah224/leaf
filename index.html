@@ -31,11 +31,18 @@
         /* 텍스트 영역 밀림/사라짐 방지 안전장치 */
         .content-text { flex: 1; min-width: 0; font-size: 14px; color: #333333; text-align: left; word-break: keep-all; }
 
-        /* 섹션별 전용 스타일 */
-        #basic .container { flex-direction: row-reverse; }
-        #basic .content-text { text-align: right; padding-right: 20px; }
-        .cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #555; margin-bottom: 20px; line-height: 1.4; }
+        /* #basic 섹션 이미지-텍스트 하단 정렬 스타일 */
+        #basic .container { flex-direction: row-reverse; align-items: stretch; } /* 높이를 이미지에 맞게 채움 */
+        #basic .content-text { 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-end; /* 전체 텍스트 덩어리를 아래쪽으로 밀착시킴 */
+            text-align: right; 
+            padding-right: 20px;
+        }
+        .cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #555; line-height: 1.4; margin-bottom: 25px; } /* 문구 사이 간격 조정 */
         .main-message { font-weight: bold; font-size: 14px; color: #000; line-height: 1.8; }
+        
         #about .content-text p { margin-bottom: 20px; line-height: 1.7; }
         #about .highlight-text { font-weight: bold; background-color: #f0fdf4; padding: 2px 4px; }
         
@@ -44,10 +51,17 @@
         .profile-list-group { list-style: none; margin-bottom: 25px; padding: 0; }
         .profile-list-group li { margin-bottom: 8px; font-size: 14px; line-height: 1.8; }
 
-        .contact-info { font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; line-height: 2.2; margin-bottom: 30px; }
-        .contact-info a { color: #333; text-decoration: none; }
-        .contact-info a:hover { text-decoration: underline; color: #52b788; }
-        .price-info { font-size: 14px; font-weight: bold; color: #444; border-top: 1px solid #ddd; padding-top: 15px; display: inline-block; }
+        /* find-me 전용 세련된 링크 리스트 디자인 */
+        .contact-box { width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .contact-list { list-style: none; padding: 0; margin: 0 auto 35px auto; display: inline-block; text-align: left; }
+        .contact-item { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; line-height: 1.2; }
+        .contact-item img { width: 24px; height: 24px; object-fit: contain; vertical-align: middle; }
+        .contact-item img.kakao-logo { width: 21px; height: 21px; margin-left: 1.5px; margin-right: 1.5px; } 
+        .contact-item a { color: #333; text-decoration: none; transition: color 0.2s ease; }
+        .contact-item a:hover { text-decoration: underline; color: #52b788; }
+        .contact-item.open-kakao-item a { color: #2d6a4f; font-size: 14px; }
+
+        .price-info { font-size: 14px; font-weight: bold; color: #444; border-top: 1px solid #ddd; padding-top: 15px; display: inline-block; width: auto; margin: 0 auto; }
         
         #sneak-peak .container { flex-direction: column; align-items: center; }
         .gallery-layout { display: flex; gap: 20px; width: 100%; }
@@ -88,7 +102,6 @@
             header { padding: 15px 0 5px 0; }
             .logo { font-size: 28px; margin-bottom: 10px; }
             
-            /* 모바일에서도 균형있게 한 줄 중앙 정렬 보장 */
             nav { justify-content: center; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 0 15px 8px 15px; gap: 15px; }
             nav a { font-size: 14px; padding: 4px 8px; }
             nav::-webkit-scrollbar { display: none; } 
@@ -97,10 +110,15 @@
             .container { flex-direction: column !important; gap: 30px; align-items: center; }
             .content-img { flex: 0 0 auto; width: 100%; max-width: 300px; min-height: auto; }
             .content-text { text-align: center !important; padding: 0 !important; }
-            #basic .content-text { text-align: center; }
-            .gallery-layout { flex-direction: column; }
             
-            /* 모바일 리뷰 화면 노출 보장 강제화 */
+            /* 모바일 화면에서는 일반 세로 정렬 및 중앙 정렬로 변환 */
+            #basic .container { flex-direction: column !important; align-items: center; }
+            #basic .content-text { text-align: center !important; padding: 0 !important; justify-content: center !important; }
+            .cursive-text { margin-bottom: 20px; }
+            
+            .gallery-layout { flex-direction: column; }
+            .contact-list { margin-bottom: 25px; }
+            
             #review-list { 
                 display: flex !important;
                 flex-direction: column !important; 
@@ -173,8 +191,10 @@
             </ul>
 
             <ul class="profile-list-group" style="font-weight: bold; color: #111; border-left: 3px solid #52b788; padding-left: 12px;">
-                <li>한국아동청소년 심리상담센터(한아청) 집단상담 코리더(고2,고3), 행정실장</li>
-                <li>헬로스마일 종로센터 행정실장</li>
+                <li>'26 서울탑 정신건강의학과 의원 데스크행정</li>
+                <li>'25 (주)아토머스 마인드카페 강남삼성점 매니저 </li>
+                <li>'21 한국아동청소년 심리상담센터 집단상담 코리더(고2,고3), 행정실장</li>
+                <li>'17 헬로스마일 종로센터 행정실장</li>
             </ul>
 
             <ul class="profile-list-group" style="font-weight: bold; color: #444;">
@@ -186,15 +206,22 @@
             </ul>
             
             <div style="margin-bottom: 20px;">
-                <div class="profile-title" style="color: #2d6a4f; margin-top: 15px;">한국상담학회 수련회원</div>
-                <ul class="profile-list-group" style="margin-top: 5px; padding-left: 10px;">
+                <div class="profile-title" style="color: #2d6a4f; margin-top: 15px;">한국상담심리학회 수련회원</div>
+                <ul class="profile-list-group" style="margin-top: 5px; padding-left: 10px; margin-bottom: 15px;">
                     <li>- 공개사례 발표회 30시간 이수</li>
+                    <li>- 성균관대학교 외상심리연구소 집단상담 18시간 이수</li>
                 </ul>
+                
                 <div class="profile-title" style="color: #2d6a4f; margin-top: 10px;">한국상담학회 준회원</div>
+                <ul class="profile-list-group" style="margin-top: 5px; padding-left: 10px; margin-bottom: 0;">
+                    <li>- 집단상담 보조지도자 11시간 이수</li>
+                </ul>
             </div>
 
-            <div>
-                <div class="profile-title" style="color: #777; margin-top: 15px;">여성가족부 청소년상담사 2급 준비 중</div>
+            <div style="margin-top: 25px;">
+                <div class="profile-title" style="color: #777; margin-bottom: 10px;">여성가족부 청소년상담사 2급 준비 중</div>
+                <div class="profile-title" style="color: #777; margin-bottom: 10px;">한국상담심리학회 상담심리사 2급 준비 중</div>
+                <div class="profile-title" style="color: #777; margin-bottom: 0;">한국상담학회 상담심리사 2급 준비 중</div>
             </div>
         </div> 
     </div> 
@@ -203,16 +230,30 @@
 <section id="find-me">
     <div class="container">
         <div class="content-img"><img src="find_me.jpg" alt="Find Me" onerror="this.style.display='none';"></div>
-        <div class="content-text" style="text-align: center;">
-            <div class="contact-info">
-                <p><a href="https://www.instagram.com/sunahhn" target="_blank">instagram.com/sunahhn</a></p>
-                <p><a href="https://www.youtube.com/@sunahhn" target="_blank">youtube.com/@sunahhn</a></p>
-                <p><a href="mailto:sunah224@gmail.com">sunahhyun@sunahhn.com</a></p>
-                <p style="margin-top: 20px; font-size: 14px; color: #2d6a4f;">
-                    <a href="https://open.kakao.com/o/gilQkDyi" target="_blank">https://open.kakao.com/o/gilQkDyi</a>
-                </p>
+        <div class="content-text">
+            <div class="contact-box">
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <img src="instagram.jpg" alt="Instagram">
+                        <a href="https://www.instagram.com/sunahhn" target="_blank">instagram.com/sunahhn</a>
+                    </li>
+                    <li class="contact-item">
+                        <img src="youtube.jpg" alt="YouTube">
+                        <a href="https://www.youtube.com/@sunahhn" target="_blank">youtube.com/@sunahhn</a>
+                    </li>
+                    <li class="contact-item">
+                        <img src="email.jpg" alt="Email">
+                        <a href="mailto:sunahhyun@sunahhn.com">sunahhyun@sunahhn.com</a>
+                    </li>
+                    <li class="contact-item open-kakao-item">
+                        <img src="kakao.jpg" class="kakao-logo" alt="KakaoTalk">
+                        <a href="https://open.kakao.com/o/gilQkDyi" target="_blank">https://open.kakao.com/o/gilQkDyi</a>
+                    </li>
+                </ul>
+                <div>
+                    <div class="price-info">상담비용 5만원 / 50분</div>
+                </div>
             </div>
-            <div class="price-info">상담비용 5만원 / 50분</div>
         </div>
     </div>
 </section>
