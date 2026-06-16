@@ -20,6 +20,9 @@
         nav a { text-decoration: none; color: #000000; font-size: 18px; font-weight: 800; font-family: 'Arial Black', Gadget, sans-serif; transition: color 0.3s ease; padding: 5px 10px; white-space: nowrap; }
         nav a:hover { color: #52b788; }
 
+        /* 상단 nav 메뉴 활성화(색상 변경) 전용 클래스 */
+        nav a.active-nav { color: #52b788 !important; }
+
         /* 공통 섹션 레이아웃 */
         section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; border-bottom: 1px solid #f0f0f0; }
         .container { max-width: 900px; width: 100%; display: flex; gap: 40px; align-items: flex-start; }
@@ -40,28 +43,40 @@
             text-align: right; 
             padding-right: 20px;
         }
-        .cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #555; line-height: 1.4; margin-bottom: 25px; } /* 문구 사이 간격 조정 */
+        .cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 16px; color: #555; line-height: 1.5; margin-bottom: 25px; } 
         .main-message { font-weight: bold; font-size: 14px; color: #000; line-height: 1.8; }
         
         #about .content-text p { margin-bottom: 20px; line-height: 1.7; }
         #about .highlight-text { font-weight: bold; background-color: #f0fdf4; padding: 2px 4px; }
         
         /* 프로필용 전용 독립 클래스 */
-        .profile-title { font-size: 16px; font-weight: bold; margin-bottom: 10px; color: #111; display: block; }
-        .profile-list-group { list-style: none; margin-bottom: 25px; padding: 0; }
+        .profile-title { font-size: 16px; font-weight: bold; margin-bottom: 10px; color: #111; display: inline-block; text-align: left; width: 100%; max-width: 530px; }
+        .profile-list-group { list-style: none; margin-bottom: 25px; padding: 0; text-align: left; width: 100%; max-width: 530px; }
         .profile-list-group li { margin-bottom: 8px; font-size: 14px; line-height: 1.8; }
+        .profile-center-box { width: 100%; max-width: 530px; text-align: left; margin-bottom: 20px; }
 
         /* find-me 전용 세련된 링크 리스트 디자인 */
         .contact-box { width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-        .contact-list { list-style: none; padding: 0; margin: 0 auto 35px auto; display: inline-block; text-align: left; }
+        .contact-list { list-style: none; padding: 0; margin: 0 auto; display: inline-block; text-align: left; }
         .contact-item { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; line-height: 1.2; }
         .contact-item img { width: 24px; height: 24px; object-fit: contain; vertical-align: middle; }
-        .contact-item img.kakao-logo { width: 21px; height: 21px; margin-left: 1.5px; margin-right: 1.5px; } 
+        
+        /* 카카오톡 로고 및 새 블로그 로고의 통일감 있는 크기 고정 스타일 */
+        .contact-item img.kakao-logo,
+        .contact-item img.blog-logo { width: 24px; height: 24px; object-fit: contain; vertical-align: middle; } 
+        
         .contact-item a { color: #333; text-decoration: none; transition: color 0.2s ease; }
         .contact-item a:hover { text-decoration: underline; color: #52b788; }
+        
+        /* 이메일과 카카오톡 사이를 최대한 멀리 떨어뜨리기 위해 이메일 아래에만 큰 여백 추가 */
+        .contact-item.email-item { margin-bottom: 50px; }
+
+        /* 카카오톡 아이템 하단 마진만 없애고, 카카오 전용 링크 스타일 지정 */
+        .contact-item.open-kakao-item { margin-bottom: 0; }
         .contact-item.open-kakao-item a { color: #2d6a4f; font-size: 14px; }
 
-        .price-info { font-size: 14px; font-weight: bold; color: #444; border-top: 1px solid #ddd; padding-top: 15px; display: inline-block; width: auto; margin: 0 auto; }
+        /* 카카오 문단과 바짝 붙도록 상단 여백 세밀 조정 */
+        .price-info { font-size: 14px; font-weight: bold; color: #444; border-top: 1px solid #ddd; padding-top: 15px; margin-top: 8px; display: inline-block; width: auto; }
         
         /* sneak peak 갤러리 레이아웃 */
         #sneak-peak .container { flex-direction: column; align-items: center; }
@@ -115,24 +130,30 @@
             /* 모바일 화면에서는 일반 세로 정렬 및 중앙 정렬로 변환 */
             #basic .container { flex-direction: column !important; align-items: center; }
             #basic .content-text { text-align: center !important; padding: 0 !important; justify-content: center !important; }
-            .cursive-text { margin-bottom: 20px; }
+            .cursive-text { margin-bottom: 20px; font-size: 14px !important; } 
             
             /* 모바일 전용 profile 텍스트 80% 축소 스케일링 규칙 */
-            #profile .content-text { text-align: left !important; padding: 0 5px !important; } 
-            #profile .profile-title { font-size: 13px !important; margin-bottom: 8px !important; line-height: 1.4 !important; }
-            #profile .profile-list-group { margin-bottom: 18px !important; }
+            #profile .content-text { text-align: left !important; padding: 0 5px !important; align-items: flex-start !important; } 
+            #profile .profile-title { font-size: 13px !important; margin-bottom: 8px !important; line-height: 1.4 !important; max-width: 100% !important; }
+            #profile .profile-list-group { margin-bottom: 18px !important; max-width: 100% !important; }
             #profile .profile-list-group li { font-size: 11.5px !important; margin-bottom: 6px !important; line-height: 1.6 !important; }
+            #profile .profile-center-box { max-width: 100% !important; margin-bottom: 15px !important; }
             #profile div[style*="margin-top: 25px"] { margin-top: 15px !important; }
             
             /* 모바일 전용 find-me 링크 70% 축소 스케일링 규칙 (상담비용 제외) */
-            #find-me .contact-list { margin-bottom: 20px !important; }
             #find-me .contact-item { font-size: 11.5px !important; gap: 10px !important; margin-bottom: 11px !important; }
+            #find-me .contact-item.email-item { margin-bottom: 35px !important; } /* 이메일과 카카오 사이 마진 확보 */
+            #find-me .contact-item.open-kakao-item { margin-bottom: 0 !important; } 
+            
+            /* 모바일 환경에서 다른 소셜 아이콘들과 동일하게 새 블로그 이미지 크기 자동 축소 규칙 매칭 */
             #find-me .contact-item img { width: 17px !important; height: 17px !important; }
-            #find-me .contact-item img.kakao-logo { width: 15px !important; height: 15px !important; margin-left: 1px !important; margin-right: 1px !important; }
+            #find-me .contact-item img.kakao-logo,
+            #find-me .contact-item img.blog-logo { width: 17px !important; height: 17px !important; }
+            
             #find-me .contact-item.open-kakao-item a { font-size: 10.5px !important; }
-            #find-me .price-info { font-size: 14px !important; padding-top: 12px !important; }
+            #find-me .price-info { font-size: 14px !important; padding-top: 12px !important; margin-top: 6px !important; }
 
-            /* [수정 부분] 모바일 전용 sneak peak 사진들 한 페이지 가로 배치 규칙 */
+            /* 모바일 전용 sneak peak 사진들 한 페이지 가로 배치 규칙 */
             .gallery-layout { flex-direction: row !important; gap: 10px !important; align-items: stretch !important; }
             .gallery-left { gap: 10px !important; }
             
@@ -160,12 +181,12 @@
         <a href="#basic" style="text-decoration: none;">
             <div class="logo">🍃 Leaf</div>
         </a>
-        <nav>
-            <a href="#about">about</a>
-            <a href="#profile">profile</a>
-            <a href="#find-me">find me</a>
-            <a href="#sneak-peak">sneak peak</a>
-            <a href="#footprints">footprints</a>
+        <nav id="main-navigation">
+            <a href="#about" data-section="about">about</a>
+            <a href="#profile" data-section="profile">profile</a>
+            <a href="#find-me" data-section="find-me">find me</a>
+            <a href="#sneak-peak" data-section="sneak-peak">sneak peak</a>
+            <a href="#footprints" data-section="footprints">footprints</a>
         </nav>
     </div>
 </header>
@@ -222,20 +243,20 @@
                 <li>• 한국직업능력진흥원 다문화심리상담사 1급</li>
             </ul>
             
-            <div style="margin-bottom: 20px;">
+            <div class="profile-center-box">
                 <div class="profile-title" style="color: #2d6a4f; margin-top: 15px;">한국상담심리학회 수련회원</div>
-                <ul class="profile-list-group" style="margin-top: 5px; padding-left: 10px; margin-bottom: 15px;">
+                <ul class="profile-list-group" style="margin-top: 5px; padding-left: 10px; margin-bottom: 15px; max-width: 100%;">
                     <li>- 공개사례 발표회 30시간 이수</li>
                     <li>- 성균관대학교 외상심리연구소 집단상담 18시간 이수</li>
                 </ul>
                 
                 <div class="profile-title" style="color: #2d6a4f; margin-top: 10px;">한국상담학회 준회원</div>
-                <ul class="profile-list-group" style="margin-top: 5px; padding-left: 10px; margin-bottom: 0;">
+                <ul class="profile-list-group" style="margin-top: 5px; padding-left: 10px; margin-bottom: 0; max-width: 100%;">
                     <li>- 집단상담 보조지도자 11시간 이수</li>
                 </ul>
             </div>
 
-            <div style="margin-top: 25px;">
+            <div class="profile-center-box" style="margin-top: 5px; margin-bottom: 0;">
                 <div class="profile-title" style="color: #777; margin-bottom: 10px;">여성가족부 청소년상담사 2급 준비 중</div>
                 <div class="profile-title" style="color: #777; margin-bottom: 10px;">한국상담심리학회 상담심리사 2급 준비 중</div>
                 <div class="profile-title" style="color: #777; margin-bottom: 0;">한국상담학회 상담심리사 2급 준비 중</div>
@@ -259,17 +280,19 @@
                         <a href="https://www.youtube.com/@sunahhn" target="_blank">youtube.com/@sunahhn</a>
                     </li>
                     <li class="contact-item">
+                        <img src="blog.jpg" class="blog-logo" alt="Naver Blog">
+                        <a href="https://blog.naver.com/sunah224-" target="_blank">blog.naver.com/sunah224-</a>
+                    </li>
+                    <li class="contact-item email-item">
                         <img src="email.jpg" alt="Email">
                         <a href="mailto:sunahhyun@sunahhn.com">sunahhyun@sunahhn.com</a>
                     </li>
                     <li class="contact-item open-kakao-item">
                         <img src="kakao.jpg" class="kakao-logo" alt="KakaoTalk">
-                        <a href="https://open.kakao.com/o/s0995Nzi" target="_blank">https://open.kakao.com/o/s0995Nzi</a>
+                        <a href="https://open.kakao.com/o/gilQkDyi" target="_blank">https://open.kakao.com/o/gilQkDyi</a>
                     </li>
                 </ul>
-                <div>
-                    <div class="price-info">상담비용 5만원 / 50분</div>
-                </div>
+                <div class="price-info">상담비용 5만원 / 50분</div>
             </div>
         </div>
     </div>
@@ -292,7 +315,7 @@
 <section id="footprints" style="padding: 120px 20px 60px 20px; background-color: #ffffff; display: block; text-align: center;">
     <div style="max-width: 720px; margin: 0 auto; width: 100%; display: block;">
         <div style="margin-bottom: 30px; text-align: center;">
-            <h3 style="font-family: 'Georgia', serif; font-size: 26px; color: #2d6a4f; margin-bottom: 12px; font-weight: bold;">Footprints</h3>
+            <h3 id="footprints-title" style="font-family: 'Georgia', serif; font-size: 26px; color: #2d6a4f; margin-bottom: 12px; font-weight: bold; transition: color 0.3s ease;">Footprints</h3>
         </div>
         <div style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); text-align: left; border: 1px solid #e8e6e1; box-sizing: border-box; width: 100%; margin-bottom: 35px;">
             <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold; letter-spacing: -0.5px;">한 줄 응원 남기기</h4>
@@ -351,7 +374,41 @@
     firebase.initializeApp(firebaseConfig);
     var database = firebase.database();
 
-    document.addEventListener('DOMContentLoaded', listenReviews);
+    document.addEventListener('DOMContentLoaded', function() {
+        listenReviews();
+        initSectionObserver();
+    });
+
+    function initSectionObserver() {
+        var navLinks = document.querySelectorAll('#main-navigation a');
+        var sections = document.querySelectorAll('section');
+
+        var observerOptions = {
+            root: null,
+            rootMargin: '-30% 0px -60% 0px', 
+            threshold: 0
+        };
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var currentId = entry.target.getAttribute('id');
+                    
+                    navLinks.forEach(function(link) {
+                        if (link.getAttribute('data-section') === currentId) {
+                            link.classList.add('active-nav');
+                        } else {
+                            link.classList.remove('active-nav');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(function(section) {
+            observer.observe(section);
+        });
+    }
 
     function listenReviews() {
         var reviewList = document.getElementById('review-list');
