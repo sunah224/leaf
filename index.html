@@ -1,145 +1,77 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- Google Tag Manager (헤드 스크립트 가동) -->
+    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-N2T54XW4');</script>
-    <!-- End Google Tag Manager -->
-
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaf Wellness Studio</title>
     <style>
-        /* 기본 스타일 초기화 */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; color: #333; background-color: #ffffff; line-height: 1.6; }
         html { scroll-behavior: smooth; }
 
-        /* 상단 네비게이션 헤더 (고정형) */
         header { position: fixed; top: 0; left: 0; width: 100%; background-color: #ffffff; z-index: 1000; padding: 20px 0 10px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .header-container { max-width: 1000px; margin: 0 auto; text-align: center; }
+        .header-container { max-width: 1000px; margin: 0 auto; text-align: center; position: relative; }
         
-        /* 로고 영역 스타일 및 마우스 호버 효과 */
         .logo-wrap { display: inline-flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 15px; text-decoration: none; }
         .logo-img-container { display: inline-block; height: 92px; }
         .logo-img { height: 92px; width: auto; object-fit: contain; display: block; transition: transform 0.2s ease-in-out; }
-        .logo { 
-            font-family: 'Georgia', serif; 
-            font-size: 42px; 
-            font-style: italic; 
-            color: #2d6a4f; 
-            font-weight: 500; 
-            display: inline-block; 
-            white-space: nowrap;
-            transition: text-shadow 0.2s ease-in-out;
-        }
+        .logo { font-family: 'Georgia', serif; font-size: 42px; font-style: italic; color: #2d6a4f; font-weight: 500; display: inline-block; white-space: nowrap; transition: text-shadow 0.2s ease-in-out; }
 
-        /* 크기 변형 방지 볼드 섀도우 기법 */
-        .logo-bold-effect {
-            text-shadow: 0.6px 0px 0px #2d6a4f, -0.6px 0px 0px #2d6a4f, 0px 0.6px 0px #2d6a4f, 0px -0.6px 0px #2d6a4f;
-        }
-        .logo-img-effect {
-            transform: scale(1.02);
-        }
-
-        .logo-wrap:hover .logo {
-            text-shadow: 0.6px 0px 0px #2d6a4f, -0.6px 0px 0px #2d6a4f, 0px 0.6px 0px #2d6a4f, 0px -0.6px 0px #2d6a4f;
-        }
-        .logo-wrap:hover .logo-img {
-            transform: scale(1.02);
-        }
+        .logo-bold-effect { text-shadow: 0.6px 0px 0px #2d6a4f, -0.6px 0px 0px #2d6a4f, 0px 0.6px 0px #2d6a4f, 0px -0.6px 0px #2d6a4f; }
+        .logo-img-effect { transform: scale(1.02); }
+        .logo-wrap:hover .logo { text-shadow: 0.6px 0px 0px #2d6a4f, -0.6px 0px 0px #2d6a4f, 0px 0.6px 0px #2d6a4f, 0px -0.6px 0px #2d6a4f; }
+        .logo-wrap:hover .logo-img { transform: scale(1.02); }
         
-        /* PC 버전 메뉴 스타일 */
         nav { display: flex; justify-content: center; max-width: 950px; margin: 0 auto; padding: 0 10px; gap: 20px; }
-        nav a { 
-            text-decoration: none; 
-            color: #5c4d42; 
-            font-size: 17px; 
-            font-weight: 800; 
-            font-family: 'Arial Black', Gadget, sans-serif; 
-            text-transform: none; 
-            transition: color 0.2s ease; 
-            padding: 5px 8px; 
-            white-space: nowrap; 
-        }
-        nav a:hover { color: #52b788; }
-        nav a.active-nav { color: #52b788 !important; }
+        nav a { text-decoration: none; color: #5c4d42; font-size: 17px; font-weight: 800; font-family: 'Arial Black', Gadget, sans-serif; transition: color 0.2s ease; padding: 5px 8px; white-space: nowrap; }
+        nav a:hover, nav a.active-nav { color: #52b788; }
 
-        /* 공통 섹션 레이아웃 (기본 여백 조정) */
-        section { padding: 180px 20px 100px 20px; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; border-bottom: 1px solid #f0f0f0; }
+        .visitor-counter { margin-top: 12px; font-size: 13px; color: #8e7d73; font-weight: bold; display: flex; justify-content: center; gap: 15px; font-family: 'Georgia', serif; min-height: 20px; }
+        .visitor-counter span em { font-style: normal; color: #2d6a4f; font-weight: 800; margin-left: 5px; }
+
+        section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; border-bottom: 1px solid #f0f0f0; }
         .container { max-width: 1000px; width: 100%; display: flex; gap: 50px; align-items: flex-start; }
         
-        /* 이미지 영역 크기 */
         .content-img { flex: 0 0 360px; max-width: 360px; text-align: center; background: #fafafa; border-radius: 4px; min-height: 240px; }
         .content-img img { width: 100%; height: auto; border-radius: 4px; object-fit: cover; display: block; }
-        
-        /* 기본 텍스트 영역 */
         .content-text { flex: 1; min-width: 0; font-size: 17px; color: #333333; text-align: left; word-break: keep-all; }
 
-        /* 메인 최상단 #basic 섹션 공간 설정 */
-        #basic { padding-top: 155px; min-height: auto; padding-bottom: 50px; border-bottom: none; }
+        #basic { padding-top: 195px; min-height: auto; padding-bottom: 50px; border-bottom: none; }
         #basic .container { flex-direction: row-reverse; align-items: stretch; gap: 40px; } 
-        #basic .content-text { 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: flex-end; 
-            text-align: right; 
-            padding-right: 10px;
-            padding-bottom: 10px;
-        }
+        #basic .content-text { display: flex; flex-direction: column; justify-content: flex-end; text-align: right; padding-right: 10px; padding-bottom: 10px; }
         .cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #555; line-height: 1.6; margin-bottom: 25px; } 
         .main-message { font-weight: bold; font-size: 17px; color: #000; line-height: 1.8; }
         
-        /* About Leaf 섹션 설정 */
-        #about-leaf { padding-top: 120px; }
+        #about-leaf { padding-top: 140px; }
         #about-leaf .container { flex-direction: column; align-items: center; max-width: 850px; }
         .about-leaf-text { width: 100%; text-align: center; font-size: 17px; color: #444; line-height: 1.9; word-break: keep-all; }
         .about-leaf-text h2 { font-family: 'Georgia', serif; font-size: 32px; color: #2d6a4f; margin-bottom: 15px; font-weight: bold; }
-        
         .about-leaf-text .main-sub { font-size: 15.4px; font-weight: bold; color: #111; line-height: 1.6; margin-bottom: 35px; }
         .about-leaf-text .intro-title { font-size: 19px; font-weight: bold; color: #2d6a4f; margin-bottom: 20px; }
         .about-leaf-text .point-title { font-size: 19px; font-weight: bold; color: #111; margin-top: 45px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 6px; }
         .about-leaf-text p { margin-bottom: 15px; }
         .about-leaf-text .sub-p-bold { font-size: 17px; font-weight: bold; color: #333; margin-top: 0; margin-bottom: 15px; }
-
-        /* [추가] 모바일 전용 반응형 줄바꿈 클래스 (기본적으로 PC선 숨김) */
         .mobile-br { display: none; }
+        .footer-highlight-text { margin-top: 50px; font-weight: bold; color: #2d6a4f; font-size: 22px; line-height: 1.5; word-break: keep-all; }
+        .section-inner-logo { display: block; margin: 60px auto 10px auto; height: 92px; width: auto; object-fit: contain; }
 
-        /* 하단 메인 문구 스타일 */
-        .footer-highlight-text {
-            margin-top: 50px; 
-            font-weight: bold; 
-            color: #2d6a4f; 
-            font-size: 22px; 
-            line-height: 1.5;
-            word-break: keep-all;
-        }
-
-        .section-inner-logo {
-            display: block;
-            margin: 60px auto 10px auto; 
-            height: 92px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        /* About CEO 및 프로필 설정 */
         #about-ceo .content-text p { margin-bottom: 24px; line-height: 1.8; }
-        
         #profile .content-text { display: flex; flex-direction: column; align-items: center; text-align: center; }
         .profile-title { font-size: 19px; font-weight: bold; margin-bottom: 12px; color: #111; display: inline-block; text-align: left; width: 100%; max-width: 580px; }
         .profile-list-group { list-style: none; margin-bottom: 30px; padding: 0; text-align: left; width: 100%; max-width: 580px; }
         .profile-list-group li { margin-bottom: 10px; font-size: 17px; line-height: 1.8; }
         .profile-center-box { width: 100%; max-width: 580px; text-align: left; margin-bottom: 25px; }
-
         .research-group { width: 100%; max-width: 580px; margin: 0 auto 30px auto; }
         .indent-tab { display: block; padding-left: 135px; } 
         .indent-tab-2 { display: block; padding-left: 160px; }
 
-        /* find-me 설정 */
         #find-me .container { justify-content: center; gap: 35px; max-width: 850px; margin: 0 auto; }
         #find-me .content-text { flex: 0 1 auto; display: flex; align-items: center; }
         .contact-box { width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; }
@@ -154,7 +86,6 @@
         .contact-item.open-kakao-item a { color: #2d6a4f; font-size: 17px; }
         .price-info { font-size: 17px; font-weight: bold; color: #444; border-top: 1px solid #ddd; padding-top: 18px; margin-top: 10px; display: inline-block; width: auto; }
         
-        /* sneak peak 및 리뷰 */
         #sneak-peak .container { flex-direction: column; align-items: center; }
         .gallery-layout { display: flex; gap: 20px; width: 100%; }
         .gallery-left { display: flex; flex-direction: column; gap: 20px; flex: 1; }
@@ -165,29 +96,25 @@
         #review-list { display: flex; flex-wrap: wrap; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
         .review-card { background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); width: calc(50% - 8px); min-width: 280px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
 
-        /* 모바일 반응형 디자인 */
         @media (max-width: 768px) {
             header { padding: 15px 0 5px 0; }
             .logo-wrap { gap: 12px; margin-bottom: 10px; }
             .logo-img-container, .logo-img { height: 64px; }
             .logo { font-size: 28px; }
-            
             nav { justify-content: flex-start; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 0 15px 8px 15px; gap: 15px; }
             nav a { font-size: 14px; padding: 4px 8px; }
             nav::-webkit-scrollbar { display: none; } 
-            
-            section { padding-top: 140px; min-height: auto; }
+            .visitor-counter { margin-top: 8px; font-size: 11px; gap: 10px; min-height: 16px; }
+            section { padding-top: 185px; min-height: auto; }
             .container { flex-direction: column !important; gap: 30px; align-items: center; }
             .content-img { flex: 0 0 auto; width: 100%; max-width: 300px; min-height: auto; }
             .content-text { text-align: center !important; padding: 0 !important; font-size: 14.5px; }
-            
-            #basic { padding-top: 125px; padding-bottom: 30px; }
+            #basic { padding-top: 160px; padding-bottom: 30px; }
             #basic .container { flex-direction: column !important; align-items: center; gap: 20px; }
             #basic .content-text { text-align: center !important; padding: 0 !important; justify-content: center !important; }
             .cursive-text { margin-bottom: 15px; font-size: 16px !important; } 
             .main-message { font-size: 14.5px !important; }
-
-            #about-leaf { padding-top: 100px; }
+            #about-leaf { padding-top: 130px; }
             #about-leaf .about-leaf-text h2 { font-size: 24px !important; }
             #about-leaf .about-leaf-text .main-sub { font-size: 13.5px !important; margin-bottom: 25px !important; }
             #about-leaf .about-leaf-text .intro-title { font-size: 15px !important; margin-bottom: 20px !important; }
@@ -195,35 +122,18 @@
             #about-leaf .about-leaf-text { font-size: 14.5px !important; }
             .about-leaf-text .sub-p-bold { font-size: 14.5px !important; }
             .section-inner-logo { height: 64px !important; margin: 40px auto 10px auto !important; }
-            
-            /* [수정 반영] 모바일 전용 줄바꿈 강제 활성화 및 폰트 크기 최적화 */
             .mobile-br { display: block; }
             .footer-highlight-text { font-size: 18px !important; margin-top: 35px; padding: 0 10px; }
-
             #profile .content-text { text-align: center !important; padding: 0 5px !important; align-items: center !important; } 
             #profile .profile-title { font-size: 15px !important; margin-bottom: 8px !important; line-height: 1.4 !important; max-width: 100% !important; text-align: center !important; }
-            
             #profile .research-group { text-align: left !important; width: 100% !important; max-width: 290px !important; margin: 0 auto 18px auto !important; }
             #profile .research-group li { font-size: 12.5px !important; margin-bottom: 6px !important; line-height: 1.6 !important; }
             #profile .indent-tab { padding-left: 85px !important; } 
             #profile .indent-tab-2 { padding-left: 110px !important; }
-
             #profile .profile-list-group:not(.research-group) { margin-bottom: 18px !important; max-width: 100% !important; text-align: center !important; }
             #profile .profile-list-group:not(.research-group) li { font-size: 12.5px !important; margin-bottom: 6px !important; line-height: 1.6 !important; }
             #profile .profile-center-box { max-width: 100% !important; margin-bottom: 15px !important; text-align: center !important; }
-            
-            #profile .profile-list-group[style*="border-left"] { 
-                border-left: 3px solid #52b788 !important; 
-                border-top: none !important;
-                padding-left: 12px !important; 
-                padding-top: 0 !important;
-                text-align: left !important;
-                display: inline-block !important;
-                width: auto !important;
-                max-width: 290px !important;
-                margin: 0 auto 18px auto !important;
-            }
-            
+            #profile .profile-list-group[style*="border-left"] { border-left: 3px solid #52b788 !important; border-top: none !important; padding-left: 12px !important; padding-top: 0 !important; text-align: left !important; display: inline-block !important; width: auto !important; max-width: 290px !important; margin: 0 auto 18px auto !important; }
             #find-me .container { gap: 30px; max-width: 100%; }
             #find-me .content-text { margin-left: 0; align-items: center; }
             #find-me .contact-box { align-items: center; text-align: center; }
@@ -233,434 +143,343 @@
             #find-me .contact-item img.kakao-logo, #find-me .contact-item img.blog-logo { width: 20px !important; height: 20px !important; }
             #find-me .contact-item.open-kakao-item a { font-size: 12.5px !important; }
             #find-me .price-info { font-size: 13.5px !important; color: #777777 !important; padding-top: 14px !important; margin-top: 8px !important; }
-
             .gallery-layout { flex-direction: row !important; gap: 10px !important; align-items: stretch !important; }
             .gallery-left { gap: 10px !important; }
-            
             #review-list { display: flex !important; flex-direction: column !important; width: 100% !important; }
             .review-card { width: 100% !important; margin: 0 0 12px 0 !important; font-size: 14.5px !important; }
         }
     </style>
-
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 </head>
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2T54XW4"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2T54XW4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header>
-    <div class="header-container">
-        <a href="#basic" class="logo-wrap" id="logo-title-wrap">
-            <div class="logo-img-container">
-                <img src="logo.png" alt="Leaf Wellness Studio Logo" id="main-logo-img" class="logo-img" onerror="this.style.display='none';">
+        <div class="header-container">
+            <a href="#basic" class="logo-wrap" id="logo-title-wrap">
+                <div class="logo-img-container"><img src="logo.png" alt="Leaf Wellness Studio Logo" id="main-logo-img" class="logo-img" onerror="this.parentElement.style.display='none';"></div>
+                <div class="logo" id="main-logo-text">Leaf Wellness Studio</div>
+            </a>
+            <nav id="main-navigation">
+                <a href="#about-leaf" data-section="about-leaf">About Leaf</a>
+                <a href="#about-ceo" data-section="about-ceo">About CEO</a>
+                <a href="#profile" data-section="profile">Profile</a>
+                <a href="#find-me" data-section="find-me">Find me</a>
+                <a href="#sneak-peak" data-section="sneak-peak">Sneak peak</a>
+                <a href="#footprints" data-section="footprints">Footprints</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="basic">
+        <div class="container">
+            <div class="content-img"><img src="basic.jpg" alt="Main Profile" onerror="this.parentElement.style.display='none';"></div>
+            <div class="content-text">
+                <div class="cursive-text">May you find peace<br>in your deepest heart<br>whenever you talk to me<br>or visit our spot</div>
+                <div class="main-message">나와 이야기할 때나 우리의 공간을 찾을 때,<br>네 마음 깊은 곳에 평온이 깃들기를.</div>
             </div>
-            <div class="logo" id="main-logo-text">Leaf Wellness Studio</div>
-        </a>
-        <nav id="main-navigation">
-            <a href="#about-leaf" data-section="about-leaf">About Leaf</a>
-            <a href="#about-ceo" data-section="about-ceo">About CEO</a>
-            <a href="#profile" data-section="profile">Profile</a>
-            <a href="#find-me" data-section="find-me">Find me</a>
-            <a href="#sneak-peak" data-section="sneak-peak">Sneak peak</a>
-            <a href="#footprints" data-section="footprints">Footprints</a>
-        </nav>
-    </div>
-</header>
-
-<section id="basic">
-    <div class="container">
-        <div class="content-img"><img src="basic.jpg" alt="Main Profile" onerror="this.style.display='none';"></div>
-        <div class="content-text">
-            <div class="cursive-text">May you find peace<br>in your deepest heart<br>whenever you talk to me<br>or visit our spot</div>
-            <div class="main-message">나와 이야기할 때나 우리의 공간을 찾을 때,<br>네 마음 깊은 곳에 평온이 깃들기를.</div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="about-leaf">
-    <div class="container">
-        <div class="about-leaf-text">
-            <h2>About Leaf</h2>
-            <div class="main-sub">
-                오롯이 혼자라고 느낄 때, 당신만의 긍정의 빛을 마주하는 공간<br>
-                하나의 잎새가 안식을 얻고, 마침내 자신만의 빛을 발견하는 공간
+    <section id="about-leaf">
+        <div class="container">
+            <div class="about-leaf-text">
+                <h2>About Leaf</h2>
+                <div class="main-sub">
+                    오롯이 혼자라고 느낄 때, 당신만의 긍정의 빛을 마주하는 공간<br>
+                    하나의 잎새가 안식을 얻고, 마침내 자신만의 빛을 발견하는 공간
+                </div>
+                <div class="intro-title">‘Leaf Wellness Studio’를 소개합니다.</div>
+                <img src="logo.png" alt="Leaf Wellness Studio Inner Logo" class="section-inner-logo" onerror="this.style.display='none';">
+                <div class="point-title">☀️ Our Symbol (로고의 의미)</div>
+                <p><strong>왼쪽의 Leaf</strong> : 세상에 하나뿐인 소중한 '한 개인'을 뜻합니다</p>
+                <p><strong>뒤편의 해</strong> : 내담자가 이미 스스로 내면에 가지고 있지만,</p>
+                <p class="sub-p-bold">잠시 숨어 있는 '긍정적인 심리적 자원'을 의미합니다.</p>
+                <div class="point-title">🌱 Leaf (나뭇잎 한 장, 새싹, 그리고 당신.)</div>
+                <p>'Leaf'는 나뭇잎 한 장을 의미합니다.</p>
+                <p>때로는 세상에 오롯이 홀로 존재한다고 느끼는 <br class="mobile-br">외로운 순간이 있습니다.</p>
+                <p>세상에 오롯이 나 홀로 남겨진 것처럼 <br class="mobile-br">외롭고 지친 마음으로 찾아오는,</p>
+                <p>쉼과 치유가 필요해 이곳을 찾아오는 <br class="mobile-br"> 한 분, 한 분의 '내담자'가 바로 Leaf입니다.</p>
+                <p><strong>동시에, 앞으로 더 푸르게 자라날 <br class="mobile-br">가능성을 품은 '새싹'을 뜻하기도 합니다.</strong></p>
+                <div class="point-title">😌 Relief (깊은 안식과 평온을 바라며)</div>
+                <p>Leaf는 마음의 안정을 뜻하는 'Relief'와 발음이 닮아 있습니다.</p>
+                <p>이곳에 발을 들이는 모든 이들이 무거운 짐(불안과 공포)을 내려놓고,</p>
+                <p>홀로 거친 바람을 견뎌내던 <br class="mobile-br">작은 잎새가 이곳에 머무는 동안만큼은</p>
+                <p><strong>온전한 평온함(Relief)과 안식을 누리기를 바라는 <br class="mobile-br">진심 어린 염원을 담았습니다.</strong></p>
+                <div class="point-title">🚀 Studio (현대 사회에 지친이들을 위한 웰니스 스튜디오)</div>
+                <p>오직 한 사람, 당신만의 진정한 웰빙과 내면의 건강을 위해</p>
+                <p>정성스럽게 꾸며진 전문적인 웰니스 공간입니다.</p>
+                <p><strong>Leaf Wellness Studio는 온전히 개인 한 사람의, 혹은 귀한 발걸음을 해주시는 여러 내담자들의 내면적 건강과 행복(Well-being)을 위해 존재하는 세심한 공간입니다.</strong></p>
+                <p class="footer-highlight-text">Leaf Wellness Studio에서<br class="mobile-br">당신만의 빛을 함께 찾아보세요.</p>
             </div>
-            
-            <div class="intro-title">‘Leaf Wellness Studio’를 소개합니다.</div>
-            
-            <img src="logo.png" alt="Leaf Wellness Studio Inner Logo" class="section-inner-logo" onerror="this.style.display='none';">
-
-            <div class="point-title">☀️ Our Symbol (로고의 의미)</div>
-            <p><strong>왼쪽의 Leaf</strong> : 세상에 하나뿐인 소중한 '한 개인'을 뜻합니다</p>
-            <p><strong>뒤편의 해</strong> : 내담자가 이미 스스로 내면에 가지고 있지만,</p>
-            <p class="sub-p-bold">잠시 숨어 있는 '긍정적인 심리적 자원'을 의미합니다.</p>
-            
-            <div class="point-title">🌱 Leaf (나뭇잎 한 장, 새싹, 그리고 당신.)</div>
-            <p>'Leaf'는 나뭇잎 한 장을 의미합니다.</p>
-            <p>때로는 세상에 오롯이 홀로 존재한다고 느끼는 외로운 순간이 있습니다.</p>
-            <p>세상에 오롯이 나 홀로 남겨진 것처럼 외롭고 지친 마음으로 찾아오는,</p>
-            <p>쉼과 치유가 필요해 이곳을 찾아오는 한 분, 한 분의 '내담자'가 바로 Leaf입니다.</p>
-            <p><strong>동시에, 앞으로 더 푸르게 자라날 가능성을 품은 '새싹'을 뜻하기도 합니다.</strong></p>
-            
-            <div class="point-title">😌 Relief (깊은 안식과 평온을 바라며)</div>
-            <p>Leaf는 마음의 안정을 뜻하는 'Relief'와 발음이 닮아 있습니다.</p>
-            <p>이곳에 발을 들이는 모든 이들이 무거운 짐(불안과 공포)을 내려놓고,</p>
-            <p>Holo 거친 바람을 견뎌내던 작은 잎새가 이곳에 머무는 동안만큼은</p>
-            <p><strong>온전한 평온함(Relief)과 안식을 누리기를 바라는 진심 어린 염원을 담았습니다.</strong></p>
-            
-            <div class="point-title">🚀 Studio (현대 사회에 지친이들을 위한 웰니스 스튜디오)</div>
-            <p>오직 한 사람, 당신만의 진정한 웰빙과 내면의 건강을 위해</p>
-            <p>정성스럽게 꾸며진 전문적인 웰니스 공간입니다.</p>
-            <p><strong>Leaf Wellness Studio는 온전히 개인 한 사람의, 혹은 귀한 발걸음을 해주시는 여러 내담자들의 내면적 건강과 행복(Well-being)을 위해 존재하는 세심한 공간입니다.</strong></p>
-            
-            <!-- [수정 반영] 클래스를 부여하고 모바일 전용 줄바꿈 태그(<br class="mobile-br">)를 원하는 곳에 배치했습니다 -->
-            <p class="footer-highlight-text">Leaf Wellness Studio에서<br class="mobile-br">당신만의 빛을 함께 찾아보세요.</p>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="about-ceo">
-    <div class="container">
-        <div class="content-img"><img src="about.jpg" alt="About CEO" onerror="this.style.display='none';"></div>
-        <div class="content-text">
-            <p>청소년기 우울이라는 진단(혹은 낙인) 속에서 심리상담을 처음 접하게 되었어요. 누구보다 장난기 많고 낙천적인 저조차 무기력하게 만들었던 건, 다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 목표를 향해 쫓아갈 때 저 혼자 목표가 없다는 이유로 스스로가 한없이 초라해 보였던 시절이었습니다.</p>
-            <p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>연결</strong>이었어요. 저는 사람을 좋아하고 친구들과 피상적인 이야기보단 인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며 비로소 살아있음을 느깁니다.</p>
-            <p>시행착오도 많았고 그 방황의 시간들이 아깝고 후회스럽기도 하죠. <strong>그리고 또 그 방황이 다시 찾아올지도 모른다는 두려움도 항상 있고요.</strong> 하지만 그 짙은 밤들이 있었기에 지금의 제가 있고, 남들의 속도에 치여 길을 잃은 사람들의 마음을 누구보다 깊이 지켜볼 수 있는 눈이 생겼습니다.</p>
-            <p>이제는 후회 대신, 제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. 그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서, 깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</p>
-            <p><strong>깊은 대화로 연결될 수 있는 안전한 공간이 되어드리겠습니다.<br>이곳에서 여러분의 이야기들을 편안하게 들려주세요.</strong></p>
+    <section id="about-ceo">
+        <div class="container">
+            <div class="content-img"><img src="about.jpg" alt="About CEO" onerror="this.parentElement.style.display='none';"></div>
+            <div class="content-text">
+                <p>청소년기 우울이라는 진단(혹은 낙인) 속에서 심리상담을 처음 접하게 되었어요. 누구보다 장난기 많고 낙천적인 저조차 무기력하게 만들었던 건, 다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 목표를 향해 쫓아갈 때 저 혼자 목표가 없다는 이유로 스스로가 한없이 초라해 보였던 시절이었습니다.</p>
+                <p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>연결</strong>이었어요. 저는 사람을 좋아하고 친구들과 피상적인 이야기보단 인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며 비로소 살아있음을 느깁니다.</p>
+                <p>시행착오도 많았고 그 방황의 시간들이 아깝고 후회스럽기도 하죠. <strong>그리고 또 그 방황이 다시 찾아올지도 모른다는 두려움도 항상 있고요.</strong> 하지만 그 짙은 밤들이 있었기에 지금의 제가 있고, 남들의 속도에 치여 길을 잃은 사람들의 마음을 누구보다 깊이 지켜볼 수 있는 눈이 생겼습니다.</p>
+                <p>이제는 후회 대신, 제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. 그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서, 깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</p>
+                <p><strong>깊은 대화로 연결될 수 있는 안전한 공간이 되어드리겠습니다.<br>이곳에서 여러분의 이야기들을 편안하게 들려주세요.</strong></p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="profile">
-    <div class="container">
-        <div class="content-img">
-            <img src="profile.jpg" alt="Profile Image" onerror="this.parentNode.style.display='none';">
-        </div>
-        <div class="content-text">
-            <div class="profile-title">B.A. University of California, Davis 심리학 전공</div>
-            <div class="profile-title" style="margin-bottom: 20px;">M.A 성균관대학교 교육대학원 상담심리전공 (전공대표)</div>
-            
-            <ul class="profile-list-group research-group" style="color: #555;">
-                <li>• 주요 연구 관심사: 청소년 정신건강, 긍정심리,<br><span class="indent-tab">쉬었음청년, 2030직장인 이직퇴직고민</span></li>
-                <li>• 연구계획서 주제: 청소년의 스트레스가 정신건강에 미치는 영향:<br><span class="indent-tab-2">긍정심리자원의 매개 효과</span></li>
-            </ul>
-
-            <ul class="profile-list-group" style="font-weight: bold; color: #111; border-left: 3px solid #52b788; padding-left: 12px;">
-                <li>'26 서울탑 정신건강의학과 의원 데스크행정</li>
-                <li>'25 (주)아토머스 마인드카페 강남삼성점 매니저</li>
-                <li>'21 한국아동청소년 심리상담센터 집단상담 코리더(고2,고3), 행정실장</li>
-                <li>'17 헬로스마일 종로센터 행정실장</li>
-            </ul>
-
-            <ul class="profile-list-group" style="font-weight: bold; color: #444;">
-                <li>• 한국직업능력진흥원 심리상담사 1급</li>
-                <li>• 한국직업능력진흥원 미술심리상담사 1급</li>
-                <li>• 한국직업능력진흥원 진로적성상담사 1급</li>
-                <li>• 한국직업능력진흥원 가족상담사 1급</li>
-                <li>• 한국직업능력진흥원 다문화심리상담사 1급</li>
-            </ul>
-            
-            <div class="profile-center-box">
-                <div class="profile-title" style="color: #2d6a4f; margin-top: 15px;">한국상담심리학회 수련회원</div>
-                <ul class="profile-list-group" style="margin-top: 5px; padding-left: 10px; margin-bottom: 15px; max-width: 100%;">
-                    <li>- 공개사례 발표회 30시간 이수</li>
-                    <li>- 성균관대학교 외상심리연구소 집단상담 18시간 이수</li>
+    <section id="profile">
+        <div class="container">
+            <div class="content-img"><img src="profile.jpg" alt="Profile Image" onerror="this.parentElement.style.display='none';"></div>
+            <div class="content-text">
+                <div class="profile-title">B.A. University of California, Davis 심리학 전공</div>
+                <div class="profile-title" style="margin-bottom: 20px;">M.A 성균관대학교 교육대학원 상담심리전공 (전공대표)</div>
+                <ul class="profile-list-group research-group" style="color: #555;">
+                    <li>• 주요 연구 관심사: 청소년 정신건강, 긍정심리,<br><span class="indent-tab">쉬었음청년, 2030직장인 이직퇴직고민</span></li>
+                    <li>• 연구계획서 주제: 청소년의 스트레스가 정신건강에 미치는 영향:<br><span class="indent-tab-2">긍정심리자원의 매개 효과</span></li>
                 </ul>
-                
-                <div class="profile-title" style="color: #2d6a4f; margin-top: 10px;">한국상담학회 준회원</div>
-                <ul class="profile-list-group" style="margin-top: 5px; padding-left: 10px; margin-bottom: 0; max-width: 100%;">
-                    <li>- 집단상담 보조지도자 11시간 이수</li>
+                <ul class="profile-list-group" style="font-weight: bold; color: #111; border-left: 3px solid #52b788; padding-left: 12px;">
+                    <li>'26 서울탑 정신건강의학과 의원 데스크행정</li>
+                    <li>'25 (주)아토머스 마인드카페 강남삼성점 매니저</li>
+                    <li>'21 한국아동청소년 심리상담센터 집단상담 코리더(고2,고3), 행정실장</li>
+                    <li>'17 헬로스마일 종로센터 행정실장</li>
                 </ul>
-            </div>
-
-            <div class="profile-center-box" style="margin-top: 5px; margin-bottom: 0;">
-                <div class="profile-title" style="color: #777; margin-bottom: 10px;">여성가족부 청소년상담사 2급 준비 중</div>
-                <div class="profile-title" style="color: #777; margin-bottom: 10px;">한국상담심리학회 상담심리사 2급 준비 중</div>
-                <div class="profile-title" style="color: #777; margin-bottom: 0;">한국상담학회 상담심리사 2급 준비 중</div>
-            </div>
+                <ul class="profile-list-group" style="font-weight: bold; color: #444;">
+                    <li>• 한국직업능력진흥원 심리상담사 1급</li>
+                    <li>• 한국직업능력진흥원 미술심리상담사 1급</li>
+                    <li>• 한국직업능력진흥원 진로적성상담사 1급</li>
+                    <li>• 한국직업능력진흥원 가족상담사 1급</li>
+                    <li>• 한국직업능력진흥원 다문화심리상담사 1급</li>
+                </ul>
+                <div class="profile-center-box">
+                    <div class="profile-title" style="color: #2d6a4f; margin-top: 15px;">한국상담심리학회 수련회원</div>
+                    <ul class="profile-list-group" style="margin-top: 5px; padding-left: 10px; margin-bottom: 15px; max-width: 100%;">
+                        <li>- 공개사례 발표회 30시간 이수</li>
+                        <li>- 성균관대학교 외상심리연구소 집단상담 18시간 이수</li>
+                    </ul>
+                    <div class="profile-title" style="color: #2d6a4f; margin-top: 10px;">한국상담학회 준회원</div>
+                    <ul class="profile-list-group" style="margin-top: 5px; padding-left: 10px; margin-bottom: 0; max-width: 100%;">
+                        <li>- 집단상담 보조지도자 11시간 이수</li>
+                    </ul>
+                </div>
+                <div class="profile-center-box" style="margin-top: 5px; margin-bottom: 0;">
+                    <div class="profile-title" style="color: #777; margin-bottom: 10px;">여성가족부 청소년상담사 2급 준비 중</div>
+                    <div class="profile-title" style="color: #777; margin-bottom: 10px;">한국상담심리학회 상담심리사 2급 준비 중</div>
+                    <div class="profile-title" style="color: #777; margin-bottom: 0;">한국상담학회 상담심리사 2급 준비 중</div>
+                </div>
+            </div> 
         </div> 
-    </div> 
-</section>
+    </section>
 
-<section id="find-me">
-    <div class="container">
-        <div class="content-img"><img src="find_me.jpg" alt="Find Me" onerror="this.style.display='none';"></div>
-        <div class="content-text">
-            <div class="contact-box">
-                <ul class="contact-list">
-                    <li class="contact-item">
-                        <img src="instagram.jpg" alt="Instagram">
-                        <a href="https://www.instagram.com/sunahhn" target="_blank" rel="noopener">instagram.com/sunahhn</a>
-                    </li>
-                    <li class="contact-item">
-                        <img src="youtube.jpg" alt="YouTube">
-                        <a href="https://www.youtube.com/@sunahhn" target="_blank" rel="noopener">youtube.com/@sunahhn</a>
-                    </li>
-                    <li class="contact-item">
-                        <img src="blog.jpg" class="blog-logo" alt="Naver Blog">
-                        <a href="https://blog.naver.com/sunah224-" target="_blank" rel="noopener">blog.naver.com/sunah224-</a>
-                    </li>
-                    <li class="contact-item email-item">
-                        <img src="email.jpg" alt="Email">
-                        <a href="mailto:sunahhn@sunahhn.com">sunahhn@sunahhn.com</a>
-                    </li>
-                    <li class="contact-item open-kakao-item">
-                        <img src="kakao.jpg" class="kakao-logo" alt="KakaoTalk">
-                        <a href="https://open.kakao.com/o/sQ6qy4zi" target="_blank" rel="noopener">https://open.kakao.com/o/sQ6qy4zi</a>
-                    </li>
-                </ul>
-                <div class="price-info">상담비용 5만원 / 50분</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="sneak-peak">
-    <div class="container">
-        <div class="gallery-layout">
-            <div class="gallery-left">
-                <img src="sneak_1.png" alt="SSD Sign">
-                <img src="sneak_2.png" alt="SSD Menu">
-            </div>
-            <div class="gallery-right">
-                <img src="sneak_3.png" alt="Floor Plan">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="footprints" style="background-color: #ffffff; min-height: auto; padding-bottom: 60px;">
-    <div class="container" style="max-width: 720px; flex-direction: column; align-items: center; gap: 0;">
-        <div style="margin-bottom: 30px; text-align: center;">
-            <h3 id="footprints-title" style="font-family: 'Georgia', serif; font-size: 26px; color: #2d6a4f; margin-bottom: 12px; font-weight: bold;">Footprints</h3>
-        </div>
-        <div style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); text-align: left; border: 1px solid #e8e6e1; box-sizing: border-box; width: 100%; margin-bottom: 35px;">
-            <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold; letter-spacing: -0.5px;">한 줄 응원 남기기</h4>
-            <div style="margin-bottom: 15px;">
-                <input type="text" id="review-name" placeholder="닉네임" style="width: 180px; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; background: #fff; box-sizing: border-box;">
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
-                <textarea id="review-content" placeholder="따뜻한 한 마디를 남겨주세요 (로그인 없이 바로 등록됩니다) 😊" style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px; font-size: 14.5px; resize: vertical; outline: none; background: #fff; font-family: sans-serif; line-height: 1.7; box-sizing: border-box; color: #333;"></textarea>
-                <div style="text-align: right; display: flex; justify-content: flex-end; gap: 10px;">
-                    <button onclick="clearBrokenData()" style="background-color: #e63946; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: bold; cursor: pointer; opacity: 0.6;">데이터 리셋</button>
-                    <button onclick="addReview()" style="background-color: #52b788; color: white; border: none; padding: 12px 45px; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; transition: background 0.2s; box-shadow: 0 3px 8px rgba(82,183,136,0.25);">등록</button>
+    <section id="find-me">
+        <div class="container">
+            <div class="content-img"><img src="find_me.jpg" alt="Find Me" onerror="this.parentElement.style.display='none';"></div>
+            <div class="content-text">
+                <div class="contact-box">
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <img src="instagram.jpg" alt="Instagram">
+                            <a href="https://www.instagram.com/sunahhn" target="_blank" rel="noopener">instagram.com/sunahhn</a>
+                        </li>
+                        <li class="contact-item">
+                            <img src="youtube.jpg" alt="YouTube">
+                            <a href="https://www.youtube.com/@sunahhn" target="_blank" rel="noopener">youtube.com/@sunahhn</a>
+                        </li>
+                        <li class="contact-item">
+                            <img src="blog.jpg" class="blog-logo" alt="Naver Blog">
+                            <a href="https://blog.naver.com/sunah224-" target="_blank" rel="noopener">blog.naver.com/sunah224-</a>
+                        </li>
+                        <li class="contact-item email-item">
+                            <img src="email.jpg" alt="Email">
+                            <a href="mailto:sunahhn@sunahhn.com">sunahhn@sunahhn.com</a>
+                        </li>
+                        <li class="contact-item open-kakao-item">
+                            <img src="kakao.jpg" class="kakao-logo" alt="KakaoTalk">
+                            <a href="https://open.kakao.com/o/sQ6qy4zi" target="_blank" rel="noopener">https://open.kakao.com/o/sQ6qy4zi</a>
+                        </li>
+                    </ul>
+                    <div class="price-info">상담비용 5만원 / 50분</div>
                 </div>
             </div>
         </div>
-        <div id="review-list"></div>
-    </div>
-</section>
+    </section>
 
-<footer style="padding: 40px 20px; text-align: center; background-color: #ffffff; border-top: 1px solid #f0f0f0;">
-    <div style="max-width: 650px; margin: 0 auto 40px; width: 100%;">
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%;">
-            <div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;">
-                <img src="review_1.png" alt="따뜻한 선물" onerror="this.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;">
-            </div>
-            <div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;">
-                <img src="review_2.png" alt="영어 상담" onerror="this.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;">
-            </div>
-            <div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;">
-                <img src="review_3.png" alt="공감 후기" onerror="this.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;">
-            </div>
-            <div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;">
-                <img src="review_4.png" alt="감사 한마디" onerror="this.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;">
+    <section id="sneak-peak">
+        <div class="container">
+            <div class="gallery-layout">
+                <div class="gallery-left">
+                    <img src="sneak_1.png" alt="SSD Sign">
+                    <img src="sneak_2.png" alt="SSD Menu">
+                </div>
+                <div class="gallery-right">
+                    <img src="sneak_3.png" alt="Floor Plan">
+                </div>
             </div>
         </div>
-    </div>
-    <div style="margin-bottom: 15px; font-size: 12px; color: #999; font-family: 'Georgia', serif; font-style: italic;">
-        Leaf - Psychological Counseling Space
-    </div>
-</footer>
+    </section>
 
-<script>
-    var MASTER_PASSWORD = "leaf1234";
+    <section id="footprints" style="background-color: #ffffff; min-height: auto; padding-bottom: 60px;">
+        <div class="container" style="max-width: 720px; flex-direction: column; align-items: center; gap: 0;">
+            <div style="margin-bottom: 30px; text-align: center;">
+                <h3 id="footprints-title" style="font-family: 'Georgia', serif; font-size: 26px; color: #2d6a4f; margin-bottom: 12px; font-weight: bold;">Footprints</h3>
+            </div>
+            <div style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); text-align: left; border: 1px solid #e8e6e1; box-sizing: border-box; width: 100%; margin-bottom: 35px;">
+                <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold; letter-spacing: -0.5px;">한 줄 응원 남기기</h4>
+                <div style="margin-bottom: 15px;">
+                    <input type="text" id="review-name" placeholder="닉네임" style="width: 180px; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; background: #fff; box-sizing: border-box;">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
+                    <textarea id="review-content" placeholder="따뜻한 한 마디를 남겨주세요 (로그인 없이 바로 등록됩니다) 😊" style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px; font-size: 14.5px; resize: vertical; outline: none; background: #fff; font-family: sans-serif; line-height: 1.7; box-sizing: border-box; color: #333;"></textarea>
+                    <div style="text-align: right; display: flex; justify-content: flex-end; gap: 10px;">
+                        <button onclick="clearBrokenData()" style="background-color: #e63946; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: bold; cursor: pointer; opacity: 0.6;">데이터 리셋</button>
+                        <button onclick="addReview()" style="background-color: #52b788; color: white; border: none; padding: 12px 45px; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; transition: background 0.2s; box-shadow: 0 3px 8px rgba(82,183,136,0.25);">등록</button>
+                    </div>
+                </div>
+            </div>
+            <div id="review-list"></div>
+        </div>
+    </section>
 
-    var firebaseConfig = {
-        apiKey: "AIzaSyCd0izexUnK2e3hFF72F09pSvNDMUX0Bg",
-        authDomain: "leaf-web-f6019.firebaseapp.com",
-        databaseURL: "https://leaf-web-f6019-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "leaf-web-f6019",
-        storageBucket: "leaf-web-f6019.firebasestorage.app",
-        messagingSenderId: "318569186261",
-        appId: "1:318569186261:web:006ee73e7359f2482bb35c"
-    };
-    
-    firebase.initializeApp(firebaseConfig);
-    var database = firebase.database();
+    <footer style="padding: 40px 20px; text-align: center; background-color: #ffffff; border-top: 1px solid #f0f0f0;">
+        <div style="max-width: 650px; margin: 0 auto 40px; width: 100%;">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%;">
+                <div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;"><img src="review_1.png" alt="따뜻한 선물" onerror="this.parentElement.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;"></div>
+                <div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;"><img src="review_2.png" alt="영어 상담" onerror="this.parentElement.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;"></div>
+                <div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;"><img src="review_3.png" alt="공감 후기" onerror="this.parentElement.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;"></div>
+                <div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;"><img src="review_4.png" alt="감사 한마디" onerror="this.parentElement.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;"></div>
+            </div>
+        </div>
+        <div class="visitor-counter" id="visitor-display-box" style="margin-bottom: 15px;">
+            <span>Today :<em id="today-count">0</em></span>
+            <span>Total :<em id="total-count">0</em></span>
+        </div>
+        <div style="margin-bottom: 15px; font-size: 12px; color: #999; font-family: 'Georgia', serif; font-style: italic;">Leaf - Psychological Counseling Space</div>
+    </footer>
 
-    document.addEventListener('DOMContentLoaded', function() {
-        listenReviews();
-        initSectionObserver();
-    });
+    <script>
+        var MASTER_PASSWORD = "leaf1234";
+        var firebaseConfig = {
+            apiKey: "AIzaSyCd0izexUnK2e3hFF72F09pSvNDMUX0Bg",
+            authDomain: "leaf-web-f6019.firebaseapp.com",
+            databaseURL: "https://leaf-web-f6019-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "leaf-web-f6019",
+            storageBucket: "leaf-web-f6019.firebasestorage.app",
+            messagingSenderId: "318569186261",
+            appId: "1:318569186261:web:006ee73e7359f2482bb35c"
+        };
+        if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
 
-    function initSectionObserver() {
-        var navLinks = document.querySelectorAll('#main-navigation a');
-        var sections = document.querySelectorAll('section');
-        var logoText = document.getElementById('main-logo-text');
-        var logoImg = document.getElementById('main-logo-img');
+        document.addEventListener('DOMContentLoaded', function() {
+            setupVisitorCounter();
+            listenReviews();
+            initSectionObserver();
+        });
 
-        function updateActiveNavOnScroll() {
-            var currentActiveId = "";
-            var maxVisibleHeight = -Infinity;
-
-            var headerHeight = 150; 
-            var viewTop = window.scrollY + headerHeight;
-            var viewBottom = window.scrollY + window.innerHeight;
-
-            sections.forEach(function(section) {
-                var sectionId = section.getAttribute('id');
-                var rect = section.getBoundingClientRect();
-                var absTop = window.scrollY + rect.top;
-                var absBottom = window.scrollY + rect.bottom;
-
-                var visibleTop = Math.max(viewTop, absTop);
-                var visibleBottom = Math.min(viewBottom, absBottom);
-                var visibleHeight = visibleBottom - visibleTop;
-
-                if (visibleHeight > 0 && visibleHeight > maxVisibleHeight) {
-                    maxVisibleHeight = visibleHeight;
-                    currentActiveId = sectionId;
-                }
-            });
-
-            if (window.scrollY < 180 || currentActiveId === "basic") {
-                navLinks.forEach(function(link) {
-                    link.classList.remove('active-nav');
+        function setupVisitorCounter() {
+            try {
+                var now = new Date();
+                var todayStr = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
+                var counterRef = database.ref('visitor_counter');
+                counterRef.child(todayStr).once('value', function(snapshot) {
+                    var todayCount = (snapshot.val() || 0) + 1;
+                    counterRef.child(todayStr).set(todayCount);
+                    var todayEl = document.getElementById('today-count');
+                    if(todayEl) todayEl.innerText = todayCount;
                 });
-                if (logoText) logoText.classList.add('logo-bold-effect');
-                if (logoImg) logoImg.classList.add('logo-img-effect');
-                return;
-            }
+                counterRef.on('value', function(snapshot) {
+                    var allData = snapshot.val();
+                    var totalSum = 0;
+                    if (allData) {
+                        for (var key in allData) totalSum += parseInt(allData[key] || 0);
+                    }
+                    var totalEl = document.getElementById('total-count');
+                    if(totalEl) totalEl.innerText = totalSum;
+                });
+            } catch (e) { console.error(e); }
+        }
 
-            if (logoText) logoText.classList.remove('logo-bold-effect');
-            if (logoImg) logoImg.classList.remove('logo-img-effect');
+        function initSectionObserver() {
+            var navLinks = document.querySelectorAll('#main-navigation a');
+            var sections = document.querySelectorAll('section');
+            var logoText = document.getElementById('main-logo-text');
+            var logoImg = document.getElementById('main-logo-img');
 
-            if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50) {
-                currentActiveId = "footprints";
-            }
+            function updateActiveNavOnScroll() {
+                var currentActiveId = "";
+                var maxVisibleHeight = -Infinity;
+                var headerHeight = 150; 
+                var viewTop = window.scrollY + headerHeight;
+                var viewBottom = window.scrollY + window.innerHeight;
 
-            navLinks.forEach(function(link) {
-                if (link.getAttribute('data-section') === currentActiveId) {
-                    link.classList.add('active-nav');
-                } else {
-                    link.classList.remove('active-nav');
+                sections.forEach(function(section) {
+                    var rect = section.getBoundingClientRect();
+                    var absTop = window.scrollY + rect.top;
+                    var absBottom = window.scrollY + rect.bottom;
+                    var visibleHeight = Math.min(viewBottom, absBottom) - Math.max(viewTop, absTop);
+                    if (visibleHeight > 0 && visibleHeight > maxVisibleHeight) {
+                        maxVisibleHeight = visibleHeight;
+                        currentActiveId = section.getAttribute('id');
+                    }
+                });
+
+                if (window.scrollY < 180 || currentActiveId === "basic") {
+                    navLinks.forEach(function(link) { link.classList.remove('active-nav'); });
+                    if (logoText) logoText.classList.add('logo-bold-effect');
+                    if (logoImg) logoImg.classList.add('logo-img-effect');
+                    return;
                 }
+                if (logoText) logoText.classList.remove('logo-bold-effect');
+                if (logoImg) logoImg.classList.remove('logo-img-effect');
+                if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50) currentActiveId = "footprints";
+
+                navLinks.forEach(function(link) {
+                    if (link.getAttribute('data-section') === currentActiveId) link.classList.add('active-nav');
+                    else link.classList.remove('active-nav');
+                });
+            }
+            window.addEventListener('scroll', updateActiveNavOnScroll);
+            window.addEventListener('resize', updateActiveNavOnScroll);
+            setTimeout(updateActiveNavOnScroll, 100);
+        }
+
+        function listenReviews() {
+            var reviewList = document.getElementById('review-list');
+            if (!reviewList) return;
+            database.ref('reviews').on('value', function(snapshot) {
+                var data = snapshot.val();
+                if (!data) { reviewList.innerHTML = '<p style="text-align:center; color:#bbb; font-size:15px; margin:30px auto; width:100%;">아직 응원의 한 마디가 없습니다. 🍃</p>'; return; }
+                var reviewsArray = [];
+                for (var key in data) { var item = data[key]; item.firebaseKey = key; reviewsArray.push(item); }
+                reviewsArray.sort(function(a, b) { return b.timestamp - a.timestamp; });
+                var htmlContent = '';
+                for (var i = 0; i < reviewsArray.length; i++) {
+                    var r = reviewsArray[i];
+                    htmlContent += '<div class="review-card"><div><div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px;"><span style="font-weight: bold; font-size: 15px; color: #444;">' + r.name + '</span><span style="font-size: 12px; color: #bbb;">' + (r.date || '') + '</span></div><button onclick="deleteReview(\'' + r.firebaseKey + '\')" style="background: none; border: none; color: #ccc; font-size: 12px; cursor: pointer; padding: 2px 5px;">삭제</button></div><p style="margin: 0; font-size: 15px; color: #555; line-height: 1.6; white-space: pre-wrap; text-align: left;">' + r.content + '</p></div></div>';
+                }
+                reviewList.innerHTML = htmlContent;
             });
         }
 
-        window.addEventListener('scroll', updateActiveNavOnScroll);
-        window.addEventListener('resize', updateActiveNavOnScroll);
-        setTimeout(updateActiveNavOnScroll, 100);
-    }
-
-    function listenReviews() {
-        var reviewList = document.getElementById('review-list');
-        if (!reviewList) return;
-
-        database.ref('reviews').on('value', function(snapshot) {
-            var data = snapshot.val();
-            
-            if (!data) {
-                reviewList.innerHTML = '<p style="text-align:center; color:#bbb; font-size:15px; margin:30px auto; width:100%;">작성된 응원의 한 마디가 아직 없습니다. 첫 마디를 남겨보세요! 🍃</p>';
-                return;
-            }
-
-            var reviewsArray = [];
-            for (var key in data) {
-                if (data.hasOwnProperty(key)) {
-                    var item = data[key];
-                    item.firebaseKey = key; 
-                    reviewsArray.push(item);
-                }
-            }
-
-            reviewsArray.sort(function(a, b) {
-                return b.timestamp - a.timestamp;
-            });
-
-            var htmlContent = '';
-            for (var i = 0; i < reviewsArray.length; i++) {
-                var r = reviewsArray[i];
-                var safeName = r.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                var safeContent = r.content.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
-                htmlContent += '<div class="review-card">' +
-                               '  <div>' +
-                               '    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">' +
-                               '      <div style="display: flex; align-items: center; gap: 8px;">' +
-                               '        <span style="font-weight: bold; font-size: 15px; color: #444;">' + safeName + '</span>' +
-                               '        <span style="font-size: 12px; color: #bbb;">' + (r.date || '') + '</span>' +
-                               '      </div>' +
-                               '      <button onclick="deleteReview(\'' + r.firebaseKey + '\')" style="background: none; border: none; color: #ccc; font-size: 12px; cursor: pointer; padding: 2px 5px;">삭제</button>' +
-                               '    </div>' +
-                               '    <p style="margin: 0; font-size: 15px; color: #555; line-height: 1.6; white-space: pre-wrap; text-align: left;">' + safeContent + '</p>' +
-                               '  </div>' +
-                               '</div>';
-            }
-            reviewList.innerHTML = htmlContent;
-        }, function(error) {
-            console.error("Firebase 로딩 에러:", error);
-        });
-    }
-
-    function addReview() {
-        try {
+        function addReview() {
             var name = document.getElementById('review-name').value.trim();
             var content = document.getElementById('review-content').value.trim();
-            if (!name || !content) { alert("닉네임과 내용을 모두 입력해 주세요! 🌿"); return; }
-            
-            var newReview = {
-                name: name,
-                content: content,
-                date: new Date().toLocaleDateString('ko-KR'),
-                timestamp: Date.now()
-            };
-            
-            database.ref('reviews').push(newReview)
-                .then(function() {
-                    document.getElementById('review-name').value = '';
-                    document.getElementById('review-content').value = '';
-                })
-                .catch(function(err) {
-                    alert("데이터 저장 실패! Firebase Realtime Database 규칙 규칙을 점검해 보세요.");
-                    console.error(err);
-                });
+            if (!name || !content) { alert("닉네임과 내용을 입력해 주세요!"); return; }
+            database.ref('reviews').push({ name: name, content: content, date: new Date().toLocaleDateString('ko-KR'), timestamp: Date.now() })
+                .then(function() { document.getElementById('review-name').value = ''; document.getElementById('review-content').value = ''; });
+        }
 
-        } catch(err) { console.error(err); }
-    }
+        function deleteReview(firebaseKey) {
+            var accessPassword = prompt("관리자 비밀번호:");
+            if (accessPassword === MASTER_PASSWORD) database.ref('reviews/' + firebaseKey).remove();
+            else if (accessPassword) alert("비밀번호 불일치");
+        }
 
-    function deleteReview(firebaseKey) {
-        var accessPassword = prompt("관리자 비밀번호를 입력해 주세요:");
-        if (!accessPassword) return;
-        if (accessPassword === MASTER_PASSWORD) {
-            database.ref('reviews/' + firebaseKey).remove()
-                .then(function() {
-                    alert("리뷰가 안전하게 삭제되었습니다. 🍃");
-                })
-                .catch(function(err) {
-                    alert("삭제 권한이 없거나 오류가 발생했습니다. (Firebase 보안 규칙을 점검하세요)");
-                    console.error(err);
-                });
-        } else { alert("비밀번호가 올바르지 않습니다."); }
-    }
-
-    function clearBrokenData() {
-        var accessPassword = prompt("이 기능은 DB의 모든 데이터를 초기화합니다. 관리자 비밀번호 입력:");
-        if (accessPassword === MASTER_PASSWORD) {
-            if (confirm("정말 모든 데이터를 영구 삭제할까요?")) {
-                database.ref('reviews').remove()
-                .then(function() {
-                    alert("전체 초기화 완료! 🍃");
-                })
-                .catch(function(err) {
-                    alert("초기화 실패. 보안 규칙을 확인하세요.");
-                    console.error(err);
-                });
-            }
-        } else { alert("비밀번호가 틀렸습니다."); }
-    }
-</script>
+        function clearBrokenData() {
+            var accessPassword = prompt("관리자 비밀번호:");
+            if (accessPassword === MASTER_PASSWORD && confirm("모든 데이터를 삭제할까요?")) database.ref('reviews').remove();
+            else if (accessPassword) alert("비밀번호 불일치");
+        }
+    </script>
 </body>
 </html>
