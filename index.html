@@ -106,9 +106,16 @@ section { padding: 60px 15px 60px 15px; min-height: auto; }
 .moments-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
 .review-card { width: 100% !important; }
 .mobile-br { display: block; }
-/* 모바일에서 프로필과 파인드미 섹션 텍스트 크기 및 간격 최적화 */
-#profile .content-text, #Find-Me .content-text { font-size: 0.85em !important; padding-top: 20px; }
-#profile .profile-title, #Find-Me .contact-item { font-size: 0.9em !important; }
+/* LWS 섹션 모바일 최적화 */
+#about-leaf .about-leaf-text { font-size: 14px; line-height: 1.6; }
+#about-leaf .about-leaf-text h2 { font-size: 22px; }
+#about-leaf .about-leaf-text .main-sub { font-size: 13px; margin-bottom: 20px; }
+/* Profile 및 Find-Me 섹션 최적화 */
+#profile .content-text, #Find-Me .content-text { font-size: 14px; padding-top: 10px; }
+#profile .profile-title { font-size: 15px; margin-bottom: 8px; }
+#profile .profile-list-group li { font-size: 12px; line-height: 1.5; margin-bottom: 6px; }
+/* Profile 주요 이력 30% 추가 축소 */
+#profile ul.profile-list-group { font-size: 0.7em !important; }
 }
 </style>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
