@@ -93,19 +93,22 @@ section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; just
 #about-leaf, #about-ceo, #profile, #Find-Me, #Sneak-Peak, #footprints { scroll-margin-top: 100px; }
 
 @media (max-width: 768px) {
-    header { padding: 15px 0; }
-    .logo-wrap { gap: 10px; margin-bottom: 15px; }
-    .logo-img-container, .logo-img { height: 50px; }
-    .logo { font-size: 24px; }
-    nav { gap: 8px; padding: 0 10px 10px 10px; }
-    nav a { font-size: 13px; padding: 4px 6px; }
-    section { padding: 100px 15px 60px 15px; min-height: auto; }
-    .container { gap: 20px; flex-direction: column !important; }
-    .content-img { max-width: 100% !important; flex: none !important; min-height: auto; }
-    .content-text { font-size: 15px !important; }
-    .moments-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
-    .review-card { width: 100% !important; }
-    .mobile-br { display: block; }
+header { padding: 15px 0; }
+.logo-wrap { gap: 10px; margin-bottom: 15px; }
+.logo-img-container, .logo-img { height: 50px; }
+.logo { font-size: 24px; }
+nav { gap: 8px; padding: 0 10px 10px 10px; }
+nav a { font-size: 13px; padding: 4px 6px; }
+section { padding: 100px 15px 60px 15px; min-height: auto; }
+.container { gap: 20px; flex-direction: column !important; }
+.content-img { max-width: 100% !important; flex: none !important; min-height: auto; }
+.content-text { font-size: 15px !important; }
+.moments-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+.review-card { width: 100% !important; }
+.mobile-br { display: block; }
+/* 모바일 Profile, Find-Me 섹션 사진 및 글 40% 축소 */
+#profile .content-img, #Find-Me .content-img { width: 60% !important; margin: 0 auto; }
+#profile .content-text, #Find-Me .content-text { transform: scale(0.6); transform-origin: top center; margin-top: -15%; }
 }
 </style>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
@@ -181,20 +184,19 @@ section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; just
 <div class="content-img"><img src="about.jpg" alt="About CEO" onerror="this.parentElement.style.display='none';"></div>
 <div class="content-text">
 <p>청소년기 우울이라는 진단(혹은 낙인) 속에서 <br class="mobile-br">심리상담을 처음 접하게 되었어요. <br class="mobile-br">
-<p>누구보다 장난기 많고 낙천적인 저조차 무기력하게 만들었던 건, <br class="mobile-br">다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요. 
-<br class="mobile-br">친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 목표를 향해 쫓아갈 때 
-<br class="mobile-br">저 혼자 목표가 없다는 이유로 스스로가 한없이 초라해 보였던 시절이었습니다.</p>
-<p>기나긴 시행착오 및 방황의 시간 속에서 
-<br class="mobile-br">변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 
-<br class="mobile-br">저는 사람을 좋아하고 친구들과 피상적인 이야기보단 
-<br class="mobile-br">인간 대 인간으로 깊은 대화를 할 때 
-<br class="mobile-br">비로소 사람과 연결되었다는 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느깁니다.</p>
-<p>시행착오도 많았고 그 방황의 시간들이 아깝고 후회스럽기도 하죠. 
-<strong>그리고 또 그 방황이 다시 찾아올지도 모른다는 두려움도 항상 있고요.</strong> 
+<p>누구보다 장난기 많고 낙천적인 저조차 무기력하게 만들었던 건, <br class="mobile-br">다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요.
+<br class="mobile-br">친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 목표를 향해 쫓아갈 때 저 혼자 목표가 없다는 이유로 스스로가 한없이 초라해 보였던 시절이었습니다.</p>
+<p>기나긴 시행착오 및 방황의 시간 속에서
+<br class="mobile-br">변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요.
+<br class="mobile-br">저는 사람을 좋아하고 친구들과 피상적인 이야기보단
+<br class="mobile-br">인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며
+<br class="mobile-br">비로소 살아있음을 느깁니다.</p>
+<p>시행착오도 많았고 그 방황의 시간들이 아깝고 후회스럽기도 하죠.
+<strong>그리고 또 그 방황이 다시 찾아올지도 모른다는 두려움도 항상 있고요.</strong>
 하지만 그 짙은 밤들이 있었기에 지금의 제가 있고, 남들의 속도에 치여 길을 잃은 사람들의 마음을 누구보다 깊이 지켜볼 수 있는 눈이 생겼습니다.</p>
 <p>이제는 후회 대신, 제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. <br class="mobile-br">그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서,
 <P><strong><br class="mobile-br">깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</strong></p>
-<p><span class="handwriting"><strong>깊은 대화로 연결될 수 있는 
+<p><span class="handwriting"><strong>깊은 대화로 연결될 수 있는
 <br class="mobile-br">안전한 공간이 되어드리겠습니다.<br>이곳에서 여러분의 이야기들을 편안하게 들려주세요.</strong></span></p>
 </div>
 </div>
@@ -288,7 +290,6 @@ section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; just
 <section id="footprints" style="background-color: #ffffff; min-height: auto; padding-bottom: 60px; border-bottom: none;">
 <div class="container" style="max-width: 720px; flex-direction: column; align-items: center; gap: 0;">
 
-<!-- 이미지 영역 추가 -->
 <div style="width: 100%; margin-bottom: 50px;">
 <h3 style="font-family: 'Georgia', serif; font-size: 26px; color: #2d6a4f; margin-bottom: 25px; font-weight: bold; text-align: center;">Moments</h3>
 <div class="moments-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px;">
