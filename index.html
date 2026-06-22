@@ -490,6 +490,18 @@ var accessPassword = prompt("관리자 비밀번호:");
 if (accessPassword === MASTER_PASSWORD && confirm("모든 데이터를 삭제할까요?")) database.ref('reviews').remove();
 else if (accessPassword) alert("비밀번호 불일치");
 }
+
+// 인앱 브라우저 앵커 이동 보완 스크립트
+window.addEventListener('load', function() {
+  if (window.location.hash) {
+    var targetElement = document.querySelector(window.location.hash);
+    if (targetElement) {
+      setTimeout(function() {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+  }
+});
 </script>
 </body>
 </html>
