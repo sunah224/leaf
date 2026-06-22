@@ -63,6 +63,7 @@ section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; just
 .section-inner-logo { display: block; margin: 60px auto 10px auto; height: 92px; width: auto; object-fit: contain; }
 
 #about-ceo .content-text p { margin-bottom: 24px; line-height: 1.8; }
+#profile { padding-bottom: 50px; } /* 프로필 하단 여백 축소 */
 #profile .content-text { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .profile-title { font-size: 19px; font-weight: bold; margin-bottom: 12px; color: #111; display: inline-block; text-align: left; width: 100%; max-width: 580px; }
 .profile-list-group { list-style: none; margin-bottom: 30px; padding: 0; text-align: left; width: 100%; max-width: 580px; }
@@ -100,17 +101,18 @@ section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; just
 
 @media (max-width: 768px) {
 header { padding: 15px 0 5px 0; }
-.logo-wrap { gap: 12px; margin-bottom: 10px; }
-.logo-img-container, .logo-img { height: 64px; }
-.logo { font-size: 28px; }
+.logo-wrap { gap: 8px; margin-bottom: 5px; flex-direction: column; } /* 모바일 중앙 정렬 */
+.logo-img-container, .logo-img { height: 50px; }
+.logo { font-size: 22px; }
 nav { justify-content: flex-start; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 0 15px 8px 15px; gap: 15px; }
 nav a { font-size: 14px; padding: 4px 8px; }
 nav::-webkit-scrollbar { display: none; }
 .visitor-counter { margin-top: 8px; font-size: 11px; gap: 10px; min-height: 16px; }
-section { padding-top: 185px; min-height: auto; }
-.container { flex-direction: column !important; gap: 30px; align-items: center; }
+section { padding-top: 150px; min-height: auto; }
+.container { flex-direction: column !important; gap: 20px; align-items: center; }
+#profile { padding-bottom: 20px !important; } /* 프로필 모바일 하단 여백 추가 축소 */
 .content-img { flex: 0 0 auto; width: 100%; max-width: 300px; min-height: auto; }
-#profile .content-img { max-width: 210px; }
+#profile .content-img { max-width: 210px; margin-bottom: 10px !important; } /* 사진과 텍스트 사이 거리 */
 .content-text { text-align: center !important; padding: 0 !important; font-size: 14.5px; }
 #basic { padding-top: 160px; padding-bottom: 30px; }
 #basic .container { flex-direction: column !important; align-items: center; gap: 20px; }
