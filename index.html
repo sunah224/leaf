@@ -93,6 +93,11 @@ section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; just
 #review-list { display: flex; flex-wrap: wrap; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
 .review-card { background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); width: calc(50% - 8px); min-width: 280px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
 
+/* 앵커 이동 시 헤더 가림 방지 */
+#about-leaf, #about-ceo, #profile, #Find-Me, #Sneak-Peak, #footprints {
+  scroll-margin-top: 100px;
+}
+
 @media (max-width: 768px) {
 header { padding: 15px 0 5px 0; }
 .logo-wrap { gap: 12px; margin-bottom: 10px; }
