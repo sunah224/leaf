@@ -25,13 +25,10 @@ header { position: fixed; top: 0; left: 0; width: 100%; background-color: #fffff
 .logo-wrap { display: inline-flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 15px; text-decoration: none; }
 .logo-img-container { display: inline-block; height: 92px; }
 .logo-img { height: 92px; width: auto; object-fit: contain; display: block; transition: transform 0.2s ease-in-out; }
-
-/* [수정] font-weight를 500(일반)으로 고정하고 볼드 관련 text-shadow 완전 제거 */
-.logo { font-family: 'Georgia', serif; font-size: 42px; font-style: italic; color: #2d6a4f; font-weight: 500 !important; display: inline-block; white-space: nowrap; text-shadow: none !important; }
+.logo { font-family: 'Georgia', serif; font-size: 42px; font-style: italic; color: #2d6a4f; font-weight: 500 !important; display: inline-block; white-space: nowrap; transition: text-shadow 0.2s ease-in-out; text-shadow: none !important; }
 
 .logo-img-effect { transform: scale(1.02); }
-/* [수정] 마우스 호버 시에도 글자가 두꺼워지지 않도록 제어 */
-.logo-wrap:hover .logo { text-shadow: none !important; font-weight: 500 !important; }
+.logo-wrap:hover .logo { text-shadow: none !important; }
 .logo-wrap:hover .logo-img { transform: scale(1.02); }
 nav { display: flex; justify-content: center; max-width: 950px; margin: 0 auto; padding: 0 10px; gap: 20px; }
 nav a { text-decoration: none; color: #5c4d42; font-size: 17px; font-weight: 800; font-family: 'Arial Black', Gadget, sans-serif; transition: color 0.2s ease; padding: 5px 8px; white-space: nowrap; }
@@ -64,7 +61,7 @@ section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; just
 .footer-highlight-text { margin-top: 50px; font-weight: bold; color: #2d6a4f; font-size: 22px; line-height: 1.5; word-break: keep-all; }
 .section-inner-logo { display: block; margin: 60px auto 10px auto; height: 92px; width: auto; object-fit: contain; }
 
-#about-f .content-text p { margin-bottom: 24px; line-height: 1.8; }
+#about-founder .content-text p { margin-bottom: 24px; line-height: 1.8; }
 #profile .content-text { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .profile-title { font-size: 19px; font-weight: bold; margin-bottom: 12px; color: #111; display: inline-block; text-align: left; width: 100%; max-width: 580px; }
 .profile-list-group { list-style: none; margin-bottom: 30px; padding: 0; text-align: left; width: 100%; max-width: 580px; }
@@ -86,74 +83,59 @@ section { padding: 220px 20px 100px 20px; min-height: 100vh; display: flex; just
 .contact-item.open-kakao-item { margin-bottom: 0; }
 .contact-item.open-kakao-item a { color: #2d6a4f; font-size: 17px; }
 .price-info { font-size: 17px; font-weight: bold; color: #444; border-top: 1px solid #ddd; padding-top: 18px; margin-top: 10px; display: inline-block; width: auto; }
-#Sneak-Peak .container { flex-direction: column; align-items: center; }
-.gallery-layout { display: flex; gap: 20px; width: 100%; }
-.gallery-left { display: flex; flex-direction: column; gap: 20px; flex: 1; }
-.gallery-left img { width: 100%; height: auto; border-radius: 4px; }
-.gallery-right { flex: 2; }
-.gallery-right img { width: 100%; height: auto; border-radius: 4px; }
 #review-list { display: flex; flex-wrap: wrap; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
 .review-card { background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); width: calc(50% - 8px); min-width: 280px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
 
-/* [수정] 모바일 화면 반응형 대폭 개선 (한눈에 보기 쉽도록 최적화) */
 @media (max-width: 768px) {
-header { padding: 10px 0 5px 0; }
-.logo-wrap { gap: 10px; margin-bottom: 8px; }
-.logo-img-container, .logo-img { height: 48px; }
-.logo { font-size: 22px !important; text-shadow: none !important; font-weight: 500 !important; }
-nav { justify-content: flex-start; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 0 12px 6px 12px; gap: 12px; }
-nav a { font-size: 13.5px; padding: 3px 6px; }
+header { padding: 15px 0 5px 0; }
+.logo-wrap { gap: 12px; margin-bottom: 10px; }
+.logo-img-container, .logo-img { height: 64px; }
+.logo { font-size: 28px; }
+nav { justify-content: flex-start; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 0 15px 8px 15px; gap: 15px; }
+nav a { font-size: 14px; padding: 4px 8px; }
 nav::-webkit-scrollbar { display: none; }
-.visitor-counter { margin-top: 6px; font-size: 11px; gap: 8px; min-height: 14px; }
-
-/* 각 섹션이 모바일 화면에 한눈에 컴팩트하게 들어오도록 패딩 및 정렬 조정 */
-section { padding: 110px 15px 40px 15px !important; min-height: auto; }
-.container { flex-direction: column !important; gap: 20px !important; align-items: center; }
-.content-img { flex: 0 0 auto; width: 100%; max-width: 180px !important; min-height: auto; }
-#profile .content-img { max-width: 150px !important; }
-.content-text { text-align: center !important; padding: 0 !important; font-size: 14px !important; line-height: 1.6 !important; }
-
-#basic { padding-top: 100px !important; padding-bottom: 25px !important; }
-#basic .container { flex-direction: column !important; align-items: center; gap: 15px; }
+.visitor-counter { margin-top: 8px; font-size: 11px; gap: 10px; min-height: 16px; }
+section { padding-top: 185px; min-height: auto; }
+.container { flex-direction: column !important; gap: 30px; align-items: center; }
+.content-img { flex: 0 0 auto; width: 100%; max-width: 300px; min-height: auto; }
+#profile .content-img { max-width: 210px; }
+.content-text { text-align: center !important; padding: 0 !important; font-size: 14.5px; }
+#about-founder .content-text { text-align: left !important; }
+#basic { padding-top: 160px; padding-bottom: 30px; }
+#basic .container { flex-direction: column !important; align-items: center; gap: 20px; }
 #basic .content-text { text-align: center !important; padding: 0 !important; justify-content: center !important; }
-.cursive-text { margin-bottom: 10px; font-size: 15px !important; }
-.main-message { font-size: 14px !important; }
-
-#about-leaf { padding-top: 90px !important; }
-#about-leaf .about-leaf-text h2 { font-size: 22px !important; }
-#about-leaf .about-leaf-text .main-sub { font-size: 13px !important; margin-bottom: 18px !important; }
-#about-leaf .about-leaf-text .intro-title { font-size: 14px !important; margin-bottom: 12px !important; }
-#about-leaf .about-leaf-text .point-title { font-size: 15px !important; margin-top: 22px !important; margin-bottom: 8px !important; }
-#about-leaf .about-leaf-text { font-size: 14px !important; }
-.about-leaf-text .sub-p-bold { font-size: 14px !important; }
-.section-inner-logo { height: 48px !important; margin: 25px auto 5px auto !important; }
+.cursive-text { margin-bottom: 15px; font-size: 16px !important; }
+.main-message { font-size: 14.5px !important; }
+#about-leaf { padding-top: 130px; }
+#about-leaf .about-leaf-text h2 { font-size: 24px !important; }
+#about-leaf .about-leaf-text .main-sub { font-size: 13.5px !important; margin-bottom: 25px !important; }
+#about-leaf .about-leaf-text .intro-title { font-size: 15px !important; margin-bottom: 20px !important; }
+#about-leaf .about-leaf-text .point-title { font-size: 16px !important; margin-top: 30px !important; }
+#about-leaf .about-leaf-text { font-size: 14.5px !important; }
+.about-leaf-text .sub-p-bold { font-size: 14.5px !important; }
+.section-inner-logo { height: 64px !important; margin: 40px auto 10px auto !important; }
 .mobile-br { display: block; }
-.footer-highlight-text { font-size: 16px !important; margin-top: 25px; padding: 0 5px; }
-
+.footer-highlight-text { font-size: 18px !important; margin-top: 35px; padding: 0 10px; }
 #profile .content-text { text-align: center !important; padding: 0 5px !important; align-items: center !important; }
-#profile .profile-title { font-size: 14px !important; margin-bottom: 6px !important; line-height: 1.4 !important; max-width: 100% !important; text-align: center !important; }
-#profile .research-group { text-align: left !important; width: 100% !important; max-width: 280px !important; margin: 0 auto 12px auto !important; }
-#profile .research-group li { font-size: 12px !important; margin-bottom: 4px !important; line-height: 1.5 !important; }
+#profile .profile-title { font-size: 15px !important; margin-bottom: 8px !important; line-height: 1.4 !important; max-width: 100% !important; text-align: center !important; }
+#profile .research-group { text-align: left !important; width: 100% !important; max-width: 290px !important; margin: 0 auto 18px auto !important; }
+#profile .research-group li { font-size: 12.5px !important; margin-bottom: 6px !important; line-height: 1.6 !important; }
 #profile .indent-tab { padding-left: 0px !important; display: block !important; }
-#profile .profile-list-group:not(.research-group) { margin-bottom: 12px !important; max-width: 100% !important; text-align: center !important; }
-#profile .profile-list-group:not(.research-group) li { font-size: 12px !important; margin-bottom: 4px !important; line-height: 1.5 !important; }
-#profile .profile-center-box { max-width: 100% !important; margin-bottom: 12px !important; text-align: center !important; }
-#profile .profile-list-group[style*="border-left"] { border-left: 3px solid #52b788 !important; border-top: none !important; padding-left: 10px !important; padding-top: 0 !important; text-align: left !important; display: inline-block !important; width: auto !important; max-width: 280px !important; margin: 0 auto 12px auto !important; }
-
-#Find-Me .container { gap: 20px; max-width: 100%; }
+#profile .profile-list-group:not(.research-group) { margin-bottom: 18px !important; max-width: 100% !important; text-align: center !important; }
+#profile .profile-list-group:not(.research-group) li { font-size: 12.5px !important; margin-bottom: 6px !important; line-height: 1.6 !important; }
+#profile .profile-center-box { max-width: 100% !important; margin-bottom: 15px !important; text-align: center !important; }
+#profile .profile-list-group[style*="border-left"] { border-left: 3px solid #52b788 !important; border-top: none !important; padding-left: 12px !important; padding-top: 0 !important; text-align: left !important; display: inline-block !important; width: auto !important; max-width: 290px !important; margin: 0 auto 18px auto !important; }
+#Find-Me .container { gap: 30px; max-width: 100%; }
 #Find-Me .content-text { margin-left: 0; align-items: center; }
 #Find-Me .contact-box { align-items: center; text-align: center; }
-#Find-Me .contact-item { font-size: 13px !important; gap: 8px !important; margin-bottom: 10px !important; }
-#Find-Me .contact-item.email-item { margin-bottom: 25px !important; }
-#Find-Me .contact-item img { width: 18px !important; height: 18px !important; }
-#Find-Me .contact-item img.kakao-logo, #Find-Me .contact-item img.blog-logo { width: 18px !important; height: 18px !important; }
-#Find-Me .contact-item.open-kakao-item a { font-size: 12px !important; }
-#Find-Me .price-info { font-size: 13px !important; padding-top: 10px !important; margin-top: 6px !important; }
-
-.gallery-layout { flex-direction: row !important; gap: 8px !important; align-items: stretch !important; }
-.gallery-left { gap: 8px !important; }
+#Find-Me .contact-item { font-size: 13.5px !important; gap: 10px !important; margin-bottom: 14px !important; }
+#Find-Me .contact-item.email-item { margin-bottom: 40px !important; }
+#Find-Me .contact-item img { width: 20px !important; height: 20px !important; }
+#Find-Me .contact-item img.kakao-logo, #Find-Me .contact-item img.blog-logo { width: 20px !important; height: 20px !important; }
+#Find-Me .contact-item.open-kakao-item a { font-size: 12.5px !important; }
+#Find-Me .price-info { font-size: 13.5px !important; color: #777777 !important; padding-top: 14px !important; margin-top: 8px !important; }
 #review-list { display: flex !important; flex-direction: column !important; width: 100% !important; }
-.review-card { width: 100% !important; margin: 0 0 10px 0 !important; font-size: 13.5px !important; padding: 15px !important; }
+.review-card { width: 100% !important; margin: 0 0 12px 0 !important; font-size: 14.5px !important; }
 }
 </style>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
@@ -169,10 +151,9 @@ section { padding: 110px 15px 40px 15px !important; min-height: auto; }
 </a>
 <nav id="main-navigation">
 <a href="#about-leaf" data-section="about-leaf">LWS</a>
-<a href="#about-founder" data-section="about-found">Founder</a>
+<a href="#about-founder" data-section="about-founder">Founder</a>
 <a href="#profile" data-section="profile">Profile</a>
 <a href="#Find-Me" data-section="Find-Me">Find Me</a>
-<a href="#Sneak-Peak" data-section="Sneak-Peak">Sneak Peak</a>
 <a href="#footprints" data-section="footprints">Footprints</a>
 </nav>
 </div>
@@ -225,17 +206,17 @@ section { padding: 110px 15px 40px 15px !important; min-height: auto; }
 </div>
 </section>
 
-<section id="about-">
+<section id="about-founder">
 <div class="container">
-<div class="content-img"><img src="about.jpg" alt="about founder" onerror="this.parentElement.style.display='none';"></div>
+<div class="content-img"><img src="about.jpg" alt="About Founder" onerror="this.parentElement.style.display='none';"></div>
 <div class="content-text">
-<p>청소년기 우울이라는 진단(혹은 낙인) 속에서 <br class="mobile-br">심리상담을 처음 접하게 되었어요. <br class="mobile-br">누구보다 장난기 많고 낙천적인 저조차 <br class="mobile-br">무기력하게 만들었던 건, <br class="mobile-br">다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 
-    <br class="mobile-br">목표를 향해 쫓아갈 때 <br class="mobile-br">저 혼자 목표가 없다는 이유로 <br class="mobile-br">스스로가 한없이 초라해 보였던 시절이었습니다.</p>
-<p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 저는 사람을 좋아하고 
-    친구들과 피상적인 이야기보단 인간 대 인간으로 깊은 대화를 할 때 <br class="mobile-br">비로소 사람과 연결되었다는 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느깁니다.</p>
+<p>청소년기 우울이라는 진단(혹은 낙인) 속에서 <br class="mobile-br">심리상담을 처음 접하게 되었어요. <br class="mobile-br">누구보다 장난기 많고 낙천적인 저조차 <br class="mobile-br">무기력하게 만들었던 건, <br class="mobile-br">다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며
+<br class="mobile-br">목표를 향해 쫓아갈 때 <br class="mobile-br">저 혼자 목표가 없다는 이유로 <br class="mobile-br">스스로가 한없이 초라해 보였던 시절이었습니다.</p>
+<p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 저는 사람을 좋아하고
+친구들과 피상적인 이야기보단 인간 대 인간으로 깊은 대화를 할 때 <br class="mobile-br">비로소 사람과 연결되었다는 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느깁니다.</p>
 <p>시행착오도 많았고 그 방황의 시간들이 아깝고 후회스럽기도 하죠. <strong><span class="handwriting">그리고 또 그 방황이 다시 찾아올지도 모른다는 두려움도 항상 있고요.</span></strong> 하지만 그 짙은 밤들이 있었기에 지금의 제가 있고, 남들의 속도에 치여 길을 잃은 사람들의 마음을 누구보다 깊이 지켜볼 수 있는 눈이 생겼습니다.</p>
-<p>이제는 후회 대신, <br class="mobile-br">제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. <br class="mobile-br">그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서, 
-    <strong class="handwriting"><br class="mobile-br">깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</strong></p>
+<p>이제는 후회 대신, <br class="mobile-br">제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. <br class="mobile-br">그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서,
+<strong class="handwriting"><br class="mobile-br">깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</strong></p>
 <p><span class="handwriting"><strong>깊은 대화로 연결될 수 있는 안전한 공간이 되어드리겠습니다.<br>이곳에서 여러분의 이야기들을 편안하게 들려주세요.</strong></span></p>
 </div>
 </div>
@@ -317,20 +298,6 @@ section { padding: 110px 15px 40px 15px !important; min-height: auto; }
 </div>
 </section>
 
-<section id="Sneak-Peak">
-<div class="container">
-<div class="gallery-layout">
-<div class="gallery-left">
-<img src="sneak_1.png" alt="SSD Sign">
-<img src="sneak_2.png" alt="SSD Menu">
-</div>
-<div class="gallery-right">
-<img src="sneak_3.png" alt="Floor Plan">
-</div>
-</div>
-</div>
-</section>
-
 <section id="footprints" style="background-color: #ffffff; min-height: auto; padding-bottom: 60px; border-bottom: none;">
 <div class="container" style="max-width: 720px; flex-direction: column; align-items: center; gap: 0;">
 <div style="margin-bottom: 30px; text-align: center;">
@@ -362,7 +329,6 @@ section { padding: 110px 15px 40px 15px !important; min-height: auto; }
 <div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;"><img src="review_4.png" alt="감사 한마디" onerror="this.parentElement.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;"></div>
 </div>
 </div>
-
 <div style="margin-bottom: 25px; font-size: 13px; color: #555; line-height: 1.5; word-break: keep-all; padding: 0 10px;">
 리프 웰니스 스튜디오. 소장: 현선아. 개인정보 보호관리자: 현선아. 
 <br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #555;">sunahhn@sunahhn.com</a>. 
@@ -371,7 +337,6 @@ OpenKakao: <a href="https://open.kakao.com/o/s0995Nzi" target="_blank" style="co
 <br>Copyright © 2026 LWS All Rights Reserved. <br class="mobile-br">Powered by Firebase
 <br><span style="font-weight:bold;">자문법무법인: 법무법인 새별 (대표변호사, 안성열)</span>
 </div>
-
 <div class="visitor-counter" id="visitor-display-box" style="margin-bottom: 15px;">
 <span>Today :<em id="today-count">0</em></span>
 <span>Yesterday :<em id="yesterday-count">0</em></span>
@@ -382,135 +347,106 @@ OpenKakao: <a href="https://open.kakao.com/o/s0995Nzi" target="_blank" style="co
 
 <script>
 var MASTER_PASSWORD = "leaf1234";
-var firebaseConfig = {
-apiKey: "AIzaSyCd0izexUnK2e3hFF72F09pSvNDMUX0Bg",
-authDomain: "leaf-web-f6019.firebaseapp.com",
-databaseURL: "https://leaf-web-f6019-default-rtdb.asia-southeast1.firebasedatabase.app",
-projectId: "leaf-web-f6019",
-storageBucket: "leaf-web-f6019.firebasestorage.app",
-messagingSenderId: "318569186261",
-appId: "1:318569186261:web:006ee73e7359f2482bb35c"
-};
+var firebaseConfig = { apiKey: "AIzaSyCd0izexUnK2e3hFF72F09pSvNDMUX0Bg", authDomain: "leaf-web-f6019.firebaseapp.com", databaseURL: "https://leaf-web-f6019-default-rtdb.asia-southeast1.firebasedatabase.app", projectId: "leaf-web-f6019", storageBucket: "leaf-web-f6019.firebasestorage.app", messagingSenderId: "318569186261", appId: "1:318569186261:web:006ee73e7359f2482bb35c" };
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
-
-document.addEventListener('DOMContentLoaded', function() {
-setupVisitorCounter();
-listenReviews();
-initSectionObserver();
-});
-
+document.addEventListener('DOMContentLoaded', function() { setupVisitorCounter(); listenReviews(); initSectionObserver(); });
 function setupVisitorCounter() {
-try {
-var now = new Date();
-var todayStr = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
-var yesterday = new Date(now);
-yesterday.setDate(now.getDate() - 1);
-var yesterdayStr = yesterday.getFullYear() + "-" + (yesterday.getMonth() + 1) + "-" + yesterday.getDate();
-
-var counterRef = database.ref('visitor_counter');
-counterRef.child(todayStr).once('value', function(snapshot) {
-var todayCount = (snapshot.val() || 0) + 1;
-counterRef.child(todayStr).set(todayCount);
-var todayEl = document.getElementById('today-count');
-if(todayEl) todayEl.innerText = todayCount;
-});
-counterRef.child(yesterdayStr).once('value', function(snapshot) {
-var yesterdayCount = (snapshot.val() || 0);
-var yesterdayEl = document.getElementById('yesterday-count');
-if(yesterdayEl) yesterdayEl.innerText = yesterdayCount;
-});
-counterRef.on('value', function(snapshot) {
-var allData = snapshot.val();
-var totalSum = 0;
-if (allData) {
-for (var key in allData) totalSum += parseInt(allData[key] || 0);
+    try {
+        var now = new Date();
+        var todayStr = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
+        var yesterday = new Date(now);
+        yesterday.setDate(now.getDate() - 1);
+        var yesterdayStr = yesterday.getFullYear() + "-" + (yesterday.getMonth() + 1) + "-" + yesterday.getDate();
+        var counterRef = database.ref('visitor_counter');
+        counterRef.child(todayStr).once('value', function(snapshot) {
+            var todayCount = (snapshot.val() || 0) + 1;
+            counterRef.child(todayStr).set(todayCount);
+            var todayEl = document.getElementById('today-count');
+            if(todayEl) todayEl.innerText = todayCount;
+        });
+        counterRef.child(yesterdayStr).once('value', function(snapshot) {
+            var yesterdayCount = (snapshot.val() || 0);
+            var yesterdayEl = document.getElementById('yesterday-count');
+            if(yesterdayEl) yesterdayEl.innerText = yesterdayCount;
+        });
+        counterRef.on('value', function(snapshot) {
+            var allData = snapshot.val();
+            var totalSum = 0;
+            if (allData) { for (var key in allData) totalSum += parseInt(allData[key] || 0); }
+            var totalEl = document.getElementById('total-count');
+            if(totalEl) totalEl.innerText = totalSum;
+        });
+    } catch (e) { console.error(e); }
 }
-var totalEl = document.getElementById('total-count');
-if(totalEl) totalEl.innerText = totalSum;
-});
-} catch (e) { console.error(e); }
-}
-
 function initSectionObserver() {
-var navLinks = document.querySelectorAll('#main-navigation a');
-var sections = document.querySelectorAll('section');
-var logoText = document.getElementById('main-logo-text');
-var logoImg = document.getElementById('main-logo-img');
-
-function updateActiveNavOnScroll() {
-var currentActiveId = "";
-var maxVisibleHeight = -Infinity;
-var headerHeight = 150;
-var viewTop = window.scrollY + headerHeight;
-var viewBottom = window.scrollY + window.innerHeight;
-
-sections.forEach(function(section) {
-var rect = section.getBoundingClientRect();
-var absTop = window.scrollY + rect.top;
-var absBottom = window.scrollY + rect.bottom;
-var visibleHeight = Math.min(viewBottom, absBottom) - Math.max(viewTop, absTop);
-if (visibleHeight > 0 && visibleHeight > maxVisibleHeight) {
-maxVisibleHeight = visibleHeight;
-currentActiveId = section.getAttribute('id');
+    var navLinks = document.querySelectorAll('#main-navigation a');
+    var sections = document.querySelectorAll('section');
+    var logoImg = document.getElementById('main-logo-img');
+    function updateActiveNavOnScroll() {
+        var currentActiveId = "";
+        var maxVisibleHeight = -Infinity;
+        var viewTop = window.scrollY + 150;
+        var viewBottom = window.scrollY + window.innerHeight;
+        sections.forEach(function(section) {
+            var rect = section.getBoundingClientRect();
+            var absTop = window.scrollY + rect.top;
+            var absBottom = window.scrollY + rect.bottom;
+            var visibleHeight = Math.min(viewBottom, absBottom) - Math.max(viewTop, absTop);
+            if (visibleHeight > 0 && visibleHeight > maxVisibleHeight) {
+                maxVisibleHeight = visibleHeight;
+                currentActiveId = section.getAttribute('id');
+            }
+        });
+        if (window.scrollY < 180 || currentActiveId === "basic") {
+            navLinks.forEach(function(link) { link.classList.remove('active-nav'); });
+            if (logoImg) logoImg.classList.add('logo-img-effect');
+            return;
+        }
+        if (logoImg) logoImg.classList.remove('logo-img-effect');
+        if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50) currentActiveId = "footprints";
+        navLinks.forEach(function(link) {
+            if (link.getAttribute('data-section') === currentActiveId) link.classList.add('active-nav');
+            else link.classList.remove('active-nav');
+        });
+    }
+    window.addEventListener('scroll', updateActiveNavOnScroll);
+    window.addEventListener('resize', updateActiveNavOnScroll);
+    setTimeout(updateActiveNavOnScroll, 100);
 }
-});
-
-/* [수정] 스크롤 시에도 글자가 두꺼워지는 현상(logo-bold-effect 추가) 완전 제거 */
-if (window.scrollY < 180 || currentActiveId === "basic") {
-navLinks.forEach(function(link) { link.classList.remove('active-nav'); });
-if (logoImg) logoImg.classList.add('logo-img-effect');
-return;
-}
-if (logoImg) logoImg.classList.remove('logo-img-effect');
-if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50) currentActiveId = "footprints";
-
-navLinks.forEach(function(link) {
-if (link.getAttribute('data-section') === currentActiveId) link.classList.add('active-nav');
-else link.classList.remove('active-nav');
-});
-}
-window.addEventListener('scroll', updateActiveNavOnScroll);
-window.addEventListener('resize', updateActiveNavOnScroll);
-setTimeout(updateActiveNavOnScroll, 100);
-}
-
 function listenReviews() {
-var reviewList = document.getElementById('review-list');
-if (!reviewList) return;
-database.ref('reviews').on('value', function(snapshot) {
-var data = snapshot.val();
-if (!data) { reviewList.innerHTML = '<p style="text-align:center; color:#bbb; font-size:15px; margin:30px auto; width:100%;">아직 응원의 한 마디가 없습니다. 🍃</p>'; return; }
-var reviewsArray = [];
-for (var key in data) { var item = data[key]; item.firebaseKey = key; reviewsArray.push(item); }
-reviewsArray.sort(function(a, b) { return b.timestamp - a.timestamp; });
-var htmlContent = '';
-for (var i = 0; i < reviewsArray.length; i++) {
-var r = reviewsArray[i];
-htmlContent += '<div class="review-card"><div><div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px;"><span style="font-weight: bold; font-size: 15px; color: #444;">' + r.name + '</span><span style="font-size: 12px; color: #bbb;">' + (r.date || '') + '</span></div><button onclick="deleteReview(\'' + r.firebaseKey + '\')" style="background: none; border: none; color: #ccc; font-size: 12px; cursor: pointer; padding: 2px 5px;">삭제</button></div><p style="margin: 0; font-size: 15px; color: #555; line-height: 1.6; white-space: pre-wrap; text-align: left;">' + r.content + '</p></div></div>';
+    var reviewList = document.getElementById('review-list');
+    if (!reviewList) return;
+    database.ref('reviews').on('value', function(snapshot) {
+        var data = snapshot.val();
+        if (!data) { reviewList.innerHTML = '<p style="text-align:center; color:#bbb; font-size:15px; margin:30px auto; width:100%;">아직 응원의 한 마디가 없습니다. 🍃</p>'; return; }
+        var reviewsArray = [];
+        for (var key in data) { var item = data[key]; item.firebaseKey = key; reviewsArray.push(item); }
+        reviewsArray.sort(function(a, b) { return b.timestamp - a.timestamp; });
+        var htmlContent = '';
+        for (var i = 0; i < reviewsArray.length; i++) {
+            var r = reviewsArray[i];
+            htmlContent += '<div class="review-card"><div><div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px;"><span style="font-weight: bold; font-size: 15px; color: #444;">' + r.name + '</span><span style="font-size: 12px; color: #bbb;">' + (r.date || '') + '</span></div><button onclick="deleteReview(\'' + r.firebaseKey + '\')" style="background: none; border: none; color: #ccc; font-size: 12px; cursor: pointer; padding: 2px 5px;">삭제</button></div><p style="margin: 0; font-size: 15px; color: #555; line-height: 1.6; white-space: pre-wrap; text-align: left;">' + r.content + '</p></div></div>';
+        }
+        reviewList.innerHTML = htmlContent;
+    });
 }
-reviewList.innerHTML = htmlContent;
-});
-}
-
 function addReview() {
-var name = document.getElementById('review-name').value.trim();
-var content = document.getElementById('review-content').value.trim();
-if (!name || !content) { alert("닉네임과 내용을 입력해 주세요!"); return; }
-database.ref('reviews').push({ name: name, content: content, date: new Date().toLocaleDateString('ko-KR'), timestamp: Date.now() })
-.then(function() { document.getElementById('review-name').value = ''; document.getElementById('review-content').value = ''; });
+    var name = document.getElementById('review-name').value.trim();
+    var content = document.getElementById('review-content').value.trim();
+    if (!name || !content) { alert("닉네임과 내용을 입력해 주세요!"); return; }
+    database.ref('reviews').push({ name: name, content: content, date: new Date().toLocaleDateString('ko-KR'), timestamp: Date.now() })
+    .then(function() { document.getElementById('review-name').value = ''; document.getElementById('review-content').value = ''; });
 }
-
 function deleteReview(firebaseKey) {
-var accessPassword = prompt("관리자 비밀번호:");
-if (accessPassword === MASTER_PASSWORD) database.ref('reviews/' + firebaseKey).remove();
-else if (accessPassword) alert("비밀번호 불일치");
+    var accessPassword = prompt("관리자 비밀번호:");
+    if (accessPassword === MASTER_PASSWORD) database.ref('reviews/' + firebaseKey).remove();
+    else if (accessPassword) alert("비밀번호 불일치");
 }
-
 function clearBrokenData() {
-var accessPassword = prompt("관리자 비밀번호:");
-if (accessPassword === MASTER_PASSWORD && confirm("모든 데이터를 삭제할까요?")) database.ref('reviews').remove();
-else if (accessPassword) alert("비밀번호 불일치");
+    var accessPassword = prompt("관리자 비밀번호:");
+    if (accessPassword === MASTER_PASSWORD && confirm("모든 데이터를 삭제할까요?")) database.ref('reviews').remove();
+    else if (accessPassword) alert("비밀번호 불일치");
 }
 </script>
 </body>
