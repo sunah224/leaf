@@ -150,15 +150,15 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 #profile .profile-title, #profile .profile-list-group, #profile .research-group { text-align: center !important; width: 100% !important; max-width: 100% !important; }
 #profile .profile-list-group { border-left: none !important; padding-left: 0 !important; border-top: 1px solid #eee; padding-top: 12px; } 
 
-/* Find Me 섹션 모바일 화면 최적화 (사진 확대, 하단 여백 최소화, 로고 아이콘 30% 축소) */
-#Find-Me.section-box { padding: 15px 12px 2px 12px !important; } /* 테두리 안쪽 하단 부분 여백 대폭 제거 */
+/* Find Me 섹션 모바일 화면 최적화 */
+#Find-Me.section-box { padding: 15px 12px 2px 12px !important; } 
 #Find-Me .container { gap: 10px !important; flex-direction: column !important; align-items: center !important; }
-#Find-Me .content-img { flex: initial !important; max-width: 216px !important; min-height: auto !important; width: 100% !important; } /* 사진 기존(180px)에서 20% 확대 적용 */
+#Find-Me .content-img { flex: initial !important; max-width: 216px !important; min-height: auto !important; width: 100% !important; } 
 #Find-Me .content-text { padding-top: 10px !important; width: 100% !important; display: flex; justify-content: center; }
 #Find-Me .contact-box { align-items: center !important; text-align: center !important; width: 100% !important; }
 #Find-Me .contact-list { display: flex !important; flex-direction: column !important; align-items: flex-start !important; }
 #Find-Me .contact-item { margin-bottom: 8px !important; gap: 10px !important; font-size: 9.12px !important; } 
-#Find-Me .contact-item img { width: 19.6px !important; height: 19.6px !important; } /* 로고 아이콘 크기 30% 축소 (28px -> 19.6px) */
+#Find-Me .contact-item img { width: 19.6px !important; height: 19.6px !important; } 
 #Find-Me .contact-item.email-item { margin-bottom: 12px !important; } 
 #Find-Me .contact-item.open-kakao-item a { font-size: 11.22px !important; } 
 #Find-Me .price-info { margin-top: 5px !important; padding-top: 10px !important; padding-bottom: 0 !important; width: 100% !important; text-align: center; }
@@ -297,7 +297,7 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 25px;">- 집단상담 보조지도자 11시간 이수</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">여성가족부 청소년상담사 2급 준비 중</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">한국상담심리학회 상담심리사 2급 준비 중</li>
-<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0;">한국상담학회 상담심리사 2급 Jewelry 준비 중</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0;">한국상담학회 상담심리사 2급 준비 중</li>
 </ul>
 </div>
 </div>
@@ -455,6 +455,43 @@ document.getElementById('today-count').innerText = data[todayStr] || 0;
 document.getElementById('yesterday-count').innerText = data[yStr] || 0;
 });
 }
+
+// 대댓글(답글) 토글창 열기/닫기 기능 함수
+function toggleReplyForm(reviewKey) {
+var form = document.getElementById('reply-form-' + reviewKey);
+if(form.style.display === 'none' || form.style.display === '') {
+form.style.display = 'block';
+} else {
+form.style.display = 'none';
+}
+}
+
+// 대댓글 데이터 추가 함수 (기존 데이터 보존용 구조화 설계)
+function addReply(reviewKey) {
+var nameInput = document.getElementById('reply-name-' + reviewKey);
+var contentInput = document.getElementById('reply-content-' + reviewKey);
+var n = nameInput.value;
+var c = contentInput.value;
+if(!n || !c) return alert("닉네임과 답글 내용을 입력해주세요.");
+
+database.ref('reviews/' + reviewKey + '/replies').push({
+name: n,
+content: c,
+timestamp: Date.now()
+}).then(() => {
+nameInput.value = '';
+contentInput.value = '';
+document.getElementById('reply-form-' + reviewKey).style.display = 'none';
+});
+}
+
+// 대댓글 전용 삭제 기능 함수
+function deleteReply(reviewKey, replyKey) {
+if(prompt("관리자 비밀번호") === MASTER_PASSWORD) {
+database.ref('reviews/' + reviewKey + '/replies/' + replyKey).remove();
+}
+}
+
 function listenReviews() {
 var reviewList = document.getElementById('review-list');
 database.ref('reviews').on('value', snapshot => {
@@ -463,15 +500,52 @@ if (!data) { reviewList.innerHTML = '<p style="text-align:center;">아직 응원
 var arr = [];
 for (var k in data) { data[k].key = k; arr.push(data[k]); }
 arr.sort((a, b) => b.timestamp - a.timestamp);
-reviewList.innerHTML = arr.map(r => `
-<div class="review-card mobile-review-card" style="width: 100% !important; margin-bottom: 12px; padding: 15px; border: 1px solid #eee; border-radius: 10px;">
-<div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-<b style="font-size:14px;">${r.name}</b><button onclick="deleteReview('${r.key}')" style="border:none; background:none; cursor:pointer; color:#ccc;">삭제</button>
+
+reviewList.innerHTML = arr.map(r => {
+// 하위 대댓글(replies) 파싱 처리 - 기존 노드 보호 및 무결성 유지
+var repliesHtml = "";
+if(r.replies) {
+var replyArr = [];
+for(var rKey in r.replies) { r.replies[rKey].key = rKey; replyArr.push(r.replies[rKey]); }
+replyArr.sort((a, b) => a.timestamp - b.timestamp); // 답글은 오래된순 정렬
+repliesHtml = replyArr.map(rp => `
+<div style="background-color: #faf9f6; border-left: 3px solid #52b788; padding: 10px 12px; margin-top: 8px; border-radius: 4px; font-size: 13px;">
+<div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+<b style="color:#3a5a40;">↳ ${rp.name}</b>
+<button onclick="deleteReply('${r.key}', '${rp.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:11px;">삭제</button>
 </div>
-<div class="review-content-text" style="font-size:14px; color:#555;">${r.content}</div>
-</div>`).join('');
+<div style="color:#666; word-break:break-all;">${rp.content}</div>
+</div>
+`).join('');
+}
+
+return `
+<div class="review-card mobile-review-card" style="width: 100% !important; margin-bottom: 12px; padding: 15px; border: 1px solid #eee; border-radius: 10px; background:#fff;">
+<div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+<b style="font-size:14px; color:#111;">${r.name}</b>
+<div>
+<button onclick="toggleReplyForm('${r.key}')" style="border:none; background:none; cursor:pointer; color:#52b788; font-size:12px; font-weight:bold; margin-right:10px;">답글달기</button>
+<button onclick="deleteReview('${r.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:12px;">삭제</button>
+</div>
+</div>
+<div class="review-content-text" style="font-size:14px; color:#555; word-break:break-all; margin-bottom: 5px;">${r.content}</div>
+
+<!-- 대댓글 노출 영역 -->
+<div id="reply-list-${r.key}">${repliesHtml}</div>
+
+<!-- 대댓글 입력 토글 폼 -->
+<div id="reply-form-${r.key}" style="display:none; margin-top:12px; padding:10px; background:#f4f6f4; border-radius:6px; border:1px solid #e2e8e2;">
+<input type="text" id="reply-name-${r.key}" placeholder="답글 닉네임" style="width:100%; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; margin-bottom:6px;">
+<textarea id="reply-content-${r.key}" placeholder="따뜻한 답글을 남겨주세요" style="width:100%; height:60px; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; resize:none; margin-bottom:6px;"></textarea>
+<div style="text-align:right;">
+<button onclick="addReply('${r.key}')" style="background-color: #52b788; color: white; border: none; padding: 4px 15px; border-radius:4px; font-size:12px; cursor: pointer;">답글등록</button>
+</div>
+</div>
+</div>`;
+}).join('');
 });
 }
+
 function addReview() {
 var n = document.getElementById('review-name').value;
 var c = document.getElementById('review-content').value;
