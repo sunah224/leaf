@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -113,11 +114,15 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 .section-box { margin: 20px 10px !important; padding: 20px 12px !important; border-radius: 14px; }
 /* 고정 헤더 높이를 반영한 첫 섹션 배치 - 윗테두리 가림 방지 보정 */
 #basic-box.section-box { margin-top: 155px !important; border-top: 6px double #bcaaa4; border-radius: 14px; }
-#basic .container { gap: 0px !important; flex-direction: column !important; align-items: flex-end !important; } 
-/* basic 섹션 모바일 이미지 크기 40% 축소 (360px -> 216px) */
-#basic .content-img { flex: initial !important; max-width: 216px !important; min-height: auto !important; width: 100% !important; margin: 0 0 0 auto !important; }
-/* basic 섹션 모바일 본문: 사진 바로 아래 배치 및 우측 정렬 */
+
+/* basic 섹션 모바일 정렬 구조화 (사진 가운데 정렬을 위해 align-items 조정) */
+#basic .container { gap: 0px !important; flex-direction: column !important; align-items: center !important; } 
+/* basic 섹션 모바일 이미지 크기 40% 축소 및 테두리 안 정중앙 정렬 */
+#basic .content-img { flex: initial !important; max-width: 216px !important; min-height: auto !important; width: 100% !important; margin: 0 auto !important; }
+/* basic 섹션 모바일 본문: 사진 바로 아래 배치, 우측 정렬, 글자 크기 30% 축소 (17px/20px -> 11.9px/14px) */
 #basic .content-text { text-align: right !important; justify-content: flex-start !important; padding: 15px 5px 0 0 !important; width: 100% !important; align-items: flex-end !important; } 
+#basic .cursive-text { font-size: 14px !important; margin-bottom: 10px !important; } /* 영어 구절 30% 축소 */
+#basic .main-message { font-size: 11.9px !important; line-height: 1.6 !important; } /* 한글 메시지 30% 축소 */
 
 #about-founder.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; }
 /* founder 섹션 모바일 사진과 글사이 여백 완전히 제거 */
