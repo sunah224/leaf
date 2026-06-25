@@ -51,7 +51,7 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 #basic .container { flex-direction: row-reverse; align-items: stretch; gap: 40px; }
 #basic .content-text { display: flex; flex-direction: column; justify-content: flex-end; text-align: right; padding-right: 10px; padding-bottom: 10px; color: #a09080; }
 .cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #a09080; line-height: 1.6; margin-bottom: 25px; }
-.main-message { font-weight: bold; font-size: 17px; color: #a09080; line-height: 1.8; }
+.main-message { font-weight: bold; font-size: 17px; color: #a09080; line-height: 1.8; font-style: italic; } /* 이탤릭체 적용 */
 
 #about-leaf { padding-top: 60px; }
 #about-leaf .container { flex-direction: column; align-items: center; max-width: 850px; }
@@ -114,10 +114,16 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 .section-box { margin: 20px 10px !important; padding: 20px 12px !important; border-radius: 14px; }
 /* 고정 헤더 높이를 반영한 첫 섹션 배치 - 윗테두리 가림 방지 보정 */
 #basic-box.section-box { margin-top: 155px !important; border-top: 6px double #bcaaa4; border-radius: 14px; }
-#basic .container { gap: 15px !important; } /* basic 섹션 글과 사진 사이 여백 축소 보정 */
+#basic .container { gap: 0px !important; flex-direction: column !important; } /* basic 섹션 모바일 정렬 구조화 */
+#basic .content-text { text-align: center !important; justify-content: flex-start !important; padding: 15px 0 0 0 !important; width: 100% !important; } /* 글들을 사진 바로 아래 정중앙 정렬 배치 */
+
 #about-founder.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; }
-/* founder 섹션 모바일 사진과 글사이 여백 제거 */
+/* founder 섹션 모바일 사진과 글사이 여백 완전히 제거 */
 #about-founder .container { flex-direction: column !important; gap: 0px !important; width: 100% !important; }
+#about-founder .content-img { min-height: auto !important; background: transparent !important; }
+#about-founder .content-text { padding-top: 0 !important; margin-top: 0 !important; }
+#about-founder .content-text p:first-child { margin-top: 0 !important; }
+
 .container { flex-direction: column !important; gap: 20px; width: 100% !important; }
 /* LWS 섹션 이미지 여백 및 크기 조정 */
 .section-inner-logo { margin: 20px auto 15px auto; height: 60px; }
