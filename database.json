@@ -1,0 +1,41 @@
+
+
+/* 방문자 카운터 시스템 (날짜 포맷 정교화 및 트랜잭션 적용) */
+function setupVisitorCounter() {
+    try {
+        var now = new Date();
+        // 날짜를 YYYY-MM-DD 형식으로 확실하게 생성
+        var year = now.getFullYear();
+        var month = ('0' + (now.getMonth() + 1)).slice(-2);
+        var day = ('0' + now.getDate()).slice(-2);
+        var todayStr = year + "-" + month + "-" + day;
+        
+        var counterRef = database.ref('visitor_counter');
+
+        // 1. 트랜잭션을 사용하여 오늘 방문자 카운트 1 증가
+        counterRef.child(todayStr).transaction(function(currentCount) {
+            return (currentCount || 0) + 1;
+        }, function(error, committed, snapshot) {
+            if (error) {
+                console.error("카운트 업데이트 실패:", error);
+            } else if (committed) {
+                var todayEl = document.getElementById('today-count');
+                if(todayEl) todayEl.innerText = snapshot.val();
+                
+                // 오늘 카운트가 성공적으로 올라간 직후, 전체 카운트를 딱 한 번만 계산합니다. (on 대신 once 사용으로 최적화)
+                counterRef.once('value', function(snapshot) {
+                    var allData = snapshot.val();
+                    var totalSum = 0;
+                    if (allData) {
+                        for (var key in allData) {
+                            totalSum += parseInt(allData[key] || 0);
+                        }
+                    }
+                    var totalEl = document.getElementById('total-count');
+                    if(totalEl) totalEl.innerText = totalSum;
+                });
+            }
+        });
+
+    } catch (e) { console.error("방문자 시스템 오류:", e); }
+}
