@@ -254,7 +254,7 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
     <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 목표를 향해 쫓아갈 때 저 혼자 목표가 없다는 이유로 
     스스로가 한없이 초라해 보였던 시절이었습니다.</p>
 <p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 저는 사람을 좋아하고 친구들과 피상적인 이야기보단 
-    인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느깁니다.</p>
+    인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느깁니다.</p>
 <p>시행착오도 많았고 그 방황의 시간들이 아깝고 후회스럽기도 하죠. <strong><span class="handwriting">그리고 또 그 방황이 다시 찾아올지도 모른다는 두려움도 항상 있고요.</span></strong> 하지만 그 짙은 밤들이 있었기에 지금의 제가 있고, 남들의 속도에 치여 길을 잃은 사람들의 마음을 누구보다 깊이 지켜볼 수 있는 눈이 생겼습니다.</p>
 <p>이제는 후회 대신, <br class="mobile-br">제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. 그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서, 
     <strong class="handwriting">깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</strong></p>
@@ -456,7 +456,6 @@ document.getElementById('yesterday-count').innerText = data[yStr] || 0;
 });
 }
 
-// 대댓글(답글) 토글창 열기/닫기 기능 함수
 function toggleReplyForm(reviewKey) {
 var form = document.getElementById('reply-form-' + reviewKey);
 if(form.style.display === 'none' || form.style.display === '') {
@@ -466,7 +465,6 @@ form.style.display = 'none';
 }
 }
 
-// 대댓글 데이터 추가 함수 (기존 데이터 보존용 구조화 설계)
 function addReply(reviewKey) {
 var nameInput = document.getElementById('reply-name-' + reviewKey);
 var contentInput = document.getElementById('reply-content-' + reviewKey);
@@ -485,7 +483,6 @@ document.getElementById('reply-form-' + reviewKey).style.display = 'none';
 });
 }
 
-// 대댓글 전용 삭제 기능 함수
 function deleteReply(reviewKey, replyKey) {
 if(prompt("관리자 비밀번호") === MASTER_PASSWORD) {
 database.ref('reviews/' + reviewKey + '/replies/' + replyKey).remove();
@@ -502,15 +499,15 @@ for (var k in data) { data[k].key = k; arr.push(data[k]); }
 arr.sort((a, b) => b.timestamp - a.timestamp);
 
 reviewList.innerHTML = arr.map(r => {
-// 하위 대댓글(replies) 파싱 처리 - 기존 노드 보호 및 무결성 유지
 var repliesHtml = "";
 if(r.replies) {
 var replyArr = [];
 for(var rKey in r.replies) { r.replies[rKey].key = rKey; replyArr.push(r.replies[rKey]); }
-replyArr.sort((a, b) => a.timestamp - b.timestamp); // 답글은 오래된순 정렬
+replyArr.sort((a, b) => a.timestamp - b.timestamp);
 repliesHtml = replyArr.map(rp => `
-<div style="background-color: #faf9f6; border-left: 3px solid #52b788; padding: 10px 12px; margin-top: 8px; border-radius: 4px; font-size: 13px;">
-<div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+<!-- white-space: pre-wrap 적용으로 대댓글 영역 줄바꿈 및 연속 공백 활성화 -->
+<div style="background-color: #faf9f6; border-left: 3px solid #52b788; padding: 10px 12px; margin-top: 8px; border-radius: 4px; font-size: 13px; white-space: pre-wrap;">
+<div style="display:flex; justify-content:space-between; margin-bottom:4px; white-space: normal;">
 <b style="color:#3a5a40;">↳ ${rp.name}</b>
 <button onclick="deleteReply('${r.key}', '${rp.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:11px;">삭제</button>
 </div>
@@ -528,7 +525,8 @@ return `
 <button onclick="deleteReview('${r.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:12px;">삭제</button>
 </div>
 </div>
-<div class="review-content-text" style="font-size:14px; color:#555; word-break:break-all; margin-bottom: 5px;">${r.content}</div>
+<!-- white-space: pre-wrap 적용으로 댓글 본문 영역 줄바꿈 및 연속 공백 활성화 -->
+<div class="review-content-text" style="font-size:14px; color:#555; word-break:break-all; margin-bottom: 5px; white-space: pre-wrap;">${r.content}</div>
 
 <!-- 대댓글 노출 영역 -->
 <div id="reply-list-${r.key}">${repliesHtml}</div>
