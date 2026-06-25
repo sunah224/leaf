@@ -36,7 +36,7 @@ header { position: fixed; top: 0; left: 0; width: 100%; background-color: #fffff
 .logo-img-effect { transform: scale(1.02); }
 nav { display: flex; justify-content: center; max-width: 950px; margin: 0 auto; padding: 0 10px; gap: 20px; }
 nav a { text-decoration: none; color: #a09080; font-size: 17px; font-weight: normal !important; font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; transition: color 0.2s ease; padding: 5px 8px; white-space: nowrap; }
-nav a:hover, nav a.active-nav { color: #2d6a4f; }
+nav a:hover, nav a.active-nav { color: #2d6a4f !important; font-weight: bold !important; }
 
 .visitor-counter { margin-top: 12px; font-size: 13px; color: #8e7d73; font-weight: bold; display: flex; justify-content: center; gap: 15px; font-family: 'Georgia', serif; min-height: 20px; }
 .visitor-counter span em { font-style: normal; color: #2d6a4f; font-weight: 800; margin-left: 5px; }
@@ -101,61 +101,53 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 
 /* 모바일 전용 반응형 스타일 최적화 */
 @media (max-width: 768px) {
-    header { padding: 10px 0 8px 0; }
-    
-    /* 타이틀 중앙 정렬 및 모바일 크기 최적화 */
-    .logo-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-bottom: 10px; width: 100%; text-align: center; }
-    .logo-img-container { height: 50px; }
-    .logo-img { height: 50px; margin: 0 auto; }
-    .logo { font-size: 24px; text-align: center; display: block; width: 100%; }
-    
-    /* 네비게이션 정렬 */
-    nav { justify-content: center !important; flex-wrap: wrap !important; overflow-x: visible !important; padding: 0 10px 4px 10px; gap: 6px 12px !important; }
-    nav a { font-size: 14px !important; padding: 3px 5px !important; }
-    
-    /* 모바일 전체 테두리 박스 여백 균형 조정 */
-    .section-box { margin: 20px 10px !important; padding: 20px 12px !important; border-radius: 14px; }
-    
-    /* 고정 헤더 높이를 반영한 첫 섹션 배치 */
-    #basic.section-box { margin-top: 135px !important; border-top: 6px double #bcaaa4; border-radius: 14px; }
-    #about-founder.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; }
-    
-    .container { flex-direction: column !important; gap: 20px; width: 100% !important; }
-    
-    /* LWS 섹션 이미지 여백 및 크기 조정 */
-    .section-inner-logo { margin: 20px auto 15px auto; height: 60px; }
-    
-    /* 본문 폰트 가독성 */
-    .content-text { font-size: 14px !important; line-height: 1.75 !important; }
-    .about-leaf-text { font-size: 14px !important; line-height: 1.75 !important; }
-    .about-leaf-text h2 { font-size: 24px !important; }
-    .about-leaf-text .main-sub { font-size: 13px !important; margin-bottom: 25px; }
-    .about-leaf-text .point-title { font-size: 16px !important; margin-top: 30px; }
-    .cursive-text { font-size: 17px !important; margin-bottom: 15px; }
-    .footer-highlight-text { font-size: 18px !important; margin-top: 35px; }
-    
-    /* Profile 섹션 모바일 탈출 방지 및 세로 정렬 강제 */
-    #profile.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; }
-    #profile .container { flex-direction: column !important; align-items: center !important; justify-content: center !important; padding-left: 0 !important; width: 100% !important; gap: 20px !important; }
-    #profile .content-img { flex: initial !important; max-width: 180px !important; min-height: auto !important; width: 100% !important; }
-    #profile .content-text { font-size: 11px !important; align-items: center !important; text-align: center !important; width: 100% !important; }
-    #profile .profile-title, #profile .profile-list-group, #profile .research-group { text-align: center !important; width: 100% !important; max-width: 100% !important; }
-    #profile .profile-list-group { border-left: none !important; padding-left: 0 !important; border-top: 2px dashed #52b788; padding-top: 12px; }
-    
-    /* Footprints 섹션 모바일 가로 확장 및 폰트 축소 */
-    #footprints .container { width: 100% !important; max-width: 100% !important; padding: 0 !important; }
-    .footprints-box { padding: 20px 15px !important; margin-bottom: 20px !important; }
-    .footprints-box h4 { font-size: 14px !important; margin-bottom: 12px !important; }
-    .footprints-box input, .footprints-box textarea { padding: 10px 12px !important; font-size: 12px !important; }
-    .footprints-box textarea { height: 110px !important; }
-    .footprints-box button { padding: 10px 20px !important; font-size: 12px !important; }
-    
-    /* 동적 생성 리뷰 카드 모바일 폰트 크기 강제 제어 */
-    .mobile-review-card { padding: 12px !important; margin-bottom: 8px !important; }
-    .mobile-review-card b { font-size: 12px !important; }
-    .mobile-review-card .review-content-text { font-size: 12px !important; line-height: 1.5 !important; }
-    
-    .mobile-br { display: block; }
+header { padding: 10px 0 8px 0; }
+/* 타이틀 중앙 정렬 및 모바일 크기 최적화 */
+.logo-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-bottom: 10px; width: 100%; text-align: center; }
+.logo-img-container { height: 50px; }
+.logo-img { height: 50px; margin: 0 auto; }
+.logo { font-size: 24px; text-align: center; display: block; width: 100%; }
+/* 네비게이션 정렬 */
+nav { justify-content: center !important; flex-wrap: wrap !important; overflow-x: visible !important; padding: 0 10px 4px 10px; gap: 6px 12px !important; }
+nav a { font-size: 14px !important; padding: 3px 5px !important; }
+/* 모바일 전체 테두리 박스 여백 균형 조정 */
+.section-box { margin: 20px 10px !important; padding: 20px 12px !important; border-radius: 14px; }
+/* 고정 헤더 높이를 반영한 첫 섹션 배치 - 윗테두리 가림 방지 보정 */
+#basic-box.section-box { margin-top: 155px !important; border-top: 6px double #bcaaa4; border-radius: 14px; }
+#basic .container { gap: 15px !important; } /* basic 섹션 글과 사진 사이 여백 축소 보정 */
+#about-founder.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; }
+/* founder 섹션 모바일 사진과 글사이 여백 제거 */
+#about-founder .container { flex-direction: column !important; gap: 0px !important; width: 100% !important; }
+.container { flex-direction: column !important; gap: 20px; width: 100% !important; }
+/* LWS 섹션 이미지 여백 및 크기 조정 */
+.section-inner-logo { margin: 20px auto 15px auto; height: 60px; }
+/* 본문 폰트 가독성 */
+.content-text { font-size: 14px !important; line-height: 1.75 !important; }
+.about-leaf-text { font-size: 14px !important; line-height: 1.75 !important; }
+.about-leaf-text h2 { font-size: 24px !important; }
+.about-leaf-text .main-sub { font-size: 13px !important; margin-bottom: 25px; }
+.about-leaf-text .point-title { font-size: 16px !important; margin-top: 30px; }
+.cursive-text { font-size: 17px !important; margin-bottom: 15px; }
+.footer-highlight-text { font-size: 18px !important; margin-top: 35px; }
+/* Profile 섹션 모바일 탈출 방지 및 세로 정렬 강제 */
+#profile.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; padding-bottom: 0 !important; } /* 마지막 글씨와 테두리 사이 여백 제거 */
+#profile .container { flex-direction: column !important; align-items: center !important; justify-content: center !important; padding-left: 0 !important; width: 100% !important; gap: 20px !important; }
+#profile .content-img { flex: initial !important; max-width: 180px !important; min-height: auto !important; width: 100% !important; }
+#profile .content-text { font-size: 11px !important; align-items: center !important; text-align: center !important; width: 100% !important; }
+#profile .profile-title, #profile .profile-list-group, #profile .research-group { text-align: center !important; width: 100% !important; max-width: 100% !important; }
+#profile .profile-list-group { border-left: none !important; padding-left: 0 !important; border-top: 1px solid #eee; padding-top: 12px; } /* 초록선 대신 연한 가로선으로 변경 */
+/* Footprints 섹션 모바일 가로 확장 및 폰트 축소 */
+#footprints .container { width: 100% !important; max-width: 100% !important; padding: 0 !important; }
+.footprints-box { padding: 20px 15px !important; margin-bottom: 20px !important; }
+.footprints-box h4 { font-size: 14px !important; margin-bottom: 12px !important; }
+.footprints-box input, .footprints-box textarea { padding: 10px 12px !important; font-size: 12px !important; }
+.footprints-box textarea { height: 110px !important; }
+.footprints-box button { padding: 10px 20px !important; font-size: 12px !important; }
+/* 동적 생성 리뷰 카드 모바일 폰트 크기 강제 제어 */
+.mobile-review-card { padding: 12px !important; margin-bottom: 8px !important; }
+.mobile-review-card b { font-size: 12px !important; }
+.mobile-review-card .review-content-text { font-size: 12px !important; line-height: 1.5 !important; }
+.mobile-br { display: block; }
 }
 </style>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
@@ -178,11 +170,11 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 </div>
 </header>
 
-<div class="section-box" style="margin-top: 180px;">
-<section id="basic">
+<div class="section-box" id="basic-box" style="margin-top: 180px;">
+<section id="basic" style="padding: 0;">
 <div class="container">
 <div class="content-img"><img src="basic.webp" alt="Main Profile" onerror="this.parentElement.style.display='none';"></div>
-<div class="content-text">
+<div class="content-text" style="padding-top: 10px;"> <!-- 글과 사진 사이 상단 여백 추가 -->
 <div class="cursive-text">May you find peace<br>in your deepest heart<br>whenever you talk to me<br>or visit our spot</div>
 <div class="main-message">나와 이야기할 때나 우리의 공간을 찾을 때,<br>네 마음 깊은 곳에 평온이 깃들기를.</div>
 </div>
@@ -190,7 +182,7 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 </section>
 </div>
 
-<div class="section-box">
+<div class="section-box" id="about-leaf-box">
 <section id="about-leaf" style="padding-top: 0; min-height: auto;">
 <div class="container">
 <div class="about-leaf-text">
@@ -226,7 +218,7 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 </section>
 </div>
 
-<div class="section-box">
+<div class="section-box" id="about-founder-box">
 <section id="about-founder" style="padding-top: 0; min-height: auto;">
 <div class="container">
 <div class="content-img"><img src="about.webp" alt="About Founder" onerror="this.parentElement.style.display='none';"></div>
@@ -242,7 +234,7 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 </section>
 </div>
 
-<div class="section-box">
+<div class="section-box" id="profile-box">
 <section id="profile" style="padding-top: 0; min-height: auto;">
 <div class="container">
 <div class="content-img"><img src="profile.webp" alt="Profile Image" onerror="this.parentElement.style.display='none';"></div>
@@ -253,35 +245,38 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 <li>• 주요 연구 관심사: 청소년 정신건강, 긍정심리,<br>쉬었음청년, 2030직장인 이직퇴직고민</li>
 <li>• 연구계획서 주제: 청소년의 스트레스가 정신건강에 미치는 영향: 긍정심리자원의 매개 효과</li>
 </ul>
-<ul class="profile-list-group" style="font-weight: bold; color: #111; border-left: 3px solid #52b788; padding-left: 12px; display: block; text-align: left; max-width: 580px;">
+<!-- 초록색 가로선(border-left)을 연한 가로선(border-top)으로 교체 및 마진 조정 -->
+<ul class="profile-list-group" style="font-weight: bold; color: #111; border-top: 1px solid #eee; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-bottom: 0;">
 <li>'26 서울탑 정신건강의학과 의원 데스크행정</li>
 <li>'25 (주)아토머스 마인드카페 강남삼성점 매니저</li>
 <li>'21 한국아동청소년 심리상담센터 집단상담 코리더(고2,고3), 행정실장</li>
 <li>'17 헬로스마일 종로센터 행정실장</li>
 </ul>
-<ul class="profile-list-group" style="font-weight: bold; color: #444; display: block; text-align: left; max-width: 580px; margin-top: 21px; margin-bottom: 0;">
+<!-- 종로센터 행정실장 리스트와 가로선 사이 여백 제거(margin-top: 0) 및 초록선 대신 연한 선 적용 -->
+<ul class="profile-list-group" style="font-weight: bold; color: #444; border-top: 1px solid #eee; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0;">
 <li>• 한국직업능력진흥원 심리상담사 1급</li>
 <li>• 한국직업능력진흥원 미술심리상담사 1급</li>
 <li>• 한국직업능력진흥원 진로적성상담사 1급</li>
 <li>• 한국직업능력진흥원 가족상담사 1급</li>
 <li>• 한국직업능력진흥원 다문화심리상담사 1급</li>
 </ul>
-<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; padding-top: 10px; display: block; text-align: left; max-width: 580px; margin-top: 5px;">
-    <li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">한국상담심리학회 수련회원</li>
-    <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 5px;">- 공개사례 발표회 30시간 이수</li>
-    <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 20px;">- 성균관대학교 외상심리연구소 집단상담 18시간 이수</li>
-    <li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">한국상담학회 준회원</li>
-    <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 25px;">- 집단상담 보조지도자 11시간 이수</li>
-    <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">여성가족부 청소년상담사 2급 준비 중</li>
-    <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">한국상담심리학회 상담심리사 2급 준비 중</li>
-    <li style="color: #c8bcad; font-size: 11.9px;">한국상담학회 상담심리사 2급 준비 중</li>
+<!-- 마지막 글씨 수련회원 정보 그룹의 하단 여백 제거 (padding-bottom: 0, margin-bottom: 0) -->
+<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; padding-top: 10px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0; padding-bottom: 0;">
+<li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">한국상담심리학회 수련회원</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 5px;">- 공개사례 발표회 30시간 이수</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 20px;">- 성균관대학교 외상심리연구소 집단상담 18시간 이수</li>
+<li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">한국상담학회 준회원</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 25px;">- 집단상담 보조지도자 11시간 이수</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">여성가족부 청소년상담사 2급 준비 중</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">한국상담심리학회 상담심리사 2급 준비 중</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0;">한국상담학회 상담심리사 2급 준비 중</li>
 </ul>
-</div> 
-</div> 
+</div>
+</div>
 </section>
 </div>
 
-<div class="section-box">
+<div class="section-box" id="Find-Me-box">
 <section id="Find-Me" style="padding-top: 0; min-height: auto;">
 <div class="container">
 <div class="content-img"><img src="find_me.webp" alt="Find Me" onerror="this.parentElement.style.display='none';"></div>
@@ -301,13 +296,14 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 </section>
 </div>
 
-<div class="section-box">
-<section id="footprints" style="padding-top: 20px; min-height: auto; border-bottom: none;">
+<!-- footprints 상하단 패딩 최소화하여 테두리와의 여백 조정 -->
+<div class="section-box" id="footprints-box" style="padding-top: 15px; padding-bottom: 0;">
+<section id="footprints" style="padding-top: 0; padding-bottom: 0; min-height: auto; border-bottom: none;">
 <div class="container" style="max-width: 720px; flex-direction: column; align-items: center; gap: 0;">
-<div style="margin-bottom: 20px; text-align: center;">
-<h3 id="footprints-title" style="font-family: 'Georgia', serif; font-size: 26px; color: #2d6a4f; margin-bottom: 12px; font-weight: bold;">Footprints</h3>
+<div style="margin-bottom: 10px; text-align: center;"> <!-- 타이틀 여백 축소 -->
+<h3 id="footprints-title" style="font-family: 'Georgia', serif; font-size: 26px; color: #2d6a4f; margin-bottom: 5px; font-weight: bold;">Footprints</h3>
 </div>
-<div class="footprints-box" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 35px;">
+<div class="footprints-box" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 25px;">
 <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">한 줄 응원 남기기</h4>
 <div style="margin-bottom: 15px;"><input type="text" id="review-name" placeholder="닉네임" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
 <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
@@ -318,8 +314,9 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 </div>
 </div>
 </div>
-<div id="review-list" style="margin-bottom: 40px; width: 100%;"></div>
-<div style="max-width: 650px; margin: 0 auto 30px; width: 100%;">
+<div id="review-list" style="margin-bottom: 25px; width: 100%;"></div>
+<!-- 마지막 사진들의 하단 마진을 완전히 제거하여 테두리와 밀착 조정 -->
+<div style="max-width: 650px; margin: 0 auto 0px; width: 100%; padding-bottom: 0;">
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%;">
 <div style="padding: 8px;"><img src="review_1.webp" style="width: 100%; border-radius: 6px;"></div>
 <div style="padding: 8px;"><img src="review_2.webp" style="width: 100%; border-radius: 6px;"></div>
@@ -337,7 +334,7 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 리프 웰니스 스튜디오. 소장: 현선아. 개인정보 보호관리자: 현선아. <br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #a09080;">sunahhn@sunahhn.com</a>. DM: <a href="https://www.instagram.com/sunahhn" target="_blank" style="color: #a09080;">@sunahhn</a><br>
 
 <br>Copyright © 2026 LWS All Rights Reserved. Powered by Firebase.<br><span style="font-weight:bold;">
-    자문법무법인: 법무법인 새별 (대표변호사, 안성열)</span>
+자문법무법인: 법무법인 새별 (대표변호사, 안성열)</span>
 </div>
 <div class="visitor-counter" id="visitor-display-box" style="margin-bottom: 15px; color: #2d6a4f;">
 <span>Today :<em id="today-count">0</em></span>
@@ -346,7 +343,7 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 </div>
 <!-- 'Screenshot_20260625_115321_Instagram.jpg' 참고 문구 삽입 영역 -->
 <div style="margin-top: 5px; margin-bottom: 15px; font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #a09080; word-spacing: 2px;">
-    LWS - Psychological Counseling Space
+LWS - Psychological Counseling Space
 </div>
 </div>
 </section>
@@ -357,87 +354,113 @@ var firebaseConfig = { apiKey: "AIzaSyCd0izexUnK2e3hFF72F09pSvNDMUX0Bg", authDom
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
-document.addEventListener('DOMContentLoaded', function() { 
-    setupVisitorCounter(); 
-    listenReviews(); 
-    setupScrollBehavior(); 
- });
+document.addEventListener('DOMContentLoaded', function() {
+setupVisitorCounter();
+listenReviews();
+setupScrollBehavior();
+setupScrollSpy(); // 스크롤 시 네비게이션 색상 변경 기능 추가
+});
 
 function setupScrollBehavior() {
-    var links = document.querySelectorAll('#main-navigation a, #logo-title-wrap');
-    var header = document.getElementById('main-header');
-    
-    links.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            var targetId = this.getAttribute('href');
-            if (targetId && targetId.startsWith('#')) {
-                e.preventDefault();
-                var targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    var boxElement = targetSection.closest('.section-box') || targetSection;
-                    
-                    // 실시간 고정 헤더의 높이 측정 후 정확하게 맞춤 오차 보정 (+2px 여유)
-                    var headerHeight = header.getBoundingClientRect().height;
-                    var elementPosition = boxElement.getBoundingClientRect().top;
-                    var offsetPosition = elementPosition + window.pageYOffset - headerHeight + 2;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
+var links = document.querySelectorAll('#main-navigation a, #logo-title-wrap');
+var header = document.getElementById('main-header');
+links.forEach(function(link) {
+link.addEventListener('click', function(e) {
+var targetId = this.getAttribute('href');
+if (targetId && targetId.startsWith('#')) {
+e.preventDefault();
+var targetSection = document.querySelector(targetId);
+if (targetSection) {
+var boxElement = targetSection.closest('.section-box') || targetSection;
+var headerHeight = header.getBoundingClientRect().height;
+var elementPosition = boxElement.getBoundingClientRect().top;
+var offsetPosition = elementPosition + window.pageYOffset - headerHeight + 2;
+window.scrollTo({
+top: offsetPosition,
+behavior: 'smooth'
+});
+}
+}
+});
+});
+}
+
+// 각 섹션 도달 시 상단 네비게이션 메뉴 색상이 동적으로 변경되는 함수 (ScrollSpy)
+function setupScrollSpy() {
+var sections = document.querySelectorAll('.section-box');
+var navLinks = document.querySelectorAll('#main-navigation a');
+var header = document.getElementById('main-header');
+
+window.addEventListener('scroll', function() {
+var fromTop = window.scrollY + header.getBoundingClientRect().height + 10;
+var currentSectionId = "";
+
+sections.forEach(function(box) {
+var section = box.querySelector('section');
+if (section) {
+var sectionTop = box.offsetTop;
+var sectionHeight = box.offsetHeight;
+if (fromTop >= sectionTop && fromTop < sectionTop + sectionHeight) {
+currentSectionId = section.getAttribute('id');
+}
+}
+});
+
+navLinks.forEach(function(link) {
+link.classList.remove('active-nav');
+if (link.getAttribute('data-section') === currentSectionId) {
+link.classList.add('active-nav');
+}
+});
+});
 }
 
 function setupVisitorCounter() {
-    var now = new Date();
-    var todayStr = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
-    var yesterday = new Date(now);
-    yesterday.setDate(now.getDate() - 1);
-    var yStr = yesterday.getFullYear() + "-" + (yesterday.getMonth() + 1) + "-" + yesterday.getDate();
-    
-    database.ref('visitor_counter/' + todayStr).transaction(count => (count || 0) + 1);
-    database.ref('visitor_counter').on('value', snapshot => {
-        var data = snapshot.val() || {};
-        var total = 0;
-        for (var k in data) total += data[k];
-        document.getElementById('total-count').innerText = total;
-        document.getElementById('today-count').innerText = data[todayStr] || 0;
-        document.getElementById('yesterday-count').innerText = data[yStr] || 0;
-    });
+var now = new Date();
+var todayStr = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
+var yesterday = new Date(now);
+yesterday.setDate(now.getDate() - 1);
+var yStr = yesterday.getFullYear() + "-" + (yesterday.getMonth() + 1) + "-" + yesterday.getDate();
+database.ref('visitor_counter/' + todayStr).transaction(count => (count || 0) + 1);
+database.ref('visitor_counter').on('value', snapshot => {
+var data = snapshot.val() || {};
+var total = 0;
+for (var k in data) total += data[k];
+document.getElementById('total-count').innerText = total;
+document.getElementById('today-count').innerText = data[todayStr] || 0;
+document.getElementById('yesterday-count').innerText = data[yStr] || 0;
+});
 }
 function listenReviews() {
-    var reviewList = document.getElementById('review-list');
-    database.ref('reviews').on('value', snapshot => {
-        var data = snapshot.val();
-        if (!data) { reviewList.innerHTML = '<p style="text-align:center;">아직 응원의 한 마디가 없습니다. 🍃</p>'; return; }
-        var arr = [];
-        for (var k in data) { data[k].key = k; arr.push(data[k]); }
-        arr.sort((a, b) => b.timestamp - a.timestamp);
-        reviewList.innerHTML = arr.map(r => `
-            <div class="review-card mobile-review-card" style="width: 100% !important; margin-bottom: 12px; padding: 15px; border: 1px solid #eee; border-radius: 10px;">
-                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                    <b style="font-size:14px;">${r.name}</b><button onclick="deleteReview('${r.key}')" style="border:none; background:none; cursor:pointer; color:#ccc;">삭제</button>
-                </div>
-                <div class="review-content-text" style="font-size:14px; color:#555;">${r.content}</div>
-            </div>`).join('');
-    });
+var reviewList = document.getElementById('review-list');
+database.ref('reviews').on('value', snapshot => {
+var data = snapshot.val();
+if (!data) { reviewList.innerHTML = '<p style="text-align:center;">아직 응원의 한 마디가 없습니다. 🍃</p>'; return; }
+var arr = [];
+for (var k in data) { data[k].key = k; arr.push(data[k]); }
+arr.sort((a, b) => b.timestamp - a.timestamp);
+reviewList.innerHTML = arr.map(r => `
+<div class="review-card mobile-review-card" style="width: 100% !important; margin-bottom: 12px; padding: 15px; border: 1px solid #eee; border-radius: 10px;">
+<div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+<b style="font-size:14px;">${r.name}</b><button onclick="deleteReview('${r.key}')" style="border:none; background:none; cursor:pointer; color:#ccc;">삭제</button>
+</div>
+<div class="review-content-text" style="font-size:14px; color:#555;">${r.content}</div>
+</div>`).join('');
+});
 }
 function addReview() {
-    var n = document.getElementById('review-name').value;
-    var c = document.getElementById('review-content').value;
-    if(!n || !c) return alert("닉네임과 내용을 입력해주세요.");
-    database.ref('reviews').push({name: n, content: c, timestamp: Date.now()}).then(() => {
-        document.getElementById('review-name').value = ''; document.getElementById('review-content').value = '';
-    });
+var n = document.getElementById('review-name').value;
+var c = document.getElementById('review-content').value;
+if(!n || !c) return alert("닉네임과 내용을 입력해주세요.");
+database.ref('reviews').push({name: n, content: c, timestamp: Date.now()}).then(() => {
+document.getElementById('review-name').value = ''; document.getElementById('review-content').value = '';
+});
 }
 function deleteReview(k) {
-    if(prompt("관리자 비밀번호") === MASTER_PASSWORD) database.ref('reviews/' + k).remove();
+if(prompt("관리자 비밀번호") === MASTER_PASSWORD) database.ref('reviews/' + k).remove();
 }
 function clearBrokenData() {
-    if(prompt("관리자 비밀번호") === MASTER_PASSWORD && confirm("전체 삭제하시겠습니까?")) database.ref('reviews').remove();
+if(prompt("관리자 비밀번호") === MASTER_PASSWORD && confirm("전체 삭제하시겠습니까?")) database.ref('reviews').remove();
 }
 </script>
 </body>
