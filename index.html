@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -149,17 +150,18 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 #profile .profile-title, #profile .profile-list-group, #profile .research-group { text-align: center !important; width: 100% !important; max-width: 100% !important; }
 #profile .profile-list-group { border-left: none !important; padding-left: 0 !important; border-top: 1px solid #eee; padding-top: 12px; } 
 
-/* Find Me 섹션 모바일 화면 한 페이지 최적화 (사진 확대 및 링크별 글자 크기 지정 반영) */
-#Find-Me.section-box { padding: 15px 12px !important; }
+/* Find Me 섹션 모바일 화면 최적화 (사진 확대, 하단 여백 최소화, 로고 아이콘 30% 축소) */
+#Find-Me.section-box { padding: 15px 12px 2px 12px !important; } /* 테두리 안쪽 하단 부분 여백 대폭 제거 */
 #Find-Me .container { gap: 10px !important; flex-direction: column !important; align-items: center !important; }
-#Find-Me .content-img { flex: initial !important; max-width: 180px !important; min-height: auto !important; width: 100% !important; } /* 사진 20% 확대 (150px -> 180px) */
+#Find-Me .content-img { flex: initial !important; max-width: 216px !important; min-height: auto !important; width: 100% !important; } /* 사진 기존(180px)에서 20% 확대 적용 */
 #Find-Me .content-text { padding-top: 10px !important; width: 100% !important; display: flex; justify-content: center; }
 #Find-Me .contact-box { align-items: center !important; text-align: center !important; width: 100% !important; }
 #Find-Me .contact-list { display: flex !important; flex-direction: column !important; align-items: flex-start !important; }
-#Find-Me .contact-item { margin-bottom: 8px !important; gap: 10px !important; font-size: 9.12px !important; } /* 일반 링크 글자크기 20% 축소 (11.4px -> 9.12px) */
+#Find-Me .contact-item { margin-bottom: 8px !important; gap: 10px !important; font-size: 9.12px !important; } 
+#Find-Me .contact-item img { width: 19.6px !important; height: 19.6px !important; } /* 로고 아이콘 크기 30% 축소 (28px -> 19.6px) */
 #Find-Me .contact-item.email-item { margin-bottom: 12px !important; } 
-#Find-Me .contact-item.open-kakao-item a { font-size: 11.22px !important; } /* 오픈카카오 링크 글자크기 10% 확대 (10.2px -> 11.22px) */
-#Find-Me .price-info { margin-top: 5px !important; padding-top: 10px !important; width: 100% !important; text-align: center; }
+#Find-Me .contact-item.open-kakao-item a { font-size: 11.22px !important; } 
+#Find-Me .price-info { margin-top: 5px !important; padding-top: 10px !important; padding-bottom: 0 !important; width: 100% !important; text-align: center; }
 
 /* Footprints 섹션 모바일 가로 확장 및 폰트 축소 */
 #footprints .container { width: 100% !important; max-width: 100% !important; padding: 0 !important; }
@@ -295,7 +297,7 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 25px;">- 집단상담 보조지도자 11시간 이수</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">여성가족부 청소년상담사 2급 준비 중</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">한국상담심리학회 상담심리사 2급 준비 중</li>
-<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0;">한국상담학회 상담심리사 2급 준비 중</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0;">한국상담학회 상담심리사 2급 Jewelry 준비 중</li>
 </ul>
 </div>
 </div>
