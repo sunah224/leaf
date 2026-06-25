@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-N2T54XW4');</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leaf Wellness Studio</title>
+<title>Leaf Wellness Studio | 현선아 상담심리사</title>
+<meta name="description" content="현선아 상담심리사가 운영하는 심리상담 스튜디오 Leaf Wellness Studio입니다. 청소년 정신건강, 긍정심리, 이직 고민 상담을 위한 안전한 연결의 공간을 제공합니다.">
+<meta name="keywords" content="현선아, 상담심리사, Leaf Wellness Studio, 심리상담, 리프웰니스스튜디오, 청소년상담, 긍정심리, 강남상담소, 심리치유">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; color: #333; background-color: #ffffff; line-height: 1.6; }
@@ -19,7 +24,6 @@ html { scroll-behavior: smooth; }
 .price-soft-green { color: #a09080; opacity: 0.8; font-weight: bold; }
 .subtle-green { color: #3a5a40; }
 
-/* 톤다운된 이중 테두리 */
 .section-box { border: 6px double #bcaaa4; margin: 40px 20px; border-radius: 20px; padding: 40px 20px; }
 
 header { position: fixed; top: 0; left: 0; width: 100%; background-color: #ffffff; z-index: 1000; padding: 20px 0 10px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
@@ -30,10 +34,8 @@ header { position: fixed; top: 0; left: 0; width: 100%; background-color: #fffff
 .logo { font-family: 'Playfair Display', serif; font-size: 42px; font-style: italic; color: #2d6a4f; font-weight: 700 !important; display: inline-block; white-space: nowrap; transition: text-shadow 0.2s ease-in-out; text-shadow: none !important; }
 
 .logo-img-effect { transform: scale(1.02); }
-.logo-wrap:hover .logo { text-shadow: none !important; }
-.logo-wrap:hover .logo-img { transform: scale(1.02); }
 nav { display: flex; justify-content: center; max-width: 950px; margin: 0 auto; padding: 0 10px; gap: 20px; }
-nav a { text-decoration: none; color: #a09080; font-size: 17px; font-weight: 800; font-family: 'Arial Black', Gadget, sans-serif; transition: color 0.2s ease; padding: 5px 8px; white-space: nowrap; }
+nav a { text-decoration: none; color: #a09080; font-size: 17px; font-weight: normal !important; font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; transition: color 0.2s ease; padding: 5px 8px; white-space: nowrap; }
 nav a:hover, nav a.active-nav { color: #2d6a4f; }
 
 .visitor-counter { margin-top: 12px; font-size: 13px; color: #8e7d73; font-weight: bold; display: flex; justify-content: center; gap: 15px; font-family: 'Georgia', serif; min-height: 20px; }
@@ -65,90 +67,66 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .section-inner-logo { display: block; margin: 60px auto 10px auto; height: 92px; width: auto; object-fit: contain; }
 .no-list-style { list-style: none; padding: 0; }
 
-/* Founder 섹션 톤업 브라운 */
+/* founder 섹션 글자크기 20% 축소 (17px -> 13.6px) */
+#about-founder .content-text { font-size: 13.6px; }
 #about-founder .content-text p { margin-bottom: 24px; line-height: 1.8; color: #6b5d51; font-weight: 500; }
 #about-founder .content-text .special-green { color: #2d6a4f; }
-#profile .content-text { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
-.profile-title { font-size: 19px; font-weight: bold; margin-bottom: 12px; color: #111; display: inline-block; text-align: left; width: 100%; max-width: 580px; }
-.profile-list-group { list-style: none; margin-bottom: 30px; padding: 0; text-align: left; width: 100%; max-width: 580px; }
-.profile-list-group li { margin-bottom: 10px; font-size: 17px; line-height: 1.8; }
-.research-group { width: 100%; max-width: 580px; margin: 0 0 30px 0; color: #2d6a4f; font-weight: bold; }
 
+/* Profile 섹션 정중앙 배치 정렬 구조 수정 */
+#profile .container { display: flex; flex-direction: row !important; gap: 40px; align-items: flex-start !important; justify-content: center !important; max-width: 900px; margin: 0 auto; padding-left: 60px; }
+#profile .content-img { flex: 0 0 252px; max-width: 252px; min-height: 168px; }
+#profile .content-text { flex: 0 1 auto; display: flex; flex-direction: column; align-items: flex-start; text-align: left; font-size: 11.9px !important; }
+.profile-title { font-size: 13.3px; font-weight: bold; margin-top: 0; margin-bottom: 8.4px; color: #111; display: inline-block; text-align: left; width: 100%; max-width: 580px; }
+.profile-list-group { list-style: none; margin-bottom: 21px; padding: 0; text-align: left; width: 100%; max-width: 580px; }
+.profile-list-group li { margin-bottom: 7px; font-size: 11.9px; line-height: 1.8; }
+.research-group { width: 100%; max-width: 580px; margin: 0 0 21px 0; color: #2d6a4f; font-weight: bold; text-align: left; }
+
+/* Find Me 섹션 글자 40% 축소 적용 */
 #Find-Me .container { justify-content: center; gap: 35px; max-width: 850px; margin: 0 auto; align-items: center; }
 #Find-Me .content-text { flex: 0 1 auto; display: flex; align-items: center; padding-top: 40px; }
 .contact-box { width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; }
 .contact-list { list-style: none; padding: 0; margin: 0; display: inline-block; text-align: left; }
-.contact-item { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; font-family: 'Arial', sans-serif; font-size: 19px; font-weight: bold; line-height: 1.2; }
+.contact-item { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; font-family: 'Arial', sans-serif; font-size: 11.4px; font-weight: bold; line-height: 1.2; }
 .contact-item img { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; }
 .contact-item img.kakao-logo, .contact-item img.blog-logo { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; }
 .contact-item a { color: #a09080; text-decoration: none; transition: color 0.2s ease; }
 .contact-item a:hover { text-decoration: underline; color: #52b788; }
 .contact-item.email-item { margin-bottom: 60px; }
 .contact-item.open-kakao-item { margin-bottom: 0; }
-.contact-item.open-kakao-item a { color: #2d6a4f; font-size: 17px; }
-.price-info { font-size: 17px; font-weight: bold; color: #a09080; border-top: 1px solid #ddd; padding-top: 18px; margin-top: 10px; display: inline-block; width: auto; }
+.contact-item.open-kakao-item a { color: #2d6a4f; font-size: 10.2px; }
+.price-info { font-size: 10.2px; font-weight: bold; color: #a09080; border-top: 1px solid #ddd; padding-top: 18px; margin-top: 10px; display: inline-block; width: auto; }
+
 #review-list { display: flex; flex-wrap: wrap; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
 .review-card { background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); width: calc(50% - 8px); min-width: 280px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
 
 @media (max-width: 768px) {
-header { padding: 15px 0 5px 0; }
-.logo-wrap { gap: 12px; margin-bottom: 10px; }
-.logo-img-container, .logo-img { height: 64px; }
-.logo { font-size: 28px; }
-nav { justify-content: flex-start; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding: 0 15px 8px 15px; gap: 15px; }
-nav a { font-size: 14px; padding: 4px 8px; }
-nav::-webkit-scrollbar { display: none; }
-.visitor-counter { margin-top: 8px; font-size: 11px; gap: 10px; min-height: 16px; }
-section { padding: 40px 20px; min-height: auto; }
-.container { flex-direction: column !important; gap: 30px; align-items: center; }
-.content-img { flex: 0 0 auto; width: 100%; max-width: 300px; min-height: auto; }
-#profile .content-img { max-width: 210px; }
-.content-text { text-align: left !important; padding: 0 !important; font-size: 14.5px; }
-#about-founder .content-text { text-align: left !important; }
-#basic { padding-top: 100px; padding-bottom: 30px; }
-#basic .container { flex-direction: column !important; align-items: center; gap: 20px; }
-#basic .content-text { text-align: center !important; padding: 0 !important; justify-content: center !important; }
-.cursive-text { margin-bottom: 15px; font-size: 16px !important; }
-.main-message { font-size: 14.5px !important; }
-#about-leaf { padding-top: 40px; }
-#about-leaf .about-leaf-text h2 { font-size: 24px !important; }
-#about-leaf .about-leaf-text .main-sub { font-size: 13.5px !important; margin-bottom: 25px !important; }
-#about-leaf .about-leaf-text .intro-title { font-size: 15px !important; margin-bottom: 20px !important; }
-#about-leaf .about-leaf-text .point-title { font-size: 16px !important; margin-top: 30px !important; }
-#about-leaf .about-leaf-text { font-size: 14.5px !important; }
-.about-leaf-text .sub-p-bold { font-size: 14.5px !important; }
-.section-inner-logo { height: 64px !important; margin: 40px auto 10px auto !important; }
-.mobile-br { display: block; }
-.footer-highlight-text { font-size: 18px !important; margin-top: 35px; padding: 0 10px; }
-#profile .content-text { text-align: left !important; padding: 0 5px !important; align-items: flex-start !important; }
-#profile .profile-title { font-size: 15px !important; margin-bottom: 8px !important; line-height: 1.4 !important; max-width: 100% !important; text-align: left !important; }
-#profile .research-group { text-align: left !important; width: 100% !important; max-width: 290px !important; margin: 0 0 18px 0 !important; }
-#profile .research-group li { font-size: 12.5px !important; margin-bottom: 6px !important; line-height: 1.6 !important; }
-#profile .profile-list-group:not(.research-group) { margin-bottom: 18px !important; max-width: 100% !important; text-align: left !important; }
-#profile .profile-list-group:not(.research-group) li { font-size: 12.5px !important; margin-bottom: 6px !important; line-height: 1.6 !important; }
-#profile .profile-list-group[style*="border-left"] { border-left: 3px solid #52b788 !important; border-top: none !important; padding-left: 12px !important; padding-top: 0 !important; text-align: left !important; display: inline-block !important; width: auto !important; max-width: 290px !important; margin: 0 0 18px 0 !important; }
-#Find-Me .container { gap: 30px; max-width: 100%; }
-#Find-Me .content-text { margin-left: 0; align-items: center; padding-top: 0 !important; }
-#Find-Me .contact-box { align-items: center; text-align: center; }
-#Find-Me .contact-item { font-size: 13.5px !important; gap: 10px !important; margin-bottom: 14px !important; }
-#Find-Me .contact-item.email-item { margin-bottom: 40px !important; }
-#Find-Me .contact-item img { width: 20px !important; height: 20px !important; }
-#Find-Me .contact-item img.kakao-logo, #Find-Me .contact-item img.blog-logo { width: 20px !important; height: 20px !important; }
-#Find-Me .contact-item.open-kakao-item a { font-size: 12.5px !important; }
-#Find-Me .price-info { font-size: 13.5px !important; color: #a09080 !important; padding-top: 14px !important; margin-top: 8px !important; }
-#review-list { display: flex !important; flex-direction: column !important; width: 100% !important; }
-.review-card { width: 100% !important; margin: 0 0 12px 0 !important; font-size: 14.5px !important; }
+    header { padding: 15px 0 5px 0; }
+    .logo-wrap { gap: 12px; margin-bottom: 10px; }
+    .logo { font-size: 28px; }
+    nav { justify-content: flex-start; overflow-x: auto; padding: 0 15px 8px 15px; gap: 15px; }
+    
+    #basic.section-box { margin-top: 80px !important; border-top: none; border-radius: 0 0 20px 20px; }
+    #about-founder.section-box { margin-bottom: 0 !important; border-bottom: none; border-radius: 20px 20px 0 0; }
+    #profile.section-box { margin-bottom: 0 !important; border-bottom: none; border-radius: 20px 20px 0 0; }
+    
+    .container { flex-direction: column !important; gap: 20px; }
+    .content-text { font-size: 14px !important; }
+    #profile .container { align-items: center !important; padding-left: 0; }
+    #profile .content-text { font-size: 11.9px !important; align-items: center !important; text-align: center !important; }
+    #profile .profile-title, #profile .profile-list-group, #profile .research-group { text-align: center !important; }
+    #footprints .container { width: 100% !important; padding: 0 10px !important; }
+    .review-card { width: 100% !important; margin: 0 0 10px 0 !important; font-size: 14px !important; }
+    .mobile-br { display: block; }
 }
 </style>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2T54XW4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<header>
+<header id="main-header">
 <div class="header-container">
 <a href="#basic" class="logo-wrap" id="logo-title-wrap">
-<div class="logo-img-container"><img src="logo.png" alt="Leaf Wellness Studio Logo" id="main-logo-img" class="logo-img" onerror="this.parentElement.style.display='none';"></div>
+<div class="logo-img-container"><img src="logo.webp" alt="Leaf Wellness Studio Logo" id="main-logo-img" class="logo-img" onerror="this.parentElement.style.display='none';"></div>
 <div class="logo" id="main-logo-text">Leaf Wellness Studio</div>
 </a>
 <nav id="main-navigation">
@@ -164,7 +142,7 @@ section { padding: 40px 20px; min-height: auto; }
 <div class="section-box" style="margin-top: 180px;">
 <section id="basic">
 <div class="container">
-<div class="content-img"><img src="basic.jpg" alt="Main Profile" onerror="this.parentElement.style.display='none';"></div>
+<div class="content-img"><img src="basic.webp" alt="Main Profile" onerror="this.parentElement.style.display='none';"></div>
 <div class="content-text">
 <div class="cursive-text">May you find peace<br>in your deepest heart<br>whenever you talk to me<br>or visit our spot</div>
 <div class="main-message">나와 이야기할 때나 우리의 공간을 찾을 때,<br>네 마음 깊은 곳에 평온이 깃들기를.</div>
@@ -178,19 +156,13 @@ section { padding: 40px 20px; min-height: auto; }
 <div class="container">
 <div class="about-leaf-text">
 <h2>About <span class="elegant-cursive">Leaf Wellness Studio</span></h2>
-<div class="main-sub">
-오롯이 혼자라고 느낄 때, 당신만의 긍정의 빛을 마주하는 공간<br>
-하나의 잎새가 안식을 얻고, 마침내 자신만의 빛을 발견하는 공간
-</div>
-
+<div class="main-sub">오롯이 혼자라고 느낄 때, 당신만의 긍정의 빛을 마주하는 공간<br>하나의 잎새가 안식을 얻고, 마침내 자신만의 빛을 발견하는 공간</div>
 <div class="intro-title"><span class="handwriting subtle-green">‘LWS’를 소개합니다.</span></div>
-<img src="logo.png" alt="Leaf Wellness Studio Inner Logo" class="section-inner-logo" onerror="this.style.display='none';">
+<img src="logo.webp" alt="Leaf Wellness Studio Inner Logo" class="section-inner-logo" onerror="this.style.display='none';">
 <div class="point-title"><span class="subtle-green">☀️ Our Symbol (로고의 의미)</span></div>
-
 <p><strong>왼쪽의 Leaf</strong> : 세상에 하나뿐인 소중한 '한 개인'을 뜻합니다</p>
 <p><strong>뒤편의 해</strong> : 내담자가 이미 스스로 내면에 가지고 있지만,</p>
 <p class="sub-p-bold handwriting subtle-green">잠시 숨어 있는 '긍정적인 심리적 자원'을 의미합니다.</p>
-
 <div class="point-title"><span class="subtle-green">🌱 Leaf (나뭇잎 한 장, 새싹, 그리고 당신.)</span></div>
 <ul class="no-list-style">
 <li>'Leaf'는 나뭇잎 한 장을 의미합니다.</li>
@@ -198,9 +170,7 @@ section { padding: 40px 20px; min-height: auto; }
 <li>외롭고 지친 마음으로 찾아오는,</li>
 <li>쉼과 치유가 필요해 이곳을 찾아오는 <br class="mobile-br"> 한 분, 한 분의 '내담자'가 바로 Leaf입니다.</li>
 </ul>
-
 <p><strong class="handwriting subtle-green">동시에, 앞으로 더 푸르게 자라날 가능성을 품은 <br class="mobile-br"> '새싹'을 뜻하기도 합니다.</strong></p>
-
 <div class="point-title"><span class="subtle-green">😌 Relief (깊은 안식과 평온을 바라며)</span></div>
 <ul class="no-list-style">
 <li>Leaf는 마음의 안정을 뜻하는 'Relief'와 발음이 닮아 있습니다.</li>
@@ -208,7 +178,6 @@ section { padding: 40px 20px; min-height: auto; }
 <li>홀로 거친 바람을 견뎌내던 <br class="mobile-br">작은 잎새가 이곳에 머무는 동안만큼은</li>
 <li><strong class="handwriting subtle-green">온전한 평온함(Relief)과 안식을 누리기를 바라는 <br class="mobile-br">진심 어린 염원을 담았습니다.</strong></li>
 </ul>
-
 <div class="point-title"><span class="subtle-green">🚀 Studio (현대 사회에 지친이들을 위한 웰니스 스튜디오)</span></div>
 <p>오직 한 사람, 당신만의 진정한 웰빙과 내면의 건강을 위해 <br class="mobile-br">정성스럽게 꾸며진 전문적인 웰니스 공간입니다.</p>
 <p><strong class="handwriting subtle-green">Leaf Wellness Studio는 온전히 개인 한 사람의, <br class="mobile-br">혹은 귀한 발걸음을 해주시는 여러 내담자들의 <br class="mobile-br">내면적 건강과 행복(Well-being)을 위해 존재하는 세심한 공간입니다.</strong></p>
@@ -221,16 +190,12 @@ section { padding: 40px 20px; min-height: auto; }
 <div class="section-box">
 <section id="about-founder" style="padding-top: 0; min-height: auto;">
 <div class="container">
-<div class="content-img"><img src="about.jpg" alt="About Founder" onerror="this.parentElement.style.display='none';"></div>
+<div class="content-img"><img src="about.webp" alt="About Founder" onerror="this.parentElement.style.display='none';"></div>
 <div class="content-text">
-<p>청소년기 우울이라는 진단(혹은 낙인) 속에서 심리상담을 처음 접하게 되었어요. 누구보다 장난기 많고 낙천적인 저조차 무기력하게 만들었던 건, 
-    <br class="mobile-br">다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며
-목표를 향해 쫓아갈 때 저 혼자 목표가 없다는 이유로 스스로가 한없이 초라해 보였던 시절이었습니다.</p>
-<p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 저는 사람을 좋아하고
-친구들과 피상적인 이야기보단 인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느깁니다.</p>
+<p>청소년기 우울이라는 진단(혹은 낙인) 속에서 심리상담을 처음 접하게 되었어요. 누구보다 장난기 많고 낙천적인 저조차 무기력하게 만들었던 건, 다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 목표를 향해 쫓아갈 때 저 혼자 목표가 없다는 이유로 스스로가 한없이 초라해 보였던 시절이었습니다.</p>
+<p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 저는 사람을 좋아하고 친구들과 피상적인 이야기보단 인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느깁니다.</p>
 <p>시행착오도 많았고 그 방황의 시간들이 아깝고 후회스럽기도 하죠. <strong><span class="handwriting">그리고 또 그 방황이 다시 찾아올지도 모른다는 두려움도 항상 있고요.</span></strong> 하지만 그 짙은 밤들이 있었기에 지금의 제가 있고, 남들의 속도에 치여 길을 잃은 사람들의 마음을 누구보다 깊이 지켜볼 수 있는 눈이 생겼습니다.</p>
-<p>이제는 후회 대신, <br class="mobile-br">제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. 그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서,
-<strong class="handwriting"><br class="mobile-br">깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</strong></p>
+<p>이제는 후회 대신, <br class="mobile-br">제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. 그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서, <strong class="handwriting"><br class="mobile-br">깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</strong></p>
 <p class="special-green"><span class="handwriting"><strong>깊은 대화로 연결될 수 있는 안전한 공간이 되어드리겠습니다.<br>이곳에서 여러분의 이야기들을 편안하게 들려주세요.</strong></span></p>
 </div>
 </div>
@@ -240,44 +205,37 @@ section { padding: 40px 20px; min-height: auto; }
 <div class="section-box">
 <section id="profile" style="padding-top: 0; min-height: auto;">
 <div class="container">
-<div class="content-img"><img src="profile.jpg" alt="Profile Image" onerror="this.parentElement.style.display='none';"></div>
+<div class="content-img"><img src="profile.webp" alt="Profile Image" onerror="this.parentElement.style.display='none';"></div>
 <div class="content-text">
 <div class="profile-title">B.A. University of California, Davis 심리학 전공</div>
 <div class="profile-title" style="margin-bottom: 20px;">M.A 성균관대학교 교육대학원 상담심리전공 (전공대표)</div>
-
 <ul class="profile-list-group research-group">
 <li>• 주요 연구 관심사: 청소년 정신건강, 긍정심리,<br>쉬었음청년, 2030직장인 이직퇴직고민</li>
 <li>• 연구계획서 주제: 청소년의 스트레스가 정신건강에 미치는 영향: 긍정심리자원의 매개 효과</li>
 </ul>
-
-<ul class="profile-list-group" style="font-weight: bold; color: #111; border-left: 3px solid #52b788; padding-left: 12px;">
+<ul class="profile-list-group" style="font-weight: bold; color: #111; border-left: 3px solid #52b788; padding-left: 12px; display: block; text-align: left; max-width: 580px;">
 <li>'26 서울탑 정신건강의학과 의원 데스크행정</li>
 <li>'25 (주)아토머스 마인드카페 강남삼성점 매니저</li>
 <li>'21 한국아동청소년 심리상담센터 집단상담 코리더(고2,고3), 행정실장</li>
 <li>'17 헬로스마일 종로센터 행정실장</li>
 </ul>
-
-<ul class="profile-list-group" style="font-weight: bold; color: #444;">
+<ul class="profile-list-group" style="font-weight: bold; color: #444; display: block; text-align: left; max-width: 580px; margin-top: 21px; margin-bottom: 0;">
 <li>• 한국직업능력진흥원 심리상담사 1급</li>
 <li>• 한국직업능력진흥원 미술심리상담사 1급</li>
 <li>• 한국직업능력진흥원 진로적성상담사 1급</li>
 <li>• 한국직업능력진흥원 가족상담사 1급</li>
 <li>• 한국직업능력진흥원 다문화심리상담사 1급</li>
 </ul>
-
-<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; padding-top: 20px;">
-    <li style="color: #2d6a4f; font-size: 18px; margin-bottom: 10px;">한국상담심리학회 수련회원</li>
-    <li style="color: #c8bcad; font-size: 17px; margin-bottom: 5px;">- 공개사례 발표회 30시간 이수</li>
-    <li style="color: #c8bcad; font-size: 17px; margin-bottom: 20px;">- 성균관대학교 외상심리연구소 집단상담 18시간 이수</li>
-    
-    <li style="color: #2d6a4f; font-size: 18px; margin-bottom: 10px;">한국상담학회 준회원</li>
-    <li style="color: #c8bcad; font-size: 17px; margin-bottom: 25px;">- 집단상담 보조지도자 11시간 이수</li>
-    
-    <li style="color: #c8bcad; font-size: 17px; margin-bottom: 8px;">여성가족부 청소년상담사 2급 준비 중</li>
-    <li style="color: #c8bcad; font-size: 17px; margin-bottom: 8px;">한국상담심리학회 상담심리사 2급 준비 중</li>
-    <li style="color: #c8bcad; font-size: 17px;">한국상담학회 상담심리사 2급 준비 중</li>
+<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; padding-top: 10px; display: block; text-align: left; max-width: 580px; margin-top: 5px;">
+    <li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">한국상담심리학회 수련회원</li>
+    <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 5px;">- 공개사례 발표회 30시간 이수</li>
+    <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 20px;">- 성균관대학교 외상심리연구소 집단상담 18시간 이수</li>
+    <li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">한국상담학회 준회원</li>
+    <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 25px;">- 집단상담 보조지도자 11시간 이수</li>
+    <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">여성가족부 청소년상담사 2급 준비 중</li>
+    <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">한국상담심리학회 상담심리사 2급 준비 중</li>
+    <li style="color: #c8bcad; font-size: 11.9px;">한국상담학회 상담심리사 2급 준비 중</li>
 </ul>
-
 </div> 
 </div> 
 </section>
@@ -286,30 +244,15 @@ section { padding: 40px 20px; min-height: auto; }
 <div class="section-box">
 <section id="Find-Me" style="padding-top: 0; min-height: auto;">
 <div class="container">
-<div class="content-img"><img src="find_me.jpg" alt="Find Me" onerror="this.parentElement.style.display='none';"></div>
+<div class="content-img"><img src="find_me.webp" alt="Find Me" onerror="this.parentElement.style.display='none';"></div>
 <div class="content-text">
 <div class="contact-box">
 <ul class="contact-list">
-<li class="contact-item">
-<img src="instagram.jpg" alt="Instagram">
-<a href="https://www.instagram.com/sunahhn" target="_blank" rel="noopener">instagram.com/sunahhn</a>
-</li>
-<li class="contact-item">
-<img src="youtube.jpg" alt="YouTube">
-<a href="https://www.youtube.com/@sunahhn" target="_blank" rel="noopener">youtube.com/@sunahhn</a>
-</li>
-<li class="contact-item">
-<img src="blog.jpg" class="blog-logo" alt="Naver Blog">
-<a href="https://blog.naver.com/sunah224-" target="_blank" rel="noopener">blog.naver.com/sunah224-</a>
-</li>
-<li class="contact-item email-item">
-<img src="email.jpg" alt="Email">
-<a href="mailto:sunahhn@sunahhn.com">sunahhn@sunahhn.com</a>
-</li>
-<li class="contact-item open-kakao-item">
-<img src="kakao.jpg" class="kakao-logo" alt="KakaoTalk">
-<a href="https://open.kakao.com/o/s0995Nzi" target="_blank" rel="noopener">https://open.kakao.com/o/s0995Nzi</a>
-</li>
+<li class="contact-item"><img src="instagram.jpg" alt="Instagram"><a href="https://www.instagram.com/sunahhn" target="_blank" rel="noopener">instagram.com/sunahhn</a></li>
+<li class="contact-item"><img src="youtube.jpg" alt="YouTube"><a href="https://www.youtube.com/@sunahhn" target="_blank" rel="noopener">youtube.com/@sunahhn</a></li>
+<li class="contact-item"><img src="blog.jpg" class="blog-logo" alt="Naver Blog"><a href="https://blog.naver.com/sunah224-" target="_blank" rel="noopener">blog.naver.com/sunah224-</a></li>
+<li class="contact-item email-item"><img src="email.jpg" alt="Email"><a href="mailto:sunahhn@sunahhn.com">sunahhn@sunahhn.com</a></li>
+<li class="contact-item open-kakao-item"><img src="kakao.jpg" class="kakao-logo" alt="KakaoTalk"><a href="https://open.kakao.com/o/s0995Nzi" target="_blank" rel="noopener">https://open.kakao.com/o/s0995Nzi</a></li>
 </ul>
 <div class="price-info price-soft-green">상담비용 5만원 / 50분</div>
 </div>
@@ -324,26 +267,24 @@ section { padding: 40px 20px; min-height: auto; }
 <div style="margin-bottom: 20px; text-align: center;">
 <h3 id="footprints-title" style="font-family: 'Georgia', serif; font-size: 26px; color: #2d6a4f; margin-bottom: 12px; font-weight: bold;">Footprints</h3>
 </div>
-<div style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); text-align: left; border: 1px solid #e8e6e1; box-sizing: border-box; width: 100%; margin-bottom: 35px;">
-<h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold; letter-spacing: -0.5px;">한 줄 응원 남기기</h4>
-<div style="margin-bottom: 15px;">
-<input type="text" id="review-name" placeholder="닉네임" style="width: 180px; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; background: #fff; box-sizing: border-box;">
-</div>
+<div style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 35px;">
+<h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">한 줄 응원 남기기</h4>
+<div style="margin-bottom: 15px;"><input type="text" id="review-name" placeholder="닉네임" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
 <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
-<textarea id="review-content" placeholder="따뜻한 한 마디를 남겨주세요 (로그인 없이 바로 등록됩니다) 😊" style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px; font-size: 14.5px; resize: vertical; outline: none; background: #fff; font-family: sans-serif; line-height: 1.7; box-sizing: border-box; color: #333;"></textarea>
+<textarea id="review-content" placeholder="따뜻한 한 마디를 남겨주세요" style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px;"></textarea>
 <div style="text-align: right; display: flex; justify-content: flex-end; gap: 10px;">
-<button onclick="clearBrokenData()" style="background-color: #e63946; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: bold; cursor: pointer; opacity: 0.6;">데이터 리셋</button>
-<button onclick="addReview()" style="background-color: #52b788; color: white; border: none; padding: 12px 45px; border-radius: 8px; font-size: 14px; font-weight: bold; cursor: pointer; transition: background 0.2s; box-shadow: 0 3px 8px rgba(82,183,136,0.25);">등록</button>
+<button onclick="clearBrokenData()" style="background-color: #e63946; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer;">데이터 리셋</button>
+<button onclick="addReview()" style="background-color: #52b788; color: white; border: none; padding: 12px 45px; border-radius: 8px; cursor: pointer;">등록</button>
 </div>
 </div>
 </div>
 <div id="review-list" style="margin-bottom: 40px; width: 100%;"></div>
 <div style="max-width: 650px; margin: 0 auto 30px; width: 100%;">
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%;">
-<div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;"><img src="review_1.png" alt="따뜻한 선물" onerror="this.parentElement.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;"></div>
-<div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;"><img src="review_2.png" alt="영어 상담" onerror="this.parentElement.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;"></div>
-<div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;"><img src="review_3.png" alt="공감 후기" onerror="this.parentElement.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;"></div>
-<div style="background-color: #ffffff; padding: 8px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); border: 1px solid #eaeaea;"><img src="review_4.png" alt="감사 한마디" onerror="this.parentElement.style.display='none';" style="width: 100%; height: auto; border-radius: 6px; display: block;"></div>
+<div style="padding: 8px;"><img src="review_1.webp" style="width: 100%; border-radius: 6px;"></div>
+<div style="padding: 8px;"><img src="review_2.webp" style="width: 100%; border-radius: 6px;"></div>
+<div style="padding: 8px;"><img src="review_3.webp" style="width: 100%; border-radius: 6px;"></div>
+<div style="padding: 8px;"><img src="review_4.webp" style="width: 100%; border-radius: 6px;"></div>
 </div>
 </div>
 </div>
@@ -352,20 +293,21 @@ section { padding: 40px 20px; min-height: auto; }
 
 <section id="footer-section" style="min-height: auto; margin-top: 0; color: #a09080;">
 <div style="width: 100%; text-align: center;">
-<div style="margin-bottom: 25px; font-size: 13px; color: #a09080; line-height: 1.5; word-break: keep-all; padding: 0 10px;">
-리프 웰니스 스튜디오. 소장: 현선아. 개인정보 보호관리자: 현선아. 
-<br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #a09080;">sunahhn@sunahhn.com</a>. 
-DM: <a href="https://www.instagram.com/sunahhn" target="_blank" style="color: #a09080;">@sunahhn</a> 
-OpenKakao: <a href="https://open.kakao.com/o/s0995Nzi" target="_blank" style="color: #a09080;">https://open.kakao.com/o/s0995Nzi</a><br>
-<br>Copyright © 2026 LWS All Rights Reserved. <br class="mobile-br">Powered by Firebase
-<br><span style="font-weight:bold;">자문법무법인: 법무법인 새별 (대표변호사, 안성열)</span>
+<div style="margin-bottom: 25px; font-size: 13px; color: #a09080; line-height: 1.5; padding: 0 10px;">
+리프 웰니스 스튜디오. 소장: 현선아. 개인정보 보호관리자: 현선아. <br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #a09080;">sunahhn@sunahhn.com</a>. DM: <a href="https://www.instagram.com/sunahhn" target="_blank" style="color: #a09080;">@sunahhn</a><br>
+
+<br>Copyright © 2026 LWS All Rights Reserved. Powered by Firebase.<br><span style="font-weight:bold;">
+    자문법무법인: 법무법인 새별 (대표변호사, 안성열)</span>
 </div>
 <div class="visitor-counter" id="visitor-display-box" style="margin-bottom: 15px; color: #2d6a4f;">
-<span>Today :<em id="today-count" style="color: #2d6a4f;">37</em></span>
-<span>Yesterday :<em id="yesterday-count" style="color: #2d6a4f;">72</em></span>
-<span>Total :<em id="total-count" style="color: #2d6a4f;">546</em></span>
+<span>Today :<em id="today-count">0</em></span>
+<span>Yesterday :<em id="yesterday-count">0</em></span>
+<span>Total :<em id="total-count">0</em></span>
 </div>
-<div style="margin-bottom: 15px; font-size: 16px; color: #a09080; font-family: 'Georgia', serif; font-style: italic;">LWS - Psychological Counseling Space</div>
+<!-- 'Screenshot_20260625_115321_Instagram.jpg' 참고 문구 삽입 영역 -->
+<div style="margin-top: 5px; margin-bottom: 15px; font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #a09080; word-spacing: 2px;">
+    LWS - Psychological Counseling Space
+</div>
 </div>
 </section>
 
@@ -374,103 +316,91 @@ var MASTER_PASSWORD = "leaf1234";
 var firebaseConfig = { apiKey: "AIzaSyCd0izexUnK2e3hFF72F09pSvNDMUX0Bg", authDomain: "leaf-web-f6019.firebaseapp.com", databaseURL: "https://leaf-web-f6019-default-rtdb.asia-southeast1.firebasedatabase.app", projectId: "leaf-web-f6019", storageBucket: "leaf-web-f6019.firebasestorage.app", messagingSenderId: "318569186261", appId: "1:318569186261:web:006ee73e7359f2482bb35c" };
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
-document.addEventListener('DOMContentLoaded', function() { setupVisitorCounter(); listenReviews(); initSectionObserver(); });
-function setupVisitorCounter() {
-    try {
-        var now = new Date();
-        var todayStr = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
-        var yesterday = new Date(now);
-        yesterday.setDate(now.getDate() - 1);
-        var yesterdayStr = yesterday.getFullYear() + "-" + (yesterday.getMonth() + 1) + "-" + yesterday.getDate();
-        var counterRef = database.ref('visitor_counter');
-        counterRef.child(todayStr).once('value', function(snapshot) {
-            var todayCount = (snapshot.val() || 0) + 1;
-            counterRef.child(todayStr).set(todayCount);
-            var todayEl = document.getElementById('today-count');
-            if(todayEl) todayEl.innerText = todayCount;
-        });
-        counterRef.child(yesterdayStr).once('value', function(snapshot) {
-            var yesterdayCount = (snapshot.val() || 0);
-            var yesterdayEl = document.getElementById('yesterday-count');
-            if(yesterdayEl) yesterdayEl.innerText = yesterdayCount;
-        });
-        counterRef.on('value', function(snapshot) {
-            var allData = snapshot.val();
-            var totalSum = 0;
-            if (allData) { for (var key in allData) totalSum += parseInt(allData[key] || 0); }
-            var totalEl = document.getElementById('total-count');
-            if(totalEl) totalEl.innerText = totalSum;
-        });
-    } catch (e) { console.error(e); }
-}
-function initSectionObserver() {
-    var navLinks = document.querySelectorAll('#main-navigation a');
-    var sections = document.querySelectorAll('section');
-    var logoImg = document.getElementById('main-logo-img');
-    function updateActiveNavOnScroll() {
-        var currentActiveId = "";
-        var maxVisibleHeight = -Infinity;
-        var viewTop = window.scrollY + 150;
-        var viewBottom = window.scrollY + window.innerHeight;
-        sections.forEach(function(section) {
-            var rect = section.getBoundingClientRect();
-            var absTop = window.scrollY + rect.top;
-            var absBottom = window.scrollY + rect.bottom;
-            var visibleHeight = Math.min(viewBottom, absBottom) - Math.max(viewTop, absTop);
-            if (visibleHeight > 0 && visibleHeight > maxVisibleHeight) {
-                maxVisibleHeight = visibleHeight;
-                currentActiveId = section.getAttribute('id');
+
+document.addEventListener('DOMContentLoaded', function() { 
+    setupVisitorCounter(); 
+    listenReviews(); 
+    setupScrollBehavior(); 
+ });
+
+function setupScrollBehavior() {
+    var links = document.querySelectorAll('#main-navigation a, #logo-title-wrap');
+    var header = document.getElementById('main-header');
+    
+    links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var targetId = this.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                e.preventDefault();
+                var targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    // 모든 섹션(베이직 포함)을 감싸는 테두리 박스(.section-box) 요소를 찾습니다.
+                    var boxElement = targetSection.closest('.section-box') || targetSection;
+                    
+                    // 현재 활성화된 상단 고정 헤더의 실시간 픽셀 높이를 완벽하게 측정합니다.
+                    var headerHeight = header.offsetHeight;
+                    
+                    // 박스의 순수 상단 테두리 선(double border)이 헤더 밑에 정확히 맞닿도록 계산합니다.
+                    var elementPosition = boxElement.getBoundingClientRect().top;
+                    var offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
-        if (window.scrollY < 180 || currentActiveId === "basic") {
-            navLinks.forEach(function(link) { link.classList.remove('active-nav'); });
-            if (logoImg) logoImg.classList.add('logo-img-effect');
-            return;
-        }
-        if (logoImg) logoImg.classList.remove('logo-img-effect');
-        if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50) currentActiveId = "footer-section";
-        navLinks.forEach(function(link) {
-            if (link.getAttribute('data-section') === currentActiveId) link.classList.add('active-nav');
-            else link.classList.remove('active-nav');
-        });
-    }
-    window.addEventListener('scroll', updateActiveNavOnScroll);
-    window.addEventListener('resize', updateActiveNavOnScroll);
-    setTimeout(updateActiveNavOnScroll, 100);
+    });
+}
+
+function setupVisitorCounter() {
+    var now = new Date();
+    var todayStr = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
+    var yesterday = new Date(now);
+    yesterday.setDate(now.getDate() - 1);
+    var yStr = yesterday.getFullYear() + "-" + (yesterday.getMonth() + 1) + "-" + yesterday.getDate();
+    
+    database.ref('visitor_counter/' + todayStr).transaction(count => (count || 0) + 1);
+    database.ref('visitor_counter').on('value', snapshot => {
+        var data = snapshot.val() || {};
+        var total = 0;
+        for (var k in data) total += data[k];
+        document.getElementById('total-count').innerText = total;
+        document.getElementById('today-count').innerText = data[todayStr] || 0;
+        document.getElementById('yesterday-count').innerText = data[yStr] || 0;
+    });
 }
 function listenReviews() {
     var reviewList = document.getElementById('review-list');
-    if (!reviewList) return;
-    database.ref('reviews').on('value', function(snapshot) {
+    database.ref('reviews').on('value', snapshot => {
         var data = snapshot.val();
-        if (!data) { reviewList.innerHTML = '<p style="text-align:center; color:#bbb; font-size:15px; margin:30px auto; width:100%;">아직 응원의 한 마디가 없습니다. 🍃</p>'; return; }
-        var reviewsArray = [];
-        for (var key in data) { var item = data[key]; item.firebaseKey = key; reviewsArray.push(item); }
-        reviewsArray.sort(function(a, b) { return b.timestamp - a.timestamp; });
-        var htmlContent = '';
-        for (var i = 0; i < reviewsArray.length; i++) {
-            var r = reviewsArray[i];
-            htmlContent += '<div class="review-card"><div><div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px;"><span style="font-weight: bold; font-size: 15px; color: #444;">' + r.name + '</span><span style="font-size: 12px; color: #bbb;">' + (r.date || '') + '</span></div><button onclick="deleteReview(\'' + r.firebaseKey + '\')" style="background: none; border: none; color: #ccc; font-size: 12px; cursor: pointer; padding: 2px 5px;">삭제</button></div><p style="margin: 0; font-size: 15px; color: #555; line-height: 1.6; white-space: pre-wrap; text-align: left;">' + r.content + '</p></div></div>';
-        }
-        reviewList.innerHTML = htmlContent;
+        if (!data) { reviewList.innerHTML = '<p style="text-align:center;">아직 응원의 한 마디가 없습니다. 🍃</p>'; return; }
+        var arr = [];
+        for (var k in data) { data[k].key = k; arr.push(data[k]); }
+        arr.sort((a, b) => b.timestamp - a.timestamp);
+        reviewList.innerHTML = arr.map(r => `
+            <div class="review-card" style="width: 100% !important; margin-bottom: 12px; padding: 15px; border: 1px solid #eee; border-radius: 10px;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                    <b style="font-size:14px;">${r.name}</b><button onclick="deleteReview('${r.key}')" style="border:none; background:none; cursor:pointer; color:#ccc;">삭제</button>
+                </div>
+                <div style="font-size:14px; color:#555;">${r.content}</div>
+            </div>`).join('');
     });
 }
 function addReview() {
-    var name = document.getElementById('review-name').value.trim();
-    var content = document.getElementById('review-content').value.trim();
-    if (!name || !content) { alert("닉네임과 내용을 입력해 주세요!"); return; }
-    database.ref('reviews').push({ name: name, content: content, date: new Date().toLocaleDateString('ko-KR'), timestamp: Date.now() })
-    .then(function() { document.getElementById('review-name').value = ''; document.getElementById('review-content').value = ''; });
+    var n = document.getElementById('review-name').value;
+    var c = document.getElementById('review-content').value;
+    if(!n || !c) return alert("닉네임과 내용을 입력해주세요.");
+    database.ref('reviews').push({name: n, content: c, timestamp: Date.now()}).then(() => {
+        document.getElementById('review-name').value = ''; document.getElementById('review-content').value = '';
+    });
 }
-function deleteReview(firebaseKey) {
-    var accessPassword = prompt("관리자 비밀번호:");
-    if (accessPassword === MASTER_PASSWORD) database.ref('reviews/' + firebaseKey).remove();
-    else if (accessPassword) alert("비밀번호 불일치");
+function deleteReview(k) {
+    if(prompt("관리자 비밀번호") === MASTER_PASSWORD) database.ref('reviews/' + k).remove();
 }
 function clearBrokenData() {
-    var accessPassword = prompt("관리자 비밀번호:");
-    if (accessPassword === MASTER_PASSWORD && confirm("모든 데이터를 삭제할까요?")) database.ref('reviews').remove();
-    else if (accessPassword) alert("비밀번호 불일치");
+    if(prompt("관리자 비밀번호") === MASTER_PASSWORD && confirm("전체 삭제하시겠습니까?")) database.ref('reviews').remove();
 }
 </script>
 </body>
