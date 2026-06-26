@@ -34,9 +34,14 @@ header { position: fixed; top: 0; left: 0; width: 100%; background-color: #fffff
 .logo { font-family: 'Playfair Display', serif; font-size: 42px; font-style: italic; color: #2d6a4f; font-weight: 700 !important; display: inline-block; white-space: nowrap; transition: text-shadow 0.2s ease-in-out; text-shadow: none !important; }
 
 .logo-img-effect { transform: scale(1.02); }
-nav { display: flex; justify-content: center; max-width: 950px; margin: 0 auto; padding: 0 10px; gap: 20px; }
+nav { display: flex; justify-content: center; max-width: 950px; margin: 0 auto; padding: 0 10px; gap: 20px; align-items: center; }
 nav a { text-decoration: none; color: #a09080; font-size: 17px; font-weight: normal !important; font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; transition: color 0.2s ease; padding: 5px 8px; white-space: nowrap; }
 nav a:hover, nav a.active-nav { color: #2d6a4f !important; font-weight: bold !important; }
+
+/* Language Switcher Styles */
+.lang-switcher { display: inline-flex; gap: 5px; margin-left: 15px; border: 1px solid #e8e6e1; border-radius: 20px; padding: 2px 6px; background: #faf9f6; }
+.lang-btn { background: none; border: none; font-size: 13px; color: #a09080; cursor: pointer; padding: 2px 6px; font-weight: bold; border-radius: 12px; transition: all 0.2s ease; }
+.lang-btn.active-lang { background: #2d6a4f; color: #fff !important; }
 
 .visitor-counter { margin-top: 12px; font-size: 13px; color: #8e7d73; font-weight: bold; display: flex; justify-content: center; gap: 15px; font-family: 'Georgia', serif; min-height: 20px; }
 .visitor-counter span em { font-style: normal; color: #2d6a4f; font-weight: 800; margin-left: 5px; }
@@ -67,12 +72,10 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .section-inner-logo { display: block; margin: 60px auto 10px auto; height: 92px; width: auto; object-fit: contain; }
 .no-list-style { list-style: none; padding: 0; }
 
-/* founder 섹션 글자크기 20% 축소 (17px -> 13.6px) */
 #about-founder .content-text { font-size: 13.6px; }
 #about-founder .content-text p { margin-bottom: 24px; line-height: 1.8; color: #6b5d51; font-weight: 500; }
 #about-founder .content-text .special-green { color: #2d6a4f; }
 
-/* Profile 섹션 가로배치 (사진 왼쪽, 글 오른쪽 및 상단 정렬 구조) */
 #profile .container { display: flex; flex-direction: row !important; gap: 40px; align-items: flex-start !important; justify-content: center !important; max-width: 900px; margin: 0 auto; padding-left: 60px; }
 #profile .content-img { flex: 0 0 252px; max-width: 252px; min-height: 168px; }
 #profile .content-text { flex: 1; display: flex; flex-direction: column; align-items: flex-start; text-align: left; font-size: 11.9px !important; }
@@ -81,7 +84,6 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .profile-list-group li { margin-bottom: 7px; font-size: 11.9px; line-height: 1.8; }
 .research-group { width: 100%; max-width: 580px; margin: 0 0 21px 0; color: #2d6a4f; font-weight: bold; text-align: left; }
 
-/* Find Me 섹션 글자 40% 축소 적용 */
 #Find-Me .container { justify-content: center; gap: 35px; max-width: 850px; margin: 0 auto; align-items: center; }
 #Find-Me .content-text { flex: 0 1 auto; display: flex; align-items: center; padding-top: 40px; }
 .contact-box { width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; }
@@ -99,42 +101,36 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 #review-list { display: flex; flex-wrap: wrap; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
 .review-card { background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); width: calc(50% - 8px); min-width: 280px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
 
-/* 모바일 전용 반응형 스타일 최적화 */
+/* 다국어 제어 클래스 */
+.lang-en { display: none; }
+
 @media (max-width: 768px) {
 header { padding: 10px 0 8px 0; }
-/* 타이틀 중앙 정렬 및 모바일 크기 최적화 */
 .logo-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-bottom: 10px; width: 100%; text-align: center; }
 .logo-img-container { height: 50px; }
 .logo-img { height: 50px; margin: 0 auto; }
 .logo { font-size: 24px; text-align: center; display: block; width: 100%; }
-/* 네비게이션 정렬 */
 nav { justify-content: center !important; flex-wrap: wrap !important; overflow-x: visible !important; padding: 0 10px 4px 10px; gap: 6px 12px !important; }
 nav a { font-size: 14px !important; padding: 3px 5px !important; }
-/* 모바일 전체 테두리 박스 여백 균형 조정 */
+.lang-switcher { margin-left: 5px; padding: 1px 4px; }
+.lang-btn { font-size: 11px; padding: 1px 4px; }
 .section-box { margin: 20px 10px !important; padding: 20px 12px !important; border-radius: 14px; }
-/* 고정 헤더 높이를 반영한 첫 섹션 배치 - 윗테두리 가림 방지 보정 */
-#basic-box.section-box { margin-top: 155px !important; border-top: 6px double #bcaaa4; border-radius: 14px; }
+#basic-box.section-box { margin-top: 175px !important; border-top: 6px double #bcaaa4; border-radius: 14px; }
 
-/* basic 섹션 모바일 정렬 구조화 */
 #basic .container { gap: 0px !important; flex-direction: column !important; align-items: flex-end !important; } 
-/* basic 섹션 모바일 이미지 크기 20% 확대 적용 및 우측 정렬 */
 #basic .content-img { flex: initial !important; max-width: 259.2px !important; min-height: auto !important; width: 100% !important; margin: 0 0 0 auto !important; }
-/* basic 섹션 모바일 본문: 사진 바로 아래 배치, 우측 정렬, 글자 크기 30% 축소 상태 유지 */
 #basic .content-text { text-align: right !important; justify-content: flex-start !important; padding: 15px 5px 0 0 !important; width: 100% !important; align-items: flex-end !important; } 
 #basic .cursive-text { font-size: 14px !important; margin-bottom: 10px !important; } 
 #basic .main-message { font-size: 11.9px !important; line-height: 1.6 !important; } 
 
 #about-founder.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; }
-/* founder 섹션 모바일 사진과 글사이 여백 완전히 제거 */
 #about-founder .container { flex-direction: column !important; gap: 0px !important; width: 100% !important; }
 #about-founder .content-img { min-height: auto !important; background: transparent !important; }
 #about-founder .content-text { padding-top: 0 !important; margin-top: 0 !important; }
 #about-founder .content-text p:first-child { margin-top: 0 !important; }
 
 .container { flex-direction: column !important; gap: 20px; width: 100% !important; }
-/* LWS 섹션 이미지 여백 및 크기 조정 */
 .section-inner-logo { margin: 20px auto 15px auto; height: 60px; }
-/* 본문 폰트 가독성 */
 .content-text { font-size: 14px !important; line-height: 1.75 !important; }
 .about-leaf-text { font-size: 14px !important; line-height: 1.75 !important; }
 .about-leaf-text h2 { font-size: 24px !important; }
@@ -142,7 +138,6 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 .about-leaf-text .point-title { font-size: 16px !important; margin-top: 30px; }
 .cursive-text { font-size: 17px !important; margin-bottom: 15px; }
 .footer-highlight-text { font-size: 18px !important; margin-top: 35px; }
-/* Profile 섹션 모바일 탈출 방지 및 세로 정렬 강제 */
 #profile.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; padding-bottom: 0 !important; } 
 #profile .container { flex-direction: column !important; align-items: center !important; justify-content: center !important; padding-left: 0 !important; width: 100% !important; gap: 20px !important; }
 #profile .content-img { flex: initial !important; max-width: 180px !important; min-height: auto !important; width: 100% !important; }
@@ -150,7 +145,6 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 #profile .profile-title, #profile .profile-list-group, #profile .research-group { text-align: center !important; width: 100% !important; max-width: 100% !important; }
 #profile .profile-list-group { border-left: none !important; padding-left: 0 !important; border-top: 1px solid #eee; padding-top: 12px; } 
 
-/* Find Me 섹션 모바일 화면 최적화 */
 #Find-Me.section-box { padding: 15px 12px 2px 12px !important; } 
 #Find-Me .container { gap: 10px !important; flex-direction: column !important; align-items: center !important; }
 #Find-Me .content-img { flex: initial !important; max-width: 216px !important; min-height: auto !important; width: 100% !important; } 
@@ -163,14 +157,12 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 #Find-Me .contact-item.open-kakao-item a { font-size: 11.22px !important; } 
 #Find-Me .price-info { margin-top: 5px !important; padding-top: 10px !important; padding-bottom: 0 !important; width: 100% !important; text-align: center; }
 
-/* Footprints 섹션 모바일 가로 확장 및 폰트 축소 */
 #footprints .container { width: 100% !important; max-width: 100% !important; padding: 0 !important; }
 .footprints-box { padding: 20px 15px !important; margin-bottom: 20px !important; }
 .footprints-box h4 { font-size: 14px !important; margin-bottom: 12px !important; }
 .footprints-box input, .footprints-box textarea { padding: 10px 12px !important; font-size: 12px !important; }
 .footprints-box textarea { height: 110px !important; }
 .footprints-box button { padding: 10px 20px !important; font-size: 12px !important; }
-/* 동적 생성 리뷰 카드 모바일 폰트 크기 강제 제어 */
 .mobile-review-card { padding: 12px !important; margin-bottom: 8px !important; }
 .mobile-review-card b { font-size: 12px !important; }
 .mobile-review-card .review-content-text { font-size: 12px !important; line-height: 1.5 !important; }
@@ -193,6 +185,10 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <a href="#profile" data-section="profile">Profile</a>
 <a href="#Find-Me" data-section="Find-Me">Find Me</a>
 <a href="#footprints" data-section="footprints">Footprints</a>
+<div class="lang-switcher">
+<button class="lang-btn active-lang" onclick="changeLanguage('ko')">KO</button>
+<button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+</div>
 </nav>
 </div>
 </header>
@@ -203,7 +199,8 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <div class="content-img"><img src="basic.webp" alt="Main Profile" onerror="this.parentElement.style.display='none';"></div>
 <div class="content-text" style="padding-top: 10px;">
 <div class="cursive-text">May you find peace<br>in your deepest heart<br>whenever you talk to me<br>or visit our spot</div>
-<div class="main-message">나와 이야기할 때나 우리의 공간을 찾을 때,<br>네 마음 깊은 곳에 평온이 깃들기를.</div>
+<div class="main-message lang-ko">나와 이야기할 때나 우리의 공간을 찾을 때,<br>네 마음 깊은 곳에 평온이 깃들기를.</div>
+<div class="main-message lang-en">Whenever you share your thoughts with me or step into this space,<br>may serene peace gently settle deep within your heart.</div>
 </div>
 </div>
 </section>
@@ -214,6 +211,9 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <div class="container">
 <div class="about-leaf-text">
 <h2>About <span class="elegant-cursive">Leaf Wellness Studio</span></h2>
+
+<!-- 한글 소개 -->
+<div class="lang-ko">
 <div class="main-sub">오롯이 혼자라고 느낄 때, 당신만의 긍정의 빛을 마주하는 공간<br>하나의 잎새가 안식을 얻고, 마침내 자신만의 빛을 발견하는 공간</div>
 <div class="intro-title"><span class="handwriting subtle-green">‘LWS’를 소개합니다.</span></div>
 <img src="logo.webp" alt="Leaf Wellness Studio Inner Logo" class="section-inner-logo" onerror="this.style.display='none';">
@@ -237,9 +237,42 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <li><strong class="handwriting subtle-green">온전한 평온함(Relief)과 안식을 누리기를 바라는 <br class="mobile-br">진심 어린 염원을 담았습니다.</strong></li>
 </ul>
 <div class="point-title"><span class="subtle-green">🚀 Studio (현대 사회에 지친이들을 위한 웰니스 스튜디오)</span></div>
-<p>오직 한 사람, 당신만의 진정한 웰빙과 내면의 건강을 위해 <br class="mobile-br">정성스럽게 꾸며진 전문적인 웰니스 공간입니다.</p>
+<p>오직 한 사람, 당신만의 진정한 웰빙และ 내면의 건강을 위해 <br class="mobile-br">정성스럽게 꾸며진 전문적인 웰니스 공간입니다.</p>
 <p><strong class="handwriting subtle-green">Leaf Wellness Studio는 온전히 개인 한 사람의, <br class="mobile-br">혹은 귀한 발걸음을 해주시는 여러 내담자들의 <br class="mobile-br">내면적 건강과 행복(Well-being)을 위해 존재하는 세심한 공간입니다.</strong></p>
 <p class="footer-highlight-text handwriting"><span class="elegant-cursive">Leaf Wellness Studio</span>에서<br class="mobile-br">당신만의 빛을 함께 찾아보세요.</p>
+</div>
+
+<!-- 영어 소개 -->
+<div class="lang-en">
+<div class="main-sub">A sanctuary to face your own light of positivity when you feel entirely alone.<br>A space where a single leaf finds rest and finally discovers its own inner radiance.</div>
+<div class="intro-title"><span class="handwriting subtle-green">Introducing 'LWS'</span></div>
+<img src="logo.webp" alt="Leaf Wellness Studio Inner Logo" class="section-inner-logo" onerror="this.style.display='none';">
+<div class="point-title"><span class="subtle-green">☀️ Our Symbol</span></div>
+<p><strong>The 'Leaf' on the left</strong> represents a precious, unique individual.</p>
+<p><strong>The 'Sun' in the background</strong> symbolizes the positive psychological resources</p>
+<p class="sub-p-bold handwriting subtle-green">that already exist within the client but are temporarily hidden.</p>
+<div class="point-title"><span class="subtle-green">🌱 Leaf (A single leaf, a sprout, and You)</span></div>
+<ul class="no-list-style">
+<li>'Leaf' signifies a single piece of leaf.</li>
+<li>There are lonely moments when we feel completely solitary in this world.</li>
+<li>Each client who visits this place with a weary heart,</li>
+<li>in search of comfort and healing, is that very 'Leaf'.</li>
+</ul>
+<p><strong class="handwriting subtle-green">At the same time, it stands for a 'sprout' holding the boundless potential to grow greener.</strong></p>
+<div class="point-title"><span class="subtle-green">😌 Relief (Wishing for profound comfort and peace)</span></div>
+<ul class="no-list-style">
+<li>The word 'Leaf' resonates closely with 'Relief', meaning stability of mind.</li>
+<li>It carries our heartfelt hope that everyone who steps inside</li>
+<li>can lay down their heavy burdens of anxiety and fear,</li>
+<li>and that the small leaf, which used to endure harsh winds alone,</li>
+</ul>
+<p><strong class="handwriting subtle-green">can experience complete peace (Relief) and rest while staying here.</strong></p>
+<div class="point-title"><span class="subtle-green">🚀 Studio (A Wellness Studio for those weary of modern life)</span></div>
+<p>A professionally and delicately curated wellness space dedicated solely to your authentic well-being and inner health.</p>
+<p><strong class="handwriting subtle-green">Leaf Wellness Studio is a mindful space designed entirely for the inner harmony and happiness of each valued individual who walks through our doors.</strong></p>
+<p class="footer-highlight-text handwriting">Discover your own light here at<br class="mobile-br"><span class="elegant-cursive">Leaf Wellness Studio</span>.</p>
+</div>
+
 </div>
 </div>
 </section>
@@ -249,18 +282,25 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <section id="about-founder" style="padding-top: 0; min-height: auto;">
 <div class="container">
 <div class="content-img"><img src="about.webp" alt="About Founder" onerror="this.parentElement.style.display='none';"></div>
-<div class="content-text">
-<p>청소년기 우울이라는 진단(혹은 낙인) 속에서 심리상담을 처음 접하게 되었어요. 누구보다 장난기 많고 낙천적인 저조차 무기력하게 만들었던 건, 다름 아닌 
-    <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 목표를 향해 쫓아갈 때 저 혼자 목표가 없다는 이유로 
-    스스로가 한없이 초라해 보였던 시절이었습니다.</p>
-<p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 저는 사람을 좋아하고 친구들과 피상적인 이야기보단 
-    인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느깁니다.</p>
-<p>시행착오도 많았고 그 방황의 시간들이 아깝고 후회스럽기도 하죠. <strong><span class="handwriting">그리고 또 그 방황이 다시 찾아올지도 모른다는 두려움도 항상 있고요.</span></strong> 하지만 그 짙은 밤들이 있었기에 지금의 제가 있고, 남들의 속도에 치여 길을 잃은 사람들의 마음을 누구보다 깊이 지켜볼 수 있는 눈이 생겼습니다.</p>
-<p>이제는 후회 대신, <br class="mobile-br">제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. 그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서, 
-    <strong class="handwriting">깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</strong></p>
 
+<!-- 한글 내용 -->
+<div class="content-text lang-ko">
+<p>청소년기 우울이라는 진단(혹은 낙인) 속에서 심리상담을 처음 접하게 되었어요. 누구보다 장난기 많고 낙천적인 저조차 무기력하게 만들었던 건, 다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 목표를 향해 쫓아갈 때 저 혼자 목표가 없다는 이유로 스스로가 한없이 초라해 보였던 시절이었습니다.</p>
+<p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 저는 사람을 좋아하고 친구들과 피상적인 이야기보단 인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느깁니다.</p>
+<p>시행착오도 많았고 그 방황의 시간들이 아깝고 후회스럽기도 하죠. <strong><span class="handwriting">그리고 또 그 방황이 다시 찾아올지도 모른다는 두려움도 항상 있고요.</span></strong> 하지만 그 짙은 밤들이 있었기에 지금의 제가 있고, 남들의 속도에 치여 길을 잃은 사람들의 마음을 누구보다 깊이 지켜볼 수 있는 눈이 생겼습니다.</p>
+<p>이제는 후회 대신, <br class="mobile-br">제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. 그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서, <strong class="handwriting">깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</strong></p>
 <br><p class="special-green"><span class="handwriting"><strong>깊은 대화로 연결될 수 있는 안전한 공간이 되어드리겠습니다.<br><br>이곳에서 여러분의 이야기들을 편안하게 들려주세요.</strong></span></p>
 </div>
+
+<!-- 영어 내용 -->
+<div class="content-text lang-en">
+<p>I first encountered psychological counseling during my adolescence under the diagnosis (or rather, the stigma) of depression. What drove me into a state of lethargy—despite being a playful and optimistic person by nature—was the simple fact that <strong>I had no dream</strong>. While my peers rushed toward concrete goals, aiming for specific universities and majors, I felt utterly diminished simply because I lacked a set destination.</p>
+<p>Throughout those prolonged years of trial, error, and wandering, the one thing that steadfastly sustained me was <strong>***Connection***</strong>. I genuinely love people, and rather than engaging in superficial small talk, I feel truly alive only when I connect on a human-to-human level through deep, meaningful conversations.</p>
+<p>There were many missteps, and sometimes I feel regret over that seemingly wasted time. <strong><span class="handwriting">And honestly, there is always a lingering fear that such wandering might return.</span></strong> Yet, because I endured those dark nights, I became who I am today, gaining the insight to deeply empathize with those who feel lost while being overwhelmed by the pace of others.</p>
+<p>Now, instead of looking back with regret, I choose to walk forward with the inner compass I have found. And for you, who might feel as solitary as I once did, <strong class="handwriting">I want to be a warm, gentle companion, walking right beside you through deep connection.</strong></p>
+<br><p class="special-green"><span class="handwriting"><strong>I promise to provide a safe haven where we can intertwine through profound dialogue.<br><br>Please feel free to share your unique stories here.</strong></span></p>
+</div>
+
 </div>
 </section>
 </div>
@@ -269,7 +309,9 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <section id="profile" style="padding-top: 0; min-height: auto;">
 <div class="container">
 <div class="content-img"><img src="profile.webp" alt="Profile Image" onerror="this.parentElement.style.display='none';"></div>
-<div class="content-text">
+
+<!-- 한글 프로필 -->
+<div class="content-text lang-ko">
 <div class="profile-title">B.A. University of California, Davis 심리학 전공</div>
 <div class="profile-title" style="margin-bottom: 20px;">M.A 성균관대학교 교육대학원 상담심리전공 (전공대표)</div>
 <ul class="profile-list-group research-group">
@@ -300,6 +342,40 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0;">한국상담학회 상담심리사 2급 준비 중</li>
 </ul>
 </div>
+
+<!-- 영어 프로필 -->
+<div class="content-text lang-en">
+<div class="profile-title">B.A. In Psychology, University of California, Davis</div>
+<div class="profile-title" style="margin-bottom: 20px;">M.A. In Counseling Psychology, Graduate School of Education, Sungkyunkwan University (Student Representative)</div>
+<ul class="profile-list-group research-group">
+<li>• Primary Research Interests: Adolescent Mental Health, Positive Psychology,<br>Neet Youth (Unemployed/Resting Youth), Career & Turnover Counseling for 2030 Professionals</li>
+<li>• Research Proposal Subject: The Impact of Adolescent Stress on Mental Health: The Mediating Effect of Positive Psychological Resources</li>
+</ul>
+<ul class="profile-list-group" style="font-weight: bold; color: #111; border-top: 1px solid #eee; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-bottom: 0;">
+<br class="mobile-br"><li>'26 Administration, Seoul Top Psychiatric Clinic (Jamsilsaenae Branch)</li>
+<li>'25 Center Manager, Atomus Mindcafe (Gangnam Samsung Branch)</li>
+<li>'21 Group Counseling Co-leader (High School Seniors) & Administrative Director, Korea Child & Adolescent Counseling Center (Daechi Branch)</li>
+<li>'17 Administrative Director, Hello Smile Psychological Counseling Center (Jongno Branch)</li><br class="mobile-br">
+</ul>
+<ul class="profile-list-group" style="font-weight: bold; color: #444; border-top: 1px solid #eee; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0;">
+<br class="mobile-br"><li>• Psychological Counselor (Level 1), Korea Vocational Competency Development Institute</li>
+<li>• Art Therapist (Level 1), Korea Vocational Competency Development Institute</li>
+<li>• Career Aptitude Counselor (Level 1), Korea Vocational Competency Development Institute</li>
+<li>• Family Counselor (Level 1), Korea Vocational Competency Development Institute</li>
+<li>• Multicultural Psychological Counselor (Level 1), Korea Vocational Competency Development Institute</li><br class="mobile-br">
+</ul>
+<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; padding-top: 10px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0; padding-bottom: 0;">
+<li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">Training Member, Korean Counseling Psychological Association (KCPA)</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 5px;">- Completed 30 hours of Case Conference presentation</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 20px;">- Completed 18 hours of Group Counseling at SKKU Trauma Psychology Institute</li>
+<li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">Associate Member, Korean Counseling Association (KCA)</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 25px;">- Completed 11 hours as an Assistant Group Leader</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">In preparation for Youth Counselor (Level 2), Ministry of Gender Equality and Family</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">In preparation for Counseling Psychologist (Level 2), KCPA</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0;">In preparation for Professional Counselor (Level 2), KCA</li>
+</ul>
+</div>
+
 </div>
 </section>
 </div>
@@ -317,7 +393,8 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <li class="contact-item email-item"><img src="email.jpg" alt="Email"><a href="mailto:sunahhn@sunahhn.com">sunahhn@sunahhn.com</a></li>
 <li class="contact-item open-kakao-item"><img src="kakao.jpg" class="kakao-logo" alt="KakaoTalk"><a href="https://open.kakao.com/o/s0995Nzi" target="_blank" rel="noopener">https://open.kakao.com/o/s0995Nzi</a></li>
 </ul>
-<div class="price-info price-soft-green">상담비용 5만원 / 50분</div>
+<div class="price-info price-soft-green lang-ko">상담비용 5만원 / 50분</div>
+<div class="price-info price-soft-green lang-en">Counseling Fee: 50,000 KRW / 50 mins</div>
 </div>
 </div>
 </div>
@@ -330,7 +407,9 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <div style="margin-bottom: 10px; text-align: center;">
 <h3 id="footprints-title" style="font-family: 'Georgia', serif; font-size: 26px; color: #2d6a4f; margin-bottom: 5px; font-weight: bold;">Footprints</h3>
 </div>
-<div class="footprints-box" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 25px;">
+
+<!-- 한글 방명록 입력 -->
+<div class="footprints-box lang-ko" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 25px;">
 <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">한 줄 응원 남기기</h4>
 <div style="margin-bottom: 15px;"><input type="text" id="review-name" placeholder="닉네임" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
 <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
@@ -341,6 +420,20 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 </div>
 </div>
 </div>
+
+<!-- 영어 방명록 입력 -->
+<div class="footprints-box lang-en" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 25px;">
+<h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">Leave a Message of Support</h4>
+<div style="margin-bottom: 15px;"><input type="text" id="review-name-en" placeholder="Nickname" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
+<div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
+<textarea id="review-content-en" placeholder="Please leave a warm message of support." style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px;"></textarea>
+<div style="text-align: right; display: flex; justify-content: flex-end; gap: 10px;">
+<button onclick="clearBrokenData()" style="background-color: #e63946; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer;">Reset</button>
+<button onclick="addReviewEn()" style="background-color: #52b788; color: white; border: none; padding: 12px 45px; border-radius: 8px; cursor: pointer;">Submit</button>
+</div>
+</div>
+</div>
+
 <div id="review-list" style="margin-bottom: 25px; width: 100%;"></div>
 <div style="max-width: 650px; margin: 0 auto 0px; width: 100%; padding-bottom: 0;">
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%;">
@@ -357,10 +450,18 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <section id="footer-section" style="min-height: auto; margin-top: 0; color: #a09080;">
 <div style="width: 100%; text-align: center;">
 <div style="margin-bottom: 25px; font-size: 13px; color: #a09080; line-height: 1.5; padding: 0 10px;">
+<!-- 한글 푸터 -->
+<span class="lang-ko">
 리프 웰니스 스튜디오. 소장: 현선아. 개인정보 보호관리자: 현선아. <br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #a09080;">sunahhn@sunahhn.com</a>. DM: <a href="https://www.instagram.com/sunahhn" target="_blank" style="color: #a09080;">@sunahhn</a><br>
-
 <br>Copyright © 2026 LWS All Rights Reserved. <br class="mobile-br">Powered by Firebase.<br><span style="font-weight:bold;">
 자문법무법인: 법무법인 새별 (대표변호사, 안성열)</span>
+</span>
+<!-- 영어 푸터 -->
+<span class="lang-en">
+Leaf Wellness Studio. Director: Sunah Ahn. Privacy Manager: Sunah Ahn. <br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #a09080;">sunahhn@sunahhn.com</a>. DM: <a href="https://www.instagram.com/sunahhn" target="_blank" style="color: #a09080;">@sunahhn</a><br>
+<br>Copyright © 2026 LWS All Rights Reserved. <br class="mobile-br">Powered by Firebase.<br><span style="font-weight:bold;">
+Legal Counsel: Saebyeol Law Firm (Managing Partner, Sungyeol Ahn)</span>
+</span>
 </div>
 <div class="visitor-counter" id="visitor-display-box" style="margin-bottom: 15px; color: #2d6a4f;">
 <span>Today :<em id="today-count">0</em></span>
@@ -374,6 +475,7 @@ LWS - Psychological Counseling Space
 </section>
 
 <script>
+var currentLang = "ko"; // 기본 언어 플래그
 var MASTER_PASSWORD = "leaf1234";
 var firebaseConfig = { apiKey: "AIzaSyCd0izexUnK2e3hFF72F09pSvNDMUX0Bg", authDomain: "leaf-web-f6019.firebaseapp.com", databaseURL: "https://leaf-web-f6019-default-rtdb.asia-southeast1.firebasedatabase.app", projectId: "leaf-web-f6019", storageBucket: "leaf-web-f6019.firebasestorage.app", messagingSenderId: "318569186261", appId: "1:318569186261:web:006ee73e7359f2482bb35c" };
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
@@ -388,6 +490,25 @@ listenReviews();
 setupScrollBehavior();
 setupScrollSpy(); 
 });
+
+// 언어 변경 처리 함수
+function changeLanguage(lang) {
+currentLang = lang;
+var buttons = document.querySelectorAll('.lang-btn');
+buttons.forEach(btn => btn.classList.remove('active-lang'));
+
+if(lang === 'ko') {
+document.querySelectorAll('.lang-ko').forEach(el => el.style.display = 'block');
+document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+event.target.classList.add('active-lang');
+} else {
+document.querySelectorAll('.lang-ko').forEach(el => el.style.display = 'none');
+document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
+event.target.classList.add('active-lang');
+}
+// 방명록 렌더링 동적 리로드
+listenReviews();
+}
 
 function fetchUserIp() {
 fetch('https://api.ipify.org?format=json')
@@ -489,7 +610,7 @@ var nameInput = document.getElementById('reply-name-' + reviewKey);
 var contentInput = document.getElementById('reply-content-' + reviewKey);
 var n = nameInput.value;
 var c = contentInput.value;
-if(!n || !c) return alert("닉네임과 답글 내용을 입력해주세요.");
+if(!n || !c) return alert(currentLang === 'ko' ? "닉네임과 답글 내용을 입력해주세요." : "Please enter your nickname and reply content.");
 
 database.ref('reviews/' + reviewKey + '/replies').push({
 name: n,
@@ -504,16 +625,20 @@ document.getElementById('reply-form-' + reviewKey).style.display = 'none';
 }
 
 function deleteReply(reviewKey, replyKey) {
-if(prompt("관리자 비밀번호") === MASTER_PASSWORD) {
+var pwMsg = currentLang === 'ko' ? "관리자 비밀번호" : "Admin Password";
+if(prompt(pwMsg) === MASTER_PASSWORD) {
 database.ref('reviews/' + reviewKey + '/replies/' + replyKey).remove();
 }
 }
 
 function editReview(reviewKey, currentContent) {
-if (prompt("관리자 비밀번호") === MASTER_PASSWORD) {
-var newContent = prompt("댓글 내용을 수정해주세요:", currentContent);
+var pwMsg = currentLang === 'ko' ? "관리자 비밀번호" : "Admin Password";
+var editMsg = currentLang === 'ko' ? "댓글 내용을 수정해주세요:" : "Edit comment content:";
+var failMsg = currentLang === 'ko' ? "내용을 입력해야 합니다." : "Content cannot be empty.";
+if (prompt(pwMsg) === MASTER_PASSWORD) {
+var newContent = prompt(editMsg, currentContent);
 if (newContent === null) return;
-if (!newContent.trim()) return alert("내용을 입력해야 합니다.");
+if (!newContent.trim()) return alert(failMsg);
 database.ref('reviews/' + reviewKey).update({
 content: newContent
 });
@@ -521,10 +646,13 @@ content: newContent
 }
 
 function editReply(reviewKey, replyKey, currentContent) {
-if (prompt("관리자 비밀번호") === MASTER_PASSWORD) {
-var newContent = prompt("답글 내용을 수정해주세요:", currentContent);
+var pwMsg = currentLang === 'ko' ? "관리자 비밀번호" : "Admin Password";
+var editMsg = currentLang === 'ko' ? "답글 내용을 수정해주세요:" : "Edit reply content:";
+var failMsg = currentLang === 'ko' ? "내용을 입력해야 합니다." : "Content cannot be empty.";
+if (prompt(pwMsg) === MASTER_PASSWORD) {
+var newContent = prompt(editMsg, currentContent);
 if (newContent === null) return;
-if (!newContent.trim()) return alert("내용을 입력해야 합니다.");
+if (!newContent.trim()) return alert(failMsg);
 database.ref('reviews/' + reviewKey + '/replies/' + replyKey).update({
 content: newContent
 });
@@ -547,7 +675,10 @@ function listenReviews() {
 var reviewList = document.getElementById('review-list');
 database.ref('reviews').on('value', snapshot => {
 var data = snapshot.val();
-if (!data) { reviewList.innerHTML = '<p style="text-align:center;">아직 응원의 한 마디가 없습니다. 🍃</p>'; return; }
+if (!data) { 
+reviewList.innerHTML = currentLang === 'ko' ? '<p style="text-align:center; width: 100%;">아직 응원의 한 마디가 없습니다. 🍃</p>' : '<p style="text-align:center; width: 100%;">No messages of support yet. 🍃</p>'; 
+return; 
+}
 var arr = [];
 for (var k in data) { data[k].key = k; arr.push(data[k]); }
 arr.sort((a, b) => b.timestamp - a.timestamp);
@@ -562,7 +693,6 @@ repliesHtml = replyArr.map(rp => {
 var escapedReplyContent = rp.content.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/\n/g, '\\n');
 var replyTimeStr = formatTimestamp(rp.timestamp);
 var replyIpStr = rp.ip ? maskIpAddress(rp.ip) : "";
-// 대댓글: 시간 정보 바로 옆에 괄호로 IP 주소 합성 배치
 var replyMetaStr = replyIpStr ? replyTimeStr + " (" + replyIpStr + ")" : replyTimeStr;
 
 return `
@@ -573,8 +703,8 @@ return `
 <span style="font-size: 11px; color: #aaa; font-family: 'Arial', sans-serif;">${replyMetaStr}</span>
 </div>
 <div>
-<button onclick="editReply('${r.key}', '${rp.key}', '${escapedReplyContent}')" style="border:none; background:none; cursor:pointer; color:#52b788; font-size:11px; margin-right:6px;">수정</button>
-<button onclick="deleteReply('${r.key}', '${rp.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:11px;">삭제</button>
+<button onclick="editReply('${r.key}', '${rp.key}', '${escapedReplyContent}')" style="border:none; background:none; cursor:pointer; color:#52b788; font-size:11px; margin-right:6px;">${currentLang === 'ko' ? '수정' : 'Edit'}</button>
+<button onclick="deleteReply('${r.key}', '${rp.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:11px;">${currentLang === 'ko' ? '삭제' : 'Delete'}</button>
 </div>
 </div>
 <div style="color:#666; word-break:break-all;">${rp.content}</div>
@@ -586,7 +716,6 @@ return `
 var escapedReviewContent = r.content.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/\n/g, '\\n');
 var reviewTimeStr = formatTimestamp(r.timestamp);
 var reviewIpStr = r.ip ? maskIpAddress(r.ip) : "";
-// 댓글: 시간 정보 바로 옆에 괄호로 IP 주소 합성 배치
 var reviewMetaStr = reviewIpStr ? reviewTimeStr + " (" + reviewIpStr + ")" : reviewTimeStr;
 
 return `
@@ -597,9 +726,9 @@ return `
 <span style="font-size: 11px; color: #aaa; font-family: 'Arial', sans-serif;">${reviewMetaStr}</span>
 </div>
 <div>
-<button onclick="toggleReplyForm('${r.key}')" style="border:none; background:none; cursor:pointer; color:#52b788; font-size:12px; font-weight:bold; margin-right:10px;">답글달기</button>
-<button onclick="editReview('${r.key}', '${escapedReviewContent}')" style="border:none; background:none; cursor:pointer; color:#52b788; font-size:12px; margin-right:10px;">수정</button>
-<button onclick="deleteReview('${r.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:12px;">삭제</button>
+<button onclick="toggleReplyForm('${r.key}')" style="border:none; background:none; cursor:pointer; color:#52b788; font-size:12px; font-weight:bold; margin-right:10px;">${currentLang === 'ko' ? '답글달기' : 'Reply'}</button>
+<button onclick="editReview('${r.key}', '${escapedReviewContent}')" style="border:none; background:none; cursor:pointer; color:#52b788; font-size:12px; margin-right:10px;">${currentLang === 'ko' ? '수정' : 'Edit'}</button>
+<button onclick="deleteReview('${r.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:12px;">${currentLang === 'ko' ? '삭제' : 'Delete'}</button>
 </div>
 </div>
 <div class="review-content-text" style="font-size:14px; color:#555; word-break:break-all; margin-bottom: 5px; white-space: pre-wrap;">${r.content}</div>
@@ -609,10 +738,10 @@ return `
 
 <!-- 대댓글 입력 토글 폼 -->
 <div id="reply-form-${r.key}" style="display:none; margin-top:12px; padding:10px; background:#f4f6f4; border-radius:6px; border:1px solid #e2e8e2;">
-<input type="text" id="reply-name-${r.key}" placeholder="답글 닉네임" style="width:100%; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; margin-bottom:6px;">
-<textarea id="reply-content-${r.key}" placeholder="따뜻한 답글을 남겨주세요" style="width:100%; height:60px; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; resize:none; margin-bottom:6px;"></textarea>
+<input type="text" id="reply-name-${r.key}" placeholder="${currentLang === 'ko' ? '답글 닉네임' : 'Reply Nickname'}" style="width:100%; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; margin-bottom:6px;">
+<textarea id="reply-content-${r.key}" placeholder="${currentLang === 'ko' ? '따뜻한 답글을 남겨주세요' : 'Please leave a warm reply'}" style="width:100%; height:60px; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; resize:none; margin-bottom:6px;"></textarea>
 <div style="text-align:right;">
-<button onclick="addReply('${r.key}')" style="background-color: #52b788; color: white; border: none; padding: 4px 15px; border-radius:4px; font-size:12px; cursor: pointer;">답글등록</button>
+<button onclick="addReply('${r.key}')" style="background-color: #52b788; color: white; border: none; padding: 4px 15px; border-radius:4px; font-size:12px; cursor: pointer;">${currentLang === 'ko' ? '답글등록' : 'Submit Reply'}</button>
 </div>
 </div>
 </div>`;
@@ -633,11 +762,30 @@ ip: currentUserIp
 document.getElementById('review-name').value = ''; document.getElementById('review-content').value = '';
 });
 }
-function deleteReview(k) {
-if(prompt("관리자 비밀번호") === MASTER_PASSWORD) database.ref('reviews/' + k).remove();
+
+function addReviewEn() {
+var n = document.getElementById('review-name-en').value;
+var c = document.getElementById('review-content-en').value;
+if(!n || !c) return alert("Please enter your nickname and content.");
+database.ref('reviews').push({
+name: n, 
+content: c, 
+timestamp: Date.now(),
+ip: currentUserIp
+}).then(() => {
+document.getElementById('review-name-en').value = ''; document.getElementById('review-content-en').value = '';
+});
 }
+
+function deleteReview(k) {
+var pwMsg = currentLang === 'ko' ? "관리자 비밀번호" : "Admin Password";
+if(prompt(pwMsg) === MASTER_PASSWORD) database.ref('reviews/' + k).remove();
+}
+
 function clearBrokenData() {
-if(prompt("관리자 비밀번호") === MASTER_PASSWORD && confirm("전체 삭제하시겠습니까?")) database.ref('reviews').remove();
+var pwMsg = currentLang === 'ko' ? "관리자 비밀번호" : "Admin Password";
+var cfMsg = currentLang === 'ko' ? "전체 삭제하시겠습니까?" : "Are you sure you want to delete all?";
+if(prompt(pwMsg) === MASTER_PASSWORD && confirm(cfMsg)) database.ref('reviews').remove();
 }
 </script>
 </body>
