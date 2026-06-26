@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -104,6 +103,10 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 /* 다국어 제어 클래스 */
 .lang-en { display: none; }
 
+/* 구글 번역 툴바 숨김 스크립트 대응용 스타일 */
+.goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .goog-te-tooltip, .goog-te-menu-value, .goog-te-gadget { display: none !important; }
+body { top: 0 !important; }
+
 @media (max-width: 768px) {
 header { padding: 10px 0 8px 0; }
 .logo-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; margin-bottom: 10px; width: 100%; text-align: center; }
@@ -171,6 +174,18 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 </style>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+<div id="google_translate_element" style="display:none;"></div>
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'ko',
+        includedLanguages: 'en,ko',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+    }, 'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
 <header id="main-header">
@@ -212,7 +227,6 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <div class="about-leaf-text">
 <h2>About <span class="elegant-cursive">Leaf Wellness Studio</span></h2>
 
-<!-- 한글 소개 -->
 <div class="lang-ko">
 <div class="main-sub">오롯이 혼자라고 느낄 때, 당신만의 긍정의 빛을 마주하는 공간<br>하나의 잎새가 안식을 얻고, 마침내 자신만의 빛을 발견하는 공간</div>
 <div class="intro-title"><span class="handwriting subtle-green">‘LWS’를 소개합니다.</span></div>
@@ -242,7 +256,6 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <p class="footer-highlight-text handwriting"><span class="elegant-cursive">Leaf Wellness Studio</span>에서<br class="mobile-br">당신만의 빛을 함께 찾아보세요.</p>
 </div>
 
-<!-- 영어 소개 -->
 <div class="lang-en">
 <div class="main-sub">A sanctuary to face your own light of positivity when you feel entirely alone.<br>A space where a single leaf finds rest and finally discovers its own inner radiance.</div>
 <div class="intro-title"><span class="handwriting subtle-green">Introducing 'LWS'</span></div>
@@ -283,7 +296,6 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <div class="container">
 <div class="content-img"><img src="about.webp" alt="About Founder" onerror="this.parentElement.style.display='none';"></div>
 
-<!-- 한글 내용 -->
 <div class="content-text lang-ko">
 <p>청소년기 우울이라는 진단(혹은 낙인) 속에서 심리상담을 처음 접하게 되었어요. 누구보다 장난기 많고 낙천적인 저조차 무기력하게 만들었던 건, 다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 목표를 향해 쫓아갈 때 저 혼자 목표가 없다는 이유로 스스로가 한없이 초라해 보였던 시절이었습니다.</p>
 <p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 저는 사람을 좋아하고 친구들과 피상적인 이야기보단 인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느깁니다.</p>
@@ -292,7 +304,6 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <br><p class="special-green"><span class="handwriting"><strong>깊은 대화로 연결될 수 있는 안전한 공간이 되어드리겠습니다.<br><br>이곳에서 여러분의 이야기들을 편안하게 들려주세요.</strong></span></p>
 </div>
 
-<!-- 영어 내용 -->
 <div class="content-text lang-en">
 <p>I first encountered psychological counseling during my adolescence under the diagnosis (or rather, the stigma) of depression. What drove me into a state of lethargy—despite being a playful and optimistic person by nature—was the simple fact that <strong>I had no dream</strong>. While my peers rushed toward concrete goals, aiming for specific universities and majors, I felt utterly diminished simply because I lacked a set destination.</p>
 <p>Throughout those prolonged years of trial, error, and wandering, the one thing that steadfastly sustained me was <strong>***Connection***</strong>. I genuinely love people, and rather than engaging in superficial small talk, I feel truly alive only when I connect on a human-to-human level through deep, meaningful conversations.</p>
@@ -310,7 +321,6 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <div class="container">
 <div class="content-img"><img src="profile.webp" alt="Profile Image" onerror="this.parentElement.style.display='none';"></div>
 
-<!-- 한글 프로필 -->
 <div class="content-text lang-ko">
 <div class="profile-title">B.A. University of California, Davis 심리학 전공</div>
 <div class="profile-title" style="margin-bottom: 20px;">M.A 성균관대학교 교육대학원 상담심리전공 (전공대표)</div>
@@ -343,7 +353,6 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 </ul>
 </div>
 
-<!-- 영어 프로필 -->
 <div class="content-text lang-en">
 <div class="profile-title">B.A. In Psychology, University of California, Davis</div>
 <div class="profile-title" style="margin-bottom: 20px;">M.A. In Counseling Psychology, Graduate School of Education, Sungkyunkwan University (Student Representative)</div>
@@ -408,7 +417,6 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <h3 id="footprints-title" style="font-family: 'Georgia', serif; font-size: 26px; color: #2d6a4f; margin-bottom: 5px; font-weight: bold;">Footprints</h3>
 </div>
 
-<!-- 한글 방명록 입력 -->
 <div class="footprints-box lang-ko" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 25px;">
 <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">한 줄 응원 남기기</h4>
 <div style="margin-bottom: 15px;"><input type="text" id="review-name" placeholder="닉네임" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
@@ -421,7 +429,6 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 </div>
 </div>
 
-<!-- 영어 방명록 입력 -->
 <div class="footprints-box lang-en" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 25px;">
 <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">Leave a Message of Support</h4>
 <div style="margin-bottom: 15px;"><input type="text" id="review-name-en" placeholder="Nickname" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
@@ -450,13 +457,11 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <section id="footer-section" style="min-height: auto; margin-top: 0; color: #a09080;">
 <div style="width: 100%; text-align: center;">
 <div style="margin-bottom: 25px; font-size: 13px; color: #a09080; line-height: 1.5; padding: 0 10px;">
-<!-- 한글 푸터 -->
 <span class="lang-ko">
 리프 웰니스 스튜디오. 소장: 현선아. 개인정보 보호관리자: 현선아. <br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #a09080;">sunahhn@sunahhn.com</a>. DM: <a href="https://www.instagram.com/sunahhn" target="_blank" style="color: #a09080;">@sunahhn</a><br>
 <br>Copyright © 2026 LWS All Rights Reserved. <br class="mobile-br">Powered by Firebase.<br><span style="font-weight:bold;">
 자문법무법인: 법무법인 새별 (대표변호사, 안성열)</span>
 </span>
-<!-- 영어 푸터 -->
 <span class="lang-en">
 Leaf Wellness Studio. Director: Sunah Ahn. Privacy Manager: Sunah Ahn. <br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #a09080;">sunahhn@sunahhn.com</a>. DM: <a href="https://www.instagram.com/sunahhn" target="_blank" style="color: #a09080;">@sunahhn</a><br>
 <br>Copyright © 2026 LWS All Rights Reserved. <br class="mobile-br">Powered by Firebase.<br><span style="font-weight:bold;">
@@ -491,20 +496,45 @@ setupScrollBehavior();
 setupScrollSpy(); 
 });
 
-// 언어 변경 처리 함수
+// 언어 변경 처리 함수 및 동적 번역 트리거 처리
 function changeLanguage(lang) {
 currentLang = lang;
 var buttons = document.querySelectorAll('.lang-btn');
 buttons.forEach(btn => btn.classList.remove('active-lang'));
 
+// 이벤트 타겟팅 예외 대응 보호 조건 처리
+if(event && event.target && typeof event.target.classList === 'object') {
+    event.target.classList.add('active-lang');
+} else {
+    buttons.forEach(btn => {
+        if(btn.textContent.toLowerCase() === lang) btn.classList.add('active-lang');
+    });
+}
+
 if(lang === 'ko') {
 document.querySelectorAll('.lang-ko').forEach(el => el.style.display = 'block');
 document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
-event.target.classList.add('active-lang');
+// 구글 번역 복원 (한국어 원본 보기)
+var iframe = document.querySelector('.goog-te-banner-frame');
+if(iframe) {
+    var restoreBtn = iframe.contentWindow.document.getElementById(':1.restore');
+    if(restoreBtn) restoreBtn.click();
+} else {
+    var select = document.querySelector('select.goog-te-combo');
+    if(select) {
+        select.value = 'ko';
+        select.dispatchEvent(new Event('change'));
+    }
+}
 } else {
 document.querySelectorAll('.lang-ko').forEach(el => el.style.display = 'none');
 document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
-event.target.classList.add('active-lang');
+// 구글 영어 번역 강제 트리거
+var select = document.querySelector('select.goog-te-combo');
+if(select) {
+    select.value = 'en';
+    select.dispatchEvent(new Event('change'));
+}
 }
 // 방명록 렌더링 동적 리로드
 listenReviews();
@@ -624,6 +654,11 @@ document.getElementById('reply-form-' + reviewKey).style.display = 'none';
 });
 }
 
+function addReplyEn() {
+var nameInput = document.getElementById('reply-name-' + reviewKey); // 폴백 대응용 구조화 코드 유지
+var contentInput = document.getElementById('reply-content-' + reviewKey);
+}
+
 function deleteReply(reviewKey, replyKey) {
 var pwMsg = currentLang === 'ko' ? "관리자 비밀번호" : "Admin Password";
 if(prompt(pwMsg) === MASTER_PASSWORD) {
@@ -697,7 +732,7 @@ var replyMetaStr = replyIpStr ? replyTimeStr + " (" + replyIpStr + ")" : replyTi
 
 return `
 <div style="background-color: #faf9f6; border-left: 3px solid #52b788; padding: 10px 12px; margin-top: 8px; border-radius: 4px; font-size: 13px; white-space: pre-wrap;">
-<div style="display:flex; justify-content:space-between; margin-bottom:4px; white-space: normal; align-items: center;">
+<div style="display:flex; justify-content:space-between; margin-bottom:4px; white-space: normal; align-items: center;" translate="no">
 <div>
 <b style="color:#3a5a40; margin-right: 6px;">↳ ${rp.name}</b>
 <span style="font-size: 11px; color: #aaa; font-family: 'Arial', sans-serif;">${replyMetaStr}</span>
@@ -720,7 +755,7 @@ var reviewMetaStr = reviewIpStr ? reviewTimeStr + " (" + reviewIpStr + ")" : rev
 
 return `
 <div class="review-card mobile-review-card" style="width: 100% !important; margin-bottom: 12px; padding: 15px; border: 1px solid #eee; border-radius: 10px; background:#fff;">
-<div style="display:flex; justify-content:space-between; margin-bottom:8px; align-items: center;">
+<div style="display:flex; justify-content:space-between; margin-bottom:8px; align-items: center;" translate="no">
 <div>
 <b style="font-size:14px; color:#111; margin-right: 8px;">${r.name}</b>
 <span style="font-size: 11px; color: #aaa; font-family: 'Arial', sans-serif;">${reviewMetaStr}</span>
@@ -733,11 +768,9 @@ return `
 </div>
 <div class="review-content-text" style="font-size:14px; color:#555; word-break:break-all; margin-bottom: 5px; white-space: pre-wrap;">${r.content}</div>
 
-<!-- 대댓글 노출 영역 -->
 <div id="reply-list-${r.key}">${repliesHtml}</div>
 
-<!-- 대댓글 입력 토글 폼 -->
-<div id="reply-form-${r.key}" style="display:none; margin-top:12px; padding:10px; background:#f4f6f4; border-radius:6px; border:1px solid #e2e8e2;">
+<div id="reply-form-${r.key}" style="display:none; margin-top:12px; padding:10px; background:#f4f6f4; border-radius:6px; border:1px solid #e2e8e2;" translate="no">
 <input type="text" id="reply-name-${r.key}" placeholder="${currentLang === 'ko' ? '답글 닉네임' : 'Reply Nickname'}" style="width:100%; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; margin-bottom:6px;">
 <textarea id="reply-content-${r.key}" placeholder="${currentLang === 'ko' ? '따뜻한 답글을 남겨주세요' : 'Please leave a warm reply'}" style="width:100%; height:60px; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; resize:none; margin-bottom:6px;"></textarea>
 <div style="text-align:right;">
@@ -746,6 +779,14 @@ return `
 </div>
 </div>`;
 }).join('');
+
+// 만약 EN 페이지가 활성화된 상태에서 새 데이터가 갱신되어 들어올 경우, 실시간 자동 감지하여 영문 변환 유지 처리
+if(currentLang === 'en') {
+    setTimeout(function(){
+        var select = document.querySelector('select.goog-te-combo');
+        if(select) { select.value = 'en'; select.dispatchEvent(new Event('change')); }
+    }, 100);
+}
 });
 }
 
