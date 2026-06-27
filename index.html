@@ -59,15 +59,16 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 
 #about-leaf { padding-top: 60px; }
 #about-leaf .container { flex-direction: column; align-items: center; max-width: 850px; }
-.about-leaf-text { width: 100%; text-align: center; font-size: 17px; color: #a09080; line-height: 1.9; word-break: keep-all; }
-.about-leaf-text h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: #2d6a4f; margin-bottom: 15px; font-weight: bold; }
-.about-leaf-text .main-sub { font-size: 15.4px; font-weight: bold; color: #a09080; line-height: 1.6; margin-bottom: 35px; }
-.about-leaf-text .intro-title { font-size: 19px; font-weight: bold; color: #3a5a40; margin-bottom: 20px; }
-.about-leaf-text .point-title { font-size: 19px; font-weight: bold; color: #3a5a40; margin-top: 45px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+/* 웹 브라우저 LWS 텍스트 크기 자연스럽게 축소 조정 */
+.about-leaf-text { width: 100%; text-align: center; font-size: 15.5px; color: #a09080; line-height: 1.9; word-break: keep-all; }
+.about-leaf-text h2 { font-family: 'Playfair Display', serif; font-size: 30px; color: #2d6a4f; margin-bottom: 15px; font-weight: bold; }
+.about-leaf-text .main-sub { font-size: 14.5px; font-weight: bold; color: #a09080; line-height: 1.6; margin-bottom: 35px; }
+.about-leaf-text .intro-title { font-size: 18px; font-weight: bold; color: #3a5a40; margin-bottom: 20px; }
+.about-leaf-text .point-title { font-size: 17.5px; font-weight: bold; color: #3a5a40; margin-top: 45px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 6px; }
 .about-leaf-text p { margin-bottom: 15px; color: #a09080; }
-.about-leaf-text .sub-p-bold { font-size: 17px; font-weight: bold; color: #3a5a40; margin-top: 0; margin-bottom: 15px; }
+.about-leaf-text .sub-p-bold { font-size: 15.5px; font-weight: bold; color: #3a5a40; margin-top: 0; margin-bottom: 15px; }
 .mobile-br { display: none; }
-.footer-highlight-text { margin-top: 50px; font-weight: bold; color: #8b7968; font-size: 22px; line-height: 1.5; word-break: keep-all; }
+.footer-highlight-text { margin-top: 50px; font-weight: bold; color: #8b7968; font-size: 20px; line-height: 1.5; word-break: keep-all; }
 .section-inner-logo { display: block; margin: 60px auto 10px auto; height: 92px; width: auto; object-fit: contain; }
 .no-list-style { list-style: none; padding: 0; }
 
@@ -122,21 +123,29 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 #basic .cursive-text { font-size: 14px !important; margin-bottom: 10px !important; } 
 #basic .main-message { font-size: 11.9px !important; line-height: 1.6 !important; } 
 
-#about-founder.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; }
+/* Founder 섹션 모바일 여백 최소화 및 사진 아래 불필요한 마진 완전 제거 */
+#about-founder.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; padding: 20px 12px !important; }
 #about-founder .container { flex-direction: column !important; gap: 0px !important; width: 100% !important; }
-#about-founder .content-img { min-height: auto !important; background: transparent !important; }
-#about-founder .content-text { padding-top: 0 !important; margin-top: 0 !important; }
+#about-founder .content-img { min-height: auto !important; background: transparent !important; margin-bottom: 0 !important; padding-bottom: 0 !important; }
+#about-founder .content-img img { margin-bottom: 0 !important; }
+#about-founder .content-text { padding-top: 15px !important; margin-top: 0 !important; }
 #about-founder .content-text p:first-child { margin-top: 0 !important; }
 
 .container { flex-direction: column !important; gap: 20px; width: 100% !important; }
 .section-inner-logo { margin: 20px auto 15px auto; height: 60px; }
 .content-text { font-size: 14px !important; line-height: 1.75 !important; }
-.about-leaf-text { font-size: 14px !important; line-height: 1.75 !important; }
-.about-leaf-text h2 { font-size: 24px !important; }
-.about-leaf-text .main-sub { font-size: 13px !important; margin-bottom: 25px; }
-.about-leaf-text .point-title { font-size: 16px !important; margin-top: 30px; }
-.cursive-text { font-size: 17px !important; margin-bottom: 15px; }
-.footer-highlight-text { font-size: 18px !important; margin-top: 35px; }
+
+/* LWS 섹션 모바일 글자 크기 자연스럽게 한눈에 들어오도록 스케일링 */
+.about-leaf-text { font-size: 13px !important; line-height: 1.7 !important; }
+.about-leaf-text h2 { font-size: 22px !important; }
+.about-leaf-text .main-sub { font-size: 12px !important; margin-bottom: 20px; line-height: 1.5; }
+.about-leaf-text .intro-title { font-size: 14.5px !important; margin-bottom: 15px; }
+.about-leaf-text .point-title { font-size: 14px !important; margin-top: 25px; margin-bottom: 10px; }
+.about-leaf-text p { margin-bottom: 10px; }
+.about-leaf-text .sub-p-bold { font-size: 13px !important; margin-bottom: 10px; }
+.cursive-text { font-size: 15px !important; margin-bottom: 15px; }
+.footer-highlight-text { font-size: 16px !important; margin-top: 30px; }
+
 #profile.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; padding-bottom: 0 !important; } 
 #profile .container { flex-direction: column !important; align-items: center !important; justify-content: center !important; padding-left: 0 !important; width: 100% !important; gap: 20px !important; }
 #profile .content-img { flex: initial !important; max-width: 180px !important; min-height: auto !important; width: 100% !important; }
@@ -235,7 +244,7 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 <li><strong class="handwriting subtle-green">온전한 평온함(Relief)과 안식을 누리기를 바라는 <br class="mobile-br">진심 어린 염원을 담았습니다.</strong></li>
 </ul>
 <div class="point-title"><span class="subtle-green">🚀 Studio (현대 사회에 지친이들을 위한 웰니스 스튜디오)</span></div>
-<p>오직 한 사람, 당신만의 진정한 웰빙และ 내면의 건강을 위해 <br class="mobile-br">정성스럽게 꾸며진 전문적인 웰니스 공간입니다.</p>
+<p>오직 한 사람, 당신만의 진정한 웰빙과 내면의 건강을 위해 <br class="mobile-br">정성스럽게 꾸며진 전문적인 웰니스 공간입니다.</p>
 <p><strong class="handwriting subtle-green">Leaf Wellness Studio는 온전히 개인 한 사람의, <br class="mobile-br">혹은 귀한 발걸음을 해주시는 여러 내담자들의 <br class="mobile-br">내면적 건강과 행복(Well-being)을 위해 존재하는 세심한 공간입니다.</strong></p>
 <p class="footer-highlight-text handwriting"><span class="elegant-cursive">Leaf Wellness Studio</span>에서<br class="mobile-br">당신만의 빛을 함께 찾아보세요.</p>
 </div>
@@ -282,7 +291,7 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 
 <div class="content-text lang-ko">
 <p>청소년기 우울이라는 진단(혹은 낙인) 속에서 심리상담을 처음 접하게 되었어요. 누구보다 장난기 많고 낙천적인 저조차 무기력하게 만들었던 건, 다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 목표를 향해 쫓아갈 때 저 혼자 목표가 없다는 이유로 스스로가 한없이 초라해 보였던 시절이었습니다.</p>
-<p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 저는 사람을 좋아하고 친구들과 피상적인 이야기보단 인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느깁니다.</p>
+<p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 저는 사람을 좋아하고 친구들과 피상적인 이야기보단 인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며 <br class="mobile-br">비로소 살아있음을 느낍니다.</p>
 <p>시행착오도 많았고 그 방황의 시간들이 아깝고 후회스럽기도 하죠. <strong><span class="handwriting">그리고 또 그 방황이 다시 찾아올지도 모른다는 두려움도 항상 있고요.</span></strong> 하지만 그 짙은 밤들이 있었기에 지금의 제가 있고, 남들의 속도에 치여 길을 잃은 사람들의 마음을 누구보다 깊이 지켜볼 수 있는 눈이 생겼습니다.</p>
 <p>이제는 후회 대신, <br class="mobile-br">제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. 그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서, <strong class="handwriting">깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</strong></p>
 <br><p class="special-green"><span class="handwriting"><strong>깊은 대화로 연결될 수 있는 안전한 공간이 되어드리겠습니다.<br><br>이곳에서 여러분의 이야기들을 편안하게 들려주세요.</strong></span></p>
