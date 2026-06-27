@@ -75,7 +75,6 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 #about-founder .content-text p { margin-bottom: 24px; line-height: 1.8; color: #6b5d51; font-weight: 500; }
 #about-founder .content-text .special-green { color: #2d6a4f; }
 
-/* profile section 가로 확장 및 정렬 최적화 (max-width 확장, padding 제거, 내부 요소 max-width 확장) */
 #profile .container { display: flex; flex-direction: row !important; gap: 40px; align-items: flex-start !important; justify-content: center !important; max-width: 1000px; margin: 0 auto; padding-left: 0; }
 #profile .content-img { flex: 0 0 252px; max-width: 252px; min-height: 168px; }
 #profile .content-text { flex: 1; display: flex; flex-direction: column; align-items: flex-start; text-align: left; font-size: 11.9px !important; }
@@ -547,7 +546,13 @@ if (targetSection) {
 var boxElement = targetSection.closest('.section-box') || targetSection;
 var headerHeight = header.getBoundingClientRect().height;
 var elementPosition = boxElement.getBoundingClientRect().top;
-var offsetPosition = elementPosition + window.pageYOffset - headerHeight + 2;
+// basic 섹션일 때는 고정 헤더 높이만큼 마진을 완벽하게 떼어 주어 6px 테두리 두 줄이 가려지지 않고 깔끔하게 상하 정렬되도록 연산 처리
+var offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+if (targetId === '#basic') {
+offsetPosition = offsetPosition - 20; 
+} else {
+offsetPosition = offsetPosition + 2;
+}
 window.scrollTo({
 top: offsetPosition,
 behavior: 'smooth'
@@ -564,7 +569,7 @@ var navLinks = document.querySelectorAll('#main-navigation a');
 var header = document.getElementById('main-header');
 
 window.addEventListener('scroll', function() {
-var fromTop = window.scrollY + header.getBoundingClientRect().height + 10;
+var fromTop = window.scrollY + header.getBoundingClientRect().height + 25;
 var currentSectionId = "";
 
 sections.forEach(function(box) {
@@ -700,7 +705,7 @@ replyArr.sort((a, b) => a.timestamp - b.timestamp);
 repliesHtml = replyArr.map(rp => {
 var escapedReplyContent = rp.content.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/\n/g, '\\n');
 var replyTimeStr = formatTimestamp(rp.timestamp);
-var replyIpStr = rp.ip ? maskIpAddress(ip) : "";
+var replyIpStr = rp.ip ? maskIpAddress(rp.ip) : "";
 var replyMetaStr = replyIpStr ? replyTimeStr + " (" + replyIpStr + ")" : replyTimeStr;
 
 return `
