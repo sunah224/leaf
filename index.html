@@ -75,13 +75,14 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 #about-founder .content-text p { margin-bottom: 24px; line-height: 1.8; color: #6b5d51; font-weight: 500; }
 #about-founder .content-text .special-green { color: #2d6a4f; }
 
-#profile .container { display: flex; flex-direction: row !important; gap: 40px; align-items: flex-start !important; justify-content: center !important; max-width: 900px; margin: 0 auto; padding-left: 60px; }
+/* profile section 가로 확장 및 정렬 최적화 (max-width 확장, padding 제거, 내부 요소 max-width 확장) */
+#profile .container { display: flex; flex-direction: row !important; gap: 40px; align-items: flex-start !important; justify-content: center !important; max-width: 1000px; margin: 0 auto; padding-left: 0; }
 #profile .content-img { flex: 0 0 252px; max-width: 252px; min-height: 168px; }
 #profile .content-text { flex: 1; display: flex; flex-direction: column; align-items: flex-start; text-align: left; font-size: 11.9px !important; }
-.profile-title { font-size: 13.3px; font-weight: bold; margin-top: 0; margin-bottom: 8.4px; color: #111; display: inline-block; text-align: left; width: 100%; max-width: 580px; }
-.profile-list-group { list-style: none; margin-bottom: 21px; padding: 0; text-align: left; width: 100%; max-width: 580px; }
+.profile-title { font-size: 13.3px; font-weight: bold; margin-top: 0; margin-bottom: 8.4px; color: #111; display: inline-block; text-align: left; width: 100%; max-width: 680px; }
+.profile-list-group { list-style: none; margin-bottom: 21px; padding: 0; text-align: left; width: 100%; max-width: 680px; }
 .profile-list-group li { margin-bottom: 7px; font-size: 11.9px; line-height: 1.8; }
-.research-group { width: 100%; max-width: 580px; margin: 0 0 21px 0; color: #2d6a4f; font-weight: bold; text-align: left; }
+.research-group { width: 100%; max-width: 680px; margin: 0 0 21px 0; color: #2d6a4f; font-weight: bold; text-align: left; }
 
 #Find-Me .container { justify-content: center; gap: 35px; max-width: 850px; margin: 0 auto; align-items: center; }
 #Find-Me .content-text { flex: 0 1 auto; display: flex; align-items: center; padding-top: 40px; }
@@ -102,10 +103,6 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 
 /* 다국어 제어 클래스 */
 .lang-en { display: none; }
-
-/* 구글 번역 툴바 숨김 스크립트 대응용 스타일 */
-.goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .goog-te-tooltip, .goog-te-menu-value, .goog-te-gadget { display: none !important; }
-body { top: 0 !important; }
 
 @media (max-width: 768px) {
 header { padding: 10px 0 8px 0; }
@@ -174,18 +171,6 @@ nav a { font-size: 14px !important; padding: 3px 5px !important; }
 </style>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
-<div id="google_translate_element" style="display:none;"></div>
-<script>
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'ko',
-        includedLanguages: 'en,ko',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-    }, 'google_translate_element');
-}
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
 <header id="main-header">
@@ -421,7 +406,7 @@ function googleTranslateElementInit() {
 <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">한 줄 응원 남기기</h4>
 <div style="margin-bottom: 15px;"><input type="text" id="review-name" placeholder="닉네임" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
 <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
-<textarea id="review-content" placeholder="따뜻한 한 마디를 남겨주세요" style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px;"></textarea>
+<textarea id="review-content" placeholder="따뜻한 한 마디를 남겨주세요" style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px("></textarea>
 <div style="text-align: right; display: flex; justify-content: flex-end; gap: 10px;">
 <button onclick="clearBrokenData()" style="background-color: #e63946; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer;">데이터 리셋</button>
 <button onclick="addReview()" style="background-color: #52b788; color: white; border: none; padding: 12px 45px; border-radius: 8px; cursor: pointer;">등록</button>
@@ -496,47 +481,40 @@ setupScrollBehavior();
 setupScrollSpy(); 
 });
 
-// 언어 변경 처리 함수 및 동적 번역 트리거 처리
+// 브라우저 내장 초경량 실시간 번역 처리 시스템 함수
+function requestDynamicTranslation(textElement, targetText) {
+    if(!targetText || targetText.trim() === "") return;
+    // 영문이나 숫자 기호만 있는 경우는 번역 연산 제외 처리
+    if(!/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(targetText)) return;
+    
+    var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=ko&tl=en&dt=t&q=" + encodeURIComponent(targetText);
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        if(data && data[0]) {
+            var translatedResult = data[0].map(sentence => sentence[0]).join('');
+            textElement.innerText = translatedResult;
+        }
+    })
+    .catch(err => console.log("Translation target error:", err));
+}
+
+// 언어 변경 처리 함수
 function changeLanguage(lang) {
 currentLang = lang;
 var buttons = document.querySelectorAll('.lang-btn');
 buttons.forEach(btn => btn.classList.remove('active-lang'));
 
-// 이벤트 타겟팅 예외 대응 보호 조건 처리
-if(event && event.target && typeof event.target.classList === 'object') {
-    event.target.classList.add('active-lang');
-} else {
-    buttons.forEach(btn => {
-        if(btn.textContent.toLowerCase() === lang) btn.classList.add('active-lang');
-    });
-}
-
 if(lang === 'ko') {
 document.querySelectorAll('.lang-ko').forEach(el => el.style.display = 'block');
 document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
-// 구글 번역 복원 (한국어 원본 보기)
-var iframe = document.querySelector('.goog-te-banner-frame');
-if(iframe) {
-    var restoreBtn = iframe.contentWindow.document.getElementById(':1.restore');
-    if(restoreBtn) restoreBtn.click();
-} else {
-    var select = document.querySelector('select.goog-te-combo');
-    if(select) {
-        select.value = 'ko';
-        select.dispatchEvent(new Event('change'));
-    }
-}
+if (event && event.target) event.target.classList.add('active-lang');
 } else {
 document.querySelectorAll('.lang-ko').forEach(el => el.style.display = 'none');
 document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
-// 구글 영어 번역 강제 트리거
-var select = document.querySelector('select.goog-te-combo');
-if(select) {
-    select.value = 'en';
-    select.dispatchEvent(new Event('change'));
+if (event && event.target) event.target.classList.add('active-lang');
 }
-}
-// 방명록 렌더링 동적 리로드
+// 방명록 렌더링 동적 리로드 및 실시간 동기화 호출
 listenReviews();
 }
 
@@ -654,11 +632,6 @@ document.getElementById('reply-form-' + reviewKey).style.display = 'none';
 });
 }
 
-function addReplyEn() {
-var nameInput = document.getElementById('reply-name-' + reviewKey); // 폴백 대응용 구조화 코드 유지
-var contentInput = document.getElementById('reply-content-' + reviewKey);
-}
-
 function deleteReply(reviewKey, replyKey) {
 var pwMsg = currentLang === 'ko' ? "관리자 비밀번호" : "Admin Password";
 if(prompt(pwMsg) === MASTER_PASSWORD) {
@@ -727,12 +700,12 @@ replyArr.sort((a, b) => a.timestamp - b.timestamp);
 repliesHtml = replyArr.map(rp => {
 var escapedReplyContent = rp.content.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/\n/g, '\\n');
 var replyTimeStr = formatTimestamp(rp.timestamp);
-var replyIpStr = rp.ip ? maskIpAddress(rp.ip) : "";
+var replyIpStr = rp.ip ? maskIpAddress(ip) : "";
 var replyMetaStr = replyIpStr ? replyTimeStr + " (" + replyIpStr + ")" : replyTimeStr;
 
 return `
 <div style="background-color: #faf9f6; border-left: 3px solid #52b788; padding: 10px 12px; margin-top: 8px; border-radius: 4px; font-size: 13px; white-space: pre-wrap;">
-<div style="display:flex; justify-content:space-between; margin-bottom:4px; white-space: normal; align-items: center;" translate="no">
+<div style="display:flex; justify-content:space-between; margin-bottom:4px; white-space: normal; align-items: center;">
 <div>
 <b style="color:#3a5a40; margin-right: 6px;">↳ ${rp.name}</b>
 <span style="font-size: 11px; color: #aaa; font-family: 'Arial', sans-serif;">${replyMetaStr}</span>
@@ -742,7 +715,7 @@ return `
 <button onclick="deleteReply('${r.key}', '${rp.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:11px;">${currentLang === 'ko' ? '삭제' : 'Delete'}</button>
 </div>
 </div>
-<div style="color:#666; word-break:break-all;">${rp.content}</div>
+<div id="reply-text-${rp.key}" class="translate-target-text" data-origin="${escapedReplyContent}" style="color:#666; word-break:break-all;">${rp.content}</div>
 </div>
 `;
 }).join('');
@@ -755,7 +728,7 @@ var reviewMetaStr = reviewIpStr ? reviewTimeStr + " (" + reviewIpStr + ")" : rev
 
 return `
 <div class="review-card mobile-review-card" style="width: 100% !important; margin-bottom: 12px; padding: 15px; border: 1px solid #eee; border-radius: 10px; background:#fff;">
-<div style="display:flex; justify-content:space-between; margin-bottom:8px; align-items: center;" translate="no">
+<div style="display:flex; justify-content:space-between; margin-bottom:8px; align-items: center;">
 <div>
 <b style="font-size:14px; color:#111; margin-right: 8px;">${r.name}</b>
 <span style="font-size: 11px; color: #aaa; font-family: 'Arial', sans-serif;">${reviewMetaStr}</span>
@@ -766,11 +739,11 @@ return `
 <button onclick="deleteReview('${r.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:12px;">${currentLang === 'ko' ? '삭제' : 'Delete'}</button>
 </div>
 </div>
-<div class="review-content-text" style="font-size:14px; color:#555; word-break:break-all; margin-bottom: 5px; white-space: pre-wrap;">${r.content}</div>
+<div id="review-text-${r.key}" class="translate-target-text" data-origin="${escapedReviewContent}" style="font-size:14px; color:#555; word-break:break-all; margin-bottom: 5px; white-space: pre-wrap;">${r.content}</div>
 
 <div id="reply-list-${r.key}">${repliesHtml}</div>
 
-<div id="reply-form-${r.key}" style="display:none; margin-top:12px; padding:10px; background:#f4f6f4; border-radius:6px; border:1px solid #e2e8e2;" translate="no">
+<div id="reply-form-${r.key}" style="display:none; margin-top:12px; padding:10px; background:#f4f6f4; border-radius:6px; border:1px solid #e2e8e2;">
 <input type="text" id="reply-name-${r.key}" placeholder="${currentLang === 'ko' ? '답글 닉네임' : 'Reply Nickname'}" style="width:100%; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; margin-bottom:6px;">
 <textarea id="reply-content-${r.key}" placeholder="${currentLang === 'ko' ? '따뜻한 답글을 남겨주세요' : 'Please leave a warm reply'}" style="width:100%; height:60px; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; resize:none; margin-bottom:6px;"></textarea>
 <div style="text-align:right;">
@@ -780,12 +753,12 @@ return `
 </div>`;
 }).join('');
 
-// 만약 EN 페이지가 활성화된 상태에서 새 데이터가 갱신되어 들어올 경우, 실시간 자동 감지하여 영문 변환 유지 처리
+// EN 상태일 때 실시간 동적 다국어 번역 실행 처리 트리거
 if(currentLang === 'en') {
-    setTimeout(function(){
-        var select = document.querySelector('select.goog-te-combo');
-        if(select) { select.value = 'en'; select.dispatchEvent(new Event('change')); }
-    }, 100);
+    document.querySelectorAll('.translate-target-text').forEach(function(el) {
+        var rawContent = el.getAttribute('data-origin');
+        requestDynamicTranslation(el, rawContent);
+    });
 }
 });
 }
