@@ -24,7 +24,7 @@ html { scroll-behavior: smooth; }
 .subtle-green { color: #3a5a40; }
 
 /* 웹에서 각 섹션의 테두리 크기를 동일하고 고급스러운 사이즈로 제한하며 정중앙 정렬 */
-.section-box { border: 6px double #bcaaa4; margin: 40px auto; border-radius: 20px; padding: 40px 20px; max-width: 940px; width: calc(100% - 40px); display: block; box-sizing: border-box; }
+.section-box { border: 6px double #bcaaa4; margin: 120px auto 180px auto; border-radius: 20px; padding: 40px 20px; max-width: 940px; width: calc(100% - 40px); display: block; box-sizing: border-box; }
 
 /* 헤더 고정 바 */
 header { position: fixed; top: 0; left: 0; width: 100%; background-color: #ffffff; z-index: 1000; padding: 12px 0 8px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
@@ -75,15 +75,15 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .section-inner-logo { display: block; margin: 15px auto 10px auto; height: 92px; width: auto; object-fit: contain; }
 .no-list-style { list-style: none; padding: 0; }
 
-/* Founder 섹션 웹 테두리 세팅 */
-#about-founder-box.section-box { padding: 15px 20px; margin: 25px auto; }
+/* Founder 및 주요 섹션 웹 테두리 세팅 */
+#about-founder-box.section-box, #profile-box.section-box, #Find-Me-box.section-box { padding: 15px 20px; margin: 120px auto 180px auto; }
 #about-founder { padding: 10px 20px; }
 #about-founder .content-text { font-size: 13.6px; }
 #about-founder .content-text p { margin-bottom: 12px; line-height: 1.7; color: #6b5d51; font-weight: 500; }
 #about-founder .content-text .special-green { color: #2d6a4f; margin-top: -5px; line-height: 1.5; }
 
 /* Profile 섹션 통째로 우측 이동 */
-#profile-box.section-box { padding-bottom: 15px; margin-bottom: 25px; }
+#profile-box.section-box { padding-bottom: 15px; }
 #profile { padding-bottom: 10px; }
 #profile .container { display: flex; flex-direction: row !important; gap: 40px; align-items: flex-start !important; justify-content: center !important; max-width: 820px; margin: 0 auto; padding: 0 0 0 91px; } 
 #profile .content-img { flex: 0 0 252px; max-width: 252px; min-height: 168px; margin-top: 0; }
@@ -94,7 +94,6 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .research-group { width: 100%; max-width: 680px; margin: 0 0 21px 0; color: #2d6a4f; font-weight: bold; text-align: left; }
 
 /* Find Me 섹션 조율 */
-#Find-Me-box.section-box { padding: 15px 20px; margin: 25px auto; }
 #Find-Me { padding: 5px 20px; }
 #Find-Me .container { justify-content: center; gap: 35px; max-width: 850px; margin: 0 auto; align-items: center; }
 #Find-Me .content-img { flex: 0 0 320px; max-width: 320px; }
@@ -113,7 +112,7 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .price-info { font-size: 10.2px; font-weight: bold; color: #a09080; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 12px; display: inline-block; width: 100%; max-width: 240px; }
 
 /* 웹 Footprints 제목 스타일 고도화 */
-#footprints-box.section-box { padding-top: 50px !important; padding-bottom: 30px !important; } 
+#footprints-box.section-box { padding-top: 50px !important; padding-bottom: 30px !important; margin: 120px auto 180px auto; } 
 #footprints-title { font-family: 'Playfair Display', serif !important; font-style: italic !important; font-size: 28px !important; color: #2d6a4f; margin-bottom: 35px !important; font-weight: 700 !important; display: inline-block; letter-spacing: 1px; }
 
 #review-list { display: flex; flex-direction: column; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
@@ -137,7 +136,7 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 /* 모바일 기본 테두리 패딩 피팅 */
 .section-box { margin: 20px 10px !important; padding: 20px 12px !important; border-radius: 14px; max-width: none !important; width: calc(100% - 20px) !important; }
 
-/* 모바일 베이직 박스: 우측 정렬 느낌을 구현하되 밑단을 완벽하게 맞추고 화면 중앙 배치 */
+/* 모바일 베이직 박스 */
 #basic-box.section-box { height: auto !important; max-height: none !important; margin-top: 135px !important; margin-bottom: 20px !important; border: 6px double #bcaaa4 !important; padding: 25px 12px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; overflow: visible !important; }
 #basic { padding: 0 !important; width: 100% !important; height: auto !important; display: flex !important; align-items: center !important; }
 #basic .container { gap: 15px !important; flex-direction: column-reverse !important; align-items: center !important; justify-content: center !important; width: 100% !important; height: auto !important; } 
@@ -149,8 +148,8 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 
 #about-leaf-box.section-box { padding: 15px 10px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 
-/* 모바일 Founder 섹션 여백 자연스럽게 살짝 추가 */
-#about-founder-box.section-box { padding: 20px 12px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
+/* 모바일 섹션 여백 */
+#about-founder-box.section-box, #profile-box.section-box, #Find-Me-box.section-box { padding: 20px 12px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 #about-founder { padding: 0 !important; }
 #about-founder .container { flex-direction: column !important; gap: 0px !important; width: 100% !important; padding: 0 !important; margin: 0 !important; display: block !important; }
 #about-founder .content-img { min-height: auto !important; background: transparent !important; margin: 0 auto 15px auto !important; padding: 0 !important; max-width: 100% !important; width: 100% !important; height: auto !important; display: block; }
@@ -171,7 +170,6 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 .cursive-text { font-size: 15px !important; margin-bottom: 15px; }
 .footer-highlight-text { font-size: 16px !important; margin-top: 30px; }
 
-#profile-box.section-box { width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 #profile { padding: 0 !important; }
 #profile .container { flex-direction: column !important; align-items: center !important; justify-content: center !important; padding-left: 0 !important; width: 100% !important; gap: 20px !important; }
 #profile .content-img { flex: initial !important; max-width: 180px !important; min-height: auto !important; width: 100% !important; }
@@ -179,7 +177,6 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 #profile .profile-title, #profile .profile-list-group, #profile .research-group { text-align: center !important; width: 100% !important; max-width: 100% !important; }
 #profile .profile-list-group { border-left: none !important; padding-left: 0 !important; border-top: 1px solid #eee; padding-top: 12px; } 
 
-#Find-Me-box.section-box { padding: 35px 12px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 #Find-Me { padding: 0 !important; }
 #Find-Me .container { gap: 12px !important; flex-direction: column !important; align-items: center !important; }
 #Find-Me .content-img { flex: initial !important; max-width: 216px !important; min-height: auto !important; width: 100% !important; } 
