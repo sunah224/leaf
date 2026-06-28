@@ -24,7 +24,17 @@ html { scroll-behavior: smooth; }
 .subtle-green { color: #3a5a40; }
 
 .section-box { border: 6px double #bcaaa4; margin: 60px auto; border-radius: 20px; padding: 40px 20px; max-width: 940px; width: calc(100% - 40px); display: block; box-sizing: border-box; }
-#basic-box { margin-top: 140px; } 
+
+/* 수정된 basic-box 스타일 */
+#basic-box { 
+    margin-top: 140px; 
+    border: none; /* 이중선 제거 */
+    border-radius: 0; 
+    background-color: #fcfbf9; /* 은은한 배경색 */
+    padding: 60px 20px;
+    max-width: 100%;
+    width: 100%;
+}
 
 header { position: fixed; top: 0; left: 0; width: 100%; background-color: #ffffff; z-index: 1000; padding: 12px 0 8px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 .header-container { max-width: 1000px; margin: 0 auto; text-align: center; position: relative; }
@@ -51,10 +61,10 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .content-text { flex: 1; min-width: 0; font-size: 17px; color: #a09080; text-align: left; word-break: keep-all; }
 
 #basic { padding-top: 20px; padding-bottom: 20px; }
-#basic .container { flex-direction: row-reverse; align-items: flex-end; gap: 40px; justify-content: center; }
-#basic .content-text { display: flex; flex-direction: column; justify-content: flex-end; text-align: right; padding-right: 10px; padding-bottom: 0; margin-bottom: -6px; color: #a09080; }
-.cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #a09080; line-height: 1.6; margin-bottom: 20px; }
-.main-message { font-weight: bold; font-size: 17px; color: #a09080; line-height: 1.8; font-style: italic; }
+#basic .container { flex-direction: row; align-items: center; gap: 60px; justify-content: center; }
+#basic .content-text { display: flex; flex-direction: column; justify-content: center; text-align: left; padding: 0; color: #5c4b40; }
+.cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 26px; color: #3a5a40; line-height: 1.4; margin-bottom: 20px; }
+.main-message { font-weight: bold; font-size: 18px; color: #6b5d51; line-height: 1.8; }
 
 #about-leaf { padding-top: 60px; }
 #about-leaf .container { flex-direction: column; align-items: center; max-width: 850px; }
@@ -126,13 +136,14 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 
 .section-box { margin: 30px 10px !important; padding: 30px 15px !important; border-radius: 14px; max-width: none !important; width: calc(100% - 20px) !important; }
 
-#basic-box.section-box { margin-top: 135px !important; margin-bottom: 40px !important; min-height: calc(100vh - 180px) !important; padding: 30px 15px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; }
-#basic { padding: 0 !important; width: 100% !important; display: flex !important; align-items: center !important; }
-#basic .container { gap: 15px !important; flex-direction: row-reverse !important; align-items: flex-end !important; justify-content: center !important; width: 100% !important; }
-#basic .content-img { flex: 0 0 140px !important; max-width: 140px !important; min-height: auto !important; margin: 0 !important; }
-#basic .content-text { text-align: right !important; padding: 0 !important; margin-bottom: 0 !important; width: 100% !important; align-items: flex-end !important; }
-#basic .cursive-text { font-size: 15px !important; margin-bottom: 12px !important; text-align: right !important; line-height: 1.4 !important; }
-#basic .main-message { font-size: 13px !important; line-height: 1.5 !important; text-align: right !important; }
+/* 모바일 basic-box 수정 */
+#basic-box.section-box { margin-top: 135px !important; margin-bottom: 40px !important; min-height: auto !important; padding: 40px 20px !important; border: none !important; border-radius: 0 !important; background-color: #fcfbf9 !important; }
+#basic { padding: 0 !important; width: 100% !important; }
+#basic .container { gap: 20px !important; flex-direction: column !important; align-items: center !important; text-align: center !important; }
+#basic .content-img { flex: 0 0 180px !important; max-width: 180px !important; min-height: auto !important; margin: 0 !important; }
+#basic .content-text { text-align: center !important; align-items: center !important; }
+#basic .cursive-text { font-size: 18px !important; margin-bottom: 15px !important; }
+#basic .main-message { font-size: 14px !important; }
 
 #about-leaf-box.section-box { margin: 40px 10px !important; }
 #about-founder-box.section-box { margin: 40px 10px !important; }
@@ -232,8 +243,7 @@ box-sizing: border-box;
 </header>
 
 <div class="section-box" id="basic-box">
-<section id="basic" style="padding: 0;">
-
+<section id="basic">
 <div class="container">
 <div class="content-img"><img src="basic.webp" alt="Main Profile" onerror="this.parentElement.style.display='none';"></div>
 <div class="content-text">
