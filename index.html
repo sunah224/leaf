@@ -54,8 +54,10 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 
 /* 웹 베이직 섹션: 사진 하단과 글 끝나는 하단 라인이 정확히 일치하도록 조율 */
 #basic { padding-top: 20px; padding-bottom: 20px; }
-#basic .container { flex-direction: row-reverse; align-items: flex-end; gap: 40px; } /* 상단정렬 해제 후 바닥라인(flex-end) 일치화 */
-#basic .content-text { display: flex; flex-direction: column; justify-content: flex-end; text-align: right; padding-right: 10px; padding-bottom: 0; margin-bottom: -6px; color: #a09080; } /* 미세 하단 보정 */
+#basic .container { flex-direction: row-reverse; align-items: flex-end; gap: 40px; justify-content: center; } 
+#basic .content-img { margin-bottom: 0; }
+#basic .content-img img { display: block; vertical-align: bottom; }
+#basic .content-text { display: flex; flex-direction: column; justify-content: flex-end; text-align: right; padding-right: 10px; padding-bottom: 0; margin-bottom: -4px; color: #a09080; } 
 .cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #a09080; line-height: 1.6; margin-bottom: 20px; }
 .main-message { font-weight: bold; font-size: 17px; color: #a09080; line-height: 1.8; font-style: italic; }
 
@@ -110,8 +112,8 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 
 .price-info { font-size: 10.2px; font-weight: bold; color: #a09080; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 12px; display: inline-block; width: 100%; max-width: 240px; }
 
-/* 웹 Footprints 제목 스타일 고도화: 글씨 확대 및 상하 테두리간 여백 확보 */
-#footprints-box.section-box { padding-top: 50px !important; padding-bottom: 30px !important; } /* 테두리 안쪽 여백 대폭 증가 */
+/* 웹 Footprints 제목 스타일 고도화 */
+#footprints-box.section-box { padding-top: 50px !important; padding-bottom: 30px !important; } 
 #footprints-title { font-family: 'Playfair Display', serif !important; font-style: italic !important; font-size: 28px !important; color: #2d6a4f; margin-bottom: 35px !important; font-weight: 700 !important; display: inline-block; letter-spacing: 1px; }
 
 #review-list { display: flex; flex-direction: column; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
@@ -135,25 +137,25 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 /* 모바일 기본 테두리 패딩 피팅 */
 .section-box { margin: 20px 10px !important; padding: 20px 12px !important; border-radius: 14px; max-width: none !important; width: calc(100% - 20px) !important; }
 
-/* 모바일 베이직 박스: 테두리 두 줄이 절대 짤리지 않고 스크롤 없이 한 페이지 안으로 온전히 들어가도록 완벽 제한 */
-#basic-box.section-box { height: calc(100vh - 150px) !important; max-height: 480px !important; margin-top: 115px !important; margin-bottom: 20px !important; border: 6px double #bcaaa4 !important; padding: 12px 10px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; overflow: hidden !important; }
-#basic { padding: 0 !important; width: 100% !important; height: 100% !important; display: flex !important; align-items: center !important; }
-#basic .container { gap: 8px !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; width: 100% !important; height: 100% !important; } 
+/* 모바일 베이직 박스: 우측 정렬 느낌을 구현하되 밑단을 완벽하게 맞추고 화면 중앙 배치 */
+#basic-box.section-box { height: auto !important; max-height: none !important; margin-top: 135px !important; margin-bottom: 20px !important; border: 6px double #bcaaa4 !important; padding: 25px 12px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; overflow: visible !important; }
+#basic { padding: 0 !important; width: 100% !important; height: auto !important; display: flex !important; align-items: center !important; }
+#basic .container { gap: 15px !important; flex-direction: column-reverse !important; align-items: center !important; justify-content: center !important; width: 100% !important; height: auto !important; } 
 #basic .content-img { flex: initial !important; max-width: 175px !important; min-height: auto !important; width: 100% !important; margin: 0 auto !important; }
-#basic .content-text { text-align: center !important; justify-content: center !important; padding: 0 !important; width: 100% !important; align-items: center !important; } 
-#basic .cursive-text { font-size: 13.5px !important; margin-bottom: 8px !important; text-align: center !important; line-height: 1.4 !important; } 
-#basic .main-message { font-size: 11.5px !important; line-height: 1.5 !important; text-align: center !important; } 
+#basic .content-img img { display: block !important; margin: 0 auto !important; }
+#basic .content-text { text-align: right !important; justify-content: flex-end !important; padding: 0 !important; width: 100% !important; max-width: 280px !important; align-items: flex-end !important; margin-bottom: -4px !important; } 
+#basic .cursive-text { font-size: 13.5px !important; margin-bottom: 8px !important; text-align: right !important; line-height: 1.4 !important; width: 100% !important; } 
+#basic .main-message { font-size: 11.5px !important; line-height: 1.5 !important; text-align: right !important; width: 100% !important; } 
 
 #about-leaf-box.section-box { padding: 15px 10px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 
-/* 모바일 Founder 섹션 여백 완전 박멸 세팅 */
+/* 모바일 Founder 섹션 여백 자연스럽게 살짝 추가 */
 #about-founder-box.section-box { padding: 20px 12px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 #about-founder { padding: 0 !important; }
 #about-founder .container { flex-direction: column !important; gap: 0px !important; width: 100% !important; padding: 0 !important; margin: 0 !important; display: block !important; }
-#about-founder .content-img { min-height: auto !important; background: transparent !important; margin: 0 auto !important; padding: 0 !important; max-width: 100% !important; width: 100% !important; height: auto !important; display: block !important; line-height: 0 !important; font-size: 0 !important; }
+#about-founder .content-img { min-height: auto !important; background: transparent !important; margin: 0 auto 15px auto !important; padding: 0 !important; max-width: 100% !important; width: 100% !important; height: auto !important; display: block; }
 #about-founder .content-img img { margin: 0 auto !important; padding: 0 !important; display: block !important; width: 100% !important; height: auto !important; border-bottom: none !important; }
 #about-founder .content-text { padding: 0 !important; margin-top: 0 !important; width: 100% !important; display: block !important; } 
-#about-founder .content-text p:first-child { margin-top: -2px !important; padding-top: 0 !important; } /* 강제 밀착 */
 
 .container { flex-direction: column !important; gap: 20px; width: 100% !important; }
 .section-inner-logo { margin: 10px auto 10px auto; height: 60px; }
@@ -190,22 +192,20 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 #Find-Me .contact-item.open-kakao-item a { font-size: 11px !important; } 
 #Find-Me .price-info { margin-top: 10px !important; padding-top: 10px !important; padding-bottom: 0 !important; width: 100% !important; max-width: none !important; text-align: center; }
 
-/* 모바일 Footprints 초광폭화 제어 시스템 (양옆 여백을 최소화하여 박스를 가로로 최대 확장) */
+/* 모바일 Footprints 초광폭화 제어 시스템 */
 #footprints-box.section-box { padding: 25px 6px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 #footprints { padding: 0 !important; width: 100% !important; }
 #footprints .container { width: 100% !important; max-width: 100% !important; padding: 0 !important; gap: 0 !important; }
 .footprints-box { padding: 20px 12px !important; margin-bottom: 15px !important; width: 100% !important; box-sizing: border-box; }
 .footprints-box h4 { font-size: 14px !important; margin-bottom: 12px !important; }
 
-/* 현재 및 동적 생성될 모든 댓글 및 대댓글 박스를 가로로 꽉 차게 넓히고 글씨를 20% 축소 */
 #review-list { width: 100% !important; padding: 0 !important; gap: 10px !important; }
 .mobile-review-card { padding: 14px 10px !important; margin-bottom: 4px !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
-.mobile-review-card b { font-size: 11px !important; } /* 댓글 작성자 20% 축소 */
+.mobile-review-card b { font-size: 11px !important; } 
 .mobile-review-card span { font-size: 9px !important; }
 .mobile-review-card button { font-size: 10px !important; }
-.mobile-review-card .translate-target-text { font-size: 11px !important; line-height: 1.5 !important; } /* 댓글 본문 20% 축소 */
+.mobile-review-card .translate-target-text { font-size: 11px !important; line-height: 1.5 !important; } 
 
-/* 대댓글 박스 및 내용 20% 축소 및 광폭화 */
 .mobile-review-card div[style*="background-color: rgb(250, 249, 246)"], 
 .mobile-review-card div[style*="background-color: #faf9f6"] {
     padding: 8px 8px !important; 
@@ -247,14 +247,14 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 </div>
 </header>
 
-<div class="section-box" id="basic-box" style="margin-top: 145px; padding: 25px 20px;">
+<div class="section-box" id="basic-box" style="margin: 120px auto 180px auto; padding: 25px 20px;">
 <section id="basic" style="padding: 0;">
 <div class="container">
 <div class="content-img"><img src="basic.webp" alt="Main Profile" onerror="this.parentElement.style.display='none';"></div>
 <div class="content-text">
 <div class="cursive-text">May you find peace<br>in your deepest heart<br>whenever you talk to me<br>or visit our spot</div>
 <div class="main-message lang-ko">나와 이야기할 때나 우리의 공간을 찾을 때,<br>네 마음 깊은 곳에 평온이 깃들기를.</div>
-<div class="main-message lang-en" style="display:none;">Whenever you share your thoughts with me<br>or step into this space,<br>May Serene Peace gently settle Deep within your Heart.</div>
+<div class="main-message lang-en">Whenever you share your thoughts with me<br>or step into this space,<br>May Serene Peace gently settle Deep within your Heart.</div>
 </div>
 </div>
 </section>
@@ -363,15 +363,15 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 <div class="content-text lang-ko">
 <div class="profile-title">B.A. University of California, Davis 심리학 전공</div>
 <div class="profile-title" style="margin-bottom: 20px;">M.A 성균관대학교 교육대학원 상담심리전공 (전공대표)</div>
-<ul class="profile-list-group research-group">
+<ul class="profile-list-group research-group" style="padding-top: 0; padding-bottom: 12px; margin-bottom: 0;">
 <li>• 주요 연구 관심사: 청소년 정신건강, 긍정심리,<br>쉬었음청년, 2030직장인 이직퇴직고민</li>
 <li>• 연구계획서 주제: 청소년의 스트레스가 정신건강에 미치는 영향: 긍정심리자원의 매개 효과</li>
 </ul>
 <ul class="profile-list-group" style="font-weight: bold; color: #111; border-top: 1px solid #eee; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-bottom: 0;">
-<br class="mobile-br"><li>'26 서울탑 정신건강의학과 의원 잠실새내점 행정</li>
+<li>'26 서울탑 정신건강의학과 의원 잠실새내점 행정</li>
 <li>'25 (주)아토머스 마인드카페 강남삼성점 매니저</li>
 <li>'21 한국아동청소년 대치동 심리상담센터 <br class="mobile-br">집단상담 코리더(고2,고3), 행정실장</li>
-<li>'17 헬로스마일 종로센터 행정실장</li><br class="mobile-br">
+<li>'17 헬로스마일 종로센터 행정실장</li>
 </ul>
 <ul class="profile-list-group" style="font-weight: bold; color: #444; border-top: 1px solid #eee; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0;">
 <br class="mobile-br"><li>• 한국직업능력진흥원 심리상담사 1급</li>
@@ -380,12 +380,14 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 <li>• 한국직업능력진흥원 가족상담사 1급</li>
 <li>• 한국직업능력진흥원 다문화심리상담사 1급</li><br class="mobile-br">
 </ul>
-<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; padding-top: 10px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0; padding-bottom: 0;">
+<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; border-bottom: 3px double #eee; padding-top: 10px; padding-bottom: 10px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0;">
 <li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">한국상담심리학회 수련회원</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 5px;">- 공개사례 발표회 30시간 이수</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 20px;">- 성균관대학교 외상심리연구소 집단상담 18시간 이수</li>
 <li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">한국상담학회 준회원</li>
-<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 25px;">- 집단상담 보조지도자 11시간 이수</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0px;">- 집단상담 보조지도자 11시간 이수</li>
+</ul>
+<ul class="profile-list-group" style="color: #a09080; font-weight: bold; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0; padding-bottom: 0;">
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">여성가족부 청소년상담사 2급 준비 중</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">한국상담심리학회 상담심리사 2급 준비 중</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0;">한국상담학회 상담심리사 2급 준비 중</li>
@@ -395,15 +397,15 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 <div class="content-text lang-en">
 <div class="profile-title">B.A. In Psychology, University of California, Davis</div>
 <div class="profile-title" style="margin-bottom: 20px;">M.A. In Counseling Psychology, Graduate School of Education, Sungkyunkwan University (Student Representative)</div>
-<ul class="profile-list-group research-group">
+<ul class="profile-list-group research-group" style="padding-top: 0; padding-bottom: 12px; margin-bottom: 0;">
 <li>• Primary Research Interests: Adolescent Mental Health, Positive Psychology,<br>Neet Youth (Unemployed/Resting Youth), Career & Turnover Counseling for 2030 Professionals</li>
 <li>• Research Proposal Subject: The Impact of Adolescent Stress on Mental Health: The Mediating Effect of Positive Psychological Resources</li>
 </ul>
 <ul class="profile-list-group" style="font-weight: bold; color: #111; border-top: 1px solid #eee; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-bottom: 0;">
-<br class="mobile-br"><li>'26 Administration, Seoul Top Psychiatric Clinic (Jamsilsaenae Branch)</li>
+<li>'26 Administration, Seoul Top Psychiatric Clinic (Jamsilsaenae Branch)</li>
 <li>'25 Center Manager, Atomus Mindcafe (Gangnam Samsung Branch)</li>
 <li>'21 Group Counseling Co-leader (High School Seniors) & Administrative Director, Korea Child & Adolescent Counseling Center (Daechi Branch)</li>
-<li>'17 Administrative Director, Hello Smile Psychological Counseling Center (Jongno Branch)</li><br class="mobile-br">
+<li>'17 Administrative Director, Hello Smile Psychological Counseling Center (Jongno Branch)</li>
 </ul>
 <ul class="profile-list-group" style="font-weight: bold; color: #444; border-top: 1px solid #eee; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0;">
 <br class="mobile-br"><li>• Psychological Counselor (Level 1), Korea Vocational Competency Development Institute</li>
@@ -412,12 +414,14 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 <li>• Family Counselor (Level 1), Korea Vocational Competency Development Institute</li>
 <li>• Multicultural Psychological Counselor (Level 1), Korea Vocational Competency Development Institute</li><br class="mobile-br">
 </ul>
-<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; padding-top: 10px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0; padding-bottom: 0;">
+<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; border-bottom: 3px double #eee; padding-top: 10px; padding-bottom: 10px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0;">
 <li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">Training Member, Korean Counseling Psychological Association (KCPA)</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 5px;">- Completed 30 hours of Case Conference presentation</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 20px;">- Completed 18 hours of Group Counseling at SKKU Trauma Psychology Institute</li>
 <li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">Associate Member, Korean Counseling Association (KCA)</li>
-<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 25px;">- Completed 11 hours as an Assistant Group Leader</li>
+<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0px;">- Completed 11 hours as an Assistant Group Leader</li>
+</ul>
+<ul class="profile-list-group" style="color: #a09080; font-weight: bold; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0; padding-bottom: 0;">
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">In preparation for Youth Counselor (Level 2), Ministry of Gender Equality and Family</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">In preparation for Counseling Psychologist (Level 2), KCPA</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0;">In preparation for Professional Counselor (Level 2), KCA</li>
@@ -442,7 +446,7 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 <li class="contact-item open-kakao-item"><img src="kakao.jpg" class="kakao-logo" alt="KakaoTalk"><a href="https://open.kakao.com/o/s0995Nzi" target="_blank" rel="noopener">https://open.kakao.com/o/s0995Nzi</a></li>
 </ul>
 <div class="price-info price-soft-green lang-ko">상담비용 5만원 / 50분</div>
-<div class="price-info price-soft-green lang-en" style="display:none;">Counseling Fee: 50,000 KRW / 50 mins</div>
+<div class="price-info price-soft-green lang-en">Counseling Fee: 50,000 KRW / 50 mins</div>
 </div>
 </div>
 </div>
@@ -460,7 +464,7 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">한 줄 응원 남기기</h4>
 <div style="margin-bottom: 15px;"><input type="text" id="review-name" placeholder="닉네임" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
 <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
-<textarea id="review-content" placeholder="따뜻한 한 마디를 남겨주세요" style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px;"></textarea>
+<textarea id="review-content" placeholder="따뜻한 한 마디를 남겨주세요" style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px PapayaWhip;"></textarea>
 <div style="text-align: right; display: flex; justify-content: flex-end; gap: 10px;">
 <button onclick="clearBrokenData()" style="background-color: #e63946; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer;">데이터 리셋</button>
 <button onclick="addReview()" style="background-color: #52b788; color: white; border: none; padding: 12px 45px; border-radius: 8px; cursor: pointer;">등록</button>
@@ -468,7 +472,7 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 </div>
 </div>
 
-<div class="footprints-box lang-en" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 25px; display:none;">
+<div class="footprints-box lang-en" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 25px;">
 <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">Leave a Message of Support</h4>
 <div style="margin-bottom: 15px;"><input type="text" id="review-name-en" placeholder="Nickname" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
 <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
@@ -502,7 +506,7 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 <br>Copyright © 2026 LWS All Rights Reserved. <br class="mobile-br">Powered by Firebase.<br class="mobile-br"><span style="font-weight:bold;">
 자문법무법인: 법무법인 새별 (대표변호사, 안성열)</span>
 </span>
-<span class="lang-en" style="display:none;">
+<span class="lang-en">
 Leaf Wellness Studio. Director: Sunah Ahn. Privacy Manager: Sunah Ahn. <br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #a09080;">sunahhn@sunahhn.com</a>. DM: <a href="https://www.instagram.com/sunahhn" target="_blank" style="color: #a09080;">@sunahhn</a><br>
 <br>Copyright © 2026 LWS All Rights Reserved. <br class="mobile-br">Powered by Firebase.<br class="mobile-br"><span style="font-weight:bold;">
 Legal Counsel: Saebyeol Law Firm (Managing Partner, Sungyeol Ahn)</span>
@@ -534,6 +538,7 @@ setupVisitorCounter();
 listenReviews();
 setupScrollBehavior();
 setupScrollSpy(); 
+changeLanguage('ko');
 });
 
 function requestDynamicTranslation(textElement, targetText) {
@@ -557,14 +562,15 @@ currentLang = lang;
 var buttons = document.querySelectorAll('.lang-btn');
 buttons.forEach(btn => btn.classList.remove('active-lang'));
 
+var activeBtn = Array.from(buttons).find(btn => btn.innerText.toLowerCase() === lang.toLowerCase());
+if (activeBtn) activeBtn.classList.add('active-lang');
+
 if(lang === 'ko') {
 document.querySelectorAll('.lang-ko').forEach(el => el.style.setProperty('display', 'block', 'important'));
-document.querySelectorAll('.lang-en').forEach(el => el.style.setProperty('display', 'none', 'important'));
-if (event && event.target) event.target.classList.add('active-lang');
+document.querySelectorAll('.lang-en').forEach(el => el.style.setProperty('none', 'display', 'important'));
 } else {
-document.querySelectorAll('.lang-ko').forEach(el => el.style.setProperty('display', 'none', 'important'));
+document.querySelectorAll('.lang-ko').forEach(el => el.style.setProperty('none', 'display', 'important'));
 document.querySelectorAll('.lang-en').forEach(el => el.style.setProperty('display', 'block', 'important'));
-if (event && event.target) event.target.classList.add('active-lang');
 }
 listenReviews();
 }
@@ -603,9 +609,7 @@ var isMobile = window.innerWidth <= 768;
 
 if (targetId === '#basic') {
 if (isMobile) {
-var boxHeight = boxElement.offsetHeight;
-var viewportHeight = window.innerHeight;
-offsetPosition = boxElement.offsetTop - ((viewportHeight - boxHeight) / 2);
+offsetPosition = boxElement.offsetTop - headerHeight - 15;
 } else {
 offsetPosition = boxElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
 }
@@ -771,7 +775,6 @@ var replyTimeStr = formatTimestamp(rp.timestamp);
 var replyIpStr = rp.ip ? maskIpAddress(rp.ip) : "";
 var replyMetaStr = replyIpStr ? replyTimeStr + " (" + replyIpStr + ")" : replyTimeStr;
 
-/* 모바일 전용 대댓글 테두리 광폭화 및 글씨 크기 20% 일괄 축소 */
 return `
 <div style="background-color: #faf9f6; border-left: 3px solid #52b788; padding: 10px 12px; margin-top: 8px; border-radius: 4px; font-size: 13px; white-space: pre-wrap; width: 100% !important; box-sizing: border-box;">
 <div style="display:flex; justify-content:space-between; margin-bottom:4px; white-space: normal; align-items: center;">
@@ -795,7 +798,6 @@ var reviewTimeStr = formatTimestamp(r.timestamp);
 var reviewIpStr = r.ip ? maskIpAddress(r.ip) : "";
 var reviewMetaStr = reviewIpStr ? reviewTimeStr + " (" + reviewIpStr + ")" : reviewTimeStr;
 
-/* 댓글 박스를 가로로 최대 확장되도록 고정 */
 return `
 <div class="review-card mobile-review-card" style="width: 100% !important; margin-bottom: 12px; padding: 15px; border: 1px solid #eee; border-radius: 10px; background:#fff; box-sizing: border-box;">
 <div style="display:flex; justify-content:space-between; margin-bottom:8px; align-items: center;">
