@@ -23,22 +23,20 @@ html { scroll-behavior: smooth; }
 .price-soft-green { color: #a09080; opacity: 0.8; font-weight: bold; }
 .subtle-green { color: #3a5a40; }
 
-/* 웹에서 각 섹션의 테두리 크기를 동일하고 고급스러운 사이즈로 제한하며 정중앙 정렬 */
-.section-box { border: 6px double #bcaaa4; margin: 120px auto 180px auto; border-radius: 20px; padding: 40px 20px; max-width: 940px; width: calc(100% - 40px); display: block; box-sizing: border-box; }
+.section-box { border: 6px double #bcaaa4; margin: 20px auto; border-radius: 20px; padding: 40px 20px; max-width: 940px; width: calc(100% - 40px); display: block; box-sizing: border-box; }
+#basic-box { margin-top: 140px; } /* 헤더 아래 충분한 여백 확보 */
 
-/* 헤더 고정 바 */
 header { position: fixed; top: 0; left: 0; width: 100%; background-color: #ffffff; z-index: 1000; padding: 12px 0 8px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 .header-container { max-width: 1000px; margin: 0 auto; text-align: center; position: relative; }
 .logo-wrap { display: inline-flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 8px; text-decoration: none; }
-.logo-img-container { display: inline-block; height: 74px; } 
+.logo-img-container { display: inline-block; height: 74px; }
 .logo-img { height: 74px; width: auto; object-fit: contain; display: block; transition: transform 0.2s ease-in-out; }
-.logo { font-family: 'Playfair Display', serif; font-size: 36px; font-style: italic; color: #2d6a4f; font-weight: 700 !important; display: inline-block; white-space: nowrap; transition: text-shadow 0.2s ease-in-out; text-shadow: none !important; } 
+.logo { font-family: 'Playfair Display', serif; font-size: 36px; font-style: italic; color: #2d6a4f; font-weight: 700 !important; display: inline-block; white-space: nowrap; transition: text-shadow 0.2s ease-in-out; text-shadow: none !important; }
 
 nav { display: flex; justify-content: center; max-width: 950px; margin: 0 auto; padding: 0 10px; gap: 20px; align-items: center; }
-nav a { text-decoration: none; color: #a09080; font-size: 15px; font-weight: normal !important; font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; transition: color 0.2s ease; padding: 5px 8px; white-space: nowrap; } 
+nav a { text-decoration: none; color: #a09080; font-size: 15px; font-weight: normal !important; font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; transition: color 0.2s ease; padding: 5px 8px; white-space: nowrap; }
 nav a:hover, nav a.active-nav { color: #2d6a4f !important; font-weight: bold !important; }
 
-/* Language Switcher Styles */
 .lang-switcher { display: inline-flex; gap: 5px; margin-left: 15px; border: 1px solid #e8e6e1; border-radius: 20px; padding: 2px 6px; background: #faf9f6; }
 .lang-btn { background: none; border: none; font-size: 13px; color: #a09080; cursor: pointer; padding: 2px 6px; font-weight: bold; border-radius: 12px; transition: all 0.2s ease; }
 .lang-btn.active-lang { background: #2d6a4f; color: #fff !important; }
@@ -52,12 +50,9 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .content-img img { width: 100%; height: auto; border-radius: 4px; object-fit: cover; display: block; }
 .content-text { flex: 1; min-width: 0; font-size: 17px; color: #a09080; text-align: left; word-break: keep-all; }
 
-/* 웹 베이직 섹션: 사진 하단과 글 끝나는 하단 라인이 정확히 일치하도록 조율 */
 #basic { padding-top: 20px; padding-bottom: 20px; }
-#basic .container { flex-direction: row-reverse; align-items: flex-end; gap: 40px; justify-content: center; } 
-#basic .content-img { margin-bottom: 0; }
-#basic .content-img img { display: block; vertical-align: bottom; }
-#basic .content-text { display: flex; flex-direction: column; justify-content: flex-end; text-align: right; padding-right: 10px; padding-bottom: 0; margin-bottom: -4px; color: #a09080; } 
+#basic .container { flex-direction: row-reverse; align-items: flex-end; gap: 40px; justify-content: center; }
+#basic .content-text { display: flex; flex-direction: column; justify-content: flex-end; text-align: right; padding-right: 10px; padding-bottom: 0; margin-bottom: -6px; color: #a09080; }
 .cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #a09080; line-height: 1.6; margin-bottom: 20px; }
 .main-message { font-weight: bold; font-size: 17px; color: #a09080; line-height: 1.8; font-style: italic; }
 
@@ -75,17 +70,15 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .section-inner-logo { display: block; margin: 15px auto 10px auto; height: 92px; width: auto; object-fit: contain; }
 .no-list-style { list-style: none; padding: 0; }
 
-/* Founder 및 주요 섹션 웹 테두리 세팅 */
-#about-founder-box.section-box, #profile-box.section-box, #Find-Me-box.section-box { padding: 15px 20px; margin: 120px auto 180px auto; }
+#about-founder-box.section-box { padding: 15px 20px; margin: 25px auto; }
 #about-founder { padding: 10px 20px; }
 #about-founder .content-text { font-size: 13.6px; }
 #about-founder .content-text p { margin-bottom: 12px; line-height: 1.7; color: #6b5d51; font-weight: 500; }
 #about-founder .content-text .special-green { color: #2d6a4f; margin-top: -5px; line-height: 1.5; }
 
-/* Profile 섹션 통째로 우측 이동 */
-#profile-box.section-box { padding-bottom: 15px; }
+#profile-box.section-box { padding-bottom: 15px; margin-bottom: 25px; }
 #profile { padding-bottom: 10px; }
-#profile .container { display: flex; flex-direction: row !important; gap: 40px; align-items: flex-start !important; justify-content: center !important; max-width: 820px; margin: 0 auto; padding: 0 0 0 91px; } 
+#profile .container { display: flex; flex-direction: row !important; gap: 40px; align-items: flex-start !important; justify-content: center !important; max-width: 820px; margin: 0 auto; padding: 0 0 0 91px; }
 #profile .content-img { flex: 0 0 252px; max-width: 252px; min-height: 168px; margin-top: 0; }
 #profile .content-text { flex: 1; display: flex; flex-direction: column; align-items: flex-start; text-align: left; font-size: 11.9px !important; margin-top: 0; padding-top: 0; }
 .profile-title { font-size: 13.3px; font-weight: bold; margin-top: 0; margin-bottom: 8.4px; color: #111; display: inline-block; text-align: left; width: 100%; max-width: 680px; }
@@ -93,7 +86,7 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .profile-list-group li { margin-bottom: 7px; font-size: 11.9px; line-height: 1.8; }
 .research-group { width: 100%; max-width: 680px; margin: 0 0 21px 0; color: #2d6a4f; font-weight: bold; text-align: left; }
 
-/* Find Me 섹션 조율 */
+#Find-Me-box.section-box { padding: 15px 20px; margin: 25px auto; }
 #Find-Me { padding: 5px 20px; }
 #Find-Me .container { justify-content: center; gap: 35px; max-width: 850px; margin: 0 auto; align-items: center; }
 #Find-Me .content-img { flex: 0 0 320px; max-width: 320px; }
@@ -105,27 +98,25 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .contact-item img.kakao-logo, .contact-item img.blog-logo { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; }
 .contact-item a { color: #a09080; text-decoration: none; transition: color 0.2s ease; }
 .contact-item a:hover { text-decoration: underline; color: #52b788; }
-.contact-item.email-item { margin-bottom: 24px; } 
+.contact-item.email-item { margin-bottom: 24px; }
 .contact-item.open-kakao-item { margin-bottom: 0; }
 .contact-item.open-kakao-item a { color: #2d6a4f; font-size: 10.2px; }
 
 .price-info { font-size: 10.2px; font-weight: bold; color: #a09080; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 12px; display: inline-block; width: 100%; max-width: 240px; }
 
-/* 웹 Footprints 제목 스타일 고도화 */
-#footprints-box.section-box { padding-top: 50px !important; padding-bottom: 30px !important; margin: 120px auto 180px auto; } 
+#footprints-box.section-box { padding-top: 50px !important; padding-bottom: 30px !important; }
 #footprints-title { font-family: 'Playfair Display', serif !important; font-style: italic !important; font-size: 28px !important; color: #2d6a4f; margin-bottom: 35px !important; font-weight: 700 !important; display: inline-block; letter-spacing: 1px; }
 
 #review-list { display: flex; flex-direction: column; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
 .review-card { background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); width: 100% !important; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
 
-/* 다국어 통합 제어 클래스 */
 .lang-en { display: none !important; }
 .lang-ko { display: block; }
 
 @media (max-width: 768px) {
 header { padding: 8px 0 6px 0; }
 .logo-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; margin-bottom: 6px; width: 100%; text-align: center; }
-.logo-img-container { height: 46px; } 
+.logo-img-container { height: 46px; }
 .logo-img { height: 46px; margin: 0 auto; }
 .logo { font-size: 21px; text-align: center; display: block; width: 100%; }
 nav { justify-content: center !important; flex-wrap: wrap !important; overflow-x: visible !important; padding: 0 10px 2px 10px; gap: 4px 10px !important; }
@@ -133,28 +124,24 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 .lang-switcher { margin-left: 4px; padding: 1px 3px; }
 .lang-btn { font-size: 10px; padding: 1px 3px; }
 
-/* 모바일 기본 테두리 패딩 피팅 */
 .section-box { margin: 20px 10px !important; padding: 20px 12px !important; border-radius: 14px; max-width: none !important; width: calc(100% - 20px) !important; }
 
-/* 모바일 베이직 박스 */
-#basic-box.section-box { height: auto !important; max-height: none !important; margin-top: 135px !important; margin-bottom: 20px !important; border: 6px double #bcaaa4 !important; padding: 25px 12px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; overflow: visible !important; }
-#basic { padding: 0 !important; width: 100% !important; height: auto !important; display: flex !important; align-items: center !important; }
-#basic .container { gap: 15px !important; flex-direction: column-reverse !important; align-items: center !important; justify-content: center !important; width: 100% !important; height: auto !important; } 
-#basic .content-img { flex: initial !important; max-width: 175px !important; min-height: auto !important; width: 100% !important; margin: 0 auto !important; }
-#basic .content-img img { display: block !important; margin: 0 auto !important; }
-#basic .content-text { text-align: right !important; justify-content: flex-end !important; padding: 0 !important; width: 100% !important; max-width: 280px !important; align-items: flex-end !important; margin-bottom: -4px !important; } 
-#basic .cursive-text { font-size: 13.5px !important; margin-bottom: 8px !important; text-align: right !important; line-height: 1.4 !important; width: 100% !important; } 
-#basic .main-message { font-size: 11.5px !important; line-height: 1.5 !important; text-align: right !important; width: 100% !important; } 
+#basic-box.section-box { margin-top: 135px !important; margin-bottom: 20px !important; padding: 25px 12px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; }
+#basic { padding: 0 !important; width: 100% !important; display: flex !important; align-items: center !important; }
+#basic .container { gap: 15px !important; flex-direction: row !important; align-items: flex-start !important; justify-content: center !important; width: 100% !important; }
+#basic .content-img { flex: 0 0 100px !important; max-width: 100px !important; margin-left: auto !important; margin-right: 0 !important; }
+#basic .content-text { text-align: right !important; padding: 0 !important; width: 100% !important; align-items: flex-end !important; }
+#basic .cursive-text { font-size: 13.5px !important; margin-bottom: 8px !important; text-align: right !important; line-height: 1.4 !important; }
+#basic .main-message { font-size: 11.5px !important; line-height: 1.5 !important; text-align: right !important; }
 
 #about-leaf-box.section-box { padding: 15px 10px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 
-/* 모바일 섹션 여백 */
-#about-founder-box.section-box, #profile-box.section-box, #Find-Me-box.section-box { padding: 20px 12px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
+#about-founder-box.section-box { padding: 20px 12px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 #about-founder { padding: 0 !important; }
 #about-founder .container { flex-direction: column !important; gap: 0px !important; width: 100% !important; padding: 0 !important; margin: 0 !important; display: block !important; }
 #about-founder .content-img { min-height: auto !important; background: transparent !important; margin: 0 auto 15px auto !important; padding: 0 !important; max-width: 100% !important; width: 100% !important; height: auto !important; display: block; }
 #about-founder .content-img img { margin: 0 auto !important; padding: 0 !important; display: block !important; width: 100% !important; height: auto !important; border-bottom: none !important; }
-#about-founder .content-text { padding: 0 !important; margin-top: 0 !important; width: 100% !important; display: block !important; } 
+#about-founder .content-text { padding: 0 !important; margin-top: 0 !important; width: 100% !important; display: block !important; }
 
 .container { flex-direction: column !important; gap: 20px; width: 100% !important; }
 .section-inner-logo { margin: 10px auto 10px auto; height: 60px; }
@@ -170,26 +157,27 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 .cursive-text { font-size: 15px !important; margin-bottom: 15px; }
 .footer-highlight-text { font-size: 16px !important; margin-top: 30px; }
 
+#profile-box.section-box { width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 #profile { padding: 0 !important; }
 #profile .container { flex-direction: column !important; align-items: center !important; justify-content: center !important; padding-left: 0 !important; width: 100% !important; gap: 20px !important; }
 #profile .content-img { flex: initial !important; max-width: 180px !important; min-height: auto !important; width: 100% !important; }
 #profile .content-text { font-size: 11px !important; align-items: center !important; text-align: center !important; width: 100% !important; }
 #profile .profile-title, #profile .profile-list-group, #profile .research-group { text-align: center !important; width: 100% !important; max-width: 100% !important; }
-#profile .profile-list-group { border-left: none !important; padding-left: 0 !important; border-top: 1px solid #eee; padding-top: 12px; } 
+#profile .profile-list-group { border-left: none !important; padding-left: 0 !important; border-top: 1px solid #eee; padding-top: 12px; }
 
+#Find-Me-box.section-box { padding: 35px 12px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 #Find-Me { padding: 0 !important; }
 #Find-Me .container { gap: 12px !important; flex-direction: column !important; align-items: center !important; }
-#Find-Me .content-img { flex: initial !important; max-width: 216px !important; min-height: auto !important; width: 100% !important; } 
+#Find-Me .content-img { flex: initial !important; max-width: 216px !important; min-height: auto !important; width: 100% !important; }
 #Find-Me .content-text { padding-top: 10px !important; width: 100% !important; display: flex; justify-content: center; }
 #Find-Me .contact-box { align-items: center !important; text-align: center !important; width: 100% !important; }
 #Find-Me .contact-list { display: flex !important; flex-direction: column !important; align-items: center !important; }
-#Find-Me .contact-item { margin-bottom: 8px !important; gap: 10px !important; font-size: 11px !important; } 
-#Find-Me .contact-item img { width: 19.6px !important; height: 19.6px !important; } 
-#Find-Me .contact-item.email-item { margin-bottom: 18px !important; } 
-#Find-Me .contact-item.open-kakao-item a { font-size: 11px !important; } 
+#Find-Me .contact-item { margin-bottom: 8px !important; gap: 10px !important; font-size: 11px !important; }
+#Find-Me .contact-item img { width: 19.6px !important; height: 19.6px !important; }
+#Find-Me .contact-item.email-item { margin-bottom: 18px !important; }
+#Find-Me .contact-item.open-kakao-item a { font-size: 11px !important; }
 #Find-Me .price-info { margin-top: 10px !important; padding-top: 10px !important; padding-bottom: 0 !important; width: 100% !important; max-width: none !important; text-align: center; }
 
-/* 모바일 Footprints 초광폭화 제어 시스템 */
 #footprints-box.section-box { padding: 25px 6px !important; width: calc(100% - 20px) !important; margin: 20px 10px !important; }
 #footprints { padding: 0 !important; width: 100% !important; }
 #footprints .container { width: 100% !important; max-width: 100% !important; padding: 0 !important; gap: 0 !important; }
@@ -198,18 +186,18 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 
 #review-list { width: 100% !important; padding: 0 !important; gap: 10px !important; }
 .mobile-review-card { padding: 14px 10px !important; margin-bottom: 4px !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
-.mobile-review-card b { font-size: 11px !important; } 
+.mobile-review-card b { font-size: 11px !important; }
 .mobile-review-card span { font-size: 9px !important; }
 .mobile-review-card button { font-size: 10px !important; }
-.mobile-review-card .translate-target-text { font-size: 11px !important; line-height: 1.5 !important; } 
+.mobile-review-card .translate-target-text { font-size: 11px !important; line-height: 1.5 !important; }
 
-.mobile-review-card div[style*="background-color: rgb(250, 249, 246)"], 
+.mobile-review-card div[style*="background-color: rgb(250, 249, 246)"],
 .mobile-review-card div[style*="background-color: #faf9f6"] {
-    padding: 8px 8px !important; 
-    margin-top: 6px !important; 
-    font-size: 10.5px !important; 
-    width: 100% !important; 
-    box-sizing: border-box;
+padding: 8px 8px !important;
+margin-top: 6px !important;
+font-size: 10.5px !important;
+width: 100% !important;
+box-sizing: border-box;
 }
 .mobile-review-card div[style*="background-color: rgb(250, 249, 246)"] b,
 .mobile-review-card div[style*="background-color: #faf9f6"] b { font-size: 10.5px !important; }
@@ -244,14 +232,15 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 </div>
 </header>
 
-<div class="section-box" id="basic-box" style="margin: 120px auto 180px auto; padding: 25px 20px;">
+<div class="section-box" id="basic-box">
 <section id="basic" style="padding: 0;">
+
 <div class="container">
 <div class="content-img"><img src="basic.webp" alt="Main Profile" onerror="this.parentElement.style.display='none';"></div>
 <div class="content-text">
 <div class="cursive-text">May you find peace<br>in your deepest heart<br>whenever you talk to me<br>or visit our spot</div>
 <div class="main-message lang-ko">나와 이야기할 때나 우리의 공간을 찾을 때,<br>네 마음 깊은 곳에 평온이 깃들기를.</div>
-<div class="main-message lang-en">Whenever you share your thoughts with me<br>or step into this space,<br>May Serene Peace gently settle Deep within your Heart.</div>
+<div class="main-message lang-en">When you speak with me or visit our spot,<br>may peace settle deep within your heart.</div>
 </div>
 </div>
 </section>
@@ -521,7 +510,7 @@ LWS - Psychological Counseling Space
 </section>
 
 <script>
-var currentLang = "ko"; 
+var currentLang = "ko";
 var MASTER_PASSWORD = "leaf1234";
 var firebaseConfig = { apiKey: "AIzaSyCd0izexUnK2e3hFF72F09pSvNDMUX0Bg", authDomain: "leaf-web-f6019.firebaseapp.com", databaseURL: "https://leaf-web-f6019-default-rtdb.asia-southeast1.firebasedatabase.app", projectId: "leaf-web-f6019", storageBucket: "leaf-web-f6019.firebasestorage.app", messagingSenderId: "318569186261", appId: "1:318569186261:web:006ee73e7359f2482bb35c" };
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
@@ -534,24 +523,23 @@ fetchUserIp();
 setupVisitorCounter();
 listenReviews();
 setupScrollBehavior();
-setupScrollSpy(); 
+setupScrollSpy();
 changeLanguage('ko');
 });
 
 function requestDynamicTranslation(textElement, targetText) {
-    if(!targetText || targetText.trim() === "") return;
-    if(!/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(targetText)) return;
-    
-    var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=ko&tl=en&dt=t&q=" + encodeURIComponent(targetText);
-    fetch(url)
-    .then(res => res.json())
-    .then(data => {
-        if(data && data[0]) {
-            var translatedResult = data[0].map(sentence => sentence[0]).join('');
-            textElement.innerText = translatedResult;
-        }
-    })
-    .catch(err => console.log("Translation target error:", err));
+if(!targetText || targetText.trim() === "") return;
+if(!/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(targetText)) return;
+var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=ko&tl=en&dt=t&q=" + encodeURIComponent(targetText);
+fetch(url)
+.then(res => res.json())
+.then(data => {
+if(data && data[0]) {
+var translatedResult = data[0].map(sentence => sentence[0]).join('');
+textElement.innerText = translatedResult;
+}
+})
+.catch(err => console.log("Translation target error:", err));
 }
 
 function changeLanguage(lang) {
@@ -564,9 +552,9 @@ if (activeBtn) activeBtn.classList.add('active-lang');
 
 if(lang === 'ko') {
 document.querySelectorAll('.lang-ko').forEach(el => el.style.setProperty('display', 'block', 'important'));
-document.querySelectorAll('.lang-en').forEach(el => el.style.setProperty('none', 'display', 'important'));
+document.querySelectorAll('.lang-en').forEach(el => el.style.setProperty('display', 'none', 'important'));
 } else {
-document.querySelectorAll('.lang-ko').forEach(el => el.style.setProperty('none', 'display', 'important'));
+document.querySelectorAll('.lang-ko').forEach(el => el.style.setProperty('display', 'none', 'important'));
 document.querySelectorAll('.lang-en').forEach(el => el.style.setProperty('display', 'block', 'important'));
 }
 listenReviews();
@@ -599,24 +587,8 @@ e.preventDefault();
 var targetSection = document.querySelector(targetId);
 if (targetSection) {
 var boxElement = targetSection.closest('.section-box') || targetSection;
-var headerHeight = header.getBoundingClientRect().height;
-
-var offsetPosition;
-var isMobile = window.innerWidth <= 768;
-
-if (targetId === '#basic') {
-if (isMobile) {
-offsetPosition = boxElement.offsetTop - headerHeight - 15;
-} else {
-offsetPosition = boxElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-}
-} else {
-if (isMobile) {
-offsetPosition = boxElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8;
-} else {
-offsetPosition = boxElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 8;
-}
-}
+var headerHeight = header.offsetHeight;
+var offsetPosition = boxElement.offsetTop - headerHeight - 10;
 window.scrollTo({
 top: offsetPosition,
 behavior: 'smooth'
@@ -633,7 +605,7 @@ var navLinks = document.querySelectorAll('#main-navigation a');
 var header = document.getElementById('main-header');
 
 window.addEventListener('scroll', function() {
-var fromTop = window.scrollY + header.getBoundingClientRect().height + 25;
+var fromTop = window.scrollY + header.getBoundingClientRect().height + 150;
 var currentSectionId = "";
 
 sections.forEach(function(box) {
@@ -752,9 +724,9 @@ function listenReviews() {
 var reviewList = document.getElementById('review-list');
 database.ref('reviews').on('value', snapshot => {
 var data = snapshot.val();
-if (!data) { 
-reviewList.innerHTML = currentLang === 'ko' ? '<p style="text-align:center; width: 100%;">아직 응원의 한 마디가 없습니다. 🍃</p>' : '<p style="text-align:center; width: 100%;">No messages of support yet. 🍃</p>'; 
-return; 
+if (!data) {
+reviewList.innerHTML = currentLang === 'ko' ? '<p style="text-align:center; width: 100%;">아직 응원의 한 마디가 없습니다. 🍃</p>' : '<p style="text-align:center; width: 100%;">No messages of support yet. 🍃</p>';
+return;
 }
 var arr = [];
 for (var k in data) { data[k].key = k; arr.push(data[k]); }
@@ -823,10 +795,10 @@ return `
 }).join('');
 
 if(currentLang === 'en') {
-    document.querySelectorAll('.translate-target-text').forEach(function(el) {
-        var rawContent = el.getAttribute('data-origin');
-        requestDynamicTranslation(el, rawContent);
-    });
+document.querySelectorAll('.translate-target-text').forEach(function(el) {
+var rawContent = el.getAttribute('data-origin');
+requestDynamicTranslation(el, rawContent);
+});
 }
 });
 }
@@ -836,8 +808,8 @@ var n = document.getElementById('review-name').value;
 var c = document.getElementById('review-content').value;
 if(!n || !c) return alert("닉네임과 내용을 입력해주세요.");
 database.ref('reviews').push({
-name: n, 
-content: c, 
+name: n,
+content: c,
 timestamp: Date.now(),
 ip: currentUserIp
 }).then(() => {
@@ -850,8 +822,8 @@ var n = document.getElementById('review-name-en').value;
 var c = document.getElementById('review-content-en').value;
 if(!n || !c) return alert("Please enter your nickname and content.");
 database.ref('reviews').push({
-name: n, 
-content: c, 
+name: n,
+content: c,
 timestamp: Date.now(),
 ip: currentUserIp
 }).then(() => {
