@@ -10,13 +10,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Leaf Wellness Studio | 현선아 상담심리사</title>
-<meta name="description" content="현선아 상담심리사가 운영하는 심리상담 ส튜디오 Leaf Wellness Studio입니다. 청소년 정신건강, 긍정심리, 이직 고민 상담을 위한 안전한 연결의 공간을 제공합니다.">
+<meta name="description" content="현선아 상담심리사가 운영하는 심리상담 스튜디오 Leaf Wellness Studio입니다. 청소년 정신건강, 긍정심리, 이직 고민 상담을 위한 안전한 연결의 공간을 제공합니다.">
 <meta name="keywords" content="현선아, 상담심리사, Leaf Wellness Studio, 심리상담, 리프웰니스스튜디오, 청소년상담, 긍정심리, 강남상담소, 심리치유">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; color: #333; background-color: #ffffff; line-height: 1.6; }
+body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; color: #333; background-color: #ffffff; line-height: 1.6; -webkit-text-size-adjust: none; -webkit-font-smoothing: antialiased; }
 html { scroll-behavior: smooth; }
 .handwriting { font-family: 'cursive', 'Georgia', serif; font-style: italic; }
 .elegant-cursive { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; }
@@ -24,18 +24,18 @@ html { scroll-behavior: smooth; }
 .subtle-green { color: #3a5a40; }
 
 /* 웹에서 각 섹션의 테두리 크기를 동일하고 고급스러운 사이즈로 제한하며 정중앙 정렬 */
-.section-box { border: 6px double #bcaaa4; margin: 40px auto; border-radius: 20px; padding: 40px 20px; max-width: 940px; width: calc(100% - 40px); }
+.section-box { border: 6px double #bcaaa4; margin: 40px auto; border-radius: 20px; padding: 40px 20px; max-width: 940px; width: calc(100% - 40px); display: block; box-sizing: border-box; }
 
+/* 베이직 섹션 한 화면 진입을 위해 헤더 상하단 패딩을 미세 조율 (16px/10px -> 12px/8px) */
 header { position: fixed; top: 0; left: 0; width: 100%; background-color: #ffffff; z-index: 1000; padding: 12px 0 8px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 .header-container { max-width: 1000px; margin: 0 auto; text-align: center; position: relative; }
-.logo-wrap { display: inline-flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 10px; text-decoration: none; }
-.logo-img-container { display: inline-block; height: 64px; }
-.logo-img { height: 64px; width: auto; object-fit: contain; display: block; transition: transform 0.2s ease-in-out; }
-.logo { font-family: 'Playfair Display', serif; font-size: 32px; font-style: italic; color: #2d6a4f; font-weight: 700 !important; display: inline-block; white-space: nowrap; transition: text-shadow 0.2s ease-in-out; text-shadow: none !important; }
+.logo-wrap { display: inline-flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 8px; text-decoration: none; }
+.logo-img-container { display: inline-block; height: 74px; } 
+.logo-img { height: 74px; width: auto; object-fit: contain; display: block; transition: transform 0.2s ease-in-out; }
+.logo { font-family: 'Playfair Display', serif; font-size: 36px; font-style: italic; color: #2d6a4f; font-weight: 700 !important; display: inline-block; white-space: nowrap; transition: text-shadow 0.2s ease-in-out; text-shadow: none !important; } 
 
-.logo-img-effect { transform: scale(1.02); }
 nav { display: flex; justify-content: center; max-width: 950px; margin: 0 auto; padding: 0 10px; gap: 20px; align-items: center; }
-nav a { text-decoration: none; color: #a09080; font-size: 17px; font-weight: normal !important; font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; transition: color 0.2s ease; padding: 5px 8px; white-space: nowrap; }
+nav a { text-decoration: none; color: #a09080; font-size: 15px; font-weight: normal !important; font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; transition: color 0.2s ease; padding: 5px 8px; white-space: nowrap; } 
 nav a:hover, nav a.active-nav { color: #2d6a4f !important; font-weight: bold !important; }
 
 /* Language Switcher Styles */
@@ -46,16 +46,17 @@ nav a:hover, nav a.active-nav { color: #2d6a4f !important; font-weight: bold !im
 .visitor-counter { margin-top: 12px; font-size: 13px; color: #8e7d73; font-weight: bold; display: flex; justify-content: center; gap: 15px; font-family: 'Georgia', serif; min-height: 20px; }
 .visitor-counter span em { font-style: normal; color: #2d6a4f; font-weight: 800; margin-left: 5px; }
 
-section { padding: 40px 20px; min-height: auto; display: flex; justify-content: center; align-items: flex-start; }
-.container { max-width: 1000px; width: 100%; display: flex; gap: 50px; align-items: flex-start; justify-content: center; margin: 0 auto; }
+section { padding: 40px 20px; min-height: auto; display: flex; justify-content: center; align-items: flex-start; box-sizing: border-box; }
+.container { max-width: 1000px; width: 100%; display: flex; gap: 50px; align-items: flex-start; justify-content: center; margin: 0 auto; box-sizing: border-box; }
 .content-img { flex: 0 0 360px; max-width: 360px; text-align: center; background: #fafafa; border-radius: 4px; min-height: 240px; }
 .content-img img { width: 100%; height: auto; border-radius: 4px; object-fit: cover; display: block; }
 .content-text { flex: 1; min-width: 0; font-size: 17px; color: #a09080; text-align: left; word-break: keep-all; }
 
-#basic { padding-top: 40px; }
-#basic .container { flex-direction: row-reverse; align-items: stretch; gap: 40px; }
-#basic .content-text { display: flex; flex-direction: column; justify-content: flex-end; text-align: right; padding-right: 10px; padding-bottom: 10px; color: #a09080; }
-.cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #a09080; line-height: 1.6; margin-bottom: 25px; }
+/* 웹 브라우저 첫 화면(VH) 최적화를 위해 베이직 섹션 내부 여백 균형 조정 */
+#basic { padding-top: 20px; padding-bottom: 20px; }
+#basic .container { flex-direction: row-reverse; align-items: center; gap: 40px; }
+#basic .content-text { display: flex; flex-direction: column; justify-content: center; text-align: right; padding-right: 10px; padding-bottom: 0; color: #a09080; }
+.cursive-text { font-family: 'Georgia', serif; font-style: italic; font-size: 20px; color: #a09080; line-height: 1.6; margin-bottom: 20px; }
 .main-message { font-weight: bold; font-size: 17px; color: #a09080; line-height: 1.8; font-style: italic; }
 
 #about-leaf { padding-top: 60px; }
@@ -79,10 +80,10 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 #about-founder .content-text p { margin-bottom: 12px; line-height: 1.7; color: #6b5d51; font-weight: 500; }
 #about-founder .content-text .special-green { color: #2d6a4f; margin-top: -5px; line-height: 1.5; }
 
-/* Profile 섹션 통째로 우측 이동(완전한 중앙 밸런스) 및 하단 여백 감소 수정 */
+/* Profile 섹션 통째로 우측 이동 */
 #profile-box.section-box { padding-bottom: 15px; margin-bottom: 25px; }
 #profile { padding-bottom: 10px; }
-#profile .container { display: flex; flex-direction: row !important; gap: 40px; align-items: flex-start !important; justify-content: center !important; max-width: 820px; margin: 0 auto; padding: 0 0 0 35px; }
+#profile .container { display: flex; flex-direction: row !important; gap: 40px; align-items: flex-start !important; justify-content: center !important; max-width: 820px; margin: 0 auto; padding: 0 0 0 91px; } 
 #profile .content-img { flex: 0 0 252px; max-width: 252px; min-height: 168px; margin-top: 0; }
 #profile .content-text { flex: 1; display: flex; flex-direction: column; align-items: flex-start; text-align: left; font-size: 11.9px !important; margin-top: 0; padding-top: 0; }
 .profile-title { font-size: 13.3px; font-weight: bold; margin-top: 0; margin-bottom: 8.4px; color: #111; display: inline-block; text-align: left; width: 100%; max-width: 680px; }
@@ -90,61 +91,63 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .profile-list-group li { margin-bottom: 7px; font-size: 11.9px; line-height: 1.8; }
 .research-group { width: 100%; max-width: 680px; margin: 0 0 21px 0; color: #2d6a4f; font-weight: bold; text-align: left; }
 
-/* Find Me 섹션 웹 테두리가 한 페이지에 깔끔하게 들어오도록 상하단 여백 살짝씩만 조율 */
+/* Find Me 섹션 조율 */
 #Find-Me-box.section-box { padding: 15px 20px; margin: 25px auto; }
 #Find-Me { padding: 5px 20px; }
 #Find-Me .container { justify-content: center; gap: 35px; max-width: 850px; margin: 0 auto; align-items: center; }
 #Find-Me .content-img { flex: 0 0 320px; max-width: 320px; }
 #Find-Me .content-text { flex: 0 1 auto; display: flex; align-items: center; padding-top: 0; }
 .contact-box { width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; }
-.contact-list { list-style: none; padding: 0; margin: 0; display: inline-block; text-align: left; }
+.contact-list { list-style: none; padding: 0; margin: 0; display: inline-block; text-align: left; width: 100%; }
 .contact-item { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; font-family: 'Arial', sans-serif; font-size: 11.4px; font-weight: bold; line-height: 1.2; }
 .contact-item img { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; }
 .contact-item img.kakao-logo, .contact-item img.blog-logo { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; }
 .contact-item a { color: #a09080; text-decoration: none; transition: color 0.2s ease; }
 .contact-item a:hover { text-decoration: underline; color: #52b788; }
-.contact-item.email-item { margin-bottom: 20px; }
+.contact-item.email-item { margin-bottom: 24px; } 
 .contact-item.open-kakao-item { margin-bottom: 0; }
 .contact-item.open-kakao-item a { color: #2d6a4f; font-size: 10.2px; }
-.price-info { font-size: 10.2px; font-weight: bold; color: #a09080; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 5px; display: inline-block; width: auto; }
+
+.price-info { font-size: 10.2px; font-weight: bold; color: #a09080; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 12px; display: inline-block; width: 100%; max-width: 240px; }
 
 #footprints-title { font-family: 'Playfair Display', serif !important; font-style: italic !important; font-size: 22px !important; color: #2d6a4f; margin-bottom: 5px; font-weight: 700 !important; }
 
-#review-list { display: flex; flex-wrap: wrap; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
-.review-card { background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); width: calc(50% - 8px); min-width: 280px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
+#review-list { display: flex; flex-direction: column; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
+.review-card { background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); width: 100% !important; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
 
 /* 다국어 통합 제어 클래스 */
 .lang-en { display: none !important; }
 .lang-ko { display: block; }
 
 @media (max-width: 768px) {
-/* 모바일 헤더 로고 크기 및 글씨 크기 축소 */
 header { padding: 8px 0 6px 0; }
 .logo-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; margin-bottom: 6px; width: 100%; text-align: center; }
-.logo-img-container { height: 40px; }
-.logo-img { height: 40px; margin: 0 auto; }
-.logo { font-size: 19px; text-align: center; display: block; width: 100%; }
+.logo-img-container { height: 46px; } 
+.logo-img { height: 46px; margin: 0 auto; }
+.logo { font-size: 21px; text-align: center; display: block; width: 100%; }
 nav { justify-content: center !important; flex-wrap: wrap !important; overflow-x: visible !important; padding: 0 10px 2px 10px; gap: 4px 10px !important; }
-nav a { font-size: 13px !important; padding: 2px 4px !important; }
+nav a { font-size: 12px !important; padding: 2px 4px !important; }
 .lang-switcher { margin-left: 4px; padding: 1px 3px; }
 .lang-btn { font-size: 10px; padding: 1px 3px; }
 
-/* 모바일 마진 덮어쓰기 분리 구조 유지 */
-.section-box { margin: 20px 10px !important; padding: 20px 12px !important; border-radius: 14px; max-width: none !important; width: auto !important; }
-#basic-box.section-box { margin-top: calc((100vh - 90px - 450px) / 2 + 90px) !important; margin-bottom: calc((100vh - 90px - 450px) / 2) !important; border-top: 6px double #bcaaa4; border-radius: 14px; padding: 15px 12px !important; }
+.section-box { margin: 20px 15px !important; padding: 20px 12px !important; border-radius: 14px; max-width: none !important; width: calc(100% - 30px) !important; }
 
-#basic .container { gap: 0px !important; flex-direction: column !important; align-items: flex-end !important; } 
-#basic .content-img { flex: initial !important; max-width: 259.2px !important; min-height: auto !important; width: 100% !important; margin: 0 0 0 auto !important; }
-#basic .content-text { text-align: right !important; justify-content: flex-start !important; padding: 15px 5px 0 0 !important; width: 100% !important; align-items: flex-end !important; } 
-#basic .cursive-text { font-size: 14px !important; margin-bottom: 10px !important; } 
-#basic .main-message { font-size: 11.9px !important; line-height: 1.6 !important; } 
+/* 모바일 베이직 박스 세팅 */
+#basic-box.section-box { margin-top: 130px !important; margin-bottom: 25px !important; border: 6px double #bcaaa4 !important; border-radius: 14px; padding: 20px 16px !important; display: flex !important; justify-content: center !important; align-items: center !important; }
+#basic .container { gap: 15px !important; flex-direction: column !important; align-items: center !important; width: 100% !important; } 
+#basic .content-img { flex: initial !important; max-width: 240px !important; min-height: auto !important; width: 100% !important; margin: 0 auto !important; }
+#basic .content-text { text-align: center !important; justify-content: center !important; padding: 5px 0 0 0 !important; width: 100% !important; align-items: center !important; } 
+#basic .cursive-text { font-size: 15px !important; margin-bottom: 15px !important; text-align: center !important; } 
+#basic .main-message { font-size: 13px !important; line-height: 1.6 !important; text-align: center !important; } 
 
-/* 모바일 Founder 섹션 사진과 글 사이 여백 대폭 자연스럽게 축소 */
-#about-founder.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; padding: 20px 12px 20px 12px !important; }
+#about-leaf-box.section-box { padding: 15px 10px !important; }
+
+/* 모바일 Founder 섹션 여백 밀착 */
+#about-founder.section-box { margin-bottom: 20px !important; border-bottom: 6px double #bcaaa4; border-radius: 14px; padding: 20px 12px !important; }
 #about-founder .container { flex-direction: column !important; gap: 0px !important; width: 100% !important; padding: 0 !important; margin: 0 !important; }
-#about-founder .content-img { min-height: auto !important; background: transparent !important; margin: 0 auto !important; padding: 0 !important; max-width: 360px !important; width: 100% !important; }
-#about-founder .content-img img { margin: 0 auto !important; padding: 0 !important; display: block !important; }
-#about-founder .content-text { padding: 5px 0 0 0 !important; margin-top: 0 !important; width: 100% !important; }
+#about-founder .content-img { min-height: auto !important; background: transparent !important; margin: 0 auto !important; padding: 0 !important; max-width: 360px !important; width: 100% !important; height: auto !important; }
+#about-founder .content-img img { margin: 0 auto !important; padding: 0 !important; display: block !important; width: 100% !important; height: auto !important; }
+#about-founder .content-text { padding: 0px !important; margin-top: -5px !important; width: 100% !important; } 
 #about-founder .content-text p:first-child { margin-top: 0 !important; padding-top: 0 !important; }
 
 .container { flex-direction: column !important; gap: 20px; width: 100% !important; }
@@ -168,29 +171,28 @@ nav a { font-size: 13px !important; padding: 2px 4px !important; }
 #profile .profile-title, #profile .profile-list-group, #profile .research-group { text-align: center !important; width: 100% !important; max-width: 100% !important; }
 #profile .profile-list-group { border-left: none !important; padding-left: 0 !important; border-top: 1px solid #eee; padding-top: 12px; } 
 
-/* 모바일 Find Me 섹션 테두리 안 상하단 여백 자연스럽게 늘려서 균형감 있게 한 화면 진입 */
 #Find-Me-box.section-box { padding: 35px 12px !important; }
 #Find-Me { padding: 0 !important; }
 #Find-Me .container { gap: 12px !important; flex-direction: column !important; align-items: center !important; }
 #Find-Me .content-img { flex: initial !important; max-width: 216px !important; min-height: auto !important; width: 100% !important; } 
 #Find-Me .content-text { padding-top: 10px !important; width: 100% !important; display: flex; justify-content: center; }
 #Find-Me .contact-box { align-items: center !important; text-align: center !important; width: 100% !important; }
-#Find-Me .contact-list { display: flex !important; flex-direction: column !important; align-items: flex-start !important; }
-#Find-Me .contact-item { margin-bottom: 8px !important; gap: 10px !important; font-size: 9.12px !important; } 
+#Find-Me .contact-list { display: flex !important; flex-direction: column !important; align-items: center !important; }
+#Find-Me .contact-item { margin-bottom: 8px !important; gap: 10px !important; font-size: 11px !important; } 
 #Find-Me .contact-item img { width: 19.6px !important; height: 19.6px !important; } 
-#Find-Me .contact-item.email-item { margin-bottom: 12px !important; } 
-#Find-Me .contact-item.open-kakao-item a { font-size: 11.22px !important; } 
-#Find-Me .price-info { margin-top: 5px !important; padding-top: 10px !important; padding-bottom: 0 !important; width: 100% !important; text-align: center; }
+#Find-Me .contact-item.email-item { margin-bottom: 18px !important; } 
+#Find-Me .contact-item.open-kakao-item a { font-size: 11px !important; } 
+#Find-Me .price-info { margin-top: 10px !important; padding-top: 10px !important; padding-bottom: 0 !important; width: 100% !important; max-width: none !important; text-align: center; }
 
 #footprints .container { width: 100% !important; max-width: 100% !important; padding: 0 !important; }
-.footprints-box { padding: 20px 15px !important; margin-bottom: 20px !important; }
+.footprints-box { padding: 20px 15px !important; margin-bottom: 20px !important; width: 100% !important; box-sizing: border-box; }
 .footprints-box h4 { font-size: 14px !important; margin-bottom: 12px !important; }
 .footprints-box input, .footprints-box textarea { padding: 10px 12px !important; font-size: 12px !important; }
 .footprints-box textarea { height: 110px !important; }
 .footprints-box button { padding: 10px 20px !important; font-size: 12px !important; }
-.mobile-review-card { padding: 12px !important; margin-bottom: 8px !important; }
-.mobile-review-card b { font-size: 12px !important; }
-.mobile-review-card .review-content-text { font-size: 12px !important; line-height: 1.5 !important; }
+.mobile-review-card { padding: 15px !important; margin-bottom: 12px !important; width: 100% !important; box-sizing: border-box; }
+.mobile-review-card b { font-size: 13px !important; }
+.mobile-review-card .review-content-text { font-size: 13px !important; line-height: 1.5 !important; }
 .mobile-br { display: block; }
 }
 </style>
@@ -218,11 +220,12 @@ nav a { font-size: 13px !important; padding: 2px 4px !important; }
 </div>
 </header>
 
-<div class="section-box" id="basic-box" style="margin-top: 145px;">
+<!-- 웹 화면에서 스크롤 없이 첫 화면에 상하단 테두리가 전부 정중앙 진입하도록 마진을 145px로 깔끔하게 피팅했습니다. -->
+<div class="section-box" id="basic-box" style="margin-top: 145px; padding: 25px 20px;">
 <section id="basic" style="padding: 0;">
 <div class="container">
 <div class="content-img"><img src="basic.webp" alt="Main Profile" onerror="this.parentElement.style.display='none';"></div>
-<div class="content-text" style="padding-top: 10px;">
+<div class="content-text">
 <div class="cursive-text">May you find peace<br>in your deepest heart<br>whenever you talk to me<br>or visit our spot</div>
 <div class="main-message lang-ko">나와 이야기할 때나 우리의 공간을 찾을 때,<br>네 마음 깊은 곳에 평온이 깃들기를.</div>
 <div class="main-message lang-en" style="display:none;">Whenever you share your thoughts with me<br>or step into this space,<br>May Serene Peace gently settle Deep within your Heart.</div>
@@ -422,7 +425,7 @@ nav a { font-size: 13px !important; padding: 2px 4px !important; }
 
 <div class="section-box" id="footprints-box" style="padding-top: 15px; padding-bottom: 0;">
 <section id="footprints" style="padding-top: 0; padding-bottom: 0; min-height: auto; border-bottom: none;">
-<div class="container" style="max-width: 720px; flex-direction: column; align-items: center; gap: 0;">
+<div class="container" style="max-width: 100%; flex-direction: column; align-items: center; gap: 0;">
 <div style="margin-bottom: 10px; text-align: center;">
 <h3 id="footprints-title">Footprints</h3>
 </div>
@@ -431,7 +434,7 @@ nav a { font-size: 13px !important; padding: 2px 4px !important; }
 <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">한 줄 응원 남기기</h4>
 <div style="margin-bottom: 15px;"><input type="text" id="review-name" placeholder="닉네임" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
 <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
-<textarea id="review-content" placeholder="따뜻한 한 마디를 남겨주세요" style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px("></textarea>
+<textarea id="review-content" placeholder="따뜻한 한 마디를 남겨주세요" style="width: 100%; height: 140px; padding: 18px; border: 1px solid #ddd; border-radius: 8px;"></textarea>
 <div style="text-align: right; display: flex; justify-content: flex-end; gap: 10px;">
 <button onclick="clearBrokenData()" style="background-color: #e63946; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer;">데이터 리셋</button>
 <button onclick="addReview()" style="background-color: #52b788; color: white; border: none; padding: 12px 45px; border-radius: 8px; cursor: pointer;">등록</button>
@@ -452,12 +455,13 @@ nav a { font-size: 13px !important; padding: 2px 4px !important; }
 </div>
 
 <div id="review-list" style="margin-bottom: 25px; width: 100%;"></div>
-<div style="max-width: 650px; margin: 0 auto 0px; width: 100%; padding-bottom: 0;">
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%;">
-<div style="padding: 8px;"><img src="review_1.webp" style="width: 100%; border-radius: 6px;"></div>
-<div style="padding: 8px;"><img src="review_2.webp" style="width: 100%; border-radius: 6px;"></div>
-<div style="padding: 8px;"><img src="review_3.webp" style="width: 100%; border-radius: 6px;"></div>
-<div style="padding: 8px;"><img src="review_4.webp" style="width: 100%; border-radius: 6px;"></div>
+
+<div style="max-width: 80%; margin: 0 auto 0px; width: 100%; padding-bottom: 0;">
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%; justify-items: center;">
+<div style="padding: 8px; width: 100%; text-align: center;"><img src="review_1.webp" style="width: 100%; max-width: 100%; border-radius: 6px; display: block; margin: 0 auto;"></div>
+<div style="padding: 8px; width: 100%; text-align: center;"><img src="review_2.webp" style="width: 100%; max-width: 100%; border-radius: 6px; display: block; margin: 0 auto;"></div>
+<div style="padding: 8px; width: 100%; text-align: center;"><img src="review_3.webp" style="width: 100%; max-width: 100%; border-radius: 6px; display: block; margin: 0 auto;"></div>
+<div style="padding: 8px; width: 100%; text-align: center;"><img src="review_4.webp" style="width: 100%; max-width: 100%; border-radius: 6px; display: block; margin: 0 auto;"></div>
 </div>
 </div>
 </div>
@@ -490,7 +494,7 @@ LWS - Psychological Counseling Space
 </section>
 
 <script>
-var currentLang = "ko"; // 기본 언어 플래그
+var currentLang = "ko"; 
 var MASTER_PASSWORD = "leaf1234";
 var firebaseConfig = { apiKey: "AIzaSyCd0izexUnK2e3hFF72F09pSvNDMUX0Bg", authDomain: "leaf-web-f6019.firebaseapp.com", databaseURL: "https://leaf-web-f6019-default-rtdb.asia-southeast1.firebasedatabase.app", projectId: "leaf-web-f6019", storageBucket: "leaf-web-f6019.firebasestorage.app", messagingSenderId: "318569186261", appId: "1:318569186261:web:006ee73e7359f2482bb35c" };
 if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
@@ -506,7 +510,6 @@ setupScrollBehavior();
 setupScrollSpy(); 
 });
 
-// 브라우저 내장 초경량 실시간 번역 처리 시스템 함수
 function requestDynamicTranslation(textElement, targetText) {
     if(!targetText || targetText.trim() === "") return;
     if(!/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(targetText)) return;
@@ -523,7 +526,6 @@ function requestDynamicTranslation(textElement, targetText) {
     .catch(err => console.log("Translation target error:", err));
 }
 
-// 언어 변경 처리 함수
 function changeLanguage(lang) {
 currentLang = lang;
 var buttons = document.querySelectorAll('.lang-btn');
