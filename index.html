@@ -114,7 +114,7 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .lang-ko { display: block; }
 
 @media (max-width: 768px) {
-header { padding: 25px 0 10px 0; } /* 모바일 헤더 여백 추가 */
+header { padding: 25px 0 10px 0; }
 .logo-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; margin-bottom: 6px; width: 100%; text-align: center; }
 .logo-img-container { height: 46px; }
 .logo-img { height: 46px; margin: 0 auto; }
@@ -126,13 +126,13 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 
 .section-box { margin: 30px 10px !important; padding: 30px 15px !important; border-radius: 14px; max-width: none !important; width: calc(100% - 20px) !important; }
 
-#basic-box.section-box { margin-top: 135px !important; margin-bottom: 40px !important; min-height: calc(100vh - 180px) !important; padding: 30px 15px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; }
-#basic { padding: 0 !important; width: 100% !important; display: flex !important; align-items: center !important; }
-#basic .container { gap: 15px !important; flex-direction: row-reverse !important; align-items: flex-end !important; justify-content: center !important; width: 100% !important; }
-#basic .content-img { flex: 0 0 140px !important; max-width: 140px !important; min-height: auto !important; margin: 0 !important; }
-#basic .content-text { text-align: right !important; padding: 0 !important; margin-bottom: 0 !important; width: 100% !important; align-items: flex-end !important; }
-#basic .cursive-text { font-size: 15px !important; margin-bottom: 12px !important; text-align: right !important; line-height: 1.4 !important; }
-#basic .main-message { font-size: 13px !important; line-height: 1.5 !important; text-align: right !important; }
+#basic-box.section-box { margin-top: 135px !important; margin-bottom: 40px !important; padding: 20px !important; }
+#basic { padding: 0 !important; }
+#basic .container { flex-direction: column !important; align-items: flex-end !important; text-align: right !important; }
+#basic .content-img { flex: 0 0 auto !important; width: 140% !important; max-width: 140% !important; margin: 0 auto 20px 0 !important; }
+#basic .content-text { text-align: right !important; align-items: flex-end !important; width: 100% !important; }
+#basic .cursive-text { font-size: 16px !important; margin-bottom: 10px !important; }
+#basic .main-message { font-size: 14px !important; }
 
 #about-leaf-box.section-box { margin: 40px 10px !important; }
 #about-founder-box.section-box { margin: 40px 10px !important; }
