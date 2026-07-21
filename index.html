@@ -111,11 +111,12 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .section-inner-logo { display: block; margin: 15px auto 10px auto; height: 92px; width: auto; object-fit: contain; }
 .no-list-style { list-style: none; padding: 0; }
 
-#about-founder-box.section-box { padding: 15px 20px; margin: 60px auto; }
-#about-founder { padding: 10px 20px; }
-#about-founder .content-text { font-size: 13.6px; }
-#about-founder .content-text p { margin-bottom: 12px; line-height: 1.7; color: #6b5d51; font-weight: 500; }
-#about-founder .content-text .special-green { color: #2d6a4f; margin-top: -5px; line-height: 1.5; }
+#about-founder-box.section-box { padding: 35px 25px; margin: 60px auto; }
+#about-founder { padding: 25px 20px; }
+#about-founder .container { gap: 40px; align-items: flex-start; }
+#about-founder .content-text { font-size: 13.6px; padding-top: 0; }
+#about-founder .content-text p { margin-bottom: 16px; line-height: 1.7; color: #6b5d51; font-weight: 500; }
+#about-founder .content-text .special-green { color: #2d6a4f; margin-top: -2px; line-height: 1.5; }
 
 #profile-box.section-box { padding-bottom: 15px; margin-bottom: 60px; }
 #profile { padding-bottom: 10px; }
@@ -127,26 +128,29 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .profile-list-group li { margin-bottom: 7px; font-size: 11.9px; line-height: 1.8; }
 .research-group { width: 100%; max-width: 680px; margin: 0 0 21px 0; color: #2d6a4f; font-weight: bold; text-align: left; }
 
-#Find-Me-box.section-box { padding: 15px 20px; margin: 60px auto; }
-#Find-Me { padding: 5px 20px; }
-#Find-Me .container { justify-content: center; gap: 35px; max-width: 850px; margin: 0 auto; align-items: center; }
+#Find-Me-box.section-box { padding: 40px 20px; margin: 60px auto; }
+#Find-Me { padding: 20px; }
+#Find-Me .container { justify-content: center; gap: 40px; max-width: 850px; margin: 0 auto; align-items: center; }
 #Find-Me .content-img { flex: 0 0 320px; max-width: 320px; }
 #Find-Me .content-text { flex: 0 1 auto; display: flex; align-items: center; padding-top: 0; }
 .contact-box { width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; }
 .contact-list { list-style: none; padding: 0; margin: 0; display: inline-block; text-align: left; width: 100%; }
 .contact-item { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; font-family: 'Arial', sans-serif; font-size: 11.4px; font-weight: bold; line-height: 1.2; }
 .contact-item img { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; }
-.contact-item img.kakao-logo, .contact-item img.blog-logo { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; }
+.contact-item img.blog-logo { width: 28px; height: 28px; object-fit: contain; vertical-align: middle; }
+.contact-item img.kakao-logo { width: 22.4px; height: 22.4px; margin: 0 2.8px; object-fit: contain; vertical-align: middle; }
+.contact-item img.naverexpert-logo { width: 33.6px; height: 33.6px; margin: 0 -2.8px; object-fit: contain; vertical-align: middle; }
 .contact-item a { color: #a09080; text-decoration: none; transition: color 0.2s ease; }
 .contact-item a:hover { text-decoration: underline; color: #52b788; }
-.contact-item.email-item { margin-bottom: 24px; }
+.contact-item.email-item { margin-bottom: 15.6px; }
+.contact-divider { border-top: 1px solid #ddd; width: 100%; max-width: 240px; margin: 0 0 15.6px 0; list-style: none; }
 .contact-item.open-kakao-item { margin-bottom: 0; }
 .contact-item.open-kakao-item a { color: #2d6a4f; font-size: 10.2px; }
 
-.price-info { font-size: 10.2px; font-weight: bold; color: #a09080; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 12px; display: inline-block; width: 100%; max-width: 240px; }
+.price-info { font-size: 10.2px; font-weight: bold; color: #a09080; border-top: 1px solid #ddd; padding-top: 13px; margin-top: 15.6px; display: inline-block; width: 100%; max-width: 240px; }
 
 #footprints-box.section-box { padding-top: 50px !important; padding-bottom: 30px !important; margin-top: 60px; }
-#footprints-title { font-family: 'Playfair Display', serif !important; font-style: italic !important; font-size: 28px !important; color: #2d6a4f; margin-bottom: 35px !important; font-weight: 700 !important; display: inline-block; letter-spacing: 1px; }
+#footprints-title { font-family: 'Playfair Display', serif !important; font-style: italic !important; font-size: 28px !important; color: #2d6a4f; margin-bottom: 20px !important; font-weight: 700 !important; display: inline-block; letter-spacing: 1px; }
 
 #review-list { display: flex; flex-direction: column; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
 .review-card { background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); width: 100% !important; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
@@ -176,10 +180,10 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 #basic .main-message { font-size: 11px !important; line-height: 1.4 !important; }
 
 #about-leaf-box.section-box { margin: 40px 10px !important; }
-#about-founder-box.section-box { margin: 40px 10px !important; }
-#about-founder { padding: 0 !important; }
-#about-founder .container { flex-direction: column !important; gap: 0px !important; width: 100% !important; padding: 0 !important; margin: 0 !important; display: block !important; }
-#about-founder .content-img { min-height: auto !important; background: transparent !important; margin: 0 auto 15px auto !important; padding: 0 !important; max-width: 100% !important; width: 100% !important; height: auto !important; display: block; }
+#about-founder-box.section-box { margin: 40px 10px !important; padding: 25px 15px !important; }
+#about-founder { padding: 10px 0 !important; }
+#about-founder .container { flex-direction: column !important; gap: 15px !important; width: 100% !important; padding: 0 !important; margin: 0 !important; display: block !important; }
+#about-founder .content-img { min-height: auto !important; background: transparent !important; margin: 0 auto 20px auto !important; padding: 0 !important; max-width: 100% !important; width: 100% !important; height: auto !important; display: block; }
 #about-founder .content-img img { margin: 0 auto !important; padding: 0 !important; display: block !important; width: 100% !important; height: auto !important; border-bottom: none !important; }
 #about-founder .content-text { padding: 0 !important; margin-top: 0 !important; width: 100% !important; display: block !important; }
 
@@ -215,9 +219,12 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 #Find-Me .contact-list { display: flex !important; flex-direction: column !important; align-items: center !important; }
 #Find-Me .contact-item { margin-bottom: 8px !important; gap: 10px !important; font-size: 11px !important; }
 #Find-Me .contact-item img { width: 19.6px !important; height: 19.6px !important; }
-#Find-Me .contact-item.email-item { margin-bottom: 18px !important; }
+#Find-Me .contact-item img.kakao-logo { width: 15.68px !important; height: 15.68px !important; margin: 0 1.96px !important; }
+#Find-Me .contact-item img.naverexpert-logo { width: 23.52px !important; height: 23.52px !important; margin: 0 -1.96px !important; }
+#Find-Me .contact-item.email-item { margin-bottom: 13px !important; }
+.contact-divider { width: 100% !important; max-width: none !important; margin: 0 0 13px 0 !important; }
 #Find-Me .contact-item.open-kakao-item a { font-size: 11px !important; }
-#Find-Me .price-info { margin-top: 10px !important; padding-top: 10px !important; padding-bottom: 0 !important; width: 100% !important; max-width: none !important; text-align: center; }
+#Find-Me .price-info { margin-top: 13px !important; padding-top: 13px !important; padding-bottom: 0 !important; width: 100% !important; max-width: none !important; text-align: center; }
 
 #footprints-box.section-box { margin: 40px 10px !important; }
 #footprints { padding: 0 !important; width: 100% !important; }
@@ -470,7 +477,9 @@ box-sizing: border-box;
 <li class="contact-item"><img src="youtube.jpg" alt="YouTube"><a href="https://www.youtube.com/@sunahhn" target="_blank" rel="noopener">youtube.com/@sunahhn</a></li>
 <li class="contact-item"><img src="blog.jpg" class="blog-logo" alt="Naver Blog"><a href="https://blog.naver.com/sunah224-" target="_blank" rel="noopener">blog.naver.com/sunah224-</a></li>
 <li class="contact-item email-item"><img src="email.jpg" alt="Email"><a href="mailto:sunahhn@sunahhn.com">sunahhn@sunahhn.com</a></li>
+<li class="contact-divider"></li>
 <li class="contact-item open-kakao-item"><img src="kakao.jpg" class="kakao-logo" alt="KakaoTalk"><a href="https://open.kakao.com/o/s0995Nzi" target="_blank" rel="noopener">https://open.kakao.com/o/s0995Nzi</a></li>
+<li class="contact-item open-kakao-item" style="margin-top: 15.6px;"><img src="naverexpert.jpg" class="naverexpert-logo" alt="Naver Expert"><a href="https://m.kin.naver.com/expert/profile/home?storeId=100060638" target="_blank" rel="noopener">https://m.kin.naver.com/expert/profile/home?storeId=100060638</a></li>
 </ul>
 <div class="price-info price-soft-green lang-ko">상담비용 5만원 / 50분</div>
 <div class="price-info price-soft-green lang-en">Counseling Fee: 50,000 KRW / 50 mins</div>
@@ -483,8 +492,9 @@ box-sizing: border-box;
 <div class="section-box" id="footprints-box">
 <section id="footprints" style="padding-top: 0; padding-bottom: 0; min-height: auto; border-bottom: none;">
 <div class="container" style="max-width: 100%; flex-direction: column; align-items: center; gap: 0;">
-<div style="text-align: center;">
+<div style="text-align: center; width: 100%;">
 <h3 id="footprints-title">Footprints</h3>
+<img src="footprints.webp" alt="Footprints" style="display: block; margin: 0 auto 25px auto; max-width: 360px; width: 100%; height: auto; border-radius: 8px; object-fit: cover;" onerror="this.style.display='none';">
 </div>
 
 <div class="footprints-box lang-ko" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 25px;">
