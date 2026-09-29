@@ -56,8 +56,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 <style>
+
+/* 메인 영문 + 바로 아래 한글 문구 동일한 골드 색상 */
+#basic-box .cursive-text,
+#basic-box .main-message {
+    color: #F0D7A1 !important;
+}
+
+/* Founder 가운데 글 제목만 골드색 */
+#about-founder .founder-entry-name {
+    color: #F0D7A1 !important;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; color: #333; background-color: #ffffff; line-height: 1.6; -webkit-text-size-adjust: none; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; color: #333; background-color: #304727; line-height: 1.6; -webkit-text-size-adjust: none; -webkit-font-smoothing: antialiased; }
 html { scroll-behavior: smooth; }
 .handwriting { font-family: 'cursive', 'Georgia', serif; font-style: italic; }
 .elegant-cursive { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; }
@@ -65,9 +77,9 @@ html { scroll-behavior: smooth; }
 .subtle-green { color: #3a5a40; }
 
 .section-box { border: 6px double #bcaaa4; margin: 60px auto; border-radius: 20px; padding: 40px 20px; max-width: 940px; width: calc(100% - 40px); display: block; box-sizing: border-box; }
-#basic-box { margin-top: 140px; border: 6px double #bcaaa4; } 
+#basic-box { margin-top: 215px; border: 6px double #bcaaa4; } 
 
-header { position: fixed; top: 0; left: 0; width: 100%; background-color: #ffffff; z-index: 1000; padding: 12px 0 8px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+header { position: fixed; top: 0; left: 0; width: 100%; background-color: #F5F0E6; z-index: 1000; padding: 22px 0 22px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 .header-container { max-width: 1000px; margin: 0 auto; text-align: center; position: relative; }
 .logo-wrap { display: inline-flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 8px; text-decoration: none; }
 .logo-img-container { display: inline-block; height: 74px; }
@@ -86,6 +98,8 @@ nav a:hover, nav a.active-nav { color: #2d6a4f !important; font-weight: bold !im
 .visitor-counter span em { font-style: normal; color: #2d6a4f; font-weight: 800; margin-left: 5px; }
 
 section { padding: 40px 20px; min-height: auto; display: flex; justify-content: center; align-items: flex-start; box-sizing: border-box; }
+#about-leaf { padding-top: 2cm !important; }
+@media (max-width: 768px) { #about-leaf { padding-top: 2cm !important; } }
 .container { max-width: 1000px; width: 100%; display: flex; gap: 50px; align-items: flex-start; justify-content: center; margin: 0 auto; box-sizing: border-box; }
 .content-img { flex: 0 0 360px; max-width: 360px; text-align: center; background: #fafafa; border-radius: 4px; min-height: 240px; }
 .content-img img { width: 100%; height: auto; border-radius: 4px; object-fit: cover; display: block; }
@@ -111,9 +125,26 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 .section-inner-logo { display: block; margin: 15px auto 10px auto; height: 92px; width: auto; object-fit: contain; }
 .no-list-style { list-style: none; padding: 0; }
 
+#founder-story-content { display: none; width: 100%; }
+.founder-story-title { position: relative; z-index: 2; margin: 18px auto 20px auto; padding: 10px 18px; color: #bcaaa4; border: 1px solid #bcaaa4; border-radius: 8px; font-size: 18px; font-weight: bold; text-align: center; cursor: pointer; max-width: 360px; transition: background-color 0.2s ease, color 0.2s ease; }
+.founder-story-title:hover { background-color: rgba(188,170,164,0.12); }
+.founder-entry-title { position: relative; z-index: 3; max-width: 100%; width: 100%; box-sizing: border-box; display: grid; grid-template-columns: minmax(70px, 1fr) minmax(0, 2fr) minmax(110px, 1fr); align-items: center; column-gap: 0; text-align: center; }
+.founder-entry-number { text-align: left; padding-right: 45px; border-right: 1px solid #bcaaa4; }
+.founder-entry-name { text-align: center; padding-left: 45px; padding-right: 45px; border-right: 1px solid #bcaaa4; }
+.founder-entry-date { text-align: right; font-size: 12px; font-weight: normal; padding-left: 45px; }
+.founder-view-count { display: inline-block; margin-left: 10px; font-size: 11px; font-weight: normal; color: #8b7968; white-space: nowrap; }
 #about-founder-box.section-box { padding: 35px 25px; margin: 60px auto; }
 #about-founder { padding: 25px 20px; }
-#about-founder .container { gap: 40px; align-items: flex-start; }
+#about-founder .container { flex-direction: column !important; gap: 0; align-items: center; }
+#about-founder .content-img { flex: 0 0 auto; width: 360px; max-width: 100%; margin: 0 auto 30px auto; }
+#about-founder .founder-story-title { flex: none; }
+#about-founder #founder-story-content, #about-founder #founder-story-content-2, #about-founder #founder-story-content-3 { flex: none; }
+#about-founder #founder-story-title-1 { margin-top: 0; }
+#about-founder #founder-story-title-2 { margin-top: 28px; }
+#about-founder #founder-story-title-3 { margin-top: 28px; }
+#about-founder .founder-back-wrap { width: 100%; display: flex; justify-content: flex-end; margin: 0 0 18px 0; }
+#about-founder .founder-back-button { background: transparent; color: #bcaaa4; border: 1px solid #bcaaa4; border-radius: 8px; padding: 7px 14px; font-size: 12px; font-weight: bold; cursor: pointer; }
+#about-founder .founder-back-button:hover { background: rgba(188,170,164,0.12); }
 #about-founder .content-text { font-size: 13.6px; padding-top: 0; }
 #about-founder .content-text p { margin-bottom: 16px; line-height: 1.7; color: #6b5d51; font-weight: 500; }
 #about-founder .content-text .special-green { color: #2d6a4f; margin-top: -2px; line-height: 1.5; }
@@ -153,7 +184,7 @@ section { padding: 40px 20px; min-height: auto; display: flex; justify-content: 
 #footprints-title { font-family: 'Playfair Display', serif !important; font-style: italic !important; font-size: 28px !important; color: #2d6a4f; margin-bottom: 20px !important; font-weight: 700 !important; display: inline-block; letter-spacing: 1px; }
 
 #review-list { display: flex; flex-direction: column; gap: 16px; justify-content: flex-start; width: 100%; box-sizing: border-box; min-height: 50px; text-align: left; }
-.review-card { background: #ffffff; padding: 20px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); width: 100% !important; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
+.review-card { background: #E8E1D6; padding: 20px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 3px 10px rgba(0,0,0,0.02); width: 100% !important; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
 
 .lang-en { display: none !important; }
 .lang-ko { display: block; }
@@ -261,6 +292,260 @@ box-sizing: border-box;
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+<style id="lws-dark-bg-text-harmony">
+/* Text colors adjusted only for readability on the #304727 background */
+body { color: #F3EEE5; }
+.section-box { color: #F3EEE5; }
+.content-text { color: #E8E1D6; }
+.content-text p, .content-text li, .about-leaf-text p, .about-leaf-text li,
+.no-list-style li { color: #E8E1D6 !important; }
+.about-leaf-text, .about-leaf-text .main-sub { color: #E8E1D6 !important; }
+.about-leaf-text h2, .profile-title { color: #F0D7A1 !important; }
+.about-leaf-text .intro-title, .about-leaf-text .point-title,
+.about-leaf-text .sub-p-bold, .research-group, .subtle-green,
+.special-green { color: #BFD3A8 !important; }
+.footer-highlight-text { color: #E7C982 !important; }
+#about-founder .content-text p { color: #E8E1D6 !important; }
+#about-founder .content-text .special-green { color: #BFD3A8 !important; }
+.profile-list-group { color: #E8E1D6 !important; }
+.profile-list-group li { color: #E8E1D6 !important; }
+.profile-list-group.research-group li,
+.profile-list-group li[style*="color: #2d6a4f"] { color: #BFD3A8 !important; }
+.profile-list-group li[style*="color: #c8bcad"] { color: #D8CCB9 !important; }
+.profile-list-group[style*="color: #111"] li,
+.profile-list-group[style*="color: #444"] li { color: #E8E1D6 !important; }
+.contact-item a, .price-soft-green, .price-info { color: #D8CCB9 !important; }
+.contact-item a:hover { color: #C9E2B4 !important; }
+#footprints-title { color: #F0D7A1 !important; }
+.visitor-counter { color: #BFD3A8 !important; }
+.visitor-counter span em { color: #E7C982 !important; }
+#footer-section, #footer-section div { color: #D8CCB9 !important; }
+#footer-section a { color: #D8CCB9 !important; }
+
+/* Founder final layout: photo and both article titles stay inside the double border in a single vertical flow */
+#about-founder-box.section-box {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+#about-founder {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+#about-founder .container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  box-sizing: border-box !important;
+}
+#about-founder .content-img {
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 360px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 auto 30px auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+#about-founder .content-img img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+}
+#about-founder .founder-story-title {
+  display: grid !important;
+  flex: 0 0 auto !important;
+  position: relative !important;
+  z-index: 3 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 58px !important;
+  height: auto !important;
+  margin: 0 auto 20px auto !important;
+  padding: 10px 18px !important;
+  box-sizing: border-box !important;
+  clear: both !important;
+}
+#about-founder #founder-story-title-1 { margin-top: 0 !important; }
+#about-founder #founder-story-title-2 { margin-top: 28px !important; }
+#about-founder #founder-story-title-3 { margin-top: 28px !important; }
+#about-founder #founder-story-content,
+#about-founder #founder-story-content-2 {
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  box-sizing: border-box !important;
+  clear: both !important;
+  margin-bottom: 28px !important;
+}
+/* Both founder articles are hidden initially; clicking a title reveals only its article. */
+#about-founder #founder-story-content,
+#about-founder #founder-story-content-2 { display: none !important; }
+#about-founder .founder-entry-title .founder-entry-number { white-space: nowrap; }
+#about-founder .founder-entry-title .founder-entry-name { white-space: nowrap; min-width: 0; }
+#about-founder .founder-entry-title .founder-entry-date { white-space: nowrap; }
+
+
+/* Footprints boxes */
+#footprints-box .footprints-box,
+#footprints-box .review-card,
+#footprints-box #review-list .mobile-review-card,
+#footprints-box [id^="reply-form-"] {
+    background-color: #445b3a !important;
+}
+
+/* Founder 글 번호·제목·본문만 'LWS를 소개합니다.'와 동일한 글씨체 */
+#about-founder .founder-entry-number,
+#about-founder .founder-entry-name,
+#about-founder .content-text,
+#about-founder .content-text p,
+#about-founder .content-text strong,
+#about-founder .content-text span {
+  font-family: 'cursive', 'Georgia', serif !important;
+  font-style: italic !important;
+}
+
+/* 날짜와 조회수는 기존 글씨체 유지 */
+#about-founder .founder-entry-date,
+#about-founder .founder-entry-date span,
+#about-founder .founder-view-count,
+#about-founder .founder-view-count em {
+  font-family: 'Malgun Gothic', '맑은 고딕', sans-serif !important;
+  font-style: normal !important;
+}
+
+
+/* 헤더 메뉴 - 마우스를 올리면 아래에 금색 두 줄 */
+nav > a {
+    border: none;
+    border-bottom: 3px double transparent;
+    border-radius: 0;
+    padding: 5px 8px;
+    transition: border-color 0.25s ease, color 0.2s ease;
+}
+
+/* Hover 시 아래쪽에만 두 줄 표시 */
+nav > a:hover {
+    border-bottom-color: #445b3a;
+}
+
+
+
+/* 헤더 로고 + LWS 섹션 로고를 기존보다 약 5톤 밝게 */
+.logo-img,
+.section-inner-logo {
+    filter: brightness(1.5) saturate(0.9);
+}
+
+/* =========================================
+   Footprints - 펼쳐진 글 / 답글 색상 통일
+   ========================================= */
+
+/* Footprints 전체 후기 카드 */
+#footprints-box .review-card,
+#footprints-box #review-list .mobile-review-card {
+    background-color: #445b3a !important;
+    border-color: #37492f !important;
+}
+
+/* 작성자 이름 */
+#footprints-box .review-author-text {
+    color: #F0D7A1 !important;
+}
+
+/* 글을 클릭했을 때 펼쳐지는 본문 */
+#footprints-box .review-body-text,
+#footprints-box .translate-target-text.review-body-text {
+    color: #F3EEE5 !important;
+}
+
+/* 날짜 / 시간 / IP 등의 작은 글씨 */
+#footprints-box .review-card span {
+    color: #D8CCB9 !important;
+}
+
+/* 답글 박스 */
+#footprints-box #review-list div[style*="background-color: #E8E1D6"],
+#footprints-box #review-list div[style*="background-color: rgb(232, 225, 214)"] {
+    background-color: #37492f !important;
+}
+
+/* 답글 작성자 이름 */
+#footprints-box .reply-author-text {
+    color: #E7C982 !important;
+}
+
+/* 답글 내용 */
+#footprints-box .reply-body-text {
+    color: #E8E1D6 !important;
+}
+
+/* 답글 입력창이 열렸을 때의 박스 */
+#footprints-box [id^="reply-form-"] {
+    background-color: #365C49 !important;
+    border-color: #6F927C !important;
+}
+
+/* 수정 / 답글달기 / 펼치기 표시 */
+#footprints-box .review-card button,
+#footprints-box .review-card span[id^="review-toggle-"] {
+    color: #BFD3A8 !important;
+}
+
+
+/* Find Me - 네이버 / 이메일 / 카카오 로고 크기 통일 */
+
+/* PC */
+#Find-Me .contact-item img,
+#Find-Me .contact-item img.blog-logo,
+#Find-Me .contact-item img.naverexpert-logo,
+#Find-Me .contact-item img.kakao-logo {
+    width: 22.4px !important;
+    height: 22.4px !important;
+    object-fit: contain !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+    #Find-Me .contact-item img,
+    #Find-Me .contact-item img.blog-logo,
+    #Find-Me .contact-item img.naverexpert-logo,
+    #Find-Me .contact-item img.kakao-logo {
+        width: 15.68px !important;
+        height: 15.68px !important;
+        object-fit: contain !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+/* Footprints - '한 줄 응원 남기기' 제목 색상 */
+#footprints-box .footprints-box h4 {
+    color: #F0D7A1 !important;
+}
+
+</style>
+
 </head>
 <body>
 <header id="main-header">
@@ -371,12 +656,18 @@ box-sizing: border-box;
 <div class="container">
 <div class="content-img"><img src="about.webp" alt="About Founder" onerror="this.parentElement.style.display='none';"></div>
 
+<div id="founder-story-title-1" class="founder-story-title founder-entry-title" onclick="toggleFounderStory()" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFounderStory();}">
+<span class="founder-entry-number">#1</span><span class="founder-entry-name">'심리상담사라는 꿈'</span><span class="founder-entry-date">26.06.16 <span class="founder-view-count">조회 <em id="founder-view-count-1">0</em></span></span>
+</div>
+
+<div id="founder-story-content" style="display:none; width:100%; margin-bottom: 28px;">
+<div class="founder-back-wrap"><button type="button" class="founder-back-button" onclick="closeFounderStory(1)"><span class="lang-ko">← Founder로 돌아가기</span><span class="lang-en">← Back to Founder</span></button></div>
 <div class="content-text lang-ko">
 <p>청소년기 우울이라는 진단(혹은 낙인) 속에서 심리상담을 처음 접하게 되었어요. 누구보다 장난기 많고 낙천적인 저조차 무기력하게 만들었던 건, 다름 아닌 <strong>'꿈이 없다'</strong>는 사실이었어요. 친구들은 어느 대학에 무슨 과에 들어가고 싶어하며 목표를 향해 쫓아갈 때 저 혼자 목표가 없다는 이유로 스스로가 한없이 초라해 보였던 시절이었습니다.</p>
 <p>기나긴 시행착오 및 방황의 시간 속에서 변함없이 저를 지켜줬던 건 <strong>***연결***</strong>이었어요. 저는 사람을 좋아하고 친구들과 피상적인 이야기보단 인간 대 인간으로 깊은 대화를 할 때 비로소 사람과 연결되었다는 것을 느끼며 비로소 살아있음을 느낍니다.</p>
 <p>시행착오도 많았고 그 방황의 시간들이 아깝고 후회스럽기도 하죠. <strong><span class="handwriting">그리고 또 그 방황이 다시 찾아올지도 모른다는 두려움도 항상 있고요.</span></strong> 하지만 그 짙은 밤들이 있었기에 지금의 제가 있고, 남들의 속도에 치여 길을 잃은 사람들의 마음을 누구보다 깊이 지켜볼 수 있는 눈이 생겼습니다.</p>
 <p style="margin-bottom: 6px;">이제는 후회 대신, 제가 얻은 이 마음의 나침반을 가지고 앞만 보고 걸어가보려 합니다. 그리고 과거의 저처럼 혼자라 느껴지는 당신의 곁에서, <strong class="handwriting">깊은 연결로 함께 걸어가는 다정한 길동무가 되고 싶습니다.</strong></p>
-<p class="special-green" style="margin-top: 6px;"><span class="handwriting"><strong>깊은 대화로 연결될 수 있는 안전한 공간이 되어드리겠습니다.<br>이곳에서 여러분의 이야기들을 편안하게 들려주세요.</strong></span></p>
+<p class="special-green" style="margin-top: 6px;"><span class="handwriting"><strong><br>깊은 대화로 연결될 수 있는 안전한 공간이 되어드리겠습니다.<br>이곳에서 여러분의 이야기들을 편안하게 들려주세요.</strong></span></p>
 </div>
 
 <div class="content-text lang-en">
@@ -386,7 +677,43 @@ box-sizing: border-box;
 <p style="margin-bottom: 6px;">Now, instead of looking back with regret, I choose to walk forward with the inner compass I have found. And for you, who might feel as solitary as I once did, <strong class="handwriting">I want to be a warm, gentle companion, walking right beside you through deep connection.</strong></p>
 <p class="special-green" style="margin-top: 6px;"><span class="handwriting"><strong>I promise to provide a safe haven where we can intertwine through profound dialogue.<br>Please feel free to share your unique stories here.</strong></span></p>
 </div>
+</div>
 
+<div id="founder-story-title-2" class="founder-story-title founder-entry-title" onclick="toggleFounderStory2()" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFounderStory2();}">
+<span class="founder-entry-number">#2</span><span class="founder-entry-name">'사람'으로 살아간다는건</span><span class="founder-entry-date">26.09.27 <span class="founder-view-count">조회 <em id="founder-view-count-2">0</em></span></span>
+</div>
+
+<div id="founder-story-content-2" style="display:none; width:100%; margin-bottom: 28px;">
+<div class="founder-back-wrap"><button type="button" class="founder-back-button" onclick="closeFounderStory(2)"><span class="lang-ko">← Founder로 돌아가기</span><span class="lang-en">← Back to Founder</span></button></div>
+<div class="content-text lang-ko">
+<p>사람으로 태어났기에 느낄 수 있는 감정들은 때론 눈부신 기쁨을 주기도 하지만, <br>빠져나오기 힘든 깊은 늪이 되어 우리를 지치게 하기도 합니다.</p>
+<p>겨우 허우적대며 늪을 빠져나왔을 때, <br>저 앞에서도 또 다른 늪이 기다리고 있을 것 같은 불안감은 삶을 더욱 진빠지게 만들지요.</p>
+<p>그렇게 아픔이 쌓이고 상처가 겹쳐, <br>문득 '내가 괴물이 된 것만 같아' 마주하기조차 싫었던 날들도 있었습니다.</p>
+<p>그럼에도 끝내 저를 붙잡아 준 것은 내 상처로 인해, 결코 다른 사람에게 상처를 주고 싶지 않다는 간절한 바람이었습니다.</p>
+<p>그리고, 비슷한 혹은 저마다의 모양으로 아파하는 이들에게 <br>작은 빛이 되고 싶다는 진심으로 15년이라는 시간 동안 심리상담사라는 꿈을 품어왔습니다.</p>
+<p>이 공간을 열며 벅차올랐던 마음처럼, <br>찾아와 주시는 한 분 한 분이 자신의 고통과 마주하려 내딛는 용기는 언제나 제 마음을 먼저 울립니다.</p>
+<p>그 용기가 헛되지 않도록, 진심 어린 대화와 그 안의 시간 속에서 <br>내담자분이 치유받는 모습을 볼 때마다 저는 오히려 제 마음이 더 깊이 치유받곤 합니다.<br><br>
+  <p class="special-green" style="margin-top: 6px;"> </span><strong>이 길은 제게 천직이며, 매일이 감사한 이유입니다.</strong></p>
+</div>
+</div>
+
+<div id="founder-story-title-3" class="founder-story-title founder-entry-title" onclick="toggleFounderStory3()" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFounderStory3();}">
+<span class="founder-entry-number">#3</span><span class="founder-entry-name">내담자를 바라보는 시선</span><span class="founder-entry-date">26.09.29 <span class="founder-view-count">조회 <em id="founder-view-count-3">0</em></span></span>
+</div>
+
+<div id="founder-story-content-3" style="display:none; width:100%; margin-bottom: 28px;">
+<div class="founder-back-wrap"><button type="button" class="founder-back-button" onclick="closeFounderStory(3)"><span class="lang-ko">← Founder로 돌아가기</span><span class="lang-en">← Back to Founder</span></button></div>
+<div class="content-text lang-ko">
+<p>저마다 자라온 환경이 다르고, 가진 고유한 개성이 다르듯,<br>내담자 한 분 한 분과 마주하는 상담의 시간 역시 <br>저마다 다른 모양과 색깔을 띱니다.</p>
+<p>하지만 그 모든 시간 속에서도 <br>저는 언제나 한 가지 공통점을 믿습니다. <br><br>스스로는 아직 알아채지 못하고 있을지라도, <br>그 사람만의 고유한 힘과 눈부신 긍정의 자원들이 마음 깊은 곳에 반드시 숨겨져 있다는 것을요.</p>
+<p>때로는 살아가는 무게에 지쳐. <br>"그저 누군가 정답을 쥐어주었으면 좋겠다"고 <br>간절히 바라는 마음을 마주하게 됩니다.</p>
+<p class="special-green" style="margin-top: 6px;"><strong>하지만 그때마다 저는 내담자분들께 차분히 건네는 말이 있습니다.</strong></p>
+<p>"저는 정답을 쥐어드리는 사람이 아닙니다. <br>다만, 어둡고 고된 안개 속에서. <br>당신이 온전히 스스로의 힘으로 길을 찾아 나갈 수 있도록, 
+<br><p class="special-green" style="margin-top: 6px;"><strong>이미 당신 안에 깊이 잠들어 있던 그 본연의 자원들을 함께 찾아드리는 사람입니다.</strong></p>
+<br><p>그러니 너무 서두르지 않아도 괜찮습니다. <br>당신의 속도대로, 이곳에서 천천히 숨을 골라보세요.</p>
+<br><p>당신이 마주할 그 모든 계절의 끝에서, <br>가장 눈부신 당신을 만나게 될 것을 저는 믿습니다.</p>
+</div>
+</div>
 </div>
 </section>
 </div>
@@ -416,7 +743,7 @@ box-sizing: border-box;
 <li>• 한국직업능력진흥원 가족상담사 1급</li>
 <li>• 한국직업능력진흥원 다문화심리상담사 1급</li>
 </ul>
-<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; border-bottom: 3px double #eee; padding-top: 10px; padding-bottom: 10px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0;">
+<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; padding-top: 10px; padding-bottom: 10px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0;">
 <li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">한국상담심리학회 수련회원</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 5px;">- 공개사례 발표회 30시간 이수</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 20px;">- 성균관대학교 외상심리연구소 집단상담 18시간 이수</li>
@@ -424,9 +751,6 @@ box-sizing: border-box;
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0px;">- 집단상담 보조지도자 11시간 이수</li>
 </ul>
 <ul class="profile-list-group" style="color: #a09080; font-weight: bold; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0; padding-bottom: 0;">
-<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">여성가족부 청소년상담사 2급 준비 중</li>
-<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">한국상담심리학회 상담심리사 2급 준비 중</li>
-<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0;">한국상담학회 상담심리사 2급 준비 중</li>
 </ul>
 </div>
 
@@ -450,7 +774,7 @@ box-sizing: border-box;
 <li>• Family Counselor (Level 1), Korea Vocational Competency Development Institute</li>
 <li>• Multicultural Psychological Counselor (Level 1), Korea Vocational Competency Development Institute</li>
 </ul>
-<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; border-bottom: 3px double #eee; padding-top: 10px; padding-bottom: 10px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0;">
+<ul class="profile-list-group" style="color: #a09080; font-weight: bold; border-top: 1px solid #eee; padding-top: 10px; padding-bottom: 10px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0;">
 <li style="color: #2d6a4f; font-size: 12.6px; margin-bottom: 10px;">Training Member, Korean Counseling Psychological Association (KCPA)</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 5px;">- Completed 30 hours of Case Conference presentation</li>
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 20px;">- Completed 18 hours of Group Counseling at SKKU Trauma Psychology Institute</li>
@@ -458,9 +782,6 @@ box-sizing: border-box;
 <li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0px;">- Completed 11 hours as an Assistant Group Leader</li>
 </ul>
 <ul class="profile-list-group" style="color: #a09080; font-weight: bold; padding-top: 12px; display: block; text-align: left; max-width: 580px; margin-top: 0; margin-bottom: 0; padding-bottom: 0;">
-<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">In preparation for Youth Counselor (Level 2), Ministry of Gender Equality and Family</li>
-<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 8px;">In preparation for Counseling Psychologist (Level 2), KCPA</li>
-<li style="color: #c8bcad; font-size: 11.9px; margin-bottom: 0;">In preparation for Professional Counselor (Level 2), KCA</li>
 </ul>
 </div>
 
@@ -475,9 +796,6 @@ box-sizing: border-box;
 <div class="content-text">
 <div class="contact-box">
 <ul class="contact-list">
-<li class="contact-item"><img src="instagram.jpg" alt="Instagram"><a href="https://www.instagram.com/sunahhn" target="_blank" rel="noopener">instagram.com/sunahhn</a></li>
-<li class="contact-item"><img src="youtube.jpg" alt="YouTube"><a href="https://www.youtube.com/@sunahhn" target="_blank" rel="noopener">youtube.com/@sunahhn</a></li>
-<li class="contact-item"><img src="blog.jpg" class="blog-logo" alt="Naver Blog"><a href="https://blog.naver.com/sunah224-" target="_blank" rel="noopener">blog.naver.com/sunah224-</a></li>
 <li class="contact-item email-item"><img src="email.jpg" alt="Email"><a href="mailto:sunahhn@sunahhn.com">sunahhn@sunahhn.com</a></li>
 <li class="contact-divider"></li>
 <li class="contact-item open-kakao-item"><img src="kakao.jpg" class="kakao-logo" alt="KakaoTalk"><a href="https://open.kakao.com/o/s0995Nzi" target="_blank" rel="noopener">https://open.kakao.com/o/s0995Nzi</a></li>
@@ -499,7 +817,7 @@ box-sizing: border-box;
 <img src="footprints.webp" alt="Footprints" style="display: block; margin: 0 auto 25px auto; max-width: 500px; width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
 </div>
 
-<div class="footprints-box lang-ko" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 25px;">
+<div class="footprints-box lang-ko" style="background-color: #E8E1D6; padding: 35px 30px; border-radius: 16px; border: 1px solid #bcaaa4; width: 100%; margin-bottom: 25px;">
 <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">한 줄 응원 남기기</h4>
 <div style="margin-bottom: 15px;"><input type="text" id="review-name" placeholder="닉네임" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
 <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
@@ -511,7 +829,7 @@ box-sizing: border-box;
 </div>
 </div>
 
-<div class="footprints-box lang-en" style="background-color: #faf9f6; padding: 35px 30px; border-radius: 16px; border: 1px solid #e8e6e1; width: 100%; margin-bottom: 25px;">
+<div class="footprints-box lang-en" style="background-color: #E8E1D6; padding: 35px 30px; border-radius: 16px; border: 1px solid #bcaaa4; width: 100%; margin-bottom: 25px;">
 <h4 style="margin: 0 0 18px 0; font-size: 16px; color: #2d6a4f; font-weight: bold;">Leave a Message of Support</h4>
 <div style="margin-bottom: 15px;"><input type="text" id="review-name-en" placeholder="Nickname" style="width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px;"></div>
 <div style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
@@ -541,9 +859,9 @@ box-sizing: border-box;
 <div style="width: 100%; text-align: center;">
 <div style="margin-bottom: 25px; font-size: 13px; color: #a09080; line-height: 1.5; padding: 0 10px;">
 <span class="lang-ko">
-리프 웰니스 스튜디오. 소장: 현선아. 개인정보 보호관리자: 현선아. <br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #a09080;">sunahhn@sunahhn.com</a>. DM: <a href="https://www.instagram.com/sunahhn" target="_blank" style="color: #a09080;">@sunahhn</a><br>
+리프 웰니스 스튜디오. 소장: 현선아 개인정보 보호관리자: 현선아 <br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #a09080;">sunahhn@sunahhn.com</a>. DM: <a href="https://www.instagram.com/sunahhn" target="_blank" style="color: #a09080;">@sunahhn</a><br>
 <br>Copyright © 2026 LWS All Rights Reserved. <br class="mobile-br">Powered by Firebase.<br class="mobile-br"><span style="font-weight:bold;">
-자문법무법인: 법무법인 새별 (대표변호사, 안성열)</span>
+<br>자문법무법인: 법무법인 새별 (대표변호사, 안성열)</span>
 </span>
 <span class="lang-en">
 Leaf Wellness Studio. Director: Sunah Hyun. Privacy Manager: Sunah Hyun. <br>E-mail: <a href="mailto:sunahhn@sunahhn.com" style="color: #a09080;">sunahhn@sunahhn.com</a>. DM: <a href="https://www.instagram.com/sunahhn" target="_blank" style="color: #a09080;">@sunahhn</a><br>
@@ -574,6 +892,7 @@ var currentUserIp = "0.0.0.0";
 document.addEventListener('DOMContentLoaded', function() {
 fetchUserIp();
 setupVisitorCounter();
+setupFounderViewCounters();
 listenReviews();
 setupScrollBehavior();
 setupScrollSpy();
@@ -738,6 +1057,15 @@ var seconds = ("0" + d.getSeconds()).slice(-2);
 return year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
 }
 
+function toggleReviewCard(reviewKey) {
+var body = document.getElementById('review-body-' + reviewKey);
+var indicator = document.getElementById('review-toggle-' + reviewKey);
+if (!body) return;
+var isHidden = body.style.display === 'none';
+body.style.display = isHidden ? 'block' : 'none';
+if (indicator) indicator.textContent = isHidden ? '▲' : '▼';
+}
+
 function listenReviews() {
 var reviewList = document.getElementById('review-list');
 database.ref('reviews').on('value', snapshot => {
@@ -763,7 +1091,7 @@ var replyIpStr = rp.ip ? maskIpAddress(rp.ip) : "";
 var replyMetaStr = replyIpStr ? replyTimeStr + " (" + replyIpStr + ")" : replyTimeStr;
 
 return `
-<div style="background-color: #faf9f6; border-left: 3px solid #52b788; padding: 10px 12px; margin-top: 8px; border-radius: 4px; font-size: 13px; white-space: pre-wrap; width: 100% !important; box-sizing: border-box;">
+<div style="background-color: #E8E1D6; border-left: 3px solid #52b788; padding: 10px 12px; margin-top: 8px; border-radius: 4px; font-size: 13px; white-space: pre-wrap; width: 100% !important; box-sizing: border-box;">
 <div style="display:flex; justify-content:space-between; margin-bottom:4px; white-space: normal; align-items: center;">
 <div>
 <b style="color:#3a5a40; margin-right: 6px;" class="reply-author-text">↳ ${rp.name}</b>
@@ -786,27 +1114,30 @@ var reviewIpStr = r.ip ? maskIpAddress(r.ip) : "";
 var reviewMetaStr = reviewIpStr ? reviewTimeStr + " (" + reviewIpStr + ")" : reviewTimeStr;
 
 return `
-<div class="review-card mobile-review-card" style="width: 100% !important; margin-bottom: 12px; padding: 15px; border: 1px solid #eee; border-radius: 10px; background:#fff; box-sizing: border-box;">
-<div style="display:flex; justify-content:space-between; margin-bottom:8px; align-items: center;">
+<div class="review-card mobile-review-card" style="width: 100% !important; margin-bottom: 12px; padding: 15px; border: 1px solid #bcaaa4; border-radius: 10px; background:#E8E1D6; box-sizing: border-box;">
+<div onclick="toggleReviewCard('${r.key}')" style="display:flex; justify-content:space-between; margin-bottom:8px; align-items: center; cursor:pointer;">
 <div>
 <b style="font-size:14px; color:#111; margin-right: 8px;" class="review-author-text">${r.name}</b>
 <span style="font-size: 11px; color: #aaa; font-family: 'Arial', sans-serif;">${reviewMetaStr}</span>
 </div>
 <div>
-<button onclick="toggleReplyForm('${r.key}')" style="border:none; background:none; cursor:pointer; color:#52b788; font-size:12px; font-weight:bold; margin-right:10px;">${currentLang === 'ko' ? '답글달기' : 'Reply'}</button>
-<button onclick="editReview('${r.key}', '${escapedReviewContent}')" style="border:none; background:none; cursor:pointer; color:#52b788; font-size:12px; margin-right:10px;">${currentLang === 'ko' ? '수정' : 'Edit'}</button>
-<button onclick="deleteReview('${r.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:12px;">${currentLang === 'ko' ? '삭제' : 'Delete'}</button>
+<button onclick="event.stopPropagation(); toggleReplyForm('${r.key}')" style="border:none; background:none; cursor:pointer; color:#52b788; font-size:12px; font-weight:bold; margin-right:10px;">${currentLang === 'ko' ? '답글달기' : 'Reply'}</button>
+<button onclick="event.stopPropagation(); editReview('${r.key}', '${escapedReviewContent}')" style="border:none; background:none; cursor:pointer; color:#52b788; font-size:12px; margin-right:10px;">${currentLang === 'ko' ? '수정' : 'Edit'}</button>
+<button onclick="event.stopPropagation(); deleteReview('${r.key}')" style="border:none; background:none; cursor:pointer; color:#ccc; font-size:12px;">${currentLang === 'ko' ? '삭제' : 'Delete'}</button>
+<span id="review-toggle-${r.key}" style="font-size:11px; color:#52b788; margin-left:4px;">▼</span>
 </div>
 </div>
+<div id="review-body-${r.key}" style="display:none; width:100%;">
 <div id="review-text-${r.key}" class="translate-target-text review-body-text" data-origin="${escapedReviewContent}" style="font-size:14px; color:#555; word-break:break-all; margin-bottom: 5px; white-space: pre-wrap;">${r.content}</div>
 
 <div id="reply-list-${r.key}" style="width: 100% !important;">${repliesHtml}</div>
 
-<div id="reply-form-${r.key}" style="display:none; margin-top:12px; padding:10px; background:#f4f6f4; border-radius:6px; border:1px solid #e2e8e2; width: 100% !important; box-sizing: border-box;">
+<div id="reply-form-${r.key}" style="display:none; margin-top:12px; padding:10px; background:#E8E1D6; border-radius:6px; border:1px solid #e2e8e2; width: 100% !important; box-sizing: border-box;">
 <input type="text" id="reply-name-${r.key}" placeholder="${currentLang === 'ko' ? '답글 닉네임' : 'Reply Nickname'}" style="width:100%; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; margin-bottom:6px;">
 <textarea id="reply-content-${r.key}" placeholder="${currentLang === 'ko' ? '따뜻한 답글을 남겨주세요' : 'Please leave a warm reply'}" style="width:100%; height:60px; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:12px; resize:none; margin-bottom:6px;"></textarea>
 <div style="text-align:right;">
 <button onclick="addReply('${r.key}')" style="background-color: #52b788; color: white; border: none; padding: 4px 15px; border-radius:4px; font-size:12px; cursor: pointer;">${currentLang === 'ko' ? '답글등록' : 'Submit Reply'}</button>
+</div>
 </div>
 </div>
 </div>`;
@@ -924,6 +1255,77 @@ function clearBrokenData() {
     database.ref('reviews').remove().catch((error) => {
        alert("권한이 없습니다. 먼저 관리자로 로그인해주세요.");
     });
+  }
+}
+
+function toggleFounderStory() {
+  showFounderStory(1);
+}
+
+function toggleFounderStory2() {
+  showFounderStory(2);
+}
+
+function toggleFounderStory3() {
+  showFounderStory(3);
+}
+
+function setupFounderViewCounters() {
+  [1, 2, 3].forEach(function(id) {
+    database.ref('founder_views/' + id).on('value', function(snapshot) {
+      var el = document.getElementById('founder-view-count-' + id);
+      if (el) el.innerText = snapshot.val() || 0;
+    });
+  });
+}
+
+function incrementFounderView(id) {
+  // 방문자 카운터와 동일하게 transaction()으로 해당 글의 조회수를 1 증가시킵니다.
+  var viewRef = database.ref('founder_views/' + id);
+  viewRef.transaction(function(currentCount) {
+    return (currentCount || 0) + 1;
+  }, function(error, committed, snapshot) {
+    if (error) {
+      console.error('Founder 조회수 업데이트 실패:', error);
+    } else if (committed) {
+      var el = document.getElementById('founder-view-count-' + id);
+      if (el && snapshot) el.innerText = snapshot.val() || 0;
+      console.log('Founder 조회수 업데이트 완료:', id, snapshot ? snapshot.val() : '');
+    }
+  });
+}
+
+function showFounderStory(which) {
+  incrementFounderView(which);
+  var ids = [1, 2, 3];
+  ids.forEach(function(id) {
+    var content = document.getElementById('founder-story-content' + (id === 1 ? '' : '-' + id));
+    var title = document.getElementById('founder-story-title-' + id);
+    if (!content || !title) return;
+    if (id === which) {
+      title.style.setProperty('display', 'grid', 'important');
+      content.style.setProperty('display', 'block', 'important');
+    } else {
+      title.style.setProperty('display', 'none', 'important');
+      content.style.setProperty('display', 'none', 'important');
+    }
+  });
+}
+
+function closeFounderStory(which) {
+  var ids = [1, 2, 3];
+  ids.forEach(function(id) {
+    var content = document.getElementById('founder-story-content' + (id === 1 ? '' : '-' + id));
+    var title = document.getElementById('founder-story-title-' + id);
+    if (content) content.style.setProperty('display', 'none', 'important');
+    if (title) title.style.setProperty('display', 'grid', 'important');
+  });
+  var founderBox = document.getElementById('about-founder-box');
+  if (founderBox) {
+    var header = document.getElementById('main-header');
+    var headerHeight = header ? header.offsetHeight : 0;
+    var top = founderBox.getBoundingClientRect().top + window.pageYOffset - headerHeight - 15;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
   }
 }
 </script>
