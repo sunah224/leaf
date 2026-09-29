@@ -431,7 +431,7 @@ body { color: #F3EEE5; }
 /* Both founder articles are hidden initially; clicking a title reveals only its article. */
 #about-founder #founder-story-content,
 #about-founder #founder-story-content-2 { display: none !important; }
-#about-founder .founder-entry-title .founder-entry-number { white-space: nowrap; }
+#about-founder .founder-entry-title .founder-entry-number { white-space: normal !important; }
 #about-founder .founder-entry-title .founder-entry-name { white-space: nowrap; min-width: 0; }
 #about-founder .founder-entry-title .founder-entry-date { white-space: nowrap; }
 
@@ -573,6 +573,42 @@ nav > a:hover {
 /* Footprints - '한 줄 응원 남기기' 제목 색상 */
 #footprints-box .footprints-box h4 {
     color: #F0D7A1 !important;
+}
+
+/* =========================================
+   모바일 Founder 제목 세로선 위치 통일
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* #번호 | 글제목 | 날짜 영역의 위치를 3개 글 모두 동일하게 */
+    #about-founder .founder-entry-title {
+        grid-template-columns: 45px minmax(0, 1fr) 85px !important;
+        width: 100% !important;
+    }
+
+    /* 왼쪽 #번호 */
+    #about-founder .founder-entry-number {
+        padding: 0 8px 0 0 !important;
+        text-align: left !important;
+        border-right: 1px solid #bcaaa4 !important;
+    }
+
+    /* 가운데 글 제목 */
+    #about-founder .founder-entry-name {
+        padding: 0 8px !important;
+        text-align: center !important;
+        border-right: 1px solid #bcaaa4 !important;
+        min-width: 0 !important;
+        white-space: normal !important;
+        line-height: 1.35 !important;
+    }
+
+    /* 오른쪽 날짜 + 조회수 */
+    #about-founder .founder-entry-date {
+        padding: 0 0 0 8px !important;
+        text-align: right !important;
+        min-width: 0 !important;
+    }
 }
 
 </style>
