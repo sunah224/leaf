@@ -202,7 +202,7 @@ nav a { font-size: 12px !important; padding: 2px 4px !important; }
 
 .section-box { margin: 30px 10px !important; padding: 30px 15px !important; border-radius: 14px; max-width: none !important; width: calc(100% - 20px) !important; }
 
-#basic-box.section-box { margin-top: 180px !important; padding: 30px 15px !important; }
+#basic-box.section-box { margin-top: 230px !important; padding: 30px 15px !important; }
 #basic { padding: 0 !important; }
 #basic .container { flex-direction: column !important; align-items: flex-end !important; text-align: right !important; gap: 0px !important; }
 #basic .content-img { width: 80% !important; max-width: 80% !important; margin: 0 0 25px auto !important; }
@@ -288,6 +288,37 @@ box-sizing: border-box;
 .footprints-box button { padding: 10px 20px !important; font-size: 12px !important; }
 .mobile-br { display: block; }
 }
+
+/* =========================================
+   모바일 화면 추가 조정
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* 첫 페이지 - 헤더와 첫 번째 섹션 사이 초록 배경 여백 늘리기 */
+    #basic-box.section-box {
+        margin-top: 230px !important;
+    }
+
+    /* Founder 각 글 제목 크기 - 현재의 약 절반 */
+    #about-founder .founder-story-title {
+        font-size: 9px !important;
+    }
+
+    #about-founder .founder-entry-number,
+    #about-founder .founder-entry-name {
+        font-size: 9px !important;
+    }
+
+    /* 날짜와 조회수도 제목에 맞게 작게 */
+    #about-founder .founder-entry-date {
+        font-size: 7px !important;
+    }
+
+    #about-founder .founder-view-count {
+        font-size: 6.5px !important;
+    }
+}
+
 </style>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
